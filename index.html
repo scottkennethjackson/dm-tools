@@ -5,41 +5,46 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Scott Kenneth Jackson">
         <meta name="description" content="A collection of DM tools for Dungeons & Dragons">
+        <meta name="theme-color" content="#000000">
 
         <title>Scott Kenneth Jackson | DM Tools</title>
+
+        <link rel="stylesheet" href="./src/css/output.css">
 
         <link rel="apple-touch-icon" sizes="180x180" href="./src/assets/icons/favicon_io/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="./src/assets/icons/favicon_io/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="./src/assets/icons/favicon_io/favicon-16x16.png">
         <link rel="manifest" href="./src/assets/icons/favicon_io/site.webmanifest">
-
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap">
-        <link rel="stylesheet" href="./styles/global.css">
     </head>
-    <body class="flex-center flex-col fill-space min-h-screen padding">
-        <div class="flex-center flex-col margin-bottom">
-            <img src="./images/logo.png" id="logo" alt="D&D">
-            <h1 class="uppercase text-center text-grey font-lg">DM Tools</h1>
-        </div>
+    <body>
+        <main class="fixed flex flex-col justify-center items-center space-y-4 p-4 w-full min-h-screen bg-black">
+            <div>
+                <img
+                    src="./src/assets/images/logo.png"
+                    alt="D&D"
+                    class="h-32"
+                >
+                <h1 class="font-roboto text-3xl font-bold text-center text-gray-400 uppercase">DM Tools</h1>
+            </div>
 
-        <div class="flex-col">
-            <a href="https://scottkennethjackson.github.io/dnd/tools/beast-generator" class="margin-bottom">
-                <button class="btn">Beast Generator</button>
-            </a>
+            <div class="container flex flex-col justify-center items-center space-y-4 mb-8 max-w-md border-2 border-red px-4 py-8">
+                <label for="tools" class="font-tiamat text-3xl text-white">What Is It That You Require?</label>
+                <select
+                    name="tools"
+                    id="tools"
+                    class="p-1 w-full max-w-xs bg-gray-100 text-center"
+                >
+                    <option value="empty" selected></option>
+                    <option value="beasts">Beast Generator</option>
+                    <option value="loot">Loot Generator</option>
+                    <option value="monsters">Monster Generator</option>
+                    <option value="npc">NPC Generator</option>
+                    <option value="spells">Spell Generator</option>
+                    <option value="hangmonster">HangMonster (Game)</option>
+                </select>
+            </div>
 
-            <a href="https://scottkennethjackson.github.io/dnd/tools/loot-generator" class="margin-bottom">
-                <button class="btn">Loot Generator</button>
-            </a>
-
-            <a href="https://scottkennethjackson.github.io/dnd/tools/monster-generator" class="margin-bottom">
-                <button class="btn">Monster Generator</button>
-            </a>
-
-            <a href="https://scottkennethjackson.github.io/dnd/tools/npc-generator">
-                <button class="btn">NPC Generator</button>
-            </a>
-        </div>
+            <button class="px-8 py-2 font-tiamat text-xl text-white bg-red">Go!</button>
+        </main>
     </body>
 </html>

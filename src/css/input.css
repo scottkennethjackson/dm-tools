@@ -1,1 +1,43 @@
 @import "tailwindcss";
+
+@font-face {
+    font-family: 'Roboto Condensed';
+    src: url('../fonts/roboto-condensed/RobotoCondensed-Regular.woff2') format('woff2'),
+        url('../fonts/roboto-condensed/RobotoCondensed-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto Condensed';
+    src: url('../fonts/roboto-condensed/RobotoCondensed-Bold.woff2') format('woff2'),
+        url('../fonts/roboto-condensed/RobotoCondensed-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Tiamat Condensed SC';
+    src: url('../fonts/tiamat-condensed-sc/TiamatCondensedSC-Regular.woff2') format('woff2'),
+        url('../fonts/tiamat-condensed-sc/TiamatCondensedSC-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@theme {
+    --color-red: #eb1313;
+    --font-tiamat: "Tiamat Condensed SC", serif;
+    --font-roboto: "Roboto Condensed", sans-serif;
+}
+
+html {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
