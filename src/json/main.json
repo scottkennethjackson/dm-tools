@@ -5,7 +5,7 @@
         {
           "title": "Bag of Tricks",
           "description": "[description]",
-          "link": "#"
+          "link": "./src/tools/<FILE>"
         }
       ]
     },
@@ -14,7 +14,7 @@
         {
           "title": "Chaos Magic",
           "description": "[description]",
-          "link": "#"
+          "link": "./src/tools/<FILE>"
         }
       ]
     },
@@ -23,7 +23,7 @@
         {
           "title": "Deck of Many Things",
           "description": "[description]",
-          "link": "#"
+          "link": "./src/tools/<FILE>"
         }
       ]
     },
@@ -32,7 +32,7 @@
         {
           "title": "Loot Randomiser",
           "description": "[description]",
-          "link": "#"
+          "link": "./src/tools/<FILE>"
         }
       ]
     },
@@ -41,7 +41,7 @@
         {
           "title": "NPC Generator",
           "description": "[description]",
-          "link": "#"
+          "link": "./src/tools/<FILE>"
         }
       ]
     },
@@ -50,7 +50,7 @@
         {
           "title": "Random Encounter",
           "description": "[description]",
-          "link": "#"
+          "link": "./src/tools/<FILE>"
         }
       ]
     },
@@ -59,7 +59,7 @@
         {
           "title": "HangMonster",
           "description": "[description]",
-          "link": "#"
+          "link": "./src/tools/<FILE>"
         }
       ]
     }
