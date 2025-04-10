@@ -16,8 +16,8 @@
         <link rel="icon" type="image/png" sizes="16x16" href="./src/assets/icons/favicon_io/favicon-16x16.png">
         <link rel="manifest" href="./src/assets/icons/favicon_io/site.webmanifest">
     </head>
-    <body>
-        <main class="fixed flex flex-col justify-center items-center space-y-4 p-4 w-full min-h-screen bg-black">
+    <body class="bg-black">
+        <main class="flex flex-col justify-center items-center space-y-4 p-4 w-full min-h-screen">
             <div>
                 <img
                     src="./src/assets/images/logo.png"
@@ -27,24 +27,46 @@
                 <h1 class="font-roboto text-3xl font-bold text-center text-gray-400 uppercase">DM Tools</h1>
             </div>
 
-            <div class="container flex flex-col justify-center items-center space-y-4 mb-8 max-w-md border-2 border-red px-4 py-8">
-                <label for="tools" class="font-tiamat text-3xl text-white">What Is It That You Require?</label>
+            <div class="container flex flex-col justify-center items-center space-y-4 mb-8 max-w-md border-2 border-red px-4 py-8 text-white">
+                <h2
+                    id="title"
+                    class="font-tiamat text-3xl"
+                >
+                    What Is It That You Require?
+                </h2>
+
+                <p
+                    id="description"
+                    class="hidden font-roboto"
+                ></p>
+                
                 <select
-                    name="tools"
-                    id="tools"
-                    class="p-1 w-full max-w-xs bg-gray-100 text-center"
+                    name="selector"
+                    id="selector"
+                    class="p-1 w-full max-w-xs bg-gray-100 text-black text-center"
                 >
                     <option value="empty" selected></option>
-                    <option value="beasts">Beast Generator</option>
-                    <option value="loot">Loot Generator</option>
-                    <option value="monsters">Monster Generator</option>
-                    <option value="npc">NPC Generator</option>
-                    <option value="spells">Spell Generator</option>
+                    <option value="bag of tricks">Bag of Tricks</option>
+                    <option value="chaos magic">Chaos Magic</option>
+                    <option value="deck of many things">Deck of Many Things</option>
+                    <option value="loot randomiser">Loot Randomiser</option>
+                    <option value="npc generator">NPC Generator</option>
+                    <option value="random encounter">Random Encounter</option>
                     <option value="hangmonster">HangMonster (Game)</option>
                 </select>
             </div>
 
-            <button class="px-8 py-2 font-tiamat text-xl text-gray-600 bg-gray-400 cursor-not-allowed">Go!</button>
+            <button
+                id="go-btn"
+                class="px-8 py-2 font-tiamat text-xl text-gray-600 bg-gray-400 cursor-not-allowed"
+            >
+                Go!
+            </button>
         </main>
     </body>
+
+    <footer>
+        <script src="./src/js/libs/flowbite.min.js"></script>
+        <script src="./src/js/main.js"></script>
+    </footer>
 </html>

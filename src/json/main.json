@@ -1,0 +1,67 @@
+{
+  "tools": [
+    {
+      "bag of tricks": [
+        {
+          "title": "Bag of Tricks",
+          "description": "[description]",
+          "link": "#"
+        }
+      ]
+    },
+    {
+      "chaos magic": [
+        {
+          "title": "Chaos Magic",
+          "description": "[description]",
+          "link": "#"
+        }
+      ]
+    },
+    {
+      "deck of many things": [
+        {
+          "title": "Deck of Many Things",
+          "description": "[description]",
+          "link": "#"
+        }
+      ]
+    },
+    {
+      "loot randomiser": [
+        {
+          "title": "Loot Randomiser",
+          "description": "[description]",
+          "link": "#"
+        }
+      ]
+    },
+    {
+      "npc generator": [
+        {
+          "title": "NPC Generator",
+          "description": "[description]",
+          "link": "#"
+        }
+      ]
+    },
+    {
+      "random encounter": [
+        {
+          "title": "Random Encounter",
+          "description": "[description]",
+          "link": "#"
+        }
+      ]
+    },
+    {
+      "hangmonster": [
+        {
+          "title": "HangMonster",
+          "description": "[description]",
+          "link": "#"
+        }
+      ]
+    }
+  ]
+}
