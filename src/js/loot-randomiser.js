@@ -1,6 +1,5 @@
 const title = document.getElementById('title');
 const lootLink = document.getElementById('loot-link');
-const warning = document.getElementById('warning');
 const rollBtn = document.getElementById('roll-btn');
 
 let roll;
@@ -44,8 +43,6 @@ fetch('../json/magic-items.json')
     });
 
 function rollLoot() {
-    warning.classList.add('hidden');
-
     roll = Math.floor(Math.random() * 7);
 
     if (roll == 0) {
