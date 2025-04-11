@@ -49,27 +49,23 @@ function rollLoot() {
     roll = Math.floor(Math.random() * 7);
 
     if (roll == 0) {
-        console.log(roll)
         title.innerHTML = "You Didn't Find Anything";
         lootLink.classList.add('hidden');
     };
 
     if (roll == 1) {
-        console.log(roll);
         roll = Math.floor(Math.random() * gemstones.length);
         title.innerHTML = gemstones[roll].name;
         lootLink.classList.add('hidden');
     };
 
     if (roll == 2) {
-        console.log(roll);
         roll = Math.floor(Math.random() * trinkets.length);
         title.innerHTML = trinkets[roll].name;
         lootLink.classList.add('hidden');
     };
 
     if (roll == 3) {
-        console.log(roll);
         roll = Math.floor(Math.random() * consumables.length);
         title.innerHTML = consumables[roll].name;
         lootLink.innerHTML = 'View Item';
@@ -78,7 +74,6 @@ function rollLoot() {
     };
 
     if (roll == 4) {
-        console.log(roll);
         roll = Math.ceil(Math.random() * 4);
 
         if (roll == 1) {
@@ -93,7 +88,6 @@ function rollLoot() {
     };
 
     if (roll == 5) {
-        console.log(roll);
         roll = Math.floor(Math.random() * 10);
 
         if (roll == 0) {
@@ -151,7 +145,6 @@ function rollLoot() {
     };
 
     if (roll == 6) {
-        console.log(roll);
         roll = Math.floor(Math.random() * 31);
 
         if (roll == 0) {
