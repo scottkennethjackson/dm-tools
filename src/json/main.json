@@ -14,7 +14,7 @@
         {
           "title": "Chaos Magic",
           "description": "[description]",
-          "link": "./src/tools/<FILE>"
+          "link": "./src/tools/chaos-magic.html"
         }
       ]
     },
@@ -23,7 +23,16 @@
         {
           "title": "Deck of Many Things",
           "description": "[description]",
-          "link": "./src/tools/<FILE>"
+          "link": "./src/tools/deck-of-many-things.html"
+        }
+      ]
+    },
+    {
+      "gp lottery": [
+        {
+          "title": "GP Lottery",
+          "description": "[description]",
+          "link": "./src/tools/gp-lottery.html"
         }
       ]
     },
@@ -32,7 +41,7 @@
         {
           "title": "Loot Randomiser",
           "description": "[description]",
-          "link": "./src/tools/<FILE>"
+          "link": "./src/tools/loot-randomiser.html"
         }
       ]
     },
@@ -41,7 +50,7 @@
         {
           "title": "NPC Generator",
           "description": "[description]",
-          "link": "./src/tools/<FILE>"
+          "link": "./src/tools/npc-generator.html"
         }
       ]
     },
@@ -50,16 +59,16 @@
         {
           "title": "Random Encounter",
           "description": "[description]",
-          "link": "./src/tools/<FILE>"
+          "link": "./src/tools/random-encounter.html"
         }
       ]
     },
     {
-      "hangmonster": [
+      "hangmaster": [
         {
-          "title": "HangMonster",
+          "title": "HangMaster",
           "description": "[description]",
-          "link": "./src/tools/<FILE>"
+          "link": "./src/tools/hangmaster.html"
         }
       ]
     }
