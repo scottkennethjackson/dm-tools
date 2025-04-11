@@ -1,0 +1,403 @@
+{
+    "gemstones": [
+        {
+            "name": "Gemstone, Alexandrite (500 GP)",
+            "link": null
+        },
+        {
+            "name": "Gemstone, Amber (100 GP)",
+            "link": null
+        },
+        {
+            "name": "Gemstone, Amethyst (100 GP)",
+            "link": null
+        },
+        {
+            "name": "Gemstone, Aquamarine (500 GP)",
+            "link": null
+        },
+        {
+            "name": "Gemstone, Azurite (10 GP)",
+            "link": null
+        },
+        {
+            "name": "Gemstone, Banded Agate (10 GP)",
+            "link": null
+        },
+        {
+            "name": "Gemstone, Black Opal (1000 GP)",
+            "link": null
+        },
+        {
+            "name": "Gemstone, Black Pearl (500 GP)",
+            "link": null
+        },
+        {
+            "name": "Gemstone, Black Sapphire (5000 GP)",
+            "link": null
+        },
+        {
+            "name": "Gemstone, Bloodstone (50 GP)",
+            "link": null
+        },
+        {
+            "name": "Gemstone, Blue Quartz (10 GP)",
+            "link": null
+        },
+        {
+            "name": "Gemstone, Blue Sapphire (1000 GP)",
+            "link": null
+        },
+        {
+            "name": "Gemstone, Blue Spinel (500 GP)",
+            "link": null
+        },
+        {
+            "name": "Gemstone, Carnelian (50 GP)",
+            "link": null
+        },
+        {
+            "name": "Gemstone, Chalcedony (50 GP)",
+            "link": null
+        },
+        {
+            "name": "Gemstone, Chrysoberyl (50 GP)",
+            "link": null
+        },
+        {
+            "name": "Gemstone, Citrine (50 GP)",
+            "link": null
+        },
+        {
+            "name": "Gemstone, Coral (100 GP)",
+            "link": null
+        },
+        {
+            "name": "Gemstone, Diamond (5000 GP)",
+            "link": null
+        },
+        {
+            "name": "Gemstone, Emerald (1000 GP)",
+            "link": null
+        },
+        {
+            "name": "Gemstone, Eye Agate (10 GP)",
+            "link": null
+        },
+        {
+            "name": "Gemstone, Fire Opal (1000 GP)",
+            "link": null
+        },
+        {
+            "name": "Gemstone, Garnet (100 GP)",
+            "link": null
+        },
+        {
+            "name": "Gemstone, Hematite (10 GP)",
+            "link": null
+        },
+        {
+            "name": "Gemstone, Jacinth (5000 GP)",
+            "link": null
+        },
+        {
+            "name": "Gemstone, Jade (100 GP)",
+            "link": null
+        },
+        {
+            "name": "Gemstone, Jasper (50 GP)",
+            "link": null
+        },
+        {
+            "name": "Gemstone, Jet (100 GP)",
+            "link": null
+        },
+        {
+            "name": "Gemstone, Lapis Lazuli (10 GP)",
+            "link": null
+        },
+        {
+            "name": "Gemstone, Malachite (10 GP)",
+            "link": null
+        },
+        {
+            "name": "Gemstone, Moonstone (50 GP)",
+            "link": null
+        },
+        {
+            "name": "Gemstone, Moss Agate (10 GP)",
+            "link": null
+        },
+        {
+            "name": "Gemstone, Obsidian (10 GP)",
+            "link": null
+        },
+        {
+            "name": "Gemstone, Onyx (50 GP)",
+            "link": null
+        },
+        {
+            "name": "Gemstone, Opal (1000 GP)",
+            "link": null
+        },
+        {
+            "name": "Gemstone, Pearl (100 GP)",
+            "link": null
+        },
+        {
+            "name": "Gemstone, Peridot (500 GP)",
+            "link": null
+        },
+        {
+            "name": "Gemstone, Quartz (50 GP)",
+            "link": null
+        },
+        {
+            "name": "Gemstone, Rhodochrosite (10 GP)",
+            "link": null
+        },
+        {
+            "name": "Gemstone, Ruby (5000 GP)",
+            "link": null
+        },
+        {
+            "name": "Gemstone, Sardonyx (50 GP)",
+            "link": null
+        },
+        {
+            "name": "Gemstone, Spinel (100 GP)",
+            "link": null
+        },
+        {
+            "name": "Gemstone, Star Rose Quartz (50 GP)",
+            "link": null
+        },
+        {
+            "name": "Gemstone, Star Ruby (1000 GP)",
+            "link": null
+        },
+        {
+            "name": "Gemstone, Star Sapphire (1000 GP)",
+            "link": null
+        },
+        {
+            "name": "Gemstone, Tiger Eye (10 GP)",
+            "link": null
+        },
+        {
+            "name": "Gemstone, Topaz (500 GP)",
+            "link": null
+        },
+        {
+            "name": "Gemstone, Tourmaline (100 GP)",
+            "link": null
+        },
+        {
+            "name": "Gemstone, Turquoise (10 GP)",
+            "link": null
+        },
+        {
+            "name": "Gemstone, Yellow Sapphire (1000 GP)",
+            "link": null
+        },
+        {
+            "name": "Gemstone, Zircon (50 GP)",
+            "link": null
+        }
+    ],
+    
+    "trinkets": [
+        {
+            "name": "Silver Ewer (25 GP)",
+            "link": null
+        },
+        {
+            "name": "Carved Bone Statuette (25 GP)",
+            "link": null
+        },
+        {
+            "name": "Small Gold Bracelet (25 GP)",
+            "link": null
+        },
+        {
+            "name": "Cloth-of-Gold Vestments (25 GP)",
+            "link": null
+        },
+        {
+            "name": "Black Velvet Mask Stitched with Silver Thread (25 GP)",
+            "link": null
+        },
+        {
+            "name": "Copper Chalice with Silver Filigree (25 GP)",
+            "link": null
+        },
+        {
+            "name": "Pair of Engraved Bone Dice (25 GP)",
+            "link": null
+        },
+        {
+            "name": "Small Mirror Set in a Painted Wooden Frame (25 GP)",
+            "link": null
+        },
+        {
+            "name": "Embroidered Silk Handkerchief (25 GP)",
+            "link": null
+        },
+        {
+            "name": "Gold Locket with a Painted Portrait Inside (25 GP)",
+            "link": null
+        },
+        {
+            "name": "Gold Ring Set with Bloodstones (250 GP)",
+            "link": null
+        },
+        {
+            "name": "Carved Ivory Statuette (250 GP)",
+            "link": null
+        },
+        {
+            "name": "Large Gold Bracelet (250 GP)",
+            "link": null
+        },
+        {
+            "name": "Silver Necklace with Gemstone Pendant (250 GP)",
+            "link": null
+        },
+        {
+            "name": "Bronze Crown (250 GP)",
+            "link": null
+        },
+        {
+            "name": "Silk Robe with Gold Embroidery (250 GP)",
+            "link": null
+        },
+        {
+            "name": "Large Well-Made Tapestry (250 GP)",
+            "link": null
+        },
+        {
+            "name": "Brass Mug with Jade Inlay (250 GP)",
+            "link": null
+        },
+        {
+            "name": "Box of Turquoise Animal Figurines (250 GP)",
+            "link": null
+        },
+        {
+            "name": "Gold Bird Cage with Electrum Filigree (250 GP)",
+            "link": null
+        },
+        {
+            "name": "Silver Chalice Set with Moonstones (750 GP)",
+            "link": null
+        },
+        {
+            "name": "Silver-Plated Steel Longsword with Jet Set in Hilt (750 GP)",
+            "link": null
+        },
+        {
+            "name": "Carved Harp of Exotic Wood with Ivory Inlay and Zircon Gems (750 GP)",
+            "link": null
+        },
+        {
+            "name": "Small Gold Idol (750 GP)",
+            "link": null
+        },
+        {
+            "name": "Gold Dragon Comb Set with Red Garnets as Eyes (750 GP)",
+            "link": null
+        },
+        {
+            "name": "Bottle Stopper Cork Embossed with Gold Leaf and Set with Amethysts (750 GP)",
+            "link": null
+        },
+        {
+            "name": "Ceremonial Electrum Dagger with a Black Pearl in the Pommel (750 GP)",
+            "link": null
+        },
+        {
+            "name": "Silver and Gold Brooch (750 GP)",
+            "link": null
+        },
+        {
+            "name": "Obsidian Statuette with Gold Fittings and Inlay (750 GP)",
+            "link": null
+        },
+        {
+            "name": "Painted Gold War Mask (750 GP)",
+            "link": null
+        },
+        {
+            "name": "Fine Gold Chain Set with a Fire Opal (2500 GP)",
+            "link": null
+        },
+        {
+            "name": "Old Masterpiece Painting (2500 GP)",
+            "link": null
+        },
+        {
+            "name": "Embroidered Silk and Velvet Mantle Set with Numerous Moonstones (2500 GP)",
+            "link": null
+        },
+        {
+            "name": "Platinum Bracelet Set with a Sapphire (2500 GP)",
+            "link": null
+        },
+        {
+            "name": "Embroidered Glove Set with Jewel Chips (2500 GP)",
+            "link": null
+        },
+        {
+            "name": "Jeweled Anklet (2500 GP)",
+            "link": null
+        },
+        {
+            "name": "Gold Music Box (2500 GP)",
+            "link": null
+        },
+        {
+            "name": "Gold Circlet Set with Four Aquamarines (2500 GP)",
+            "link": null
+        },
+        {
+            "name": "Eye Patch with a Mock Eye Set in Blue Sapphire and Moonstone (2500 GP)",
+            "link": null
+        },
+        {
+            "name": "A Necklace String of Small Pink Pearls (2500 GP)",
+            "link": null
+        },
+        {
+            "name": "Jeweled Gold Crown (7500 GP)",
+            "link": null
+        },
+        {
+            "name": "Jeweled Platinum Ring (7500 GP)",
+            "link": null
+        },
+        {
+            "name": "Small Gold Statuette Set with Rubies (7500 GP)",
+            "link": null
+        },
+        {
+            "name": "Gold Cup Set with Emeralds (7500 GP)",
+            "link": null
+        },
+        {
+            "name": "Gold Jewelry Box with Platinum Filigree (7500 GP)",
+            "link": null
+        },
+        {
+            "name": "Painted Gold Child's Sarcophagus (7500 GP)",
+            "link": null
+        },
+        {
+            "name": "Jade Game Board with Solid Gold Playing Pieces (7500 GP)",
+            "link": null
+        },
+        {
+            "name": "Bejeweled Ivory Drinking Horn with Gold Filigree (7500 GP)",
+            "link": null
+        }
+    ]
+}
