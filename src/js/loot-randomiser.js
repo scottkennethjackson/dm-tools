@@ -33,6 +33,16 @@ fetch('../json/spells.json')
         level9 = data.level9;
     });
 
+fetch('../json/magic-items.json')
+    .then(response => response.json())
+    .then(data => {
+        cursed = data.cursed;
+        uncommon = data.uncommon;
+        rare = data.rare;
+        veryRare = data.veryRare;
+        legendary = data.legendary;
+    });
+
 function rollLoot() {
     warning.classList.add('hidden');
 
@@ -45,24 +55,24 @@ function rollLoot() {
     };
 
     if (roll == 1) {
-        console.log(roll)
+        console.log(roll);
         roll = Math.floor(Math.random() * gemstones.length);
         title.innerHTML = gemstones[roll].name;
         lootLink.classList.add('hidden');
     };
 
     if (roll == 2) {
-        console.log(roll)
+        console.log(roll);
         roll = Math.floor(Math.random() * trinkets.length);
         title.innerHTML = trinkets[roll].name;
         lootLink.classList.add('hidden');
     };
 
     if (roll == 3) {
-        console.log(roll)
+        console.log(roll);
         roll = Math.floor(Math.random() * consumables.length);
         title.innerHTML = consumables[roll].name;
-        lootLink.innerHTML = 'View Item'
+        lootLink.innerHTML = 'View Item';
         lootLink.setAttribute('href', `${consumables[roll].link}`);
         lootLink.classList.remove('hidden');
     };
@@ -72,12 +82,12 @@ function rollLoot() {
         roll = Math.ceil(Math.random() * 4);
 
         if (roll == 1) {
-            title.innerHTML = `${roll} Potion of Healing`
+            title.innerHTML = `${roll} Potion of Healing`;
         } else {
-            title.innerHTML = `${roll} Potions of Healing`
+            title.innerHTML = `${roll} Potions of Healing`;
         }
 
-        lootLink.innerHTML = 'View Item'
+        lootLink.innerHTML = 'View Item';
         lootLink.setAttribute('href', 'https://www.dndbeyond.com/magic-items/8960641-potion-of-healing');
         lootLink.classList.remove('hidden');
     };
@@ -136,13 +146,38 @@ function rollLoot() {
             lootLink.setAttribute('href', `${level9[roll].link}`);
         };
         
-        lootLink.innerHTML = 'View Spell'
+        lootLink.innerHTML = 'View Spell';
         lootLink.classList.remove('hidden');
     };
 
     if (roll == 6) {
         console.log(roll);
-        title.innerHTML = "Not Set Yet";
+        roll = Math.floor(Math.random() * 31);
+
+        if (roll == 0) {
+            roll = Math.floor(Math.random() * cursed.length);
+            title.innerHTML = cursed[roll].name;
+            lootLink.setAttribute('href', `${cursed[roll].link}`);
+        } else if (roll <= 16) {
+            roll = Math.floor(Math.random() * uncommon.length);
+            title.innerHTML = uncommon[roll].name;
+            lootLink.setAttribute('href', `${uncommon[roll].link}`);
+        } else if (roll <= 25) {
+            roll = Math.floor(Math.random() * rare.length);
+            title.innerHTML = rare[roll].name;
+            lootLink.setAttribute('href', `${rare[roll].link}`);
+        } else if (roll <= 29) {
+            roll = Math.floor(Math.random() * veryRare.length);
+            title.innerHTML = veryRare[roll].name;
+            lootLink.setAttribute('href', `${veryRare[roll].link}`);
+        } else {
+            roll = Math.floor(Math.random() * legendary.length);
+            title.innerHTML = legendary[roll].name;
+            lootLink.setAttribute('href', `${leg[roll].link}`);
+        };
+
+        lootLink.innerHTML = 'View Item';
+        lootLink.classList.remove('hidden');
     };
 };
 
