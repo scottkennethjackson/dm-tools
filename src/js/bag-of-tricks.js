@@ -9,10 +9,10 @@ let roll;
 
 fetch('../json/beasts.json')
     .then(response => response.json())
-    .then(data => {
-        walking = data.walking;
-        flying = data.flying;
-        swimming = data.swimming;
+    .then(beasts => {
+        walking = beasts.walking;
+        flying = beasts.flying;
+        swimming = beasts.swimming;
     });
 
 function rollBeast() {

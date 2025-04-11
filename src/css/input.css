@@ -41,7 +41,3 @@ html {
 html::-webkit-scrollbar {
     display: none;
 }
-
-* {
-    border: 1px dotted red;
-}
