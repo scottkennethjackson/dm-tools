@@ -133,6 +133,78 @@ function rollGold() {
             coin4Currency = "PP";
             title.innerHTML = `${coin4Value} ${coin4Currency}, ${coin3Value} ${coin3Currency}, ${coin2Value} ${coin2Currency} & ${coin1Value} ${coin1Currency}`;
             break;
+
+        case (level <= 16 && !hoardCheck.checked && roll <= 20):
+            coin1Value = rollMultiple(4, 6) * 100;
+            coin1Currency = "SP";
+            coin2Value = rollMultiple(1, 6) * 100;
+            coin2Currency = "GP";
+            title.innerHTML = `${coin2Value} ${coin2Currency} & ${coin1Value} ${coin1Currency}`;
+            break;
+
+        case (level <= 16 && !hoardCheck.checked && roll <= 35):
+            coin1Value = rollMultiple(1, 6) * 100;
+            coin1Currency = "EP";
+            coin2Value = rollMultiple(1, 6) * 100;
+            coin2Currency = "GP";
+            title.innerHTML = `${coin2Value} ${coin2Currency} & ${coin1Value} ${coin1Currency}`;
+            break;
+
+        case (level <= 16 && !hoardCheck.checked && roll <= 75):
+            coin1Value = rollMultiple(2, 6) * 100;
+            coin1Currency = "GP";
+            coin2Value = rollMultiple(1, 6) * 10;
+            coin2Currency = "PP";
+            title.innerHTML = `${coin2Value} ${coin2Currency} & ${coin1Value} ${coin1Currency}`;
+            break;
+
+        case (level <= 16 && !hoardCheck.checked && roll <= 100):
+            coin1Value = rollMultiple(2, 6) * 100;
+            coin1Currency = "GP";
+            coin2Value = rollMultiple(2, 6) * 10;
+            coin2Currency = "PP";
+            title.innerHTML = `${coin2Value} ${coin2Currency} & ${coin1Value} ${coin1Currency}`;
+            break;
+
+        case (level <= 16 && hoardCheck.checked):
+            coin1Value = (rollMultiple(4, 6) * 1000);
+            coin1Currency = "GP";
+            coin2Value = (rollMultiple(5, 6) * 100);
+            coin2Currency = "PP";
+            title.innerHTML = `${coin2Value} ${coin2Currency} & ${coin1Value} ${coin1Currency}`;
+            break;
+
+        case (level >= 17 && !hoardCheck.checked && roll <= 15):
+            coin1Value = rollMultiple(2, 6) * 1000;
+            coin1Currency = "EP";
+            coin2Value = rollMultiple(8, 6) * 100;
+            coin2Currency = "GP";
+            title.innerHTML = `${coin2Value} ${coin2Currency} & ${coin1Value} ${coin1Currency}`;
+            break;
+
+        case (level >= 17 && !hoardCheck.checked && roll <= 55):
+            coin1Value = rollMultiple(1, 6) * 1000;
+            coin1Currency = "GP";
+            coin2Value = rollMultiple(1, 6) * 100;
+            coin2Currency = "PP";
+            title.innerHTML = `${coin2Value} ${coin2Currency} & ${coin1Value} ${coin1Currency}`;
+            break;
+
+        case (level >= 17 && !hoardCheck.checked && roll <= 100):
+            coin1Value = rollMultiple(1, 6) * 1000;
+            coin1Currency = "GP";
+            coin2Value = rollMultiple(2, 6) * 100;
+            coin2Currency = "PP";
+            title.innerHTML = `${coin2Value} ${coin2Currency} & ${coin1Value} ${coin1Currency}`;
+            break;
+
+        case (level >= 17 && hoardCheck.checked):
+            coin1Value = (rollMultiple(12, 6) * 1000);
+            coin1Currency = "GP";
+            coin2Value = (rollMultiple(8, 6) * 1000);
+            coin2Currency = "PP";
+            title.innerHTML = `${coin2Value} ${coin2Currency} & ${coin1Value} ${coin1Currency}`;
+            break;
     };
 };
 
