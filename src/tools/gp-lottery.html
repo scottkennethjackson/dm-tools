@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Scott Kenneth Jackson">
+        <meta name="description" content="A DM Tool for rendomly generating gold">
+        <meta name="theme-color" content="#000000">
+
+        <title>DM Tools | GP Lottery</title>
+
+        <link rel="stylesheet" href="../css/output.css">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="../assets/icons/favicon_io/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon_io/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../assets/icons/favicon_io/favicon-16x16.png">
+        <link rel="manifest" href="../assets/icons/favicon_io/site.webmanifest">
+    </head>
+    <body class="bg-black">
+        <main class="flex flex-col justify-center items-center space-y-4 px-4 py-12 w-full min-h-screen">
+            <svg
+                role="button"
+                aria-hidden="true"
+                focusable="false"
+                class="absolute top-4 right-4 h-8 fill-gray-400 hover:fill-red active:brightness-90 cursor-pointer"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 576 512"
+                onclick="location.href='https://scottkennethjackson.github.io/dm-tools/'"
+            >
+                <path
+                    d="M575.8 255.5c0 18-15 32.1-32 32.1l-32 0 .7 160.2c0 2.7-.2 5.4-.5 8.1l0 16.2c0 22.1-17.9 40-40 40l-16 0c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1L416 512l-24 0c-22.1 0-40-17.9-40-40l0-24 0-64c0-17.7-14.3-32-32-32l-64 0c-17.7 0-32 14.3-32 32l0 64 0 24c0 22.1-17.9 40-40 40l-24 0-31.9 0c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2l-16 0c-22.1 0-40-17.9-40-40l0-112c0-.9 0-1.9 .1-2.8l0-69.7-32 0c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"
+                />
+            </svg>
+            <div>
+                <img
+                    src="../assets/images/logo.png"
+                    alt="D&D"
+                    class="h-24 sm:h-32 mx-auto"
+                >
+                <h1 class="font-roboto text-3xl font-bold text-center text-gray-400 uppercase">GP Lottery</h1>
+            </div>
+
+            <div class="container flex flex-col justify-center items-center space-y-4 mb-8 max-w-md border-2 border-red px-4 py-8 text-white">
+                <h2
+                    id="title"
+                    class="font-tiamat text-3xl text-center"
+                >
+                    Roll to Generate Gold
+                </h2>
+
+                <div class="flex space-x-4">
+                    <div class="flex items-center space-x-1">
+                        <label for="level-selector"><span id="variable">Player</span> Level:</label>
+                        <select
+                            name="level-selector"
+                            id="level-selector"
+                            class="p-1 bg-gray-100 text-black"
+                        >
+                            <option value="1" selected>1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                        </select>
+                    </div>
+
+                    <div class="flex items-center space-x-1">
+                        <label for="hoard-selector">Treasure Hoard:</label>
+                        <input type="checkbox" name="hoard-check" id="hoard-check" class="accent-red">
+                    </div>
+                </div>
+            </div>
+
+            <button
+                id="roll-btn"
+                class="px-8 py-2 font-tiamat text-xl text-white bg-red active:brightness-90 cursor-pointer"
+            >
+                Roll!
+            </button>
+        </main>
+    </body>
+
+    <footer>
+        <script src="../js/gp-lottery.js"></script>
+    </footer>
+</html>
