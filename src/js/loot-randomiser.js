@@ -21,15 +21,15 @@ fetch('../json/spells.json')
     .then(response => response.json())
     .then(data => {
         cantrips = data.cantrips;
-        level1 = data.level1;
-        level2 = data.level2;
-        level3 = data.level3;
-        level4 = data.level4;
-        level5 = data.level5;
-        level6 = data.level6;
-        level7 = data.level7;
-        level8 = data.level8;
-        level9 = data.level9;
+        level1 = data['1st level'];
+        level2 = data['2nd level'];
+        level3 = data['3rd level'];
+        level4 = data['4th level'];
+        level5 = data['5th level'];
+        level6 = data['6th level'];
+        level7 = data['7th level'];
+        level8 = data['8th level'];
+        level9 = data['9th level'];
     });
 
 fetch('../json/magic-items.json')
@@ -38,7 +38,7 @@ fetch('../json/magic-items.json')
         cursed = data.cursed;
         uncommon = data.uncommon;
         rare = data.rare;
-        veryRare = data.veryRare;
+        veryRare = data['very rare'];
         legendary = data.legendary;
     });
 

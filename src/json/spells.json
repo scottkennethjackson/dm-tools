@@ -55,7 +55,7 @@
     }
   ],
 
-  "level1": [
+  "1st level": [
     { "name": "Alarm", "link": "https://www.dndbeyond.com/spells/1991-alarm" },
     {
       "name": "Burning Hands",
@@ -157,7 +157,7 @@
     }
   ],
 
-  "level2": [
+  "2nd level": [
     {
       "name": "Acid Arrow",
       "link": "https://www.dndbeyond.com/spells/1988-acid-arrow"
@@ -275,7 +275,7 @@
     { "name": "Web", "link": "https://www.dndbeyond.com/spells/2299-web" }
   ],
 
-  "level3": [
+  "3rd level": [
     {
       "name": "Animate Dead",
       "link": "https://www.dndbeyond.com/spells/1996-animate-dead"
@@ -375,7 +375,7 @@
     }
   ],
 
-  "level4": [
+  "4th level": [
     {
       "name": "Arcane Eye",
       "link": "https://www.dndbeyond.com/spells/2001-arcane-eye"
@@ -470,7 +470,7 @@
     }
   ],
 
-  "level5": [
+  "5th level": [
     {
       "name": "Animate Objects",
       "link": "https://www.dndbeyond.com/spells/1997-animate-objects"
@@ -559,7 +559,7 @@
     }
   ],
 
-  "level6": [
+  "6th level": [
     {
       "name": "Chain Lightning",
       "link": "https://www.dndbeyond.com/spells/2024-chain-lightning"
@@ -638,7 +638,7 @@
     }
   ],
 
-  "level7": [
+  "7th level": [
     {
       "name": "Delayed Blast Fireball",
       "link": "https://www.dndbeyond.com/spells/2062-delayed-blast-fireball"
@@ -701,7 +701,7 @@
     }
   ],
 
-  "level8": [
+  "8th level": [
     {
       "name": "Antimagic Field",
       "link": "https://www.dndbeyond.com/spells/1999-antimagic-field"
@@ -746,7 +746,7 @@
     }
   ],
 
-  "level9": [
+  "9th level": [
     {
       "name": "Astral Projection",
       "link": "https://www.dndbeyond.com/spells/2006-astral-projection"
