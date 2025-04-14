@@ -1,6 +1,6 @@
 const title = document.getElementById('title');
 const description = document.getElementById('description');
-const selector = document.getElementById('selector');
+const toolSelector = document.getElementById('tool-selector');
 const goBtn = document.getElementById('go-btn');
 
 let tools = [];
@@ -19,7 +19,7 @@ function handleClick() {
 };
 
 function handleSelection() {
-    selection = selector.value;
+    selection = toolSelector.value;
     inactiveClasses = ['text-gray-600', 'bg-gray-400', 'cursor-not-allowed'];
     activeClasses = ['text-white', 'bg-red', 'active:brightness-90', 'cursor-pointer'];
 
@@ -49,4 +49,4 @@ function handleSelection() {
     };
 };
 
-selector.addEventListener('change', handleSelection);
+toolSelector.addEventListener('change', handleSelection);
