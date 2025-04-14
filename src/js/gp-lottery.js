@@ -1,5 +1,5 @@
 const title = document.getElementById('title');
-const variable = document.getElementById('variable');
+const modifier = document.querySelectorAll('.modifier');
 const levelSelector = document.getElementById('level-selector');
 const hoardCheck = document.getElementById('hoard-check');
 const rollBtn = document.getElementById('roll-btn');
@@ -15,11 +15,13 @@ let coin4Value;
 let coin4Currency;
 
 function handleCheck() {
-    if (variable.innerHTML == 'Player') {
-        variable.innerHTML = 'Party';
-    } else {
-        variable.innerHTML = 'Player';
-    };
+    modifier.forEach((instance) => {
+        if (instance.innerHTML == 'Player') {
+            instance.innerHTML = 'Party';
+        } else {
+            instance.innerHTML = 'Player';
+        };
+    });
 };
 
 hoardCheck.addEventListener('change', handleCheck);
