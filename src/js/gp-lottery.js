@@ -2,6 +2,7 @@ const title = document.getElementById('title');
 const modifier = document.querySelectorAll('.modifier');
 const levelSelector = document.getElementById('level-selector');
 const hoardCheck = document.getElementById('hoard-check');
+const conversionLink = document.getElementById('conversion-link');
 const rollBtn = document.getElementById('roll-btn');
 
 let roll;
@@ -43,6 +44,8 @@ function rollMultiple(numRolls, diceValue) {
 function rollGold() {
     let level = levelSelector.value;
 
+    conversionLink.classList.remove('hidden');
+    
     rollD100();
 
     switch(true) {
