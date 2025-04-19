@@ -1,0 +1,831 @@
+{
+  "CR 0": [
+    {
+      "name": "Awakened Shrub",
+      "link": "https://www.dndbeyond.com/monsters/16791-awakened-shrub"
+    },
+    {
+      "name": "Homunculus",
+      "link": "https://www.dndbeyond.com/monsters/16926-homunculus"
+    },
+    {
+      "name": "Lemure",
+      "link": "https://www.dndbeyond.com/monsters/16942-lemure"
+    },
+    {
+      "name": "Shrieker",
+      "link": "https://www.dndbeyond.com/monsters/17013-shrieker"
+    }
+  ],
+
+  "CR 1/8": [
+    {
+      "name": "Twig Blight",
+      "link": "https://www.dndbeyond.com/monsters/17095-twig-blight"
+    }
+  ],
+
+  "CR 1/4": [
+    {
+      "name": "Blink Dog",
+      "link": "https://www.dndbeyond.com/monsters/16809-blink-dog"
+    },
+    {
+      "name": "Dretch",
+      "link": "https://www.dndbeyond.com/monsters/16846-dretch"
+    },
+    {
+      "name": "Flying Sword",
+      "link": "https://www.dndbeyond.com/monsters/16865-flying-sword"
+    },
+    {
+      "name": "Pseudodragon",
+      "link": "https://www.dndbeyond.com/monsters/16986-pseudodragon"
+    },
+    {
+      "name": "Skeleton",
+      "link": "https://www.dndbeyond.com/monsters/17015-skeleton"
+    },
+    {
+      "name": "Sprite",
+      "link": "https://www.dndbeyond.com/monsters/17020-sprite"
+    },
+    {
+      "name": "Steam Mephit",
+      "link": "https://www.dndbeyond.com/monsters/17022-steam-mephit"
+    },
+    {
+      "name": "Violet Fungus",
+      "link": "https://www.dndbeyond.com/monsters/17046-violet-fungus"
+    },
+    {
+      "name": "Zombie",
+      "link": "https://www.dndbeyond.com/monsters/17077-zombie"
+    }
+  ],
+
+  "CR 1/2": [
+    {
+      "name": "Cockatrice",
+      "link": "https://www.dndbeyond.com/monsters/16828-cockatrice"
+    },
+    {
+      "name": "Darkmantle",
+      "link": "https://www.dndbeyond.com/monsters/16837-darkmantle"
+    },
+    {
+      "name": "Dust Mephit",
+      "link": "https://www.dndbeyond.com/monsters/16851-dust-mephit"
+    },
+    {
+      "name": "Gray Ooze",
+      "link": "https://www.dndbeyond.com/monsters/16909-gray-ooze"
+    },
+    {
+      "name": "Ice Mephit",
+      "link": "https://www.dndbeyond.com/monsters/16932-ice-mephit"
+    },
+    {
+      "name": "Magma Mephit",
+      "link": "https://www.dndbeyond.com/monsters/16948-magma-mephit"
+    },
+    {
+      "name": "Magmin",
+      "link": "https://www.dndbeyond.com/monsters/16949-magmin"
+    },
+    {
+      "name": "Rust Monster",
+      "link": "https://www.dndbeyond.com/monsters/17001-rust-monster"
+    },
+    {
+      "name": "Satyr",
+      "link": "https://www.dndbeyond.com/monsters/17005-satyr"
+    },
+    {
+      "name": "Shadow",
+      "link": "https://www.dndbeyond.com/monsters/17010-shadow"
+    },
+    {
+      "name": "Warhorse Skeleton",
+      "link": "https://www.dndbeyond.com/monsters/17050-warhorse-skeleton"
+    },
+    { "name": "Worg", "link": "https://www.dndbeyond.com/monsters/17063-worg" }
+  ],
+
+  "CR 1": [
+    {
+      "name": "Animated Armor",
+      "link": "https://www.dndbeyond.com/monsters/16786-animated-armor"
+    },
+    {
+      "name": "Brass Dragon Wyrmling",
+      "link": "https://www.dndbeyond.com/monsters/16814-brass-dragon-wyrmling"
+    },
+    {
+      "name": "Copper Dragon Wyrmling",
+      "link": "https://www.dndbeyond.com/monsters/16831-copper-dragon-wyrmling"
+    },
+    {
+      "name": "Death Dog",
+      "link": "https://www.dndbeyond.com/monsters/16838-death-dog"
+    },
+    {
+      "name": "Dryad",
+      "link": "https://www.dndbeyond.com/monsters/16849-dryad"
+    },
+    {
+      "name": "Ghoul",
+      "link": "https://www.dndbeyond.com/monsters/16872-ghoul"
+    },
+    {
+      "name": "Harpy",
+      "link": "https://www.dndbeyond.com/monsters/16919-harpy"
+    },
+    {
+      "name": "Hippogriff",
+      "link": "https://www.dndbeyond.com/monsters/16924-hippogriff"
+    },
+    { "name": "Imp", "link": "https://www.dndbeyond.com/monsters/16933-imp" },
+    {
+      "name": "Quasit",
+      "link": "https://www.dndbeyond.com/monsters/16988-quasit"
+    },
+    {
+      "name": "Specter",
+      "link": "https://www.dndbeyond.com/monsters/17017-specter"
+    }
+  ],
+
+  "CR 2": [
+    {
+      "name": "Ankheg",
+      "link": "https://www.dndbeyond.com/monsters/16787-ankheg"
+    },
+    {
+      "name": "Awakened Tree",
+      "link": "https://www.dndbeyond.com/monsters/16792-awakened-tree"
+    },
+    { "name": "Azer", "link": "https://www.dndbeyond.com/monsters/16794-azer" },
+    {
+      "name": "Black Dragon Wyrmling",
+      "link": "https://www.dndbeyond.com/monsters/16807-black-dragon-wyrmling"
+    },
+    {
+      "name": "Bronze Dragon Wyrmling",
+      "link": "https://www.dndbeyond.com/monsters/16815-bronze-dragon-wyrmling"
+    },
+    {
+      "name": "Centaur",
+      "link": "https://www.dndbeyond.com/monsters/16821-centaur"
+    },
+    {
+      "name": "Ettercap",
+      "link": "https://www.dndbeyond.com/monsters/16859-ettercap"
+    },
+    {
+      "name": "Gargoyle",
+      "link": "https://www.dndbeyond.com/monsters/16868-gargoyle"
+    },
+    {
+      "name": "Gelatinous Cube",
+      "link": "https://www.dndbeyond.com/monsters/16869-gelatinous-cube"
+    },
+    {
+      "name": "Ghast",
+      "link": "https://www.dndbeyond.com/monsters/16870-ghast"
+    },
+    {
+      "name": "Gibbering Mouther",
+      "link": "https://www.dndbeyond.com/monsters/16901-gibbering-mouther"
+    },
+    {
+      "name": "Green Dragon Wyrmling",
+      "link": "https://www.dndbeyond.com/monsters/16910-green-dragon-wyrmling"
+    },
+    {
+      "name": "Grick",
+      "link": "https://www.dndbeyond.com/monsters/16912-grick"
+    },
+    {
+      "name": "Griffon",
+      "link": "https://www.dndbeyond.com/monsters/16913-griffon"
+    },
+    {
+      "name": "Merrow",
+      "link": "https://www.dndbeyond.com/monsters/16956-merrow"
+    },
+    {
+      "name": "Mimic",
+      "link": "https://www.dndbeyond.com/monsters/16957-mimic"
+    },
+    {
+      "name": "Minotaur Skeleton",
+      "link": "https://www.dndbeyond.com/monsters/16959-minotaur-skeleton"
+    },
+    {
+      "name": "Nothic",
+      "link": "https://www.dndbeyond.com/monsters/17092-nothic"
+    },
+    {
+      "name": "Ochre Jelly",
+      "link": "https://www.dndbeyond.com/monsters/16967-ochre-jelly"
+    },
+    { "name": "Ogre", "link": "https://www.dndbeyond.com/monsters/16969-ogre" },
+    {
+      "name": "Ogre Zombie",
+      "link": "https://www.dndbeyond.com/monsters/16970-ogre-zombie"
+    },
+    {
+      "name": "Pegasus",
+      "link": "https://www.dndbeyond.com/monsters/16977-pegasus"
+    },
+    {
+      "name": "Rug of Smothering",
+      "link": "https://www.dndbeyond.com/monsters/17000-rug-of-smothering"
+    },
+    {
+      "name": "Sea Hag",
+      "link": "https://www.dndbeyond.com/monsters/17008-sea-hag"
+    },
+    {
+      "name": "Silver Dragon Wyrmling",
+      "link": "https://www.dndbeyond.com/monsters/17014-silver-dragon-wyrmling"
+    },
+    {
+      "name": "White Dragon Wyrmling",
+      "link": "https://www.dndbeyond.com/monsters/17058-white-dragon-wyrmling"
+    },
+    {
+      "name": "Will-o'-Wisp",
+      "link": "https://www.dndbeyond.com/monsters/17060-will-o-wisp"
+    }
+  ],
+
+  "CR 3": [
+    {
+      "name": "Basilisk",
+      "link": "https://www.dndbeyond.com/monsters/16801-basilisk"
+    },
+    {
+      "name": "Bearded Devil",
+      "link": "https://www.dndbeyond.com/monsters/16803-bearded-devil"
+    },
+    {
+      "name": "Blue Dragon Wyrmling",
+      "link": "https://www.dndbeyond.com/monsters/16811-blue-dragon-wyrmling"
+    },
+    {
+      "name": "Doppelganger",
+      "link": "https://www.dndbeyond.com/monsters/16843-doppelganger"
+    },
+    {
+      "name": "Gold Dragon Wyrmling",
+      "link": "https://www.dndbeyond.com/monsters/17098-gold-dragon-wyrmling"
+    },
+    {
+      "name": "Green Hag",
+      "link": "https://www.dndbeyond.com/monsters/16911-green-hag"
+    },
+    {
+      "name": "Hell Hound",
+      "link": "https://www.dndbeyond.com/monsters/16921-hell-hound"
+    },
+    {
+      "name": "Manticore",
+      "link": "https://www.dndbeyond.com/monsters/16951-manticore"
+    },
+    {
+      "name": "Minotaur",
+      "link": "https://www.dndbeyond.com/monsters/16958-minotaur"
+    },
+    {
+      "name": "Mummy",
+      "link": "https://www.dndbeyond.com/monsters/16961-mummy"
+    },
+    {
+      "name": "Nightmare",
+      "link": "https://www.dndbeyond.com/monsters/16964-nightmare"
+    },
+    {
+      "name": "Owlbear",
+      "link": "https://www.dndbeyond.com/monsters/16975-owlbear"
+    },
+    {
+      "name": "Phase Spider",
+      "link": "https://www.dndbeyond.com/monsters/16978-phase-spider"
+    },
+    {
+      "name": "Spectator",
+      "link": "https://www.dndbeyond.com/monsters/17094-spectator"
+    },
+    {
+      "name": "Wight",
+      "link": "https://www.dndbeyond.com/monsters/17059-wight"
+    },
+    {
+      "name": "Winter Wolf",
+      "link": "https://www.dndbeyond.com/monsters/17061-winter-wolf"
+    },
+    { "name": "Yeti", "link": "https://www.dndbeyond.com/monsters/17096-yeti" }
+  ],
+
+  "CR 4": [
+    {
+      "name": "Banshee",
+      "link": "https://www.dndbeyond.com/monsters/17089-banshee"
+    },
+    {
+      "name": "Black Pudding",
+      "link": "https://www.dndbeyond.com/monsters/16808-black-pudding"
+    },
+    {
+      "name": "Chuul",
+      "link": "https://www.dndbeyond.com/monsters/16824-chuul"
+    },
+    {
+      "name": "Couatl",
+      "link": "https://www.dndbeyond.com/monsters/16832-couatl"
+    },
+    {
+      "name": "Ettin",
+      "link": "https://www.dndbeyond.com/monsters/16860-ettin"
+    },
+    {
+      "name": "Flameskull",
+      "link": "https://www.dndbeyond.com/monsters/17091-flameskull"
+    },
+    {
+      "name": "Ghost",
+      "link": "https://www.dndbeyond.com/monsters/16871-ghost"
+    },
+    {
+      "name": "Incubus",
+      "link": "https://www.dndbeyond.com/monsters/257235-incubus"
+    },
+    {
+      "name": "Lamia",
+      "link": "https://www.dndbeyond.com/monsters/16941-lamia"
+    },
+    {
+      "name": "Red Dragon Wyrmling",
+      "link": "https://www.dndbeyond.com/monsters/16993-red-dragon-wyrmling"
+    },
+    {
+      "name": "Succubus",
+      "link": "https://www.dndbeyond.com/monsters/17027-succubus"
+    }
+  ],
+
+  "CR 5": [
+    {
+      "name": "Air Elemental",
+      "link": "https://www.dndbeyond.com/monsters/16774-air-elemental"
+    },
+    {
+      "name": "Barbed Devil",
+      "link": "https://www.dndbeyond.com/monsters/16800-barbed-devil"
+    },
+    {
+      "name": "Bulette",
+      "link": "https://www.dndbeyond.com/monsters/16818-bulette"
+    },
+    {
+      "name": "Dust Devil",
+      "link": "https://www.dndbeyond.com/monsters/804867-dust-devil"
+    },
+    {
+      "name": "Earth Elemental",
+      "link": "https://www.dndbeyond.com/monsters/16853-earth-elemental"
+    },
+    {
+      "name": "Fire Elemental",
+      "link": "https://www.dndbeyond.com/monsters/16861-fire-elemental"
+    },
+    {
+      "name": "Flesh Golem",
+      "link": "https://www.dndbeyond.com/monsters/16863-flesh-golem"
+    },
+    {
+      "name": "Gorgon",
+      "link": "https://www.dndbeyond.com/monsters/16908-gorgon"
+    },
+    {
+      "name": "Hill Giant",
+      "link": "https://www.dndbeyond.com/monsters/16923-hill-giant"
+    },
+    {
+      "name": "Night Hag",
+      "link": "https://www.dndbeyond.com/monsters/16965-night-hag"
+    },
+    {
+      "name": "Otyugh",
+      "link": "https://www.dndbeyond.com/monsters/16973-otyugh"
+    },
+    {
+      "name": "Roper",
+      "link": "https://www.dndbeyond.com/monsters/16999-roper"
+    },
+    {
+      "name": "Salamander",
+      "link": "https://www.dndbeyond.com/monsters/17004-salamander"
+    },
+    {
+      "name": "Shambling Mound",
+      "link": "https://www.dndbeyond.com/monsters/17011-shambling-mound"
+    },
+    {
+      "name": "Troll",
+      "link": "https://www.dndbeyond.com/monsters/17040-troll"
+    },
+    {
+      "name": "Unicorn",
+      "link": "https://www.dndbeyond.com/monsters/17042-unicorn"
+    },
+    {
+      "name": "Vampire Spawn",
+      "link": "https://www.dndbeyond.com/monsters/17044-vampire-spawn"
+    },
+    {
+      "name": "Water Elemental",
+      "link": "https://www.dndbeyond.com/monsters/17051-water-elemental"
+    },
+    {
+      "name": "Wraith",
+      "link": "https://www.dndbeyond.com/monsters/17064-wraith"
+    },
+    { "name": "Xorn", "link": "https://www.dndbeyond.com/monsters/17066-xorn" }
+  ],
+
+  "CR 6": [
+    {
+      "name": "Chimera",
+      "link": "https://www.dndbeyond.com/monsters/16823-chimera"
+    },
+    {
+      "name": "Cyclops",
+      "link": "https://www.dndbeyond.com/monsters/17090-cyclops"
+    },
+    {
+      "name": "Drider",
+      "link": "https://www.dndbeyond.com/monsters/16847-drider"
+    },
+    {
+      "name": "Invisible Stalker",
+      "link": "https://www.dndbeyond.com/monsters/16934-invisible-stalker"
+    },
+    {
+      "name": "Medusa",
+      "link": "https://www.dndbeyond.com/monsters/16954-medusa"
+    },
+    {
+      "name": "Vrock",
+      "link": "https://www.dndbeyond.com/monsters/17047-vrock"
+    },
+    {
+      "name": "Wyvern",
+      "link": "https://www.dndbeyond.com/monsters/17065-wyvern"
+    },
+    {
+      "name": "Young Brass Dragon",
+      "link": "https://www.dndbeyond.com/monsters/17069-young-brass-dragon"
+    },
+    {
+      "name": "Young White Dragon",
+      "link": "https://www.dndbeyond.com/monsters/17076-young-white-dragon"
+    }
+  ],
+
+  "CR ": [
+    { "name": "Oni", "link": "https://www.dndbeyond.com/monsters/16971-oni" },
+    {
+      "name": "Shield Guardian",
+      "link": "https://www.dndbeyond.com/monsters/17012-shield-guardian"
+    },
+    {
+      "name": "Stone Giant",
+      "link": "https://www.dndbeyond.com/monsters/17024-stone-giant"
+    },
+    {
+      "name": "Young Black Dragon",
+      "link": "https://www.dndbeyond.com/monsters/17067-young-black-dragon"
+    },
+    {
+      "name": "Young Copper Dragon",
+      "link": "https://www.dndbeyond.com/monsters/17071-young-copper-dragon"
+    }
+  ],
+
+  "CR 8": [
+    {
+      "name": "Chain Devil",
+      "link": "https://www.dndbeyond.com/monsters/16822-chain-devil"
+    },
+    {
+      "name": "Cloaker",
+      "link": "https://www.dndbeyond.com/monsters/16826-cloaker"
+    },
+    {
+      "name": "Frost Giant",
+      "link": "https://www.dndbeyond.com/monsters/16867-frost-giant"
+    },
+    {
+      "name": "Hezrou",
+      "link": "https://www.dndbeyond.com/monsters/16922-hezrou"
+    },
+    {
+      "name": "Hydra",
+      "link": "https://www.dndbeyond.com/monsters/16929-hydra"
+    },
+    {
+      "name": "Spirit Naga",
+      "link": "https://www.dndbeyond.com/monsters/17019-spirit-naga"
+    },
+    {
+      "name": "Young Bronze Dragon",
+      "link": "https://www.dndbeyond.com/monsters/17070-young-bronze-dragon"
+    },
+    {
+      "name": "Young Green Dragon",
+      "link": "https://www.dndbeyond.com/monsters/17073-young-green-dragon"
+    }
+  ],
+
+  "CR 9": [
+    {
+      "name": "Bone Devil",
+      "link": "https://www.dndbeyond.com/monsters/16813-bone-devil"
+    },
+    {
+      "name": "Clay Golem",
+      "link": "https://www.dndbeyond.com/monsters/16825-clay-golem"
+    },
+    {
+      "name": "Cloud Giant",
+      "link": "https://www.dndbeyond.com/monsters/16827-cloud-giant"
+    },
+    {
+      "name": "Fire Giart",
+      "link": "https://www.dndbeyond.com/monsters/16862-fire-giant"
+    },
+    {
+      "name": "Glabrezu",
+      "link": "https://www.dndbeyond.com/monsters/16902-glabrezu"
+    },
+    {
+      "name": "Treant",
+      "link": "https://www.dndbeyond.com/monsters/17037-treant"
+    },
+    {
+      "name": "Young Blue Dragon",
+      "link": "https://www.dndbeyond.com/monsters/17068-young-blue-dragon"
+    },
+    {
+      "name": "Young Silver Dragon",
+      "link": "https://www.dndbeyond.com/monsters/17075-young-silver-dragon"
+    }
+  ],
+
+  "CR 10": [
+    {
+      "name": "Aboleth",
+      "link": "https://www.dndbeyond.com/monsters/16762-aboleth"
+    },
+    { "name": "Deva", "link": "https://www.dndbeyond.com/monsters/16840-deva" },
+    {
+      "name": "Guardian Naga",
+      "link": "https://www.dndbeyond.com/monsters/16916-guardian-naga"
+    },
+    {
+      "name": "Stone Golem",
+      "link": "https://www.dndbeyond.com/monsters/17025-stone-golem"
+    },
+    {
+      "name": "Young Gold Dragon",
+      "link": "https://www.dndbeyond.com/monsters/17072-young-gold-dragon"
+    },
+    {
+      "name": "Young Red Dragon",
+      "link": "https://www.dndbeyond.com/monsters/17074-young-red-dragon"
+    }
+  ],
+
+  "CR 11": [
+    {
+      "name": "Behir",
+      "link": "https://www.dndbeyond.com/monsters/16804-behir"
+    },
+    {
+      "name": "Djinni",
+      "link": "https://www.dndbeyond.com/monsters/16842-djinni"
+    },
+    {
+      "name": "Efreeti",
+      "link": "https://www.dndbeyond.com/monsters/16854-efreeti"
+    },
+    {
+      "name": "Gynosphinx",
+      "link": "https://www.dndbeyond.com/monsters/16917-gynosphinx"
+    },
+    {
+      "name": "Horned Devil",
+      "link": "https://www.dndbeyond.com/monsters/16927-horned-devil"
+    },
+    {
+      "name": "Remorhaz",
+      "link": "https://www.dndbeyond.com/monsters/16995-remorhaz"
+    },
+    { "name": "Roc", "link": "https://www.dndbeyond.com/monsters/16998-roc" }
+  ],
+
+  "CR 12": [
+    {
+      "name": "Erinyes",
+      "link": "https://www.dndbeyond.com/monsters/16858-erinyes"
+    }
+  ],
+
+  "CR 13": [
+    {
+      "name": "Adult Brass Dragon",
+      "link": "https://www.dndbeyond.com/monsters/16766-adult-brass-dragon"
+    },
+    {
+      "name": "Adult White Dragon",
+      "link": "https://www.dndbeyond.com/monsters/16773-adult-white-dragon"
+    },
+    {
+      "name": "Nalfeshnee",
+      "link": "https://www.dndbeyond.com/monsters/16963-nalfeshnee"
+    },
+    {
+      "name": "Rakshasa",
+      "link": "https://www.dndbeyond.com/monsters/16990-rakshasa"
+    },
+    {
+      "name": "Storm Giant",
+      "link": "https://www.dndbeyond.com/monsters/17026-storm-giant"
+    },
+    {
+      "name": "Vampire",
+      "link": "https://www.dndbeyond.com/monsters/17043-vampire"
+    }
+  ],
+
+  "CR 14": [
+    {
+      "name": "Adult Black Dragon",
+      "link": "https://www.dndbeyond.com/monsters/16764-adult-black-dragon"
+    },
+    {
+      "name": "Adult Copper Dragon",
+      "link": "https://www.dndbeyond.com/monsters/16768-adult-copper-dragon"
+    },
+    {
+      "name": "Ice Devil",
+      "link": "https://www.dndbeyond.com/monsters/16931-ice-devil"
+    }
+  ],
+
+  "CR 15": [
+    {
+      "name": "Adult Bronze Dragon",
+      "link": "https://www.dndbeyond.com/monsters/16767-adult-bronze-dragon"
+    },
+    {
+      "name": "Adult Green Dragon",
+      "link": "https://www.dndbeyond.com/monsters/16770-adult-green-dragon"
+    },
+    {
+      "name": "Mummy Lord",
+      "link": "https://www.dndbeyond.com/monsters/16962-mummy-lord"
+    },
+    {
+      "name": "Purple Worm",
+      "link": "https://www.dndbeyond.com/monsters/16987-purple-worm"
+    }
+  ],
+
+  "CR 16": [
+    {
+      "name": "Adult Blue Dragon",
+      "link": "https://www.dndbeyond.com/monsters/16765-adult-blue-dragon"
+    },
+    {
+      "name": "Adult Silver Dragon",
+      "link": "https://www.dndbeyond.com/monsters/16772-adult-silver-dragon"
+    },
+    {
+      "name": "Iron Golem",
+      "link": "https://www.dndbeyond.com/monsters/16935-iron-golem"
+    },
+    {
+      "name": "Marilith",
+      "link": "https://www.dndbeyond.com/monsters/16952-marilith"
+    },
+    {
+      "name": "Planetar",
+      "link": "https://www.dndbeyond.com/monsters/16980-planetar"
+    }
+  ],
+
+  "CR 17": [
+    {
+      "name": "Adult Gold Dragon",
+      "link": "https://www.dndbeyond.com/monsters/16769-adult-gold-dragon"
+    },
+    {
+      "name": "Adult Red Dragon",
+      "link": "https://www.dndbeyond.com/monsters/16771-adult-red-dragon"
+    },
+    {
+      "name": "Androsphinx",
+      "link": "https://www.dndbeyond.com/monsters/16785-androsphinx"
+    },
+    {
+      "name": "Dragon Turtle",
+      "link": "https://www.dndbeyond.com/monsters/16845-dragon-turtle"
+    }
+  ],
+
+  "CR 19": [
+    {
+      "name": "Balor",
+      "link": "https://www.dndbeyond.com/monsters/16797-balor"
+    }
+  ],
+
+  "CR 20": [
+    {
+      "name": "Ancient Brass Dragon",
+      "link": "https://www.dndbeyond.com/monsters/16777-ancient-brass-dragon"
+    },
+    {
+      "name": "Ancient White Dragon",
+      "link": "https://www.dndbeyond.com/monsters/16784-ancient-white-dragon"
+    },
+    {
+      "name": "Pit Fiend",
+      "link": "https://www.dndbeyond.com/monsters/16979-pit-fiend"
+    }
+  ],
+
+  "CR 21": [
+    {
+      "name": "Ancient Black Dragon",
+      "link": "https://www.dndbeyond.com/monsters/16775-ancient-black-dragon"
+    },
+    {
+      "name": "Ancient Copper Dragon",
+      "link": "https://www.dndbeyond.com/monsters/16779-ancient-copper-dragon"
+    },
+    { "name": "Lich", "link": "https://www.dndbeyond.com/monsters/16943-lich" },
+    {
+      "name": "Solar",
+      "link": "https://www.dndbeyond.com/monsters/17016-solar"
+    }
+  ],
+
+  "CR 22": [
+    {
+      "name": "Ancient Bronze Dragon",
+      "link": "https://www.dndbeyond.com/monsters/16778-ancient-bronze-dragon"
+    },
+    {
+      "name": "Ancient Green Dragon",
+      "link": "https://www.dndbeyond.com/monsters/16781-ancient-green-dragon"
+    }
+  ],
+
+  "CR 23": [
+    {
+      "name": "Ancient Blue Dragon",
+      "link": "https://www.dndbeyond.com/monsters/16776-ancient-blue-dragon"
+    },
+    {
+      "name": "Ancient Silver Dragon",
+      "link": "https://www.dndbeyond.com/monsters/16783-ancient-silver-dragon"
+    },
+    {
+      "name": "Kraken",
+      "link": "https://www.dndbeyond.com/monsters/16940-kraken"
+    }
+  ],
+
+  "CR 24": [
+    {
+      "name": "Ancient Gold Dragon",
+      "link": "https://www.dndbeyond.com/monsters/16780-ancient-gold-dragon"
+    },
+    {
+      "name": "Ancient Red Dragon",
+      "link": "https://www.dndbeyond.com/monsters/16782-ancient-red-dragon"
+    }
+  ],
+
+  "CR 30": [
+    {
+      "name": "Tarrasque",
+      "link": "https://www.dndbeyond.com/monsters/17034-tarrasque"
+    }
+  ]
+}
