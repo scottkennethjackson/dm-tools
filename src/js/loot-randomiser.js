@@ -2,173 +2,115 @@ const title = document.getElementById('title');
 const lootLink = document.getElementById('loot-link');
 const rollBtn = document.getElementById('roll-btn');
 
-let roll;
+let gemstones = [], trinkets = [], consumables = [];
+let cantrips = [], level1 = [], level2 = [], level3 = [], level4 = [], level5 = [],
+    level6 = [], level7 = [], level8 = [], level9 = [];
+let cursed = [], uncommon = [], rare = [], veryRare = [], legendary = [];
 
-fetch('../json/treasure.json')
-    .then(response => response.json())
-    .then(data => {
-        gemstones = data.gemstones;
-        trinkets = data.trinkets;
-    });
+Promise.all([
+    fetch('../json/treasure.json').then(r => r.json()),
+    fetch('../json/consumables.json').then(r => r.json()),
+    fetch('../json/spells.json').then(r => r.json()),
+    fetch('../json/magic-items.json').then(r => r.json())
+]).then(([treasure, consumableData, spells, magicItems]) => {
+    gemstones = treasure.gemstones;
+    trinkets = treasure.trinkets;
+    consumables = consumableData.consumables;
 
-fetch('../json/consumables.json')
-    .then(response => response.json())
-    .then(data => {
-        consumables = data.consumables;
-    });
+    cantrips = spells.cantrips;
+    level1 = spells['1st level'];
+    level2 = spells['2nd level'];
+    level3 = spells['3rd level'];
+    level4 = spells['4th level'];
+    level5 = spells['5th level'];
+    level6 = spells['6th level'];
+    level7 = spells['7th level'];
+    level8 = spells['8th level'];
+    level9 = spells['9th level'];
 
-fetch('../json/spells.json')
-    .then(response => response.json())
-    .then(data => {
-        cantrips = data.cantrips;
-        level1 = data['1st level'];
-        level2 = data['2nd level'];
-        level3 = data['3rd level'];
-        level4 = data['4th level'];
-        level5 = data['5th level'];
-        level6 = data['6th level'];
-        level7 = data['7th level'];
-        level8 = data['8th level'];
-        level9 = data['9th level'];
-    });
-
-fetch('../json/magic-items.json')
-    .then(response => response.json())
-    .then(data => {
-        cursed = data.cursed;
-        uncommon = data.uncommon;
-        rare = data.rare;
-        veryRare = data['very rare'];
-        legendary = data.legendary;
-    });
+    cursed = magicItems.cursed;
+    uncommon = magicItems.uncommon;
+    rare = magicItems.rare;
+    veryRare = magicItems['very rare'];
+    legendary = magicItems.legendary;
+});
 
 function rollLoot() {
-    roll = Math.floor(Math.random() * 7);
+    let lootRoll = Math.floor(Math.random() * 7);
 
-    if (roll == 0) {
+    lootLink.classList.add('hidden'); // Default to hidden
+
+    if (lootRoll === 0) {
         title.innerHTML = "You Didn't Find Anything";
-        lootLink.classList.add('hidden');
-    };
+        return;
+    }
 
-    if (roll == 1) {
-        roll = Math.floor(Math.random() * gemstones.length);
-        title.innerHTML = gemstones[roll].name;
-        lootLink.classList.add('hidden');
-    };
+    if (lootRoll === 1) {
+        const pick = gemstones[Math.floor(Math.random() * gemstones.length)];
+        title.innerHTML = pick.name;
+    }
 
-    if (roll == 2) {
-        roll = Math.floor(Math.random() * trinkets.length);
-        title.innerHTML = trinkets[roll].name;
-        lootLink.classList.add('hidden');
-    };
+    else if (lootRoll === 2) {
+        const pick = trinkets[Math.floor(Math.random() * trinkets.length)];
+        title.innerHTML = pick.name;
+    }
 
-    if (roll == 3) {
-        roll = Math.floor(Math.random() * consumables.length);
-        title.innerHTML = consumables[roll].name;
+    else if (lootRoll === 3) {
+        const pick = consumables[Math.floor(Math.random() * consumables.length)];
+        title.innerHTML = pick.name;
         lootLink.innerHTML = 'View Item';
-        lootLink.setAttribute('href', `${consumables[roll].link}`);
+        lootLink.href = pick.link;
         lootLink.classList.remove('hidden');
-    };
+    }
 
-    if (roll == 4) {
-        roll = Math.ceil(Math.random() * 4);
+    else if (lootRoll === 4) {
+        const quantity = Math.ceil(Math.random() * 4);
+        title.innerHTML = quantity === 1 ? `Potion of Healing` : `${quantity} Potions of Healing`;
+        lootLink.innerHTML = 'View Item';
+        lootLink.href = 'https://www.dndbeyond.com/magic-items/8960641-potion-of-healing';
+        lootLink.classList.remove('hidden');
+    }
 
-        if (roll == 1) {
-            title.innerHTML = `${roll} Potion of Healing`;
-        } else {
-            title.innerHTML = `${roll} Potions of Healing`;
+    else if (lootRoll === 5) {
+        const levelRoll = Math.floor(Math.random() * 10);
+        let spellList, spellLevel;
+
+        switch (levelRoll) {
+            case 0: spellList = cantrips; spellLevel = 'Cantrip'; break;
+            case 1: spellList = level1; spellLevel = '1st Level'; break;
+            case 2: spellList = level2; spellLevel = '2nd Level'; break;
+            case 3: spellList = level3; spellLevel = '3rd Level'; break;
+            case 4: spellList = level4; spellLevel = '4th Level'; break;
+            case 5: spellList = level5; spellLevel = '5th Level'; break;
+            case 6: spellList = level6; spellLevel = '6th Level'; break;
+            case 7: spellList = level7; spellLevel = '7th Level'; break;
+            case 8: spellList = level8; spellLevel = '8th Level'; break;
+            case 9: spellList = level9; spellLevel = '9th Level'; break;
         }
 
-        lootLink.innerHTML = 'View Item';
-        lootLink.setAttribute('href', 'https://www.dndbeyond.com/magic-items/8960641-potion-of-healing');
-        lootLink.classList.remove('hidden');
-    };
-
-    if (roll == 5) {
-        roll = Math.floor(Math.random() * 10);
-
-        if (roll == 0) {
-            title.innerHTML = `Spell Scroll, Cantrip: ${cantrips[roll].name}`;
-            lootLink.setAttribute('href', `${cantrips[roll].link}`);
-        };
-
-        if (roll == 1) {
-            title.innerHTML = `Spell Scroll, 1st Level: ${level1[roll].name}`;
-            lootLink.setAttribute('href', `${level1[roll].link}`);
-        };
-
-        if (roll == 2) {
-            title.innerHTML = `Spell Scroll, 2nd Level: ${level2[roll].name}`;
-            lootLink.setAttribute('href', `${level2[roll].link}`);
-        };
-
-        if (roll == 3) {
-            title.innerHTML = `Spell Scroll, 3rd Level: ${level3[roll].name}`;
-            lootLink.setAttribute('href', `${level3[roll].link}`);
-        };
-
-        if (roll == 4) {
-            title.innerHTML = `Spell Scroll, 4th Level: ${level4[roll].name}`;
-            lootLink.setAttribute('href', `${level4[roll].link}`);
-        };
-
-        if (roll == 5) {
-            title.innerHTML = `Spell Scroll, 5th Level: ${level5[roll].name}`;
-            lootLink.setAttribute('href', `${level5[roll].link}`);
-        };
-
-        if (roll == 6) {
-            title.innerHTML = `Spell Scroll, 6th Level: ${level6[roll].name}`;
-            lootLink.setAttribute('href', `${level6[roll].link}`);
-        };
-
-        if (roll == 7) {
-            title.innerHTML = `Spell Scroll, 7th Level: ${level7[roll].name}`;
-            lootLink.setAttribute('href', `${level7[roll].link}`);
-        };
-
-        if (roll == 8) {
-            title.innerHTML = `Spell Scroll, 8th Level: ${level8[roll].name}`;
-            lootLink.setAttribute('href', `${level8[roll].link}`);
-        };
-
-        if (roll == 9) {
-            title.innerHTML = `Spell Scroll, 9th Level: ${level9[roll].name}`;
-            lootLink.setAttribute('href', `${level9[roll].link}`);
-        };
-        
+        const pick = spellList[Math.floor(Math.random() * spellList.length)];
+        title.innerHTML = `Spell Scroll, ${spellLevel}: ${pick.name}`;
         lootLink.innerHTML = 'View Spell';
+        lootLink.href = pick.link;
         lootLink.classList.remove('hidden');
-    };
+    }
 
-    if (roll == 6) {
-        roll = Math.floor(Math.random() * 31);
+    else if (lootRoll === 6) {
+        const rarityRoll = Math.floor(Math.random() * 31);
+        let category;
 
-        if (roll == 0) {
-            roll = Math.floor(Math.random() * cursed.length);
-            title.innerHTML = cursed[roll].name;
-            lootLink.setAttribute('href', `${cursed[roll].link}`);
-        } else if (roll <= 16) {
-            roll = Math.floor(Math.random() * uncommon.length);
-            title.innerHTML = uncommon[roll].name;
-            lootLink.setAttribute('href', `${uncommon[roll].link}`);
-        } else if (roll <= 25) {
-            roll = Math.floor(Math.random() * rare.length);
-            title.innerHTML = rare[roll].name;
-            lootLink.setAttribute('href', `${rare[roll].link}`);
-        } else if (roll <= 29) {
-            roll = Math.floor(Math.random() * veryRare.length);
-            title.innerHTML = veryRare[roll].name;
-            lootLink.setAttribute('href', `${veryRare[roll].link}`);
-        } else {
-            roll = Math.floor(Math.random() * legendary.length);
-            title.innerHTML = legendary[roll].name;
-            lootLink.setAttribute('href', `${leg[roll].link}`);
-        };
+        if (rarityRoll === 0) category = cursed;
+        else if (rarityRoll <= 16) category = uncommon;
+        else if (rarityRoll <= 25) category = rare;
+        else if (rarityRoll <= 29) category = veryRare;
+        else category = legendary;
 
+        const pick = category[Math.floor(Math.random() * category.length)];
+        title.innerHTML = pick.name;
         lootLink.innerHTML = 'View Item';
+        lootLink.href = pick.link;
         lootLink.classList.remove('hidden');
-    };
-};
+    }
+}
 
 rollBtn.addEventListener('click', rollLoot);
