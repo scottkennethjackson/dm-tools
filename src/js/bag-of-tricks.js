@@ -5,36 +5,39 @@ const flyingRadio = document.getElementById('flying-radio');
 const swimmingRadio = document.getElementById('swimming-radio');
 const rollBtn = document.getElementById('roll-btn');
 
-let roll;
+let beasts = {
+    walking: [],
+    flying: [],
+    swimming: []
+};
 
 fetch('../json/beasts.json')
     .then(response => response.json())
     .then(data => {
-        walking = data.walking;
-        flying = data.flying;
-        swimming = data.swimming;
+        beasts.walking = data.walking;
+        beasts.flying = data.flying;
+        beasts.swimming = data.swimming;
     });
 
 function rollBeast() {
     beastLink.classList.remove('hidden');
 
-    if (walkingRadio.checked) {
-        roll = Math.floor(Math.random() * walking.length);
-        title.innerHTML = walking[roll].name;
-        beastLink.setAttribute('href', `${walking[roll].link}`);
-    };
+    let type = null;
+    if (walkingRadio.checked) type = 'walking';
+    else if (flyingRadio.checked) type = 'flying';
+    else if (swimmingRadio.checked) type = 'swimming';
 
-    if (flyingRadio.checked) {
-        roll = Math.floor(Math.random() * flying.length);
-        title.innerHTML = flying[roll].name;
-        beastLink.setAttribute('href', `${flying[roll].link}`);
-    };
+    if (!type || beasts[type].length === 0) {
+        title.innerHTML = "No beast available. Please select a movement type.";
+        beastLink.classList.add('hidden');
+        return;
+    }
 
-    if (swimmingRadio.checked) {
-        roll = Math.floor(Math.random() * swimming.length);
-        title.innerHTML = swimming[roll].name;
-        beastLink.setAttribute('href', `${swimming[roll].link}`);
-    };
-};
+    const randomIndex = Math.floor(Math.random() * beasts[type].length);
+    const selectedBeast = beasts[type][randomIndex];
+
+    title.innerHTML = selectedBeast.name;
+    beastLink.setAttribute('href', selectedBeast.link);
+}
 
 rollBtn.addEventListener('click', rollBeast);
