@@ -28,7 +28,7 @@ function rollBeast() {
     else if (swimmingRadio.checked) type = 'swimming';
 
     if (!type || beasts[type].length === 0) {
-        title.innerHTML = "No beast available. Please select a movement type.";
+        title.innerHTML = "No beast found. Please try again.";
         beastLink.classList.add('hidden');
         return;
     }
