@@ -5,212 +5,157 @@ const hoardCheck = document.getElementById('hoard-check');
 const conversionLink = document.getElementById('conversion-link');
 const rollBtn = document.getElementById('roll-btn');
 
-let roll;
-let coin1Value;
-let coin1Currency;
-let coin2Value;
-let coin2Currency;
-let coin3Value;
-let coin3Currency;
-let coin4Value;
-let coin4Currency;
-
 function handleCheck() {
-    modifier.forEach((instance) => {
-        if (instance.innerHTML == 'Player') {
-            instance.innerHTML = 'Party';
-        } else {
-            instance.innerHTML = 'Player';
-        };
+    modifier.forEach(instance => {
+        instance.innerHTML = (instance.innerHTML === 'Player') ? 'Party' : 'Player';
     });
-};
+}
 
 hoardCheck.addEventListener('change', handleCheck);
 
 function rollD100() {
-    return roll = Math.ceil(Math.random() * 100);
-};
+    return Math.ceil(Math.random() * 100);
+}
 
 function rollMultiple(numRolls, diceValue) {
     let total = 0;
-
-    for (let timesRolled = 0; timesRolled < numRolls; timesRolled++) {
-        total+= Math.ceil(Math.random() * diceValue);
-    };
-    
+    for (let i = 0; i < numRolls; i++) {
+        total += Math.ceil(Math.random() * diceValue);
+    }
     return total;
-};
+}
+
+function determineLoot(level, hoard, roll) {
+    let coins = [];
+
+    if (level <= 4) {
+        if (!hoard) {
+            if (roll <= 30) coins.push({ value: rollMultiple(5, 6), currency: "CP" });
+            else if (roll <= 60) coins.push({ value: rollMultiple(4, 6), currency: "SP" });
+            else if (roll <= 70) coins.push({ value: rollMultiple(3, 6), currency: "EP" });
+            else if (roll <= 95) coins.push({ value: rollMultiple(3, 6), currency: "GP" });
+            else coins.push({ value: rollMultiple(1, 6), currency: "PP" });
+        } else {
+            coins.push(
+                { value: rollMultiple(6, 6) * 100, currency: "CP" },
+                { value: rollMultiple(3, 6) * 100, currency: "SP" },
+                { value: rollMultiple(2, 6) * 10, currency: "GP" }
+            );
+        }
+    }
+
+    else if (level <= 10) {
+        if (!hoard) {
+            if (roll <= 30) {
+                coins.push(
+                    { value: rollMultiple(4, 6) * 100, currency: "CP" },
+                    { value: rollMultiple(1, 6) * 10, currency: "EP" }
+                );
+            } else if (roll <= 60) {
+                coins.push(
+                    { value: rollMultiple(6, 6) * 10, currency: "SP" },
+                    { value: rollMultiple(2, 6) * 10, currency: "GP" }
+                );
+            } else if (roll <= 70) {
+                coins.push(
+                    { value: rollMultiple(3, 6) * 10, currency: "EP" },
+                    { value: rollMultiple(2, 6) * 10, currency: "GP" }
+                );
+            } else if (roll <= 95) {
+                coins.push({ value: rollMultiple(4, 6) * 10, currency: "GP" });
+            } else {
+                coins.push(
+                    { value: rollMultiple(2, 6) * 10, currency: "GP" },
+                    { value: rollMultiple(3, 6), currency: "PP" }
+                );
+            }
+        } else {
+            coins.push(
+                { value: rollMultiple(2, 6) * 100, currency: "CP" },
+                { value: rollMultiple(2, 6) * 1000, currency: "SP" },
+                { value: rollMultiple(6, 6) * 100, currency: "GP" },
+                { value: rollMultiple(3, 6) * 10, currency: "PP" }
+            );
+        }
+    }
+
+    else if (level <= 16) {
+        if (!hoard) {
+            if (roll <= 20) {
+                coins.push(
+                    { value: rollMultiple(4, 6) * 100, currency: "SP" },
+                    { value: rollMultiple(1, 6) * 100, currency: "GP" }
+                );
+            } else if (roll <= 35) {
+                coins.push(
+                    { value: rollMultiple(1, 6) * 100, currency: "EP" },
+                    { value: rollMultiple(1, 6) * 100, currency: "GP" }
+                );
+            } else if (roll <= 75) {
+                coins.push(
+                    { value: rollMultiple(2, 6) * 100, currency: "GP" },
+                    { value: rollMultiple(1, 6) * 10, currency: "PP" }
+                );
+            } else {
+                coins.push(
+                    { value: rollMultiple(2, 6) * 100, currency: "GP" },
+                    { value: rollMultiple(2, 6) * 10, currency: "PP" }
+                );
+            }
+        } else {
+            coins.push(
+                { value: rollMultiple(4, 6) * 1000, currency: "GP" },
+                { value: rollMultiple(5, 6) * 100, currency: "PP" }
+            );
+        }
+    }
+
+    else if (level >= 17) {
+        if (!hoard) {
+            if (roll <= 15) {
+                coins.push(
+                    { value: rollMultiple(2, 6) * 1000, currency: "EP" },
+                    { value: rollMultiple(8, 6) * 100, currency: "GP" }
+                );
+            } else if (roll <= 55) {
+                coins.push(
+                    { value: rollMultiple(1, 6) * 1000, currency: "GP" },
+                    { value: rollMultiple(1, 6) * 100, currency: "PP" }
+                );
+            } else {
+                coins.push(
+                    { value: rollMultiple(1, 6) * 1000, currency: "GP" },
+                    { value: rollMultiple(2, 6) * 100, currency: "PP" }
+                );
+            }
+        } else {
+            coins.push(
+                { value: rollMultiple(12, 6) * 1000, currency: "GP" },
+                { value: rollMultiple(8, 6) * 1000, currency: "PP" }
+            );
+        }
+    }
+
+    return coins;
+}
+
+function formatCoins(coins) {
+    return coins
+        .filter(c => c.value > 0)  // skip any zero results
+        .map(c => `${c.value} ${c.currency}`)
+        .join(', ')
+        .replace(/,([^,]*)$/, ' &$1'); // last comma becomes ' &'
+}
 
 function rollGold() {
-    let level = levelSelector.value;
+    const level = Number(levelSelector.value);
+    const hoard = hoardCheck.checked;
+    const roll = rollD100();
 
     conversionLink.classList.remove('hidden');
-    
-    rollD100();
 
-    switch(true) {
-        case (level <= 4 && !hoardCheck.checked && roll <= 30):
-            coin1Value = rollMultiple(5, 6);
-            coin1Currency = "CP";
-            title.innerHTML = `${coin1Value} ${coin1Currency}`;
-            break;
-        
-        case (level <= 4 && !hoardCheck.checked && roll <= 60):
-            coin1Value = rollMultiple(4, 6);
-            coin1Currency = "SP";
-            title.innerHTML = `${coin1Value} ${coin1Currency}`;
-            break;
-
-        case (level <= 4 && !hoardCheck.checked && roll <= 70):
-            coin1Value = rollMultiple(3, 6);
-            coin1Currency = "EP";
-            title.innerHTML = `${coin1Value} ${coin1Currency}`;
-            break;
-
-        case (level <= 4 && !hoardCheck.checked && roll <= 95):
-            coin1Value = rollMultiple(3, 6);
-            coin1Currency = "GP";
-            title.innerHTML = `${coin1Value} ${coin1Currency}`;
-            break;
-
-        case (level <= 4 && !hoardCheck.checked && roll <= 100):
-            coin1Value = rollMultiple(1, 6);
-            coin1Currency = "PP";
-            title.innerHTML = `${coin1Value} ${coin1Currency}`;
-            break;
-
-        case (level <= 4 && hoardCheck.checked):
-            coin1Value = rollMultiple(6, 6) * 100;
-            coin1Currency = "CP";
-            coin2Value = rollMultiple(3, 6) * 100;
-            coin2Currency = "SP";
-            coin3Value = rollMultiple(2, 6) * 10;
-            coin3Currency = "GP";
-            title.innerHTML = `${coin3Value} ${coin3Currency}, ${coin2Value} ${coin2Currency} & ${coin1Value} ${coin1Currency}`;
-            break
-
-        case (level <= 10 && !hoardCheck.checked && roll <= 30):
-            coin1Value = rollMultiple(4, 6) * 100;
-            coin1Currency = "CP";
-            coin2Value = rollMultiple(1, 6) * 10;
-            coin2Currency = "EP";
-            title.innerHTML = `${coin2Value} ${coin2Currency} & ${coin1Value} ${coin1Currency}`;
-            break;
-
-        case (level <= 10 && !hoardCheck.checked && roll <= 60):
-            coin1Value = rollMultiple(6, 6) * 10;
-            coin1Currency = "SP";
-            coin2Value = rollMultiple(2, 6) * 10;
-            coin2Currency = "GP";
-            title.innerHTML = `${coin2Value} ${coin2Currency} & ${coin1Value} ${coin1Currency}`;
-            break;
-
-        case (level <= 10 && !hoardCheck.checked && roll <= 70):
-            coin1Value = rollMultiple(3, 6) * 10;
-            coin1Currency = "EP";
-            coin2Value = rollMultiple(2, 6) * 10;
-            coin2Currency = "GP";
-            title.innerHTML = `${coin2Value} ${coin2Currency} & ${coin1Value} ${coin1Currency}`;
-            break;
-
-        case (level <= 10 && !hoardCheck.checked && roll <= 95):
-            coin1Value = rollMultiple(4, 6) * 10;
-            coin1Currency = "GP";
-            title.innerHTML = `${coin1Value} ${coin1Currency}`;
-            break;
-
-        case (level <= 10 && !hoardCheck.checked && roll <= 100):
-            coin1Value = rollMultiple(2, 6) * 10;
-            coin1Currency = "GP";
-            coin2Value = rollMultiple(3, 6);
-            coin2Currency = "PP";
-            title.innerHTML = `${coin2Value} ${coin2Currency} & ${coin1Value} ${coin1Currency}`;
-            break;
-
-        case (level <= 10 && hoardCheck.checked):
-            coin1Value = (rollMultiple(2, 6) * 100);
-            coin1Currency = "CP";
-            coin2Value = (rollMultiple(2, 6) * 1000);
-            coin2Currency = "SP";
-            coin3Value = (rollMultiple(6, 6) * 100);
-            coin3Currency = "GP";
-            coin4Value = (rollMultiple(3, 6) * 10);
-            coin4Currency = "PP";
-            title.innerHTML = `${coin4Value} ${coin4Currency}, ${coin3Value} ${coin3Currency}, ${coin2Value} ${coin2Currency} & ${coin1Value} ${coin1Currency}`;
-            break;
-
-        case (level <= 16 && !hoardCheck.checked && roll <= 20):
-            coin1Value = rollMultiple(4, 6) * 100;
-            coin1Currency = "SP";
-            coin2Value = rollMultiple(1, 6) * 100;
-            coin2Currency = "GP";
-            title.innerHTML = `${coin2Value} ${coin2Currency} & ${coin1Value} ${coin1Currency}`;
-            break;
-
-        case (level <= 16 && !hoardCheck.checked && roll <= 35):
-            coin1Value = rollMultiple(1, 6) * 100;
-            coin1Currency = "EP";
-            coin2Value = rollMultiple(1, 6) * 100;
-            coin2Currency = "GP";
-            title.innerHTML = `${coin2Value} ${coin2Currency} & ${coin1Value} ${coin1Currency}`;
-            break;
-
-        case (level <= 16 && !hoardCheck.checked && roll <= 75):
-            coin1Value = rollMultiple(2, 6) * 100;
-            coin1Currency = "GP";
-            coin2Value = rollMultiple(1, 6) * 10;
-            coin2Currency = "PP";
-            title.innerHTML = `${coin2Value} ${coin2Currency} & ${coin1Value} ${coin1Currency}`;
-            break;
-
-        case (level <= 16 && !hoardCheck.checked && roll <= 100):
-            coin1Value = rollMultiple(2, 6) * 100;
-            coin1Currency = "GP";
-            coin2Value = rollMultiple(2, 6) * 10;
-            coin2Currency = "PP";
-            title.innerHTML = `${coin2Value} ${coin2Currency} & ${coin1Value} ${coin1Currency}`;
-            break;
-
-        case (level <= 16 && hoardCheck.checked):
-            coin1Value = (rollMultiple(4, 6) * 1000);
-            coin1Currency = "GP";
-            coin2Value = (rollMultiple(5, 6) * 100);
-            coin2Currency = "PP";
-            title.innerHTML = `${coin2Value} ${coin2Currency} & ${coin1Value} ${coin1Currency}`;
-            break;
-
-        case (level >= 17 && !hoardCheck.checked && roll <= 15):
-            coin1Value = rollMultiple(2, 6) * 1000;
-            coin1Currency = "EP";
-            coin2Value = rollMultiple(8, 6) * 100;
-            coin2Currency = "GP";
-            title.innerHTML = `${coin2Value} ${coin2Currency} & ${coin1Value} ${coin1Currency}`;
-            break;
-
-        case (level >= 17 && !hoardCheck.checked && roll <= 55):
-            coin1Value = rollMultiple(1, 6) * 1000;
-            coin1Currency = "GP";
-            coin2Value = rollMultiple(1, 6) * 100;
-            coin2Currency = "PP";
-            title.innerHTML = `${coin2Value} ${coin2Currency} & ${coin1Value} ${coin1Currency}`;
-            break;
-
-        case (level >= 17 && !hoardCheck.checked && roll <= 100):
-            coin1Value = rollMultiple(1, 6) * 1000;
-            coin1Currency = "GP";
-            coin2Value = rollMultiple(2, 6) * 100;
-            coin2Currency = "PP";
-            title.innerHTML = `${coin2Value} ${coin2Currency} & ${coin1Value} ${coin1Currency}`;
-            break;
-
-        case (level >= 17 && hoardCheck.checked):
-            coin1Value = (rollMultiple(12, 6) * 1000);
-            coin1Currency = "GP";
-            coin2Value = (rollMultiple(8, 6) * 1000);
-            coin2Currency = "PP";
-            title.innerHTML = `${coin2Value} ${coin2Currency} & ${coin1Value} ${coin1Currency}`;
-            break;
-    };
-};
+    const coins = determineLoot(level, hoard, roll);
+    title.innerHTML = formatCoins(coins);
+}
 
 rollBtn.addEventListener('click', rollGold);
