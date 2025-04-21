@@ -50,27 +50,34 @@
 
                 <p
                     id="description"
-                    class="hidden font-roboto"
-                >[description]</p>
+                    class="hidden font-roboto text-center"
+                ></p>
+
+                <a
+                    href="#"
+                    id="info-link"
+                    class="hidden hover:text-red active:brightness-90 underline"
+                    target="_blank"
+                ></a>
 
                 <div class="flex space-x-4">
                     <div>
                         <input type="radio" name="deck" id="balanced-radio" class="accent-red" value="balanced" checked />
-                        <label class="text-grey" for="balanced">Ivory (Balanced)</label>
+                        <label class="text-grey" for="balanced">Balanced</label>
                     </div>
         
                     <div>
                         <input type="radio" name="deck" id="chaotic-radio" class="accent-red" value="chaotic" />
-                        <label class="text-grey" for="chaotic">Vellum (Chaotic)</label>
+                        <label class="text-grey" for="chaotic">Chaotic</label>
                     </div>
                 </div>
             </div>
 
             <button
-                id="roll-btn"
+                id="draw-btn"
                 class="px-8 py-2 font-tiamat text-xl text-white bg-red active:brightness-90 cursor-pointer"
             >
-                Roll!
+                Draw!
             </button>
         </main>
     </body>
