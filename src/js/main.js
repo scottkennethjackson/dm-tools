@@ -8,7 +8,7 @@ let toolTitle;
 let toolDescription;
 let toolLink;
 
-fetch('src/json/main.json')
+fetch('src/json/tools.json')
     .then(response => response.json())
     .then(data => {
         tools = data.tools;
