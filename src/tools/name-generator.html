@@ -40,7 +40,7 @@
                 <h1 class="font-roboto text-3xl font-bold text-center text-gray-400 uppercase">Name Generator</h1>
             </div>
 
-            <div class="container flex flex-col justify-center items-center mb-8 max-w-md border-2 border-red px-4 py-8 text-white">
+            <div class="container flex flex-col justify-center items-center space-y-4 mb-8 max-w-md border-2 border-red px-4 py-8 text-white">
                 <h2
                     id="title"
                     class="font-tiamat text-3xl"
@@ -49,11 +49,23 @@
                 </h2>
 
                 <a
-                href="#"
+                href="./npc-generator.html"
                 id="statblock-link"
-                class="hidden mt-4 hover:text-red active:brightness-90 underline"
+                class="hidden hover:text-red active:brightness-90 underline"
                 target="_blank"
                 >View Statblock</a>
+
+                <div class="flex space-x-4">
+                    <div>
+                        <input type="radio" name="gender" id="masculine-radio" class="accent-red" value="masculine" checked />
+                        <label class="text-grey" for="masculine">Masculine</label>
+                    </div>
+        
+                    <div>
+                        <input type="radio" name="gender" id="feminine-radio" class="accent-red" value="feminine" />
+                        <label class="text-grey" for="feminine">Feminine</label>
+                    </div>
+                </div>
             </div>
 
             <button
