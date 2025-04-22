@@ -4,10 +4,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Scott Kenneth Jackson">
-        <meta name="description" content="[insert description here]">
+        <meta name="description" content="A DM Tool for randomly generating encounters">
         <meta name="theme-color" content="#000000">
 
-        <title>DM Tools | [TOOL NAME]</title>
+        <title>DM Tools | NPC Generator</title>
 
         <link rel="stylesheet" href="../css/output.css">
 
@@ -37,28 +37,48 @@
                     alt="D&D"
                     class="h-24 sm:h-32 mx-auto"
                 >
-                <h1 class="font-roboto text-3xl font-bold text-center text-gray-400 uppercase">[TOOL NAME]</h1>
+                <h1 class="font-roboto text-3xl font-bold text-center text-gray-400 uppercase">NPC Generator [WIP]</h1>
             </div>
 
             <div class="container flex flex-col justify-center items-center space-y-4 mb-8 max-w-md border-2 border-red px-4 py-8 text-white">
                 <h2
                     id="title"
                     class="font-tiamat text-3xl"
-                >
-                    [title]
-                </h2>
+                ></h2>
 
-                <p
-                    id="description"
-                    class="hidden font-roboto"
-                >[description]</p>
+                <div class="flex space-x-4">
+                    <div>
+                        <input type="radio" name="level" id="commoner-radio" class="accent-red" value="commoner" checked />
+                        <label class="text-grey" for="commoner">Commoner</label>
+                    </div>
+        
+                    <div>
+                        <input type="radio" name="level" id="adventurer-radio" class="accent-red" value="adventurer" />
+                        <label class="text-grey" for="adventurer">Adventurer</label>
+                    </div>
+        
+                    <div>
+                        <input type="radio" name="level" id="hero-radio" class="accent-red" value="hero" />
+                        <label class="text-grey" for="hero">Hero</label>
+                    </div>
 
-                <a
-                href="#"
-                id="loot-link"
-                class="hidden hover:text-red active:brightness-90 underline"
-                target="_blank"
-                >[link]</a>
+                    <div>
+                        <input type="radio" name="level" id="legend-radio" class="accent-red" value="legend" />
+                        <label class="text-grey" for="legend">Legend</label>
+                    </div>
+                </div>
+
+                <div class="flex space-x-4">
+                    <div class="flex items-center space-x-1">
+                        <label for="armed-check">Armed</label>
+                        <input type="checkbox" name="armed-check" id="armed-check" class="accent-red">
+                    </div>
+
+                    <div class="flex items-center space-x-1">
+                        <label for="spellcaster-check">Spellcaster</label>
+                        <input type="checkbox" name="spellcaster-check" id="spellcaster-check" class="accent-red">
+                    </div>
+                </div>
             </div>
 
             <button

@@ -5,6 +5,6 @@ window.addEventListener('DOMContentLoaded', () => {
     if (name) {
         title.innerText = `Select ${name}'s Level`;
     } else {
-        title.innerText = 'Select NPC\'s Level';
+        title.innerText = 'Set NPC Level & Modifiers';
     }
 });
