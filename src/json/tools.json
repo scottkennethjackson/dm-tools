@@ -46,6 +46,15 @@
       ]
     },
     {
+      "name generator": [
+        {
+          "title": "Name Generator",
+          "description": "[Work-in-Progress]",
+          "link": "./src/tools/name-generator.html"
+        }
+      ]
+    },
+    {
       "npc generator": [
         {
           "title": "NPC Generator",
