@@ -3,7 +3,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const title = document.getElementById('title');
 
     if (name) {
-        title.innerText = `Select ${name}'s Level`;
+        title.innerText = `Set ${name}'s Level & Modifiers`;
     } else {
         title.innerText = 'Set NPC Level & Modifiers';
     }
