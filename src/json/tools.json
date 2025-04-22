@@ -49,7 +49,7 @@
       "name generator": [
         {
           "title": "Name Generator",
-          "description": "Players shown an interest in a random NPC? Quickly generate a name for them. Now they've invited them on a quest? Transfer that name to the NPC Generator and roll them up a statblock.",
+          "description": "Players shown an interest in a random NPC? Quickly generate a name for them. Now they've invited them along on a quest? Transfer that name to the NPC Generator and roll them up a statblock.",
           "link": "./src/tools/name-generator.html"
         }
       ]
