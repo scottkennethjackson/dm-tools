@@ -4,7 +4,7 @@
       "bag of tricks": [
         {
           "title": "Bag of Tricks",
-          "description": "[description]",
+          "description": "Whether they walk, swim or fly, generate a random Beast to pull out of your Bag of Tricks. Or for your Druid to Polymorph into.",
           "link": "./src/tools/bag-of-tricks.html"
         }
       ]
@@ -13,7 +13,7 @@
       "chaos magic": [
         {
           "title": "Chaos Magic",
-          "description": "[description]",
+          "description": "Generate spells based on their level, from simple Cantrips to powerful 9th-Level incantations. Or embrace chaos, and flip to a random page of your spellbook.",
           "link": "./src/tools/chaos-magic.html"
         }
       ]
@@ -22,7 +22,7 @@
       "deck of many things": [
         {
           "title": "Deck of Many Things",
-          "description": "[description]",
+          "description": "Inject a little chaos into your campaign by giving your party a Deck of Many Things. Simply draw a card, sit back, and watch as the Nine Hells break loose.",
           "link": "./src/tools/deck-of-many-things.html"
         }
       ]
@@ -31,7 +31,7 @@
       "gp lottery": [
         {
           "title": "GP Lottery",
-          "description": "[description]",
+          "description": "Whether looted from a fallen enemy or pickpocketed by your light-fingered Rogue, generate a level-appropriate amount of gold for your players. Or reward the entire party with a full-on Dragon hoard.",
           "link": "./src/tools/gp-lottery.html"
         }
       ]
@@ -40,7 +40,7 @@
       "loot randomiser": [
         {
           "title": "Loot Randomiser",
-          "description": "[description]",
+          "description": "Instead of gold, reward your players with a random item drop. With resources ranging from simple trinkets, to Health Potions and consumables, and all the way up to Legendary magic items, looting has never been more exciting.",
           "link": "./src/tools/loot-randomiser.html"
         }
       ]
@@ -49,7 +49,7 @@
       "npc generator": [
         {
           "title": "NPC Generator",
-          "description": "[description]",
+          "description": "[Work-in-Progress]",
           "link": "./src/tools/npc-generator.html"
         }
       ]
@@ -58,7 +58,7 @@
       "random encounter": [
         {
           "title": "Random Encounter",
-          "description": "[description]",
+          "description": "Session running short? Generate a random, level-appropriate encounter for your party. Or give them a scare by scaling up the difficulty a bit.",
           "link": "./src/tools/random-encounter.html"
         }
       ]
@@ -67,7 +67,7 @@
       "hangmaster": [
         {
           "title": "HangMaster",
-          "description": "[description]",
+          "description": "[Work-in-Progress]",
           "link": "./src/tools/hangmaster.html"
         }
       ]
