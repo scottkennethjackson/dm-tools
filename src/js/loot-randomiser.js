@@ -2,7 +2,7 @@ const title = document.getElementById('title');
 const lootLink = document.getElementById('loot-link');
 const rollBtn = document.getElementById('roll-btn');
 
-let gemstones = [], trinkets = [], consumables = [];
+let trinkets = [], gemstones = [], valuables = [], consumables = [];
 let cantrips = [], level1 = [], level2 = [], level3 = [], level4 = [], level5 = [],
     level6 = [], level7 = [], level8 = [], level9 = [];
 let cursed = [], uncommon = [], rare = [], veryRare = [], legendary = [];
@@ -13,8 +13,9 @@ Promise.all([
     fetch('../json/spells.json').then(r => r.json()),
     fetch('../json/magic-items.json').then(r => r.json())
 ]).then(([treasure, consumableData, spells, magicItems]) => {
-    gemstones = treasure.gemstones;
     trinkets = treasure.trinkets;
+    gemstones = treasure.gemstones;
+    valuables = treasure.valuables;
     consumables = consumableData.consumables;
 
     cantrips = spells.cantrips;
@@ -36,7 +37,7 @@ Promise.all([
 });
 
 function rollLoot() {
-    let lootRoll = Math.floor(Math.random() * 7);
+    let lootRoll = Math.floor(Math.random() * 8);
 
     lootLink.classList.add('hidden'); // Default to hidden
 
@@ -46,16 +47,21 @@ function rollLoot() {
     }
 
     if (lootRoll === 1) {
-        const pick = gemstones[Math.floor(Math.random() * gemstones.length)];
-        title.innerHTML = pick.name;
-    }
-
-    else if (lootRoll === 2) {
         const pick = trinkets[Math.floor(Math.random() * trinkets.length)];
         title.innerHTML = pick.name;
     }
 
+    else if (lootRoll === 2) {
+        const pick = gemstones[Math.floor(Math.random() * gemstones.length)];
+        title.innerHTML = pick.name;
+    }
+
     else if (lootRoll === 3) {
+        const pick = valuables[Math.floor(Math.random() * valuables.length)];
+        title.innerHTML = pick.name;
+    }
+
+    else if (lootRoll === 4) {
         const pick = consumables[Math.floor(Math.random() * consumables.length)];
         title.innerHTML = pick.name;
         lootLink.innerHTML = 'View Item';
@@ -63,7 +69,7 @@ function rollLoot() {
         lootLink.classList.remove('hidden');
     }
 
-    else if (lootRoll === 4) {
+    else if (lootRoll === 5) {
         const quantity = Math.ceil(Math.random() * 4);
         title.innerHTML = quantity === 1 ? `Potion of Healing` : `${quantity} Potions of Healing`;
         lootLink.innerHTML = 'View Item';
@@ -71,7 +77,7 @@ function rollLoot() {
         lootLink.classList.remove('hidden');
     }
 
-    else if (lootRoll === 5) {
+    else if (lootRoll === 6) {
         const levelRoll = Math.floor(Math.random() * 10);
         let spellList, spellLevel;
 
@@ -95,7 +101,7 @@ function rollLoot() {
         lootLink.classList.remove('hidden');
     }
 
-    else if (lootRoll === 6) {
+    else if (lootRoll === 7) {
         const rarityRoll = Math.floor(Math.random() * 31);
         let category;
 
