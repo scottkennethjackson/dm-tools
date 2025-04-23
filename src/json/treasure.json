@@ -73,85 +73,55 @@
     { "name": "A Silver Spoon with an M Engraved on the Handle" },
     { "name": "A Whistle Made from Gold-Colored Wood" },
     { "name": "A Dead Scarab Beetle the Size of Your Hand" },
-    { "name": "Two toy soldiers, one with a missing head" },
-    { "name": "A small box filled with different-sized buttons" },
-    { "name": "A candle that can’t be lit" },
-    { "name": "A tiny cage with no door" },
-    { "name": "An old key" },
-    { "name": "An indecipherable treasure map" },
-    { "name": "A hilt from a broken sword" },
-    { "name": "A rabbit’s foot" },
-    { "name": "A glass eye" },
-    { "name": "A cameo carved in the likeness of a hideous person" },
-    { "name": "A silver skull the size of a coin" },
-    { "name": "An alabaster mask" },
-    { "name": "A pyramid of sticky black incense that smells very bad" },
-    { "name": "A nightcap that, when worn, gives you pleasant dreams" },
-    { "name": "A single caltrop made from bone" },
-    { "name": "A gold monocle frame without the lens" },
-    { "name": "A 1-inch cube, each side painted a different color" },
-    { "name": "A crystal knob from a door" },
-    { "name": "A small packet filled with pink dust" },
-    {
-      "name": "A fragment of a beautiful song, written as musical notes on two pieces of parchment"
-    },
-    { "name": "A silver teardrop earring made from a real teardrop" },
-    {
-      "name": "The shell of an egg painted with scenes of human misery in disturbing detail"
-    },
-    { "name": "A fan that, when unfolded, shows a sleeping cat" },
-    { "name": "A set of bone pipes" },
-    {
-      "name": "A four-leaf clover pressed inside a book discussing manners and etiquette"
-    },
-    {
-      "name": "A sheet of parchment upon which is drawn a complex mechanical contraption"
-    },
-    { "name": "An ornate scabbard that fits no blade you have found so far" },
-    { "name": "An invitation to a party where a murder happened" },
-    {
-      "name": "A bronze pentacle with an etching of a rat's head in its center"
-    },
-    {
-      "name": "A purple handkerchief embroidered with the name of a powerful archmage"
-    },
-    {
-      "name": "Half of a floorplan for a temple, castle, or some other structure"
-    },
-    {
-      "name": "A bit of folded cloth that, when unfolded, turns into a stylish cap"
-    },
-    { "name": "A receipt of deposit at a bank in a far-flung city" },
-    { "name": "A diary with seven missing pages" },
-    {
-      "name": "An empty silver snuffbox bearing an inscription on the surface that says “dreams”"
-    },
-    { "name": "An iron holy symbol devoted to an unknown god" },
-    {
-      "name": "A book that tells the story of a legendary hero's rise and fall, with the last chapter missing"
-    },
-    { "name": "A vial of dragon blood" },
-    { "name": "An ancient arrow of elven design" },
-    { "name": "A needle that never bends" },
-    { "name": "An ornate brooch of dwarven design" },
-    {
-      "name": "An empty wine bottle bearing a pretty label that says, \"The Wizard of Wines Winery, Red Dragon Crush, 331422-W\""
-    },
-    { "name": "A mosaic tile with a multicolored, glazed surface" },
-    { "name": "A petrified mouse" },
-    {
-      "name": "A black pirate flag adorned with a dragon's skull and crossbones"
-    },
-    {
-      "name": "A tiny mechanical crab or spider that moves about when it’s not being observed"
-    },
-    {
-      "name": "A glass jar containing lard with a label that reads, “Griffon Grease”"
-    },
-    {
-      "name": "A wooden box with a ceramic bottom that holds a living worm with a head on each end of its body"
-    },
-    { "name": "A metal urn containing the ashes of a hero" }
+    { "name": “Two Toy Soldiers, One with a Missing Head” },
+    { "name": “A Small Box Filled with Different-Sized Buttons” },
+    { "name": “A Candle That Can’t Be Lit” },
+    { "name": “A Tiny Cage with No Door” },
+    { "name": “An Old Key” },
+    { "name": “An Indecipherable Treasure Map” },
+    { "name": “A Hilt from a Broken Sword” },
+    { "name": “A Rabbit’s Foot” },
+    { "name": “A Glass Eye” },
+    { "name": “A Cameo Carved in the Likeness of a Hideous Person” },
+    { "name": “A Silver Skull the Size of a Coin” },
+    { "name": “An Alabaster Mask” },
+    { "name": “A Pyramid of Sticky Black Incense That Smells Very Bad” },
+    { "name": “A Nightcap That, When Worn, Gives You Pleasant Dreams” },
+    { "name": “A Single Caltrop Made from Bone” },
+    { "name": “A Gold Monocle Frame Without the Lens” },
+    { "name": “A 1-Inch Cube, Each Side Painted a Different Color” },
+    { "name": “A Crystal Knob from a Door” },
+    { "name": “A Small Packet Filled with Pink Dust” },
+    { "name": “A Fragment of a Beautiful Song, Written As Musical Notes on Two Pieces of Parchment” },
+    { "name": “A Silver Teardrop Earring Made from a Real Teardrop” },
+    { "name": “The Shell of an Egg Painted with Scenes of Human Misery in Disturbing Detail” },
+    { "name": “A Fan That, When Unfolded, Shows a Sleeping Cat” },
+    { "name": “A Set of Bone Pipes” },
+    { "name": “A Four-Leaf Clover Pressed Inside a Book Discussing Manners and Etiquette” },
+    { "name": “A Sheet of Parchment upon Which Is Drawn a Complex Mechanical Contraption” },
+    { "name": “An Ornate Scabbard That Fits No Blade You Have Found So Far” },
+    { "name": “An Invitation to a Party Where a Murder Happened” },
+    { "name": “A Bronze Pentacle with an Etching of a Rat’s Head in Its Center” },
+    { "name": “A Purple Handkerchief Embroidered with the Name of a Powerful Archmage” },
+    { "name": “Half of a Floorplan for a Temple, Castle, or Some Other Structure” },
+    { "name": “A Bit of Folded Cloth That, When Unfolded, Turns into a Stylish Cap” },
+    { "name": “A Receipt of Deposit at a Bank in a Far-Flung City” },
+    { "name": “A Diary with Seven Missing Pages” },
+    { "name": “An Empty Silver Snuffbox Bearing an Inscription on the Surface That Says “Dreams”” },
+    { "name": “An Iron Holy Symbol Devoted to an Unknown God” },
+    { "name": “A Book That Tells the Story of a Legendary Hero’s Rise and Fall, with the Last Chapter Missing” },
+    { "name": “A Vial of Dragon Blood” },
+    { "name": “An Ancient Arrow of Elven Design” },
+    { "name": “A Needle That Never Bends” },
+    { "name": “An Ornate Brooch of Dwarven Design” },
+    { "name": “An Empty Wine Bottle Bearing a Pretty Label That Says, \”the Wizard of Wines Winery, Red Dragon Crush, 331422-W\”” },
+    { "name": “A Mosaic Tile with a Multicolored, Glazed Surface” },
+    { "name": “A Petrified Mouse” },
+    { "name": “A Black Pirate Flag Adorned with a Dragon’s Skull and Crossbones” },
+    { "name": “A Tiny Mechanical Crab or Spider That Moves About When It’s Not Being Observed” },
+    { "name": “A Glass Jar Containing Lard with a Label That Reads, “Griffon Grease”” },
+    { "name": “A Wooden Box with a Ceramic Bottom That Holds a Living Worm with a Head On Each End of Its Body” },
+    { "name": “A Metal Urn Containing the Ashes of a Hero” }
   ],
   "gemstones": [
     {
