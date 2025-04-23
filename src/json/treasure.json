@@ -92,35 +92,65 @@
     { "name": "A 1-Inch Cube, Each Side Painted a Different Color" },
     { "name": "A Crystal Knob from a Door" },
     { "name": "A Small Packet Filled with Pink Dust" },
-    { "name": "A Fragment of a Beautiful Song, Written As Musical Notes on Two Pieces of Parchment" },
+    {
+      "name": "A Fragment of a Beautiful Song, Written As Musical Notes on Two Pieces of Parchment"
+    },
     { "name": "A Silver Teardrop Earring Made from a Real Teardrop" },
-    { "name": "The Shell of an Egg Painted with Scenes of Human Misery in Disturbing Detail" },
+    {
+      "name": "The Shell of an Egg Painted with Scenes of Human Misery in Disturbing Detail"
+    },
     { "name": "A Fan That, When Unfolded, Shows a Sleeping Cat" },
     { "name": "A Set of Bone Pipes" },
-    { "name": "A Four-Leaf Clover Pressed Inside a Book Discussing Manners and Etiquette" },
-    { "name": "A Sheet of Parchment upon Which Is Drawn a Complex Mechanical Contraption" },
+    {
+      "name": "A Four-Leaf Clover Pressed Inside a Book Discussing Manners and Etiquette"
+    },
+    {
+      "name": "A Sheet of Parchment upon Which Is Drawn a Complex Mechanical Contraption"
+    },
     { "name": "An Ornate Scabbard That Fits No Blade You Have Found So Far" },
     { "name": "An Invitation to a Party Where a Murder Happened" },
-    { "name": "A Bronze Pentacle with an Etching of a Rat's Head in Its Center" },
-    { "name": "A Purple Handkerchief Embroidered with the Name of a Powerful Archmage" },
-    { "name": "Half of a Floorplan for a Temple, Castle, or Some Other Structure" },
-    { "name": "A Bit of Folded Cloth That, When Unfolded, Turns into a Stylish Cap" },
+    {
+      "name": "A Bronze Pentacle with an Etching of a Rat's Head in Its Center"
+    },
+    {
+      "name": "A Purple Handkerchief Embroidered with the Name of a Powerful Archmage"
+    },
+    {
+      "name": "Half of a Floorplan for a Temple, Castle, or Some Other Structure"
+    },
+    {
+      "name": "A Bit of Folded Cloth That, When Unfolded, Turns into a Stylish Cap"
+    },
     { "name": "A Receipt of Deposit at a Bank in a Far-Flung City" },
     { "name": "A Diary with Seven Missing Pages" },
-    { "name": "An Empty Silver Snuffbox Bearing an Inscription on the Surface That Says \"Dreams\"" },
+    {
+      "name": "An Empty Silver Snuffbox Bearing an Inscription on the Surface That Says \"Dreams\""
+    },
     { "name": "An Iron Holy Symbol Devoted to an Unknown God" },
-    { "name": "A Book That Tells the Story of a Legendary Hero's Rise and Fall, with the Last Chapter Missing" },
+    {
+      "name": "A Book That Tells the Story of a Legendary Hero's Rise and Fall, with the Last Chapter Missing"
+    },
     { "name": "A Vial of Dragon Blood" },
     { "name": "An Ancient Arrow of Elven Design" },
     { "name": "A Needle That Never Bends" },
     { "name": "An Ornate Brooch of Dwarven Design" },
-    { "name": "An Empty Wine Bottle Bearing a Pretty Label That Says, \"The Wizard of Wines Winery, Red Dragon Crush, 331422-W\"" },
+    {
+      "name": "An Empty Wine Bottle Bearing a Pretty Label That Says, \"The Wizard of Wines Winery, Red Dragon Crush, 331422-W\""
+    },
     { "name": "A Mosaic Tile with a Multicolored, Glazed Surface" },
     { "name": "A Petrified Mouse" },
-    { "name": "A Black Pirate Flag Adorned with a Dragon's Skull and Crossbones" },
-    { "name": "A Tiny Mechanical Crab or Spider That Moves About When It's Not Being Observed" },
-    { "name": "A Glass Jar Containing Lard with a Label That Reads, \"Griffon Grease\"" },
-    { "name": "A Wooden Box with a Ceramic Bottom That Holds a Living Worm with a Head On Each End of Its Body" },
+    {
+      "name": "A Black Pirate Flag Adorned with a Dragon's Skull and Crossbones"
+    },
+    {
+      "name": "A Tiny Mechanical Crab or Spider That Moves About When It's Not Being Observed"
+    },
+    {
+      "name": "A Glass Jar Containing Lard with a Label That Reads, \"Griffon Grease\""
+    },
+    {
+      "name": "A Wooden Box with a Ceramic Bottom That Holds a Living Worm with a Head On Each End of Its Body"
+    },
     { "name": "A Metal Urn Containing the Ashes of a Hero" }
   ],
   "gemstones": [
