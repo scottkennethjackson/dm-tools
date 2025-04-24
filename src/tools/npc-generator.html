@@ -78,19 +78,16 @@
                 </div>
 
                 <div class="flex space-x-4">
-                    <div>
-                        <label for="armor-selector">Armor Type:</label>
-                        <select
-                            name="armor-selector"
-                            id="armor-selector"
-                            class="p-1 bg-gray-100 text-black"
-                        >
-                            <option value="none" selected>None</option>
-                            <option value="light">Light</option>
-                            <option value="medium">Medium</option>
-                            <option value="heavy">Heavy</option>
-                        </select>
-                    </div>
+                    <select
+                        name="armor-selector"
+                        id="armor-selector"
+                        class="p-1 bg-gray-100 text-black"
+                    >
+                        <option value="none" disabled selected hidden>Armor Type</option>
+                        <option value="light">Light</option>
+                        <option value="medium">Medium</option>
+                        <option value="heavy">Heavy</option>
+                    </select>
 
                     <div class="flex items-center space-x-1">
                         <input type="checkbox" name="armed-check" id="armed-check" class="accent-red">
