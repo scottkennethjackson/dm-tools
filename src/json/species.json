@@ -8,16 +8,16 @@
             "range": 60
         },
         "subspecies": [
-            {"dragon": "Black", "element": "Acid"},
-            {"dragon": "Blue", "element": "Lightning"},
-            {"dragon": "Brass", "element": "Fire"},
-            {"dragon": "Bronze", "element": "Lightning"},
-            {"dragon": "Copper", "element": "Acid"},
-            {"dragon": "Gold", "element": "Fire"},
-            {"dragon": "Green", "element": "Poison"},
-            {"dragon": "Red", "element": "Fire"},
-            {"dragon": "Silver", "element": "Cold"},
-            {"dragon": "White", "element": "Cold"}
+            {"type": "Black", "element": "Acid"},
+            {"type": "Blue", "element": "Lightning"},
+            {"type": "Brass", "element": "Fire"},
+            {"type": "Bronze", "element": "Lightning"},
+            {"type": "Copper", "element": "Acid"},
+            {"type": "Gold", "element": "Fire"},
+            {"type": "Green", "element": "Poison"},
+            {"type": "Red", "element": "Fire"},
+            {"type": "Silver", "element": "Cold"},
+            {"type": "White", "element": "Cold"}
         ],
         "bonus action": {
             "name": "Draconic Flight",
@@ -54,7 +54,7 @@
         },
         "subspecies": [
             {
-                "elf": "Drow",
+                "type": "Drow",
                 "improved darkvision": 120,
                 "spells": [
                     {"cantrip": "<a href=\"https://www.dndbeyond.com/spells/2619058-dancing-lights\" target=\"_blank\">Dancing Lights</a>"},
@@ -64,7 +64,7 @@
                 "proficiency": "Insight"
             },
             {
-                "elf": "High",
+                "type": "High",
                 "spells": [
                     {"cantrip": "<a href=\"https://www.dndbeyond.com/spells/2618893-prestidigitation\" target=\"_blank\">Prestidigitation</a>"},
                     {"1st level": "<a href=\"https://www.dndbeyond.com/spells/2619097-detect-magic\" target=\"_blank\">Detect Magic</a>"},
@@ -73,7 +73,7 @@
                 "proficiency": "Perception"
             },
             {
-                "elf": "Wood",
+                "type": "Wood",
                 "improved speed": 35,
                 "spells": [
                     {"cantrip": "<a href=\"https://www.dndbeyond.com/spells/2619158-druidcraft\" target=\"_blank\">Druidcraft</a>"},
@@ -99,14 +99,14 @@
         },
         "subspecies": [
             {
-                "gnome": "Forest",
+                "type": "Forest",
                 "spells": [
                     {"cantrip": "<a href=\"https://www.dndbeyond.com/spells/2619039-minor-illusion\" target=\"_blank\">Minor Illusion</a>"},
                     {"1st level": "<a href=\"https://www.dndbeyond.com/spells/2619059-speak-with-animals\" target=\"_blank\">Speak with Animals</a>"}
                 ]
             },
             {
-                "gnome": "Rock",
+                "type": "Rock",
                 "spells": [
                     {"cantrips": [
                         {"cantrip": "<a href=\"https://www.dndbeyond.com/spells/2619033-mending\" target=\"_blank\">Mending</a>"},
@@ -126,42 +126,42 @@
         },
         "subspecies": [
             {
-                "giant": "Cloud",
+                "type": "Cloud",
                 "subspecies trait": {
                     "name": "Cloud's Jaunt",
                     "description": "As a Bonus Action, the Goliath can magically teleport up to 30 feet to an unoccupied space they can see."
                 }
             },
             {
-                "giant": "Fire",
+                "type": "Fire",
                 "subspecies trait": {
                     "name": "Fire's Burn",
                     "description": "When the Goliath hit a target with an attack roll and deals damage to it, they can also deal 1d10 Fire damage to that target."
                 }
             },
             {
-                "giant": "Frost",
+                "type": "Frost",
                 "subspecies trait": {
                     "name": "Cloud's Jaunt",
                     "description": "When the Goliath hits a target with an attack roll and deal damage to it, they can also deal 1d6 Cold damage to that target and reduce its Speed by 10 feet until the start of the Goliath's next turn."
                 }
             },
             {
-                "giant": "Hill",
+                "type": "Hill",
                 "subspecies trait": {
                     "name": "Hill's Tumble",
                     "description": "When the Goliath hits a Large or smaller creature with an attack roll and deal damage to it, they can give that target the Prone condition."
                 }
             },
             {
-                "giant": "Stone",
+                "type": "Stone",
                 "subspecies trait": {
                     "name": "Stone's Endurance",
                     "description": "When the Goliath takes damage, they can take a Reaction to roll 1d12. Add the Goliath's Constitution modifier to the number rolled and reduce the damage by that total."
                 }
             },
             {
-                "giant": "Storm",
+                "type": "Storm",
                 "subspecies trait": {
                     "name": "Storm's Thunder",
                     "description": "When the Goliath take damage from a creature within 60 feet of them, they can take a Reaction to deal 1d8 Thunder damage to that creature."
@@ -247,7 +247,7 @@
         },
         "subspecies": [
             {
-                "tiefling": "Abyssal",
+                "type": "Abyssal",
                 "damage resistance": "Poison",
                 "spells": [
                     {"cantrips": [
@@ -259,7 +259,7 @@
                 ]
             },
             {
-                "tiefling": "Chthonic",
+                "type": "Chthonic",
                 "damage resistance": "Necrotic",
                 "spells": [
                     {"cantrips": [
@@ -271,7 +271,7 @@
                 ]
             },
             {
-                "tiefling": "Infernal",
+                "type": "Infernal",
                 "damage resistance": "Fire",
                 "spells": [
                     {"cantrips": [
