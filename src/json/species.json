@@ -1,0 +1,287 @@
+{
+    "Dragonborn": {
+        "creature type": "Humanoid",
+        "size": "Medium",
+        "speed": 30,
+        "darkvision": {
+            "has darkvision": true,
+            "range": 60
+        },
+        "subspecies": [
+            {"dragon": "Black", "element": "Acid"},
+            {"dragon": "Blue", "element": "Lightning"},
+            {"dragon": "Brass", "element": "Fire"},
+            {"dragon": "Bronze", "element": "Lightning"},
+            {"dragon": "Copper", "element": "Acid"},
+            {"dragon": "Gold", "element": "Fire"},
+            {"dragon": "Green", "element": "Poison"},
+            {"dragon": "Red", "element": "Fire"},
+            {"dragon": "Silver", "element": "Cold"},
+            {"dragon": "White", "element": "Cold"}
+        ],
+        "bonus action": {
+            "name": "Draconic Flight",
+            "description": "As a Bonus Action, the Dragonborn sprouts spectral wings on their back that last for 10 minutes or until they retract the wings (no action required) or have the Incapacitated condition. During that time, they have a Fly Speed equal to their Speed. Their wings appear to be made of the same energy as their Breath Weapon. Once they use this trait, they can’t use it again until they finish a Long Rest."
+        }
+    },
+
+    "Dwarf": {
+        "creature type": "Humanoid",
+        "size": "Medium",
+        "speed": 30,
+        "damage resistance": "Poison",
+        "darkvision": {
+            "has darkvision": true,
+            "range": 120
+        },
+        "traits": {
+            "name": "Dwarven Resilience",
+            "description": "The Dwarf has Resistance to Poison damage. They also have Advantage on saving throws they make to avoid or end the Poisoned condition."
+        },
+        "bonus action": {
+            "name": "Stonecunning",
+            "description": "As a Bonus Action, the Dwarf gains <a href=\"https://www.dndbeyond.com/sources/dnd/free-rules/rules-glossary#Tremorsense\" target=\"_blank\">Tremorsense</a> with a range of 60 feet for 10 minutes. They must be on a stone surface or touching a stone surface to use this Tremorsense. The stone can be natural or worked."
+        }
+    },
+
+    "Elf": {
+        "creature type": "Humanoid",
+        "size": "Medium",
+        "speed": 30,
+        "darkvision": {
+            "has darkvision": true,
+            "range": 60
+        },
+        "subspecies": [
+            {
+                "elf": "Drow",
+                "improved darkvision": 120,
+                "spells": [
+                    {"cantrip": "<a href=\"https://www.dndbeyond.com/spells/2619058-dancing-lights\" target=\"_blank\">Dancing Lights</a>"},
+                    {"1st level": "<a href=\"https://www.dndbeyond.com/spells/2618858-faerie-fire\" target=\"_blank\">Faerie Fire</a>"},
+                    {"2nd level": "<a href=\"https://www.dndbeyond.com/spells/2619080-darkness\" target=\"_blank\">Darkness</a>"}
+                ],
+                "proficiency": "Insight"
+            },
+            {
+                "elf": "High",
+                "spells": [
+                    {"cantrip": "<a href=\"https://www.dndbeyond.com/spells/2618893-prestidigitation\" target=\"_blank\">Prestidigitation</a>"},
+                    {"1st level": "<a href=\"https://www.dndbeyond.com/spells/2619097-detect-magic\" target=\"_blank\">Detect Magic</a>"},
+                    {"2nd level": "<a href=\"https://www.dndbeyond.com/spells/2619133-misty-step\" target=\"_blank\">Misty Step</a>"}
+                ],
+                "proficiency": "Perception"
+            },
+            {
+                "elf": "Wood",
+                "improved speed": 35,
+                "spells": [
+                    {"cantrip": "<a href=\"https://www.dndbeyond.com/spells/2619158-druidcraft\" target=\"_blank\">Druidcraft</a>"},
+                    {"1st level": "<a href=\"https://www.dndbeyond.com/spells/2619004-longstrider\" target=\"_blank\">Longstrider</a>"},
+                    {"2nd level": "<a href=\"https://www.dndbeyond.com/spells/2618849-pass-without-trace\" target=\"_blank\">Pass without Trace</a>"}
+                ],
+                "proficiency": "Survival"
+            }
+        ],
+        "traits": {
+            "name": "Fey Ancestry",
+            "description": "The Elf has Advantage on saving throws they make to avoid or end the Charmed condition, and magic can't put them to sleep."
+        }
+    },
+
+    "Gnome": {
+        "creature type": "Humanoid",
+        "size": "Small",
+        "speed": 30,
+        "darkvision": {
+            "has darkvision": true,
+            "range": 60
+        },
+        "subspecies": [
+            {
+                "gnome": "Forest",
+                "spells": [
+                    {"cantrip": "<a href=\"https://www.dndbeyond.com/spells/2619039-minor-illusion\" target=\"_blank\">Minor Illusion</a>"},
+                    {"1st level": "<a href=\"https://www.dndbeyond.com/spells/2619059-speak-with-animals\" target=\"_blank\">Speak with Animals</a>"}
+                ]
+            },
+            {
+                "gnome": "Rock",
+                "spells": [
+                    {"cantrips": [
+                        {"cantrip": "<a href=\"https://www.dndbeyond.com/spells/2619033-mending\" target=\"_blank\">Mending</a>"},
+                        {"cantrip": "<a href=\"https://www.dndbeyond.com/spells/2618893-prestidigitation\" target=\"_blank\">Prestidigitation</a>"}
+                    ]}
+                ]
+            }
+        ]
+    },
+
+    "Goliath": {
+        "creature type": "Humanoid",
+        "size": "Medium",
+        "speed": 35,
+        "darkvision": {
+            "has darkvision": false
+        },
+        "subspecies": [
+            {
+                "giant": "Cloud",
+                "subspecies trait": {
+                    "name": "Cloud's Jaunt",
+                    "description": "As a Bonus Action, the Goliath can magically teleport up to 30 feet to an unoccupied space they can see."
+                }
+            },
+            {
+                "giant": "Fire",
+                "subspecies trait": {
+                    "name": "Fire's Burn",
+                    "description": "When the Goliath hit a target with an attack roll and deals damage to it, they can also deal 1d10 Fire damage to that target."
+                }
+            },
+            {
+                "giant": "Frost",
+                "subspecies trait": {
+                    "name": "Cloud's Jaunt",
+                    "description": "When the Goliath hits a target with an attack roll and deal damage to it, they can also deal 1d6 Cold damage to that target and reduce its Speed by 10 feet until the start of the Goliath's next turn."
+                }
+            },
+            {
+                "giant": "Hill",
+                "subspecies trait": {
+                    "name": "Hill's Tumble",
+                    "description": "When the Goliath hits a Large or smaller creature with an attack roll and deal damage to it, they can give that target the Prone condition."
+                }
+            },
+            {
+                "giant": "Stone",
+                "subspecies trait": {
+                    "name": "Stone's Endurance",
+                    "description": "When the Goliath takes damage, they can take a Reaction to roll 1d12. Add the Goliath's Constitution modifier to the number rolled and reduce the damage by that total."
+                }
+            },
+            {
+                "giant": "Storm",
+                "subspecies trait": {
+                    "name": "Storm's Thunder",
+                    "description": "When the Goliath take damage from a creature within 60 feet of them, they can take a Reaction to deal 1d8 Thunder damage to that creature."
+                }
+            }
+        ],
+        "traits": {
+            "name": "Powerful Build",
+            "description": "The Goliath has Advantage on any ability check they make to end the Grappled condition."
+        },
+        "bonus action": {
+            "name": "Large Form",
+            "description": "If they are in a big enough space, the Goliath can change their size to Large as a Bonus Action. This transformation lasts for 10 minutes or until they end it (no action required). For that duration, the Goliath has Advantage on Strength checks, and their Speed increases by 10 feet."
+        }
+    },
+
+    "Halfling":
+    {
+        "creature type": "Humanoid",
+        "size": "Small",
+        "speed": 30,
+        "darkvision": {
+            "has darkvision": false
+        },
+        "traits": [
+            {
+                "name": "Brave",
+                "description": "The Halfling has Advantage on saving throws they make to avoid or end the Frightened condition."
+            },
+            {
+                "name": "Halfling Nimbleness",
+                "description": "The Halfling can move through the space of any creature that is a size larger than them, but they cannot stop in the same space."
+            },
+            {
+                "name": "Luck",
+                "description": "When the Halfling rolls a 1 on the d20 of a D20 Test, they can reroll the die, and must use the new roll."
+            },
+            {
+                "name": "Naturally Stealthy",
+                "description": "The Halfling can take the Hide action even when they are obscured only by a creature that is at least one size larger than them."
+            }
+        ]
+    },
+
+    "Human": {
+        "creature type": "Humanoid",
+        "size": "Medium",
+        "speed": 30,
+        "darkvision": {
+            "has darkvision": false
+        },
+        "traits": {
+            "name": "Resourceful",
+            "description": "Once per Long Rest, the Human can reroll any die immediately after rolling it, and must use the new roll."
+        }
+    },
+
+    "Orc": {
+        "creature type": "Humanoid",
+        "size": "Medium",
+        "speed": 30,
+        "darkvision": {
+            "has darkvision": true,
+            "range": 120
+        },
+        "traits": {
+            "name": "Relentless Endurance",
+            "description": "When the Orc is reduced to 0 Hit Points but not killed outright, they can drop to 1 Hit Point instead. Once they use this trait, they can’t do so again until they finish a Long Rest."
+        },
+        "bonus action": {
+            "name": "Adrenaline Rush",
+            "description": "The Orc can take the Dash action as a Bonus Action. When they do so, they gain a number of Temporary Hit Points equal to their Proficiency Bonus."
+        }
+    },
+
+    "Tiefling": {
+        "creature type": "Humanoid",
+        "size": "Medium",
+        "speed": 30,
+        "darkvision": {
+            "has darkvision": true,
+            "range": 60
+        },
+        "subspecies": [
+            {
+                "tiefling": "Abyssal",
+                "damage resistance": "Poison",
+                "spells": [
+                    {"cantrips": [
+                        {"cantrip": "<a href=\"https://www.dndbeyond.com/spells/2277-thaumaturgy\" target=\"_blank\">Thaumaturgy</a>"},
+                        {"cantrip": "<a href=\"https://www.dndbeyond.com/spells/2618875-poison-spray\" target=\"_blank\">Poison Spray</a>"}
+                    ]},
+                    {"1st level": "<a href=\"https://www.dndbeyond.com/spells/2618935-ray-of-sickness\" target=\"_blank\">Ray of Sickness</a>"},
+                    {"2nd level": "<a href=\"https://www.dndbeyond.com/spells/2619153-hold-person\" target=\"_blank\">Hold Person</a>"}
+                ]
+            },
+            {
+                "tiefling": "Chthonic",
+                "damage resistance": "Necrotic",
+                "spells": [
+                    {"cantrips": [
+                        {"cantrip": "<a href=\"https://www.dndbeyond.com/spells/2618965-chill-touch\" target=\"_blank\">Chill Touch</a>"},
+                        {"cantrip": "<a href=\"https://www.dndbeyond.com/spells/2277-thaumaturgy\" target=\"_blank\">Thaumaturgy</a>"}
+                    ]},
+                    {"1st level": "<a href=\"https://www.dndbeyond.com/spells/2618866-false-life\" target=\"_blank\">False Life</a>"},
+                    {"2nd level": "<a href=\"https://www.dndbeyond.com/spells/2618926-ray-of-enfeeblement\" target=\"_blank\">Ray of Enfeeblement</a>"}
+                ]
+            },
+            {
+                "tiefling": "Infernal",
+                "damage resistance": "Fire",
+                "spells": [
+                    {"cantrips": [
+                        {"cantrip": "<a href=\"https://www.dndbeyond.com/spells/2277-thaumaturgy\" target=\"_blank\">Thaumaturgy</a>"},
+                        {"cantrip": "<a href=\"https://www.dndbeyond.com/spells/2618890-fire-bolt\" target=\"_blank\">Fire Bolt</a>"}
+                    ]},
+                    {"1st level": "<a href=\"https://www.dndbeyond.com/spells/2619149-hellish-rebuke\" target=\"_blank\">Hellish Rebuke</a>"},
+                    {"2nd level": "<a href=\"https://www.dndbeyond.com/spells/2619080-darkness\" target=\"_blank\">Darkness</a>"}
+                ]
+            }
+        ]
+    }
+}

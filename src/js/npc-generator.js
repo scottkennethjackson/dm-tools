@@ -11,9 +11,9 @@ let importedName = localStorage.getItem('generatedName') || undefined;
 
 window.addEventListener('DOMContentLoaded', () => {
     if (importedName !== undefined) {
-        title.innerText = `Select ${importedName}'s Level`;
+        title.innerText = `Set ${importedName}'s Level`;
     } else {
-        title.innerText = "Select NPC's Level";
+        title.innerText = "Set NPC's Level";
     }
 });
 
