@@ -1,43 +1,53 @@
-window.addEventListener('DOMContentLoaded', () => {
-    const name = localStorage.getItem('generatedName');
-    const title = document.getElementById('title');
+const importedName = localStorage.getItem('generatedName') || undefined;
+const title = document.getElementById('title');
+const rollBtn = document.getElementById('roll-btn');
+const names = {
+    male: [],
+    female: [],
+    surname: []
+};
 
-    if (name) {
-        title.innerText = `Set ${name}'s Level`;
+window.addEventListener('DOMContentLoaded', () => {
+    if (importedName !== undefined) {
+        title.innerText = `Select ${importedName}'s Level`;
     } else {
-        title.innerText = 'Set NPC Level';
+        title.innerText = "Select NPC's Level";
     }
 });
 
-//So your setup would look like this:
-//
-//💾 Name is saved in localStorage on the first page (name-generator.html).
-//🌐 npc-generator.html reads the name on page load, displays it in the <title>, and holds it in a variable (npcName).
-//🎲 When the user selects a level and clicks rollBtn to generate the statblock:
-//→ Use the stored npcName to assign it to the statblock.
-//→ Then clear localStorage (so the next NPC won’t accidentally reuse the old name).
-//
-//💡 Here’s how you’d wire it up:
-//let npcName = localStorage.getItem('generatedName') || "Unnamed";
-//
-//window.addEventListener('DOMContentLoaded', () => {
-//    const title = document.getElementById('title');
-//
-//    if (npcName !== "Unnamed") {
-//        title.innerText = `Select ${npcName}'s Level`;
-//    } else {
-//        title.innerText = "Select an NPC's Level";
-//    }
-//});
-//
-//const rollBtn = document.getElementById('roll-btn');
-//
-//rollBtn.addEventListener('click', () => {
-//    // Example: Your statblock generation logic
-//    console.log(`Generating statblock for: ${npcName}`);
-//
-//    // After generating, clear the name so the next one will be fresh
-//    localStorage.removeItem('generatedName');
-//
-//    // You can proceed with any further statblock display logic here
-//});
+fetch('../json/names.json')
+    .then(response => {
+        if (!response.ok) throw new Error("Failed to load names.json");
+        return response.json();
+    })
+    .then(data => {
+        names.male = data['first names']?.male.map(obj => obj.name) || [];
+        names.female = data['first names']?.female.map(obj => obj.name) || [];
+        names.surname = data.surnames?.map(obj => obj.name) || [];
+    })    
+    .catch(error => {
+        console.error("Error loading names:", error);
+        title.innerHTML = "Failed to Load Names";
+    });
+
+function rollStats() {
+    title.classList.add('hidden');
+    localStorage.removeItem('generatedName');
+    const nameInput = document.getElementById('name-input');
+
+    if (importedName !== undefined) {
+        nameInput.value = importedName;
+    } else {
+        const gender = Math.round(Math.random());
+
+        const firstName = gender === 0 
+            ? names.male[Math.floor(Math.random() * names.male.length)] 
+            : names.female[Math.floor(Math.random() * names.female.length)];
+
+        const surname = names.surname[Math.floor(Math.random() * names.surname.length)];
+
+        nameInput.value = `${firstName} ${surname}`;
+    }
+}
+
+rollBtn.addEventListener('click', rollStats);
