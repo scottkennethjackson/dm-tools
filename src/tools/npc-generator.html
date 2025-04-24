@@ -41,6 +41,75 @@
             </div>
 
             <div class="container flex flex-col justify-center items-center space-y-4 mb-8 max-w-md border-2 border-red px-4 py-8 text-white">
+                <div id="character-sheet" class="w-full space-y-2 border-b-2 border-red pb-2">
+                    <div>
+                        <input
+                            type="text"
+                            name="npc-name"
+                            id="npc-name"
+                            class="w-full font-tiamat text-2xl"
+                            placeholder="Name Your NPC"
+                        >
+                        <p class="italic"><span class="size">{size}</span> <span class="shape">{shape}</span> (<span class="species">{species}</span>), <span class="alignment">{alignment}</span></p>
+                    </div>
+
+                    <hr class="border-1 border-red">
+
+                    <div>
+                        <p><span class="font-bold">Armor Class</span> <span class="ac">{value}</span><span id="show-armor"> ({armorType})</span></p>
+                        <p><span class="font-bold">Hit Points</span> <span class="hp">{value}</span></p>
+                        <p><span class="font-bold">Speed</span> <span class="speed">{value}</span> ft.</p>
+                    </div>
+
+                    <hr class="border-1 border-red">
+
+                    <div class="space-y-2">
+                        <div class="flex">
+                            <p class="w-1/3 text-center"><span class="font-bold">STR</span></br><span class="str-value">{value} (+<span class="str-modifier">{value}</span> )</span> </p>
+                            <p class="w-1/3 text-center"><span class="font-bold">DEX</span></br><span class="dex-value">{value} (+<span class="dex-modifier">{value}</span> )</span> </p>
+                            <p class="w-1/3 text-center"><span class="font-bold">CON</span></br><span class="con-value">{value} (+<span class="con-modifier">{value}</span> )</span> </p>
+                        </div>
+                        <div class="flex justify-around">
+                            <p class="w-1/3 text-center"><span class="font-bold">INT</span></br><span class="int-value">{value} (+<span class="int-modifier">{value}</span> )</span> </p>
+                            <p class="w-1/3 text-center"><span class="font-bold">WIS</span></br><span class="wis-value">{value} (+<span class="wis-modifier">{value}</span> )</span> </p>
+                            <p class="w-1/3 text-center"><span class="font-bold">CHA</span></br><span class="cha-value">{value} (+<span class="cha-modifier">{value}</span> )</span> </p>
+                        </div>
+                    </div>
+
+                    <hr class="border-1 border-red">
+
+                    <div>
+                        <p><span class="font-bold">Saving Throws</span> <span class="save1">{save1}</span> +<span class="save1-value">{value}</span>, <span class="save2">{save2}</span> +<span class="save2-value">{value}</span></p>
+                        <p><span class="font-bold">Skills</span> <span class="skill1">{skill1}</span> +<span class="skill1-value">{value}</span>, <span class="skill2">{skill2}</span> +<span class="skill2-value">{value}</span></p>
+                        <p><span class="font-bold">Damage Resistances</span> <span class="dmg-resistance">{dmgResistance}</span></p>
+                        <p><span class="font-bold">Senses</span> <span id="show-darkvision">Darkvision <span class="darkvision-range">{value}</span> ft., </span>Passive Perception <span class="passive-perception">{value}</span></p>
+                        <p><span class="font-bold">Languages</span> <span class="languages">{languages}</span></p>
+                        <p><span class="font-bold">Proficiency Bonus</span> +<span class="proficiency-bonus">{value}</span></p>
+                    </div>
+
+                    <hr class="border-1 border-red">
+
+                    <div id="traits" class="mt-4">
+                        <h2 class="text-xl text-gray-400">Traits</h2>
+
+                        <hr class="mb-2 border-red">
+
+                        <p><span class="font-bold"><span class="trait-name">{traitName}</span>.</span> <span class="trait-description">{traitDescription}</span></p>
+                    </div>
+
+                    <div id="actions" class="hidden mt-4">
+                        <h2 class="text-xl text-gray-400">Actions</h2>
+
+                        <hr class="mb-2 border-red">
+
+                        <div class="space-y-2">
+                        <p id="multiattack"><span class="font-bold">Multiattack.</span> The <span class="species">{species}</span> makes two <span class="melee-attack">{meleeAttack}</span> attacks.</p>
+                        <p><span class="font-bold"><span class="melee-attack">{meleeAttack}</span>.</span> <span class="italic">Melee Weapon Attack:</span> +<span class="to-hit">{value}</span> to hit, reach <span class="reach">{value}</span> ft., one target. <span class="italic">Hit:</span> <span class="melee-dice">{meleeDice}</span> + <span class="proficiency-bonus">{value}</span> <span class="melee-type">{dmgType}</span> damage.</p>
+                        <p id="ranged-attack"><span class="font-bold"><span id="ranged-attack">{rangedAttack}</span>.</span> <span class="italic">Ranged Weapon Attack:</span> +<span class="to-hit">{value}</span> to hit, range <span class="range">{value}</span> ft., one target. <span class="italic">Hit:</span> <span class="ranged-dice">{rangedDice}</span> + <span class="proficiency-bonus">{value}</span> <span class="ranged-type">{dmgType}</span> damage.</p>
+                        <p id="breath-weapon"><span class="font-bold">Breath Weapon (<span class="dmg-resistance">{dmgResistance}</span> ).</span> The <span class="species">{species}</span> exhales <span class="dmg-resistance">{dmgResistance}</span> in either a 15-ft. cone or a 30-ft. line that's 5 ft. wide (choose the shape each time). Each creature must make a DC <span class="breath-save">{value}</span> DEX saving throw taking <span class="breath-dice">{breathDice}</span> <span class="dmg-resistance">{dmgResistance}</span> damage on a failed save or half as much damage on success.</p>
+                        </div>
+                    </div>
+                </div>
                 <h2
                     id="title"
                     class="font-tiamat text-3xl text-center"
