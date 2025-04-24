@@ -1,4 +1,3 @@
-const importedName = localStorage.getItem('generatedName') || undefined;
 const title = document.getElementById('title');
 const nameInput = document.getElementById('name-input');
 const names = {
@@ -7,6 +6,8 @@ const names = {
     surname: []
 };
 const rollBtn = document.getElementById('roll-btn');
+
+let importedName = localStorage.getItem('generatedName') || undefined;
 
 window.addEventListener('DOMContentLoaded', () => {
     if (importedName !== undefined) {
@@ -33,10 +34,11 @@ fetch('../json/names.json')
 
 function rollStats() {
     title.classList.add('hidden');
-    localStorage.removeItem('generatedName');
 
     if (importedName !== undefined) {
         nameInput.value = importedName;
+        localStorage.removeItem('generatedName');
+        importedName = undefined;
     } else {
         const gender = Math.round(Math.random());
 
@@ -48,8 +50,6 @@ function rollStats() {
 
         nameInput.value = `${firstName} ${surname}`;
     }
-
-    importedName = undefined;
 }
 
 rollBtn.addEventListener('click', rollStats);
