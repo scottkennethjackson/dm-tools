@@ -46,37 +46,60 @@
                     class="font-tiamat text-3xl text-center"
                 ></h2>
 
-                <div class="flex space-x-4">
-                    <div>
-                        <input type="radio" name="level" id="commoner-radio" class="accent-red" value="commoner" checked />
-                        <label class="text-grey" for="commoner">Commoner</label>
+                <div class="flex flex-col xs:flex-row justify-center w-full xs:space-x-4">
+                    <div class="flex justify-center space-x-2 xs:space-x-4">
+                        <div class="w-28 xs:w-fit">
+                            <input type="radio" name="level" id="commoner-radio" class="accent-red" value="commoner" checked />
+                            <label class="text-grey" for="commoner">Commoner</label>
+                        </div>
+            
+                        <div class="w-28 xs:w-fit">
+                            <input type="radio" name="level" id="adventurer-radio" class="accent-red" value="adventurer" />
+                            <label class="text-grey" for="adventurer">Adventurer</label>
+                        </div>
                     </div>
         
-                    <div>
-                        <input type="radio" name="level" id="adventurer-radio" class="accent-red" value="adventurer" />
-                        <label class="text-grey" for="adventurer">Adventurer</label>
-                    </div>
-        
-                    <div>
-                        <input type="radio" name="level" id="hero-radio" class="accent-red" value="hero" />
-                        <label class="text-grey" for="hero">Hero</label>
-                    </div>
+                    <div class="flex justify-center space-x-2 xs:space-x-4">
+                        <div class="w-28 xs:w-fit">
+                            <input type="radio" name="level" id="hero-radio" class="accent-red" value="hero" />
+                            <label class="text-grey" for="hero">Hero</label>
+                        </div>
 
-                    <div>
-                        <input type="radio" name="level" id="legend-radio" class="accent-red" value="legend" />
-                        <label class="text-grey" for="legend">Legend</label>
+                        <div class="w-28 xs:w-fit">
+                            <input type="radio" name="level" id="legend-radio" class="accent-red" value="legend" />
+                            <label class="text-grey" for="legend">Legend</label>
+                        </div>
                     </div>
                 </div>
 
+                <div class="relative w-full">
+                    <hr class="border-red">
+                    <p class="absolute -top-3 left-1/2 -translate-x-1/2 font-serif text-sm italic text-gray-300 bg-black px-1">modifiers</p>
+                </div>
+
                 <div class="flex space-x-4">
-                    <div class="flex items-center space-x-1">
-                        <label for="armed-check">Armed</label>
-                        <input type="checkbox" name="armed-check" id="armed-check" class="accent-red">
+                    <div>
+                        <label for="armor-selector">Armor Type:</label>
+                        <select
+                            name="armor-selector"
+                            id="armor-selector"
+                            class="p-1 bg-gray-100 text-black"
+                        >
+                            <option value="none" selected>None</option>
+                            <option value="light">Light</option>
+                            <option value="medium">Medium</option>
+                            <option value="heavy">Heavy</option>
+                        </select>
                     </div>
 
                     <div class="flex items-center space-x-1">
-                        <label for="spellcaster-check">Spellcaster</label>
+                        <input type="checkbox" name="armed-check" id="armed-check" class="accent-red">
+                        <label for="armed-check">Armed</label>
+                    </div>
+
+                    <div class="flex items-center space-x-1">
                         <input type="checkbox" name="spellcaster-check" id="spellcaster-check" class="accent-red">
+                        <label for="spellcaster-check">Spellcaster</label>
                     </div>
                 </div>
             </div>
