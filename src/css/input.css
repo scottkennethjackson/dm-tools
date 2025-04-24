@@ -28,6 +28,8 @@
 }
 
 @theme {
+    --breakpoint-xs: 30rem;
+    
     --color-red: #eb1313;
     --font-tiamat: "Tiamat Condensed SC", serif;
     --font-roboto: "Roboto Condensed", sans-serif;
