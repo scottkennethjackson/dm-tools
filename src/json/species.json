@@ -7,6 +7,19 @@
             "has darkvision": true,
             "range": 60
         },
+        "languages": [
+            {"core languages": "Common, Draconic"},
+            {"additional language": [
+                {"language": "Common Sign Language"},
+                {"language": "Dwarvish"},
+                {"language": "Elvish"},
+                {"language": "Giant"},
+                {"language": "Gnomish"},
+                {"language": "Goblin"},
+                {"language": "Halfling"},
+                {"language": "Orc"}
+            ]}
+        ],
         "subspecies": [
             {"type": "Black", "element": "Acid"},
             {"type": "Blue", "element": "Lightning"},
@@ -34,13 +47,26 @@
             "has darkvision": true,
             "range": 120
         },
+        "languages": [
+            {"core languages": "Common, Dwarvish"},
+            {"additional language": [
+                {"language": "Common Sign Language"},
+                {"language": "Draconic"},
+                {"language": "Elvish"},
+                {"language": "Giant"},
+                {"language": "Gnomish"},
+                {"language": "Goblin"},
+                {"language": "Halfling"},
+                {"language": "Orc"}
+            ]}
+        ],
         "traits": {
             "name": "Dwarven Resilience",
             "description": "The Dwarf has Resistance to Poison damage. They also have Advantage on saving throws they make to avoid or end the Poisoned condition."
         },
         "bonus action": {
             "name": "Stonecunning",
-            "description": "As a Bonus Action, the Dwarf gains <a href=\"https://www.dndbeyond.com/sources/dnd/free-rules/rules-glossary#Tremorsense\" target=\"_blank\">Tremorsense</a> with a range of 60 feet for 10 minutes. They must be on a stone surface or touching a stone surface to use this Tremorsense. The stone can be natural or worked."
+            "description": "As a Bonus Action, the Dwarf gains <a href=\"https://www.dndbeyond.com/sources/dnd/free-rules/rules-glossary#Tremorsense\" class=\"hover:text-red active:brightness-90 underline\" target=\"_blank\">Tremorsense</a> with a range of 60 feet for 10 minutes. They must be on a stone surface or touching a stone surface to use this Tremorsense. The stone can be natural or worked."
         }
     },
 
@@ -52,23 +78,36 @@
             "has darkvision": true,
             "range": 60
         },
+        "languages": [
+            {"core languages": "Common, Elvish"},
+            {"additional language": [
+                {"language": "Common Sign Language"},
+                {"language": "Draconic"},
+                {"language": "Dwarvish"},
+                {"language": "Giant"},
+                {"language": "Gnomish"},
+                {"language": "Goblin"},
+                {"language": "Halfling"},
+                {"language": "Orc"}
+            ]}
+        ],
         "subspecies": [
             {
                 "type": "Drow",
                 "improved darkvision": 120,
                 "spells": [
-                    {"cantrip": "<a href=\"https://www.dndbeyond.com/spells/2619058-dancing-lights\" target=\"_blank\">Dancing Lights</a>"},
-                    {"1st level": "<a href=\"https://www.dndbeyond.com/spells/2618858-faerie-fire\" target=\"_blank\">Faerie Fire</a>"},
-                    {"2nd level": "<a href=\"https://www.dndbeyond.com/spells/2619080-darkness\" target=\"_blank\">Darkness</a>"}
+                    {"cantrip": "<a href=\"https://www.dndbeyond.com/spells/2619058-dancing-lights\" class=\"hover:text-red active:brightness-90 underline\" target=\"_blank\">Dancing Lights</a>"},
+                    {"1st level": "<a href=\"https://www.dndbeyond.com/spells/2618858-faerie-fire\" class=\"hover:text-red active:brightness-90 underline\" target=\"_blank\">Faerie Fire</a>"},
+                    {"2nd level": "<a href=\"https://www.dndbeyond.com/spells/2619080-darkness\" class=\"hover:text-red active:brightness-90 underline\" target=\"_blank\">Darkness</a>"}
                 ],
                 "proficiency": "Insight"
             },
             {
                 "type": "High",
                 "spells": [
-                    {"cantrip": "<a href=\"https://www.dndbeyond.com/spells/2618893-prestidigitation\" target=\"_blank\">Prestidigitation</a>"},
-                    {"1st level": "<a href=\"https://www.dndbeyond.com/spells/2619097-detect-magic\" target=\"_blank\">Detect Magic</a>"},
-                    {"2nd level": "<a href=\"https://www.dndbeyond.com/spells/2619133-misty-step\" target=\"_blank\">Misty Step</a>"}
+                    {"cantrip": "<a href=\"https://www.dndbeyond.com/spells/2618893-prestidigitation\" class=\"hover:text-red active:brightness-90 underline\" target=\"_blank\">Prestidigitation</a>"},
+                    {"1st level": "<a href=\"https://www.dndbeyond.com/spells/2619097-detect-magic\" class=\"hover:text-red active:brightness-90 underline\" target=\"_blank\">Detect Magic</a>"},
+                    {"2nd level": "<a href=\"https://www.dndbeyond.com/spells/2619133-misty-step\" class=\"hover:text-red active:brightness-90 underline\" target=\"_blank\">Misty Step</a>"}
                 ],
                 "proficiency": "Perception"
             },
@@ -76,9 +115,9 @@
                 "type": "Wood",
                 "improved speed": 35,
                 "spells": [
-                    {"cantrip": "<a href=\"https://www.dndbeyond.com/spells/2619158-druidcraft\" target=\"_blank\">Druidcraft</a>"},
-                    {"1st level": "<a href=\"https://www.dndbeyond.com/spells/2619004-longstrider\" target=\"_blank\">Longstrider</a>"},
-                    {"2nd level": "<a href=\"https://www.dndbeyond.com/spells/2618849-pass-without-trace\" target=\"_blank\">Pass without Trace</a>"}
+                    {"cantrip": "<a href=\"https://www.dndbeyond.com/spells/2619158-druidcraft\" class=\"hover:text-red active:brightness-90 underline\" target=\"_blank\">Druidcraft</a>"},
+                    {"1st level": "<a href=\"https://www.dndbeyond.com/spells/2619004-longstrider\" class=\"hover:text-red active:brightness-90 underline\" target=\"_blank\">Longstrider</a>"},
+                    {"2nd level": "<a href=\"https://www.dndbeyond.com/spells/2618849-pass-without-trace\" class=\"hover:text-red active:brightness-90 underline\" target=\"_blank\">Pass without Trace</a>"}
                 ],
                 "proficiency": "Survival"
             }
@@ -97,20 +136,33 @@
             "has darkvision": true,
             "range": 60
         },
+        "languages": [
+            {"core languages": "Common, Gnomish"},
+            {"additional language": [
+                {"language": "Common Sign Language"},
+                {"language": "Draconic"},
+                {"language": "Dwarvish"},
+                {"language": "Elvish"},
+                {"language": "Giant"},
+                {"language": "Goblin"},
+                {"language": "Halfling"},
+                {"language": "Orc"}
+            ]}
+        ],
         "subspecies": [
             {
                 "type": "Forest",
                 "spells": [
-                    {"cantrip": "<a href=\"https://www.dndbeyond.com/spells/2619039-minor-illusion\" target=\"_blank\">Minor Illusion</a>"},
-                    {"1st level": "<a href=\"https://www.dndbeyond.com/spells/2619059-speak-with-animals\" target=\"_blank\">Speak with Animals</a>"}
+                    {"cantrip": "<a href=\"https://www.dndbeyond.com/spells/2619039-minor-illusion\" class=\"hover:text-red active:brightness-90 underline\" target=\"_blank\">Minor Illusion</a>"},
+                    {"1st level": "<a href=\"https://www.dndbeyond.com/spells/2619059-speak-with-animals\" class=\"hover:text-red active:brightness-90 underline\" target=\"_blank\">Speak with Animals</a>"}
                 ]
             },
             {
                 "type": "Rock",
                 "spells": [
                     {"cantrips": [
-                        {"cantrip": "<a href=\"https://www.dndbeyond.com/spells/2619033-mending\" target=\"_blank\">Mending</a>"},
-                        {"cantrip": "<a href=\"https://www.dndbeyond.com/spells/2618893-prestidigitation\" target=\"_blank\">Prestidigitation</a>"}
+                        {"cantrip": "<a href=\"https://www.dndbeyond.com/spells/2619033-mending\" class=\"hover:text-red active:brightness-90 underline\" target=\"_blank\">Mending</a>"},
+                        {"cantrip": "<a href=\"https://www.dndbeyond.com/spells/2618893-prestidigitation\" class=\"hover:text-red active:brightness-90 underline\" target=\"_blank\">Prestidigitation</a>"}
                     ]}
                 ]
             }
@@ -124,6 +176,19 @@
         "darkvision": {
             "has darkvision": false
         },
+        "languages": [
+            {"core languages": "Common, Giant"},
+            {"additional language": [
+                {"language": "Common Sign Language"},
+                {"language": "Draconic"},
+                {"language": "Dwarvish"},
+                {"language": "Elvish"},
+                {"language": "Gnomish"},
+                {"language": "Goblin"},
+                {"language": "Halfling"},
+                {"language": "Orc"}
+            ]}
+        ],
         "subspecies": [
             {
                 "type": "Cloud",
@@ -186,6 +251,19 @@
         "darkvision": {
             "has darkvision": false
         },
+        "languages": [
+            {"core languages": "Common, Halfling"},
+            {"additional language": [
+                {"language": "Common Sign Language"},
+                {"language": "Draconic"},
+                {"language": "Dwarvish"},
+                {"language": "Elvish"},
+                {"language": "Giant"},
+                {"language": "Gnomish"},
+                {"language": "Goblin"},
+                {"language": "Orc"}
+            ]}
+        ],
         "traits": [
             {
                 "name": "Brave",
@@ -197,7 +275,7 @@
             },
             {
                 "name": "Luck",
-                "description": "When the Halfling rolls a 1 on the d20 of a D20 Test, they can reroll the die, and must use the new roll."
+                "description": "When the Halfling rolls a 1 on the d20 of a d20 Test, they can reroll the die, and must use the new roll."
             },
             {
                 "name": "Naturally Stealthy",
@@ -213,6 +291,20 @@
         "darkvision": {
             "has darkvision": false
         },
+        "languages": [
+            {"core languages": "Common"},
+            {"additional language": [
+                {"language": "Common Sign Language"},
+                {"language": "Draconic"},
+                {"language": "Dwarvish"},
+                {"language": "Elvish"},
+                {"language": "Giant"},
+                {"language": "Gnomish"},
+                {"language": "Goblin"},
+                {"language": "Halfling"},
+                {"language": "Orc"}
+            ]}
+        ],
         "traits": {
             "name": "Resourceful",
             "description": "Once per Long Rest, the Human can reroll any die immediately after rolling it, and must use the new roll."
@@ -227,6 +319,19 @@
             "has darkvision": true,
             "range": 120
         },
+        "languages": [
+            {"core languages": "Common, Orc"},
+            {"additional language": [
+                {"language": "Common Sign Language"},
+                {"language": "Draconic"},
+                {"language": "Dwarvish"},
+                {"language": "Elvish"},
+                {"language": "Giant"},
+                {"language": "Gnomish"},
+                {"language": "Goblin"},
+                {"language": "Halfling"}
+            ]}
+        ],
         "traits": {
             "name": "Relentless Endurance",
             "description": "When the Orc is reduced to 0 Hit Points but not killed outright, they can drop to 1 Hit Point instead. Once they use this trait, they can’t do so again until they finish a Long Rest."
@@ -245,41 +350,63 @@
             "has darkvision": true,
             "range": 60
         },
+        "languages": {
+            "additional language": [
+                {"language": "Common Sign Language"},
+                {"language": "Draconic"},
+                {"language": "Dwarvish"},
+                {"language": "Elvish"},
+                {"language": "Giant"},
+                {"language": "Gnomish"},
+                {"language": "Goblin"},
+                {"language": "Halfling"},
+                {"language": "Orc"}
+            ]
+        },
         "subspecies": [
             {
                 "type": "Abyssal",
                 "damage resistance": "Poison",
+                "languages": {
+                    "core languages": "Common, Abyssal"
+                },
                 "spells": [
                     {"cantrips": [
-                        {"cantrip": "<a href=\"https://www.dndbeyond.com/spells/2277-thaumaturgy\" target=\"_blank\">Thaumaturgy</a>"},
-                        {"cantrip": "<a href=\"https://www.dndbeyond.com/spells/2618875-poison-spray\" target=\"_blank\">Poison Spray</a>"}
+                        {"cantrip": "<a href=\"https://www.dndbeyond.com/spells/2277-thaumaturgy\" class=\"hover:text-red active:brightness-90 underline\" target=\"_blank\">Thaumaturgy</a>"},
+                        {"cantrip": "<a href=\"https://www.dndbeyond.com/spells/2618875-poison-spray\" class=\"hover:text-red active:brightness-90 underline\" target=\"_blank\">Poison Spray</a>"}
                     ]},
-                    {"1st level": "<a href=\"https://www.dndbeyond.com/spells/2618935-ray-of-sickness\" target=\"_blank\">Ray of Sickness</a>"},
-                    {"2nd level": "<a href=\"https://www.dndbeyond.com/spells/2619153-hold-person\" target=\"_blank\">Hold Person</a>"}
+                    {"1st level": "<a href=\"https://www.dndbeyond.com/spells/2618935-ray-of-sickness\" class=\"hover:text-red active:brightness-90 underline\" target=\"_blank\">Ray of Sickness</a>"},
+                    {"2nd level": "<a href=\"https://www.dndbeyond.com/spells/2619153-hold-person\" class=\"hover:text-red active:brightness-90 underline\" target=\"_blank\">Hold Person</a>"}
                 ]
             },
             {
                 "type": "Chthonic",
                 "damage resistance": "Necrotic",
+                "languages": {
+                    "core languages": "Common, Abyssal & Infernal"
+                },
                 "spells": [
                     {"cantrips": [
-                        {"cantrip": "<a href=\"https://www.dndbeyond.com/spells/2618965-chill-touch\" target=\"_blank\">Chill Touch</a>"},
-                        {"cantrip": "<a href=\"https://www.dndbeyond.com/spells/2277-thaumaturgy\" target=\"_blank\">Thaumaturgy</a>"}
+                        {"cantrip": "<a href=\"https://www.dndbeyond.com/spells/2618965-chill-touch\" class=\"hover:text-red active:brightness-90 underline\" target=\"_blank\">Chill Touch</a>"},
+                        {"cantrip": "<a href=\"https://www.dndbeyond.com/spells/2277-thaumaturgy\" class=\"hover:text-red active:brightness-90 underline\" target=\"_blank\">Thaumaturgy</a>"}
                     ]},
-                    {"1st level": "<a href=\"https://www.dndbeyond.com/spells/2618866-false-life\" target=\"_blank\">False Life</a>"},
-                    {"2nd level": "<a href=\"https://www.dndbeyond.com/spells/2618926-ray-of-enfeeblement\" target=\"_blank\">Ray of Enfeeblement</a>"}
+                    {"1st level": "<a href=\"https://www.dndbeyond.com/spells/2618866-false-life\" class=\"hover:text-red active:brightness-90 underline\" target=\"_blank\">False Life</a>"},
+                    {"2nd level": "<a href=\"https://www.dndbeyond.com/spells/2618926-ray-of-enfeeblement\" class=\"hover:text-red active:brightness-90 underline\" target=\"_blank\">Ray of Enfeeblement</a>"}
                 ]
             },
             {
                 "type": "Infernal",
                 "damage resistance": "Fire",
+                "languages": {
+                    "core languages": "Common, Infernal"
+                },
                 "spells": [
                     {"cantrips": [
-                        {"cantrip": "<a href=\"https://www.dndbeyond.com/spells/2277-thaumaturgy\" target=\"_blank\">Thaumaturgy</a>"},
-                        {"cantrip": "<a href=\"https://www.dndbeyond.com/spells/2618890-fire-bolt\" target=\"_blank\">Fire Bolt</a>"}
+                        {"cantrip": "<a href=\"https://www.dndbeyond.com/spells/2277-thaumaturgy\" class=\"hover:text-red active:brightness-90 underline\" target=\"_blank\">Thaumaturgy</a>"},
+                        {"cantrip": "<a href=\"https://www.dndbeyond.com/spells/2618890-fire-bolt\" class=\"hover:text-red active:brightness-90 underline\" target=\"_blank\">Fire Bolt</a>"}
                     ]},
-                    {"1st level": "<a href=\"https://www.dndbeyond.com/spells/2619149-hellish-rebuke\" target=\"_blank\">Hellish Rebuke</a>"},
-                    {"2nd level": "<a href=\"https://www.dndbeyond.com/spells/2619080-darkness\" target=\"_blank\">Darkness</a>"}
+                    {"1st level": "<a href=\"https://www.dndbeyond.com/spells/2619149-hellish-rebuke\" class=\"hover:text-red active:brightness-90 underline\" target=\"_blank\">Hellish Rebuke</a>"},
+                    {"2nd level": "<a href=\"https://www.dndbeyond.com/spells/2619080-darkness\" class=\"hover:text-red active:brightness-90 underline\" target=\"_blank\">Darkness</a>"}
                 ]
             }
         ]
