@@ -50,41 +50,41 @@
                             class="w-full font-tiamat text-2xl"
                             placeholder="Name Your NPC"
                         >
-                        <p class="italic"><span class="size"></span> <span class="shape"></span> (<span class="species"></span>), <span class="alignment"></span></p>
+                        <p class="italic"><span id="size"></span> <span id="shape"></span> (<span id="species"></span>), <span id="alignment"></span></p>
                     </div>
 
                     <hr class="border-1 border-red">
 
                     <div>
-                        <p><span class="font-bold">Armor Class</span> <span class="ac">{value}</span><span id="display-armor"> ({armorType})</span></p>
-                        <p><span class="font-bold">Hit Points</span> <span class="hp">{value}</span></p>
-                        <p><span class="font-bold">Speed</span> <span class="speed"></span> ft.</p>
+                        <p><span class="font-bold">Armor Class</span> <span id="ac"></span> <span id="armor">(<span id="armor-type">)</span></span></p>
+                        <p><span class="font-bold">Hit Points</span> <span id="hp"></span></p>
+                        <p><span class="font-bold">Speed</span> <span id="speed"></span> ft.</p>
                     </div>
 
                     <hr class="border-1 border-red">
 
                     <div class="space-y-2">
                         <div class="flex">
-                            <p class="w-1/3 text-center"><span class="font-bold">STR</span></br><span class="str-value">{value} (+<span class="str-modifier">{value}</span> )</span> </p>
-                            <p class="w-1/3 text-center"><span class="font-bold">DEX</span></br><span class="dex-value">{value} (+<span class="dex-modifier">{value}</span> )</span> </p>
-                            <p class="w-1/3 text-center"><span class="font-bold">CON</span></br><span class="con-value">{value} (+<span class="con-modifier">{value}</span> )</span> </p>
+                            <p class="w-1/3 text-center"><span class="font-bold">STR</span></br><span id="str-value"></span> (+<span id="str-modifier"></span>) </p>
+                            <p class="w-1/3 text-center"><span class="font-bold">DEX</span></br><span id="dex-value"></span> (+<span id="dex-modifier"></span>) </p>
+                            <p class="w-1/3 text-center"><span class="font-bold">CON</span></br><span id="con-value"></span> (+<span id="con-modifier"></span>) </p>
                         </div>
                         <div class="flex justify-around">
-                            <p class="w-1/3 text-center"><span class="font-bold">INT</span></br><span class="int-value">{value} (+<span class="int-modifier">{value}</span> )</span> </p>
-                            <p class="w-1/3 text-center"><span class="font-bold">WIS</span></br><span class="wis-value">{value} (+<span class="wis-modifier">{value}</span> )</span> </p>
-                            <p class="w-1/3 text-center"><span class="font-bold">CHA</span></br><span class="cha-value">{value} (+<span class="cha-modifier">{value}</span> )</span> </p>
+                            <p class="w-1/3 text-center"><span class="font-bold">INT</span></br><span id="int-value"></span> (+<span id="int-modifier"></span>) </p>
+                            <p class="w-1/3 text-center"><span class="font-bold">WIS</span></br><span id="wis-value"></span> (+<span id="wis-modifier"></span>) </p>
+                            <p class="w-1/3 text-center"><span class="font-bold">CHA</span></br><span id="cha-value"></span> (+<span id="cha-modifier"></span>) </p>
                         </div>
                     </div>
 
                     <hr class="border-1 border-red">
 
                     <div>
-                        <p><span class="font-bold">Saving Throws</span> <span class="save1">{save1}</span> +<span class="save1-value">{value}</span>, <span class="save2">{save2}</span> +<span class="save2-value">{value}</span></p>
-                        <p><span class="font-bold">Skills</span> <span class="skill1">{skill1}</span> +<span class="skill1-value">{value}</span>, <span class="skill2">{skill2}</span> +<span class="skill2-value">{value}</span></p>
-                        <p id="display-dmg-resistance" class="hidden"><span class="font-bold">Damage Resistances</span> <span class="dmg-resistance"></span></p>
-                        <p><span class="font-bold">Senses</span> <span id="display-darkvision" class="hidden">Darkvision <span class="darkvision"></span> ft., </span>Passive Perception <span class="passive-perception">{value}</span></p>
-                        <p><span class="font-bold">Languages</span> <span class="languages"></span></p>
-                        <p><span class="font-bold">Proficiency Bonus</span> +<span class="proficiency-bonus">{value}</span></p>
+                        <p><span class="font-bold">Saving Throws</span> <span id="save1"></span> +<span id="save1-modifier"></span>, <span id="save2"></span> +<span id="save2-modifier"></span></p>
+                        <p><span class="font-bold">Skills</span> <span id="skill1"></span> +<span id="skill1-modifier"></span>, <span id="skill2"></span> +<span id="skill2-modifier"></span></p>
+                        <p id="dmg-resistances" class="hidden"><span class="font-bold">Damage Resistances</span> <span id="dmg-resistance"></span></p>
+                        <p><span class="font-bold">Senses</span> <span id="darkvision" class="hidden">Darkvision <span id="darkvision-range"></span> ft., </span>Passive Perception <span id="passive-perception"></span></p>
+                        <p><span class="font-bold">Languages</span> <span id="languages"></span></p>
+                        <p><span class="font-bold">Proficiency Bonus</span> +<span class="proficiency-bonus"></span></p>
                     </div>
 
                     <hr class="border-1 border-red">
@@ -94,13 +94,13 @@
 
                         <hr class="mb-2 border-red">
 
-                        <p><span class="font-bold"><span class="trait0-name"></span>.</span> <span class="trait0-description"></span></p>
+                        <p><span class="font-bold"><span id="trait0-name"></span>.</span> <span id="trait0-description"></span></p>
                         <div id="sub-trait" class="hidden mt-2">
-                            <p><span class="font-bold"><span class="trait1-name"></span>.</span> <span class="trait1-description"></span></p>
+                            <p><span class="font-bold"><span id="trait1-name"></span>.</span> <span id="trait1-description"></span></p>
                         </div>
                         <div id="additional-traits" class="hidden mt-2 space-y-2">
-                            <p><span class="font-bold"><span class="trait2-name"></span>.</span> <span class="trait2-description"></span></p>
-                            <p><span class="font-bold"><span class="trait3-name"></span>.</span> <span class="trait3-description"></span></p>
+                            <p><span class="font-bold"><span id="trait2-name"></span>.</span> <span id="trait2-description"></span></p>
+                            <p><span class="font-bold"><span id="trait3-name"></span>.</span> <span id="trait3-description"></span></p>
                         </div>
                     </div>
 
@@ -110,10 +110,10 @@
                         <hr class="mb-2 border-red">
 
                         <div class="space-y-2">
-                        <p id="multiattack"><span class="font-bold">Multiattack.</span> The <span class="species">{species}</span> makes two <span class="melee-attack">{meleeAttack}</span> attacks.</p>
-                        <p><span class="font-bold"><span class="melee-attack">{meleeAttack}</span>.</span> <span class="italic">Melee Weapon Attack:</span> +<span class="to-hit">{value}</span> to hit, reach <span class="reach">{value}</span> ft., one target. <span class="italic">Hit:</span> <span class="melee-dice">{meleeDice}</span> + <span class="proficiency-bonus">{value}</span> <span class="melee-type">{dmgType}</span> damage.</p>
-                        <p id="ranged-attack"><span class="font-bold"><span id="ranged-attack">{rangedAttack}</span>.</span> <span class="italic">Ranged Weapon Attack:</span> +<span class="to-hit">{value}</span> to hit, range <span class="range">{value}</span> ft., one target. <span class="italic">Hit:</span> <span class="ranged-dice">{rangedDice}</span> + <span class="proficiency-bonus">{value}</span> <span class="ranged-type">{dmgType}</span> damage.</p>
-                        <p id="breath-weapon"><span class="font-bold">Breath Weapon (<span class="dmg-resistance">{dmgResistance}</span> ).</span> The <span class="species">{species}</span> exhales <span class="dmg-resistance">{dmgResistance}</span> in either a 15-ft. cone or a 30-ft. line that's 5 ft. wide (choose the shape each time). Each creature must make a DC <span class="breath-save">{value}</span> DEX saving throw taking <span class="breath-dice">{breathDice}</span> <span class="dmg-resistance">{dmgResistance}</span> damage on a failed save or half as much damage on success.</p>
+                        <p id="multiattack"><span class="font-bold">Multiattack.</span> The <span id="attacker"></span> makes two <span id="multiattack-type"></span> attacks.</p>
+                        <p><span class="font-bold"><span id="melee-type"></span>.</span> <span class="italic">Melee Weapon Attack:</span> +<span id="melee-to-hit">{value}</span> to hit, reach <span id="melee-reach"></span> ft., one target. <span class="italic">Hit:</span> <span id="melee-dice"></span> + <span class="proficiency-bonus"></span> <span id="melee-dmg-type"></span> damage.</p>
+                        <p id="ranged-attack"><span class="font-bold"><span id="ranged-type"></span>.</span> <span class="italic">Ranged Weapon Attack:</span> +<span id="ranged-to-hit"></span> to hit, range <span id="ranged-range"></span> ft., one target. <span class="italic">Hit:</span> <span id="ranged-dice"></span> + <span class="proficiency-bonus"></span> <span id="ranged-dmg-type"></span> damage.</p>
+                        <p id="breath-weapon"><span class="font-bold">Breath Weapon (<span class="breath-dmg-type"></span>).</span> The Dragonborn exhales <span class="breath-dmg-type"></span> in either a 15-ft. cone or a 30-ft. line that's 5 ft. wide (choose the shape each time). Each creature must make a DC <span id="breath-save"></span> DEX saving throw taking <span id="breath-dice"></span> <span class="breath-dmg-type"></span> damage on a failed save or half as much damage on success.</p>
                         </div>
                     </div>
 
@@ -123,7 +123,7 @@
                         <hr class="mb-2 border-red">
 
                         <div>
-                        <p><span class="font-bold"><span class="bonus-name"></span>.</span> <span class="bonus-description"></span></p>
+                        <p><span class="font-bold"><span id="bonus-name"></span>.</span> <span id="bonus-description"></span></p>
                         </div>
                     </div>
                 </div>

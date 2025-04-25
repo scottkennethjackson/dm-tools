@@ -1,37 +1,77 @@
 const characterSheet = document.getElementById('character-sheet');
 const nameInput = document.getElementById('name-input');
-const npcSize = document.querySelector('.size');
-const npcShape = document.querySelector('.shape');
-const npcSpecies = document.querySelector('.species');
-const npcAlignment = document.querySelector('.alignment');
-const npcSpeed = document.querySelector('.speed');
-// Break
-const npcSkill1 = document.querySelector('.skill1');
-const npcSkill2 = document.querySelector('.skill2');
-const displayDmgResistance = document.getElementById('display-dmg-resistance');
-const npcDmgResistance = document.querySelector('.dmg-resistance');
-const displayDarkvision = document.getElementById('display-darkvision');
-const npcDarkvision = document.querySelector('.darkvision');
-// Break
-const npcLanguages = document.querySelector('.languages');
-// Break
+const npcSize = document.getElementById('size');
+const npcShape = document.getElementById('shape');
+const npcSpecies = document.getElementById('species');
+const npcAlignment = document.getElementById('alignment');
+const npcAC = document.getElementById('ac');
+const npcArmor = document.getElementById('armor');
+const npcArmorType = document.getElementById('armor-type');
+const npcHP = document.getElementById('hp');
+const npcSpeed = document.getElementById('speed');
+const npcSTR = document.getElementById('str-value');
+const npcSTRmod = document.getElementById('str-modifier');
+const npcDEX = document.getElementById('dex-value');
+const npcDEXmod = document.getElementById('dex-modifier');
+const npcCON = document.getElementById('con-value');
+const npcCONmod = document.getElementById('con-modifier');
+const npcINT = document.getElementById('int-value');
+const npcINTmod = document.getElementById('int-modifier');
+const npcWIS = document.getElementById('wis-value');
+const npcWISmod = document.getElementById('wis-modifier');
+const npcCHA = document.getElementById('cha-value');
+const npcCHAmod = document.getElementById('cha-modifier');
+const npcSave1 = document.getElementById('save1');
+const npcSave1Mod = document.getElementById('save1-modifier');
+const npcSave2 = document.getElementById('save2');
+const npcSave2Mod = document.getElementById('save2-modifier');
+const npcSkill1 = document.getElementById('skill1');
+const npcSkill1Mod = document.getElementById('skill1-modifier');
+const npcSkill2 = document.getElementById('skill2');
+const npcSkill2Mod = document.getElementById('skill2-modifier');
+const dmgResistances = document.getElementById('dmg-resistance');
+const npcDmgResistance = document.getElementById('dmg-resistance');
+const darkvision = document.getElementById('darkvision');
+const npcDarkvision = document.getElementById('darkvision-range');
+const npcPassivePerception = document.getElementById('passive-perception')
+const npcLanguages = document.getElementById('languages');
+const npcProfBonus = document.querySelectorAll('.proficiency-bonus');
 const traits = document.getElementById('traits');
-const trait0Name = document.querySelector('.trait0-name');
-const trait0Description = document.querySelector('.trait0-description');
+const trait0Name = document.getElementById('trait0-name');
+const trait0Description = document.getElementById('trait0-description');
 const subTrait = document.getElementById('sub-trait');
+const trait1Name = document.getElementById('trait1-name');
+const trait1Description = document.getElementById('trait1-description');
 const additionalTraits = document.getElementById('additional-traits');
-const trait1Name = document.querySelector('.trait1-name');
-const trait1Description = document.querySelector('.trait1-description');
-const trait2Name = document.querySelector('.trait2-name');
-const trait2Description = document.querySelector('.trait2-description');
-const trait3Name = document.querySelector('.trait3-name');
-const trait3Description = document.querySelector('.trait3-description');
-// Break
+const trait2Name = document.getElementById('trait2-name');
+const trait2Description = document.getElementById('trait2-description');
+const trait3Name = document.getElementById('trait3-name');
+const trait3Description = document.getElementById('trait3-description');
+const actions = document.getElementById('actions');
+const multiattack = document.getElementById('multiattack');
+const attacker = document.getElementById('attacker');
+const multiattackType = document.getElementById('multiattack-type');
+const meleeType = document.getElementById('melee-type');
+const meleeToHit = document.getElementById('melee-to-hit');
+const meleeReach = document.getElementById('melee-reach');
+const meleeDice = document.getElementById('melee-dice');
+const meleeDmgType = document.getElementById('ranged-dmg-type');
+const rangedAttack = document.getElementById('ranged-attack');
+const rangedType = document.getElementById('ranged-type');
+const rangedToHit = document.getElementById('ranged-to-hit');
+const rangedRange = document.getElementById('ranged-range');
+const rangedDice = document.getElementById('ranged-dice');
+const rangedDmgType = document.getElementById('ranged-dmg-type');
+const breathWeapon = document.getElementById('breath-weapon');
+const breathDmgType = document.querySelectorAll('.breath-dmg-type');
+const breathSave = document.getElementById('breath-save');
+const breathDice = document.getElementById('breath-dice');
 const bonusActions = document.getElementById('bonus-actions');
-const bonusName = document.querySelector('.bonus-name');
-const bonusDescription = document.querySelector('.bonus-description');
-// Break
+const bonusName = document.getElementById('bonus-name');
+const bonusDescription = document.getElementById('bonus-description');
+
 const title = document.getElementById('title');
+// Modifiers
 const rollBtn = document.getElementById('roll-btn');
 
 let importedName = localStorage.getItem('generatedName');
@@ -85,11 +125,11 @@ Promise.all([
         console.error("Error loading JSON files:", error);
     });
 
-function rollStats() {
-    title.classList.add('hidden');
-    characterSheet.classList.remove('hidden');
+function getRandom(array) {
+    return array[Math.floor(Math.random() * array.length)];
+}
 
-    // Name generation
+function rollName() {
     if (importedName) {
         nameInput.value = importedName;
         localStorage.removeItem('generatedName');
@@ -100,8 +140,9 @@ function rollStats() {
         const surname = getRandom(names.surname);
         nameInput.value = `${firstName} ${surname}`;
     }
+}
 
-    // Species-based stats
+function rollSpecies() {
     const speciesList = ['Dragonborn', 'Dwarf', 'Elf', 'Gnome', 'Goliath', 'Halfling', 'Human', 'Orc', 'Tiefling'];
     const species = getRandom(speciesList);
     const speciesInfo = speciesData[species];
@@ -135,16 +176,16 @@ function rollStats() {
     let dmgResistance = '';
 
     if (species === 'Dragonborn') {
-        displayDmgResistance.classList.remove('hidden');
+        dmgResistances.classList.remove('hidden');
         dmgResistance = selectedSubspecies.element;
     } else if (species === 'Tiefling') {
-        displayDmgResistance.classList.remove('hidden');
+        dmgResistances.classList.remove('hidden');
         dmgResistance = selectedSubspecies['damage resistance'];
     } else if (speciesInfo['damage resistance']) {
-        displayDmgResistance.classList.remove('hidden');
+        dmgResistances.classList.remove('hidden');
         dmgResistance = speciesInfo['damage resistance'];
     } else {
-        displayDmgResistance.classList.add('hidden');
+        dmgResistances.classList.add('hidden');
     }
     
     npcDmgResistance.textContent = dmgResistance || '';
@@ -152,13 +193,13 @@ function rollStats() {
     let darkvisionRange = 0;
 
     if (selectedSubspecies?.['improved darkvision']) {
-        displayDarkvision.classList.remove('hidden');
+        darkvision.classList.remove('hidden');
         darkvisionRange = selectedSubspecies['improved darkvision'];
     } else if (speciesInfo.darkvision['has darkvision']) {
-        displayDarkvision.classList.remove('hidden');
+        darkvision.classList.remove('hidden');
         darkvisionRange = speciesInfo.darkvision.range;
     } else {
-        displayDarkvision.classList.add('hidden');
+        darkvision.classList.add('hidden');
     }
     
     npcDarkvision.textContent = darkvisionRange || '';
@@ -244,8 +285,9 @@ function rollStats() {
     } else {
         bonusActions.classList.add('hidden');
     }
-        
-    // Alignment
+}
+
+function rollAlignment() {
     const lawfulness = getRandom(['Chaotic', 'Neutral', 'Lawful']);
     const goodness = getRandom(['Evil', 'Neutral', 'Good']);
 
@@ -253,8 +295,13 @@ function rollStats() {
         lawfulness === goodness ? 'True Neutral' : `${lawfulness} ${goodness}` || '';
 }
 
-function getRandom(array) {
-    return array[Math.floor(Math.random() * array.length)];
+function rollNPC() {
+    title.classList.add('hidden');
+    characterSheet.classList.remove('hidden');
+
+    rollName();
+    rollSpecies();
+    rollAlignment();
 }
 
-rollBtn.addEventListener('click', rollStats);
+rollBtn.addEventListener('click', rollNPC);
