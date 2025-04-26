@@ -5,61 +5,60 @@ const npcShape = document.getElementById('shape');
 const npcSpecies = document.getElementById('species');
 const npcAlignment = document.getElementById('alignment');
 const npcAC = document.getElementById('ac');
-const npcArmor = document.getElementById('armor');
+const armor = document.getElementById('armor');
 const npcArmorType = document.getElementById('armor-type');
 const npcHP = document.getElementById('hp');
 const npcSpeed = document.getElementById('speed');
-const npcSTR = document.getElementById('str-value');
-const npcSTRmod = document.getElementById('str-modifier');
-const npcDEX = document.getElementById('dex-value');
-const npcDEXmod = document.getElementById('dex-modifier');
-const npcCON = document.getElementById('con-value');
-const npcCONmod = document.getElementById('con-modifier');
-const npcINT = document.getElementById('int-value');
-const npcINTmod = document.getElementById('int-modifier');
-const npcWIS = document.getElementById('wis-value');
-const npcWISmod = document.getElementById('wis-modifier');
-const npcCHA = document.getElementById('cha-value');
-const npcCHAmod = document.getElementById('cha-modifier');
+const npcSTR = document.getElementById('str');
+const npcSTRmodifier = document.getElementById('str-modifier');
+const npcDEX = document.getElementById('dex');
+const npcDEXmodifier = document.getElementById('dex-modifier');
+const npcCON = document.getElementById('con');
+const npcCONmodifier = document.getElementById('con-modifier');
+const npcINT = document.getElementById('int');
+const npcINTmodifier = document.getElementById('int-modifier');
+const npcWIS = document.getElementById('wis');
+const npcWISmodifier = document.getElementById('wis-modifier');
+const npcCHA = document.getElementById('cha');
+const npcCHAmodifier = document.getElementById('cha-modifier');
 const npcSave1 = document.getElementById('save1');
-const npcSave1Mod = document.getElementById('save1-modifier');
+const npcSave1Modifier = document.getElementById('save1-modifier');
 const npcSave2 = document.getElementById('save2');
-const npcSave2Mod = document.getElementById('save2-modifier');
+const npcSave2Modifier = document.getElementById('save2-modifier');
 const npcSkill1 = document.getElementById('skill1');
-const npcSkill1Mod = document.getElementById('skill1-modifier');
+const npcSkill1Modifier = document.getElementById('skill1-modifier');
 const npcSkill2 = document.getElementById('skill2');
-const npcSkill2Mod = document.getElementById('skill2-modifier');
-const dmgResistances = document.getElementById('dmg-resistance');
-const npcDmgResistance = document.getElementById('dmg-resistance');
+const npcSkill2Modifier = document.getElementById('skill2-modifier');
+const dmgResistances = document.getElementById('dmg-resistances');
+const npcResistance = document.getElementById('resistance');
 const darkvision = document.getElementById('darkvision');
-const npcDarkvision = document.getElementById('darkvision-range');
+const npcDarkvisionRange = document.getElementById('darkvision-range');
 const npcPassivePerception = document.getElementById('passive-perception')
 const npcLanguages = document.getElementById('languages');
-const npcProfBonus = document.querySelectorAll('.proficiency-bonus');
+const npcProficiencyBonus = document.querySelectorAll('.proficiency-bonus');
 const traits = document.getElementById('traits');
-const trait0Name = document.getElementById('trait0-name');
-const trait0Description = document.getElementById('trait0-description');
-const subTrait = document.getElementById('sub-trait');
-const trait1Name = document.getElementById('trait1-name');
+const trait1 = document.getElementById('trait1');
 const trait1Description = document.getElementById('trait1-description');
-const additionalTraits = document.getElementById('additional-traits');
-const trait2Name = document.getElementById('trait2-name');
+const subTrait = document.getElementById('sub-trait');
+const trait2 = document.getElementById('trait2');
 const trait2Description = document.getElementById('trait2-description');
-const trait3Name = document.getElementById('trait3-name');
+const additionalTraits = document.getElementById('additional-traits');
+const trait3 = document.getElementById('trait3');
 const trait3Description = document.getElementById('trait3-description');
+const trait4 = document.getElementById('trait4');
+const trait4Description = document.getElementById('trait4-description');
 const actions = document.getElementById('actions');
 const multiattack = document.getElementById('multiattack');
 const attacker = document.getElementById('attacker');
 const multiattackType = document.getElementById('multiattack-type');
-const meleeType = document.getElementById('melee-type');
-const meleeToHit = document.getElementById('melee-to-hit');
-const meleeReach = document.getElementById('melee-reach');
+const meleeWeapon = document.getElementById('melee-weapon');
+const toHit = document.querySelectorAll('.to-hit');
+const reach = document.getElementById('reach');
 const meleeDice = document.getElementById('melee-dice');
 const meleeDmgType = document.getElementById('ranged-dmg-type');
 const rangedAttack = document.getElementById('ranged-attack');
-const rangedType = document.getElementById('ranged-type');
-const rangedToHit = document.getElementById('ranged-to-hit');
-const rangedRange = document.getElementById('ranged-range');
+const rangedWeapon = document.getElementById('ranged-weapon');
+const range = document.getElementById('range');
 const rangedDice = document.getElementById('ranged-dice');
 const rangedDmgType = document.getElementById('ranged-dmg-type');
 const breathWeapon = document.getElementById('breath-weapon');
@@ -176,8 +175,13 @@ function rollSpecies() {
     let dmgResistance = '';
 
     if (species === 'Dragonborn') {
+        const element = selectedSubspecies.element;
+
         dmgResistances.classList.remove('hidden');
-        dmgResistance = selectedSubspecies.element;
+        dmgResistance = element;
+        rangedAttack.classList.add('hidden');
+        breathWeapon.classList.remove('hidden');
+        breathDmgType.forEach((instance) => instance.textContent = element);
     } else if (species === 'Tiefling') {
         dmgResistances.classList.remove('hidden');
         dmgResistance = selectedSubspecies['damage resistance'];
@@ -188,7 +192,7 @@ function rollSpecies() {
         dmgResistances.classList.add('hidden');
     }
     
-    npcDmgResistance.textContent = dmgResistance || '';
+    npcResistance.textContent = dmgResistance || '';
 
     let darkvisionRange = 0;
 
@@ -202,7 +206,7 @@ function rollSpecies() {
         darkvision.classList.add('hidden');
     }
     
-    npcDarkvision.textContent = darkvisionRange || '';
+    npcDarkvisionRange.textContent = darkvisionRange || '';
 
     let languages = '';
 
@@ -245,10 +249,10 @@ function rollSpecies() {
         additionalTraits.classList.remove('hidden');
 
         const traitElements = [
-            [trait0Name, trait0Description],
-            [trait1Name, trait1Description],
-            [trait2Name, trait2Description],
-            [trait3Name, trait3Description],
+            [trait1, trait1Description],
+            [trait2, trait2Description],
+            [trait3, trait3Description],
+            [trait4, trait4Description]
         ];
 
         traitElements.forEach(([nameElement, descElement], index) => {
@@ -261,17 +265,17 @@ function rollSpecies() {
         subTrait.classList.remove('hidden');
         additionalTraits.classList.add('hidden');
 
-        trait0Name.textContent = speciesInfo.traits.name || '';
-        trait0Description.textContent = speciesInfo.traits.description || '';
-        trait1Name.textContent = selectedSubspecies['subspecies trait'].name || '';
-        trait1Description.textContent = selectedSubspecies['subspecies trait'].description || '';
+        trait1.textContent = speciesInfo.traits.name || '';
+        trait1Description.textContent = speciesInfo.traits.description || '';
+        trait2.textContent = selectedSubspecies['subspecies trait'].name || '';
+        trait2Description.textContent = selectedSubspecies['subspecies trait'].description || '';
     } else if (speciesInfo?.traits) {
         traits.classList.remove('hidden');
         subTrait.classList.add('hidden');
         additionalTraits.classList.add('hidden');
 
-        trait0Name.textContent = speciesInfo.traits.name || '';
-        trait0Description.textContent = speciesInfo.traits.description || '';
+        trait1.textContent = speciesInfo.traits.name || '';
+        trait1Description.textContent = speciesInfo.traits.description || '';
     } else {
         traits.classList.add('hidden');
         subTrait.classList.add('hidden');
