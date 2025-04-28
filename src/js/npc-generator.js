@@ -2,6 +2,7 @@ const title = document.getElementById("title");
 const commoner = document.getElementById("commoner-radio");
 const adventurer = document.getElementById("adventurer-radio");
 const hero = document.getElementById("hero-radio");
+const traits = document.getElementById("traits");
 
 let importedName = localStorage.getItem("generatedName");
 let names = { male: [], female: [], surname: [] };
@@ -235,7 +236,6 @@ function rollSpecies() {
 
   document.getElementById("languages").textContent = languages || "";
 
-  const traits = document.getElementById("traits");
   const mainTrait = document.getElementById("main-trait");
   const subTrait = document.getElementById("sub-trait");
   const additionalTraits = document.getElementById("additional-traits");
@@ -626,7 +626,53 @@ function getWeapons() {
   else breathDMG.textContent = "1d10";
 }
 
-// function getSpells() {}
+function getSpells() {
+    const spellcasting = document.getElementById("spellcasting");
+    
+    if (!document.getElementById("spellcaster-check").checked) {
+        spellcasting.classList.add("hidden");
+    } else {
+        traits.classList.remove("hidden");
+        spellcasting.classList.remove("hidden");
+    }
+
+    const nth = document.getElementById("nth")
+    const spellcastingLevel  = document.getElementById("spellcasting-level");
+
+    if (levelMultiplier === 1) {
+        nth.textContent = "st";
+    } else if (levelMultiplier === 2) {
+        nth.textContent = "nd";
+    } else if (levelMultiplier === 3) {
+        nth.textContent = "rd";
+    } else {
+        nth.textContent = "th";
+    }
+
+    if (levelMultiplier === 8 || levelMultiplier === 11 || levelMultiplier === 18) {
+        spellcastingLevel.textContent = `an ${levelMultiplier}`;
+    } else {
+        spellcastingLevel.textContent = `a ${levelMultiplier}`;
+    }
+
+    const spellcastingAbility = document.getElementById("spellcasting-ability");
+    const spellSave = document.getElementById("spell-save");
+    const spellToHit = document.getElementById("spell-to-hit");
+
+    if (npcModifiers.CHA > npcModifiers.WIS && npcModifiers.CHA > npcModifiers.INT) {
+        spellcastingAbility.textContent = "Charisma";
+        spellSave.textContent = 8 + npcModifiers.CHA + proficiencyBonus;
+        spellToHit.textContent = npcModifiers.CHA + proficiencyBonus;
+    } else if (npcModifiers.WIS > npcModifiers.INT) {
+        spellcastingAbility.textContent = "Wisdom";
+        spellSave.textContent = 8 + npcModifiers.WIS + proficiencyBonus;
+        spellToHit.textContent = npcModifiers.WIS + proficiencyBonus;
+    } else {
+        spellcastingAbility.textContent = "Intelligence";
+        spellSave.textContent = 8 + npcModifiers.INT + proficiencyBonus;
+        spellToHit.textContent = npcModifiers.INT + proficiencyBonus;
+    }
+}
 
 function rollNPC() {
   title.classList.add("hidden");
