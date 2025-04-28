@@ -1,5 +1,4 @@
-const npcArmorType = document.getElementById("armor-type");
-const actions = document.getElementById("actions");
+const unarmedStrike = document.getElementById("unarmed-strike");
 const multiattack = document.getElementById("multiattack");
 const attacker = document.getElementById("attacker");
 const multiattackType = document.getElementById("multiattack-type");
@@ -16,24 +15,24 @@ const rangedDmgType = document.getElementById("ranged-dmg-type");
 const breathWeapon = document.getElementById("breath-weapon");
 const breathSave = document.getElementById("breath-save");
 const breathDice = document.getElementById("breath-dice");
-const commoner = document.getElementById("commoner-radio");
-const adventurer = document.getElementById("adventurer-radio");
-const hero = document.getElementById("hero-radio");
-const legend = document.getElementById("legend-radio");
 
 // Start here
 const title = document.getElementById("title");
-const npcModifiers = {};
+const commoner = document.getElementById("commoner-radio");
+const adventurer = document.getElementById("adventurer-radio");
+const hero = document.getElementById("hero-radio");
 
 let importedName = localStorage.getItem("generatedName");
 let names = { male: [], female: [], surname: [] };
 let speciesData = {};
 let currentSpecies = null;
 let currentSubspecies = null;
+let npcModifiers = {};
 let proficiencyData = {};
 let proficiencyBonus = 2;
 let baseHP = 8;
 let levelMultiplier = 1;
+let armorData = {};
 
 window.addEventListener("DOMContentLoaded", () => {
   title.innerText = importedName
@@ -42,55 +41,60 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 Promise.all([
-  fetch("../json/names.json").then((res) => {
-    if (!res.ok) throw new Error("Failed to load names.json");
-    return res.json();
-  }),
-  fetch("../json/species.json").then((res) => {
-    if (!res.ok) throw new Error("Failed to load species.json");
-    return res.json();
-  }),
-  fetch("../json/proficiencies.json").then((res) => {
-    if (!res.ok) throw new Error("Failed to load proficiencies.json");
-    return res.json();
-  }),
-])
-  .then(([namesData, speciesJson, proficienciesJson]) => {
-    names.male = namesData["first names"]?.male.map((obj) => obj.name) || [];
-    names.female =
-      namesData["first names"]?.female.map((obj) => obj.name) || [];
-    names.surname = namesData.surnames?.map((obj) => obj.name) || [];
-
-    for (const speciesInfo of Object.values(speciesJson)) {
-      let coreLangs = "";
-      let additionalLang = [];
-
-      if (Array.isArray(speciesInfo.languages)) {
-        for (const entry of speciesInfo.languages) {
-          if (entry["core languages"]) coreLangs = entry["core languages"];
-          if (entry["additional language"]) {
-            additionalLang = entry["additional language"].map(
-              (l) => l.language
-            );
+    fetch("../json/names.json").then((res) => {
+      if (!res.ok) throw new Error("Failed to load names.json");
+      return res.json();
+    }),
+    fetch("../json/species.json").then((res) => {
+      if (!res.ok) throw new Error("Failed to load species.json");
+      return res.json();
+    }),
+    fetch("../json/proficiencies.json").then((res) => {
+      if (!res.ok) throw new Error("Failed to load proficiencies.json");
+      return res.json();
+    }),
+    fetch("../json/armor.json").then((res) => {
+      if (!res.ok) throw new Error("Failed to load armor.json");
+      return res.json();
+    }),
+  ])
+  .then(([namesData, speciesJson, proficienciesJson, armorJson]) => {
+      names.male = namesData["first names"]?.male.map((obj) => obj.name) || [];
+      names.female = namesData["first names"]?.female.map((obj) => obj.name) || [];
+      names.surname = namesData.surnames?.map((obj) => obj.name) || [];
+  
+      for (const speciesInfo of Object.values(speciesJson)) {
+        let coreLangs = "";
+        let additionalLang = [];
+  
+        if (Array.isArray(speciesInfo.languages)) {
+          for (const entry of speciesInfo.languages) {
+            if (entry["core languages"]) coreLangs = entry["core languages"];
+            if (entry["additional language"]) {
+              additionalLang = entry["additional language"].map(
+                (l) => l.language
+              );
+            }
           }
-        }
-      } else if (typeof speciesInfo.languages === "object") {
-        coreLangs = speciesInfo.languages["core languages"] ?? "";
-        additionalLang =
-          speciesInfo.languages["additional language"]?.map(
+        } else if (typeof speciesInfo.languages === "object") {
+          coreLangs = speciesInfo.languages["core languages"] ?? "";
+          additionalLang = speciesInfo.languages["additional language"]?.map(
             (l) => l.language
           ) ?? [];
+        }
+  
+        speciesInfo._coreLanguages = coreLangs;
+        speciesInfo._additionalLanguage = additionalLang;
       }
-
-      speciesInfo._coreLanguages = coreLangs;
-      speciesInfo._additionalLanguage = additionalLang;
-    }
-    speciesData = speciesJson;
-    proficiencyData = proficienciesJson;
+  
+      speciesData = speciesJson;
+      proficiencyData = proficienciesJson;
+      armorData = armorJson;
   })
   .catch((error) => {
-    console.error("Error loading JSON files:", error);
+      console.error("Error loading JSON files:", error);
   });
+  
 
 function getRandom(array) {
   return array[Math.floor(Math.random() * array.length)];
@@ -126,12 +130,14 @@ function rollSpecies() {
   const species = getRandom(speciesList);
   const speciesInfo = speciesData[species];
   const npcSpecies = document.getElementById("species");
+  const npc = document.querySelectorAll("npc");
 
   if (!speciesInfo) {
     console.warn(`Species data for "${species}" not found.`);
     return;
   }
 
+  document.querySelectorAll(".npc").forEach((instance => (instance.textContent = species)));
   document.getElementById("size").textContent = speciesInfo.size || "";
   document.getElementById("shape").textContent =
     speciesInfo["creature type"] || "";
@@ -238,6 +244,7 @@ function rollSpecies() {
   document.getElementById("languages").textContent = languages || "";
 
   const traits = document.getElementById("traits");
+  const mainTrait = document.getElementById("main-trait");
   const subTrait = document.getElementById("sub-trait");
   const additionalTraits = document.getElementById("additional-traits");
 
@@ -252,6 +259,7 @@ function rollSpecies() {
 
   if (species === "Halfling" && Array.isArray(speciesInfo?.traits)) {
     traits.classList.remove("hidden");
+    mainTrait.classList.remove("hidden");
     subTrait.classList.remove("hidden");
     additionalTraits.classList.remove("hidden");
 
@@ -269,6 +277,7 @@ function rollSpecies() {
     });
   } else if (species === "Goliath") {
     traits.classList.remove("hidden");
+    mainTrait.classList.remove("hidden");
     subTrait.classList.remove("hidden");
     additionalTraits.classList.add("hidden");
 
@@ -279,6 +288,7 @@ function rollSpecies() {
       selectedSubspecies["subspecies trait"].description || "";
   } else if (speciesInfo?.traits) {
     traits.classList.remove("hidden");
+    mainTrait.classList.remove("hidden");
     subTrait.classList.add("hidden");
     additionalTraits.classList.add("hidden");
 
@@ -286,6 +296,7 @@ function rollSpecies() {
     trait1Description.textContent = speciesInfo.traits.description || "";
   } else {
     traits.classList.add("hidden");
+    mainTrait.classList.add("hidden");
     subTrait.classList.add("hidden");
     additionalTraits.classList.add("hidden");
   }
@@ -481,14 +492,53 @@ function rollArmor() {
   const armor = document.getElementById("armor");
   const ac = document.getElementById("ac");
   const baseAC = 10 + npcModifiers.DEX;
+  const armorType = document.getElementById("armor-type");
 
   if (selection === "" || selection === "none") {
     armor.classList.add("hidden");
     ac.textContent = baseAC;
   } else {
     armor.classList.remove("hidden");
+
+    const stealthDisadvantage = document.getElementById('stealth-disadvantage');
+    const checkArmorMods = (armorToCheck) => {
+        const overencumbered = document.getElementById('overencumbered');
+
+        if (armorToCheck['stealth disadvantage']) {
+            traits.classList.remove('hidden');
+            stealthDisadvantage.classList.remove('hidden');
+        } else {
+            stealthDisadvantage.classList.add('hidden');
+        }
+
+        if (armorToCheck['dex max'] && npcModifiers.DEX > 2) {
+            ac.textContent = armorToCheck.ac + 2;
+        } else ac.textContent = armorToCheck.ac + npcModifiers.DEX;
+
+        if (armorToCheck['str min'] > npcModifiers.STR) {
+            overencumbered.classList.remove('hidden');
+        } else {
+            overencumbered.classList.add('hidden');
+        }
+
+        armorType.textContent = armorToCheck.name;
+    }
+
+    if (selection === "light") {
+        const selectedArmor = armorData.light[Math.floor(Math.random() * armorData.light.length)];
+        checkArmorMods(selectedArmor);
+    } else if (selection === "medium") {
+        const selectedArmor = armorData.medium[Math.floor(Math.random() * armorData.medium.length)];
+        checkArmorMods(selectedArmor);
+    } else {
+        const selectedArmor = armorData.heavy[Math.floor(Math.random() * armorData.heavy.length)];
+        checkArmorMods(selectedArmor);
+    }    
   }
 }
+
+// function getWeapons() {}
+// function getSpells() {}
 
 function rollNPC() {
   title.classList.add("hidden");
@@ -501,6 +551,8 @@ function rollNPC() {
   rollStats();
   rollProficiencies();
   rollArmor();
+  getWeapons();
+  getSpells();
 }
 
 document.getElementById("roll-btn").addEventListener("click", rollNPC);

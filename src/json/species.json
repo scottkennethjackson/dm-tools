@@ -275,7 +275,7 @@
             },
             {
                 "name": "Luck",
-                "description": "When the Halfling rolls a 1 on the d20 of a d20 Test, they can reroll the die, and must use the new roll."
+                "description": "When the Halfling rolls a 1 on the d20 of a D20 Test, they can reroll the die, and must use the new roll."
             },
             {
                 "name": "Naturally Stealthy",

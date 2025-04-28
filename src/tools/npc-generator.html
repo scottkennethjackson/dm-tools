@@ -56,7 +56,7 @@
                     <hr class="border-1 border-red">
 
                     <div>
-                        <p><span class="font-bold">Armor Class</span> <span id="ac"></span> <span id="armor">(<span id="armor-type">)</span></span></p>
+                        <p><span class="font-bold">Armor Class</span> <span id="ac"></span> <span id="armor">(<span id="armor-type"></span>)</span></p>
                         <p><span class="font-bold">Hit Points</span> <span id="hp"></span></p>
                         <p><span class="font-bold">Speed</span> <span id="speed"></span> ft.</p>
                     </div>
@@ -94,7 +94,7 @@
 
                         <hr class="mb-2 border-red">
 
-                        <p><span class="font-bold"><span id="trait1"></span>.</span> <span id="trait1-description"></span></p>
+                        <p id="main-trait" class="hidden"><span class="font-bold"><span id="trait1"></span>.</span> <span id="trait1-description"></span></p>
                         <div id="sub-trait" class="hidden mt-2">
                             <p><span class="font-bold"><span id="trait2"></span>.</span> <span id="trait2-description"></span></p>
                         </div>
@@ -102,6 +102,8 @@
                             <p><span class="font-bold"><span id="trait3"></span>.</span> <span id="trait3-description"></span></p>
                             <p><span class="font-bold"><span id="trait4"></span>.</span> <span id="trait4-description"></span></p>
                         </div>
+                        <p id="stealth-disadvantage" class="hidden mt-2"><span class="font-bold">Stealth Disadvantage.</span> The <span class="npc"></span> has Disadvantage on Dexterity (Stealth) checks.</p>
+                        <p id="overencumbered" class="hidden mt-2"><span class="font-bold">Over-Encumbered.</span> The <span class="npc"></span> has Disadvantage on any D20 Test that involves Strength or Dexterity, and their speed is reduced by 10 feet.</p>
                     </div>
 
                     <div id="actions" class="mt-4">
@@ -110,7 +112,7 @@
                         <hr class="mb-2 border-red">
 
                         <div class="space-y-2">
-                        <p id="multiattack"><span class="font-bold">Multiattack.</span> The <span id="attacker"></span> makes two <span id="multiattack-type"></span> attacks.</p>
+                        <p id="multiattack"><span class="font-bold">Multiattack.</span> The <span class="npc"></span> makes two <span id="multiattack-type"></span> attacks.</p>
                         <p><span class="font-bold"><span id="melee-weapon"></span>.</span> <span class="italic">Melee Weapon Attack:</span> +<span class="to-hit"></span> to hit, reach <span id="reach"></span> ft., one target. <span class="italic">Hit:</span> <span id="melee-dice"></span> + <span class="proficiency-bonus"></span> <span id="melee-dmg-type"></span> damage.</p>
                         <p id="ranged-attack"><span class="font-bold"><span id="ranged-weapon"></span>.</span> <span class="italic">Ranged Weapon Attack:</span> +<span class="to-hit"></span> to hit, range <span id="range"></span> ft., one target. <span class="italic">Hit:</span> <span id="ranged-dice"></span> + <span class="proficiency-bonus"></span> <span id="ranged-dmg-type"></span> damage.</p>
                         <p id="breath-weapon" class="hidden"><span class="font-bold">Breath Weapon (<span class="breath-dmg-type"></span>).</span> The Dragonborn exhales <span class="breath-dmg-type"></span> in either a 15-ft. cone or a 30-ft. line that's 5 ft. wide (choose the shape each time). Each creature must make a DC <span id="breath-save"></span> DEX saving throw taking <span id="breath-dice"></span> <span class="breath-dmg-type"></span> damage on a failed save or half as much damage on success.</p>
