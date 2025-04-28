@@ -1,22 +1,3 @@
-const unarmedStrike = document.getElementById("unarmed-strike");
-const multiattack = document.getElementById("multiattack");
-const attacker = document.getElementById("attacker");
-const multiattackType = document.getElementById("multiattack-type");
-const meleeWeapon = document.getElementById("melee-weapon");
-const toHit = document.querySelectorAll(".to-hit");
-const reach = document.getElementById("reach");
-const meleeDice = document.getElementById("melee-dice");
-const meleeDmgType = document.getElementById("ranged-dmg-type");
-const rangedAttack = document.getElementById("ranged-attack");
-const rangedWeapon = document.getElementById("ranged-weapon");
-const range = document.getElementById("range");
-const rangedDice = document.getElementById("ranged-dice");
-const rangedDmgType = document.getElementById("ranged-dmg-type");
-const breathWeapon = document.getElementById("breath-weapon");
-const breathSave = document.getElementById("breath-save");
-const breathDice = document.getElementById("breath-dice");
-
-// Start here
 const title = document.getElementById("title");
 const commoner = document.getElementById("commoner-radio");
 const adventurer = document.getElementById("adventurer-radio");
@@ -33,6 +14,7 @@ let proficiencyBonus = 2;
 let baseHP = 8;
 let levelMultiplier = 1;
 let armorData = {};
+let weaponsData = {};
 
 window.addEventListener("DOMContentLoaded", () => {
   title.innerText = importedName
@@ -41,32 +23,38 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 Promise.all([
-    fetch("../json/names.json").then((res) => {
-      if (!res.ok) throw new Error("Failed to load names.json");
-      return res.json();
-    }),
-    fetch("../json/species.json").then((res) => {
-      if (!res.ok) throw new Error("Failed to load species.json");
-      return res.json();
-    }),
-    fetch("../json/proficiencies.json").then((res) => {
-      if (!res.ok) throw new Error("Failed to load proficiencies.json");
-      return res.json();
-    }),
-    fetch("../json/armor.json").then((res) => {
-      if (!res.ok) throw new Error("Failed to load armor.json");
-      return res.json();
-    }),
-  ])
-  .then(([namesData, speciesJson, proficienciesJson, armorJson]) => {
+  fetch("../json/names.json").then((res) => {
+    if (!res.ok) throw new Error("Failed to load names.json");
+    return res.json();
+  }),
+  fetch("../json/species.json").then((res) => {
+    if (!res.ok) throw new Error("Failed to load species.json");
+    return res.json();
+  }),
+  fetch("../json/proficiencies.json").then((res) => {
+    if (!res.ok) throw new Error("Failed to load proficiencies.json");
+    return res.json();
+  }),
+  fetch("../json/armor.json").then((res) => {
+    if (!res.ok) throw new Error("Failed to load armor.json");
+    return res.json();
+  }),
+  fetch("../json/weapons.json").then((res) => {
+    if (!res.ok) throw new Error("Failed to load weapons.json");
+    return res.json();
+  }),
+])
+  .then(
+    ([namesData, speciesJson, proficienciesJson, armorJson, weaponsJson]) => {
       names.male = namesData["first names"]?.male.map((obj) => obj.name) || [];
-      names.female = namesData["first names"]?.female.map((obj) => obj.name) || [];
+      names.female =
+        namesData["first names"]?.female.map((obj) => obj.name) || [];
       names.surname = namesData.surnames?.map((obj) => obj.name) || [];
-  
+
       for (const speciesInfo of Object.values(speciesJson)) {
         let coreLangs = "";
         let additionalLang = [];
-  
+
         if (Array.isArray(speciesInfo.languages)) {
           for (const entry of speciesInfo.languages) {
             if (entry["core languages"]) coreLangs = entry["core languages"];
@@ -78,23 +66,25 @@ Promise.all([
           }
         } else if (typeof speciesInfo.languages === "object") {
           coreLangs = speciesInfo.languages["core languages"] ?? "";
-          additionalLang = speciesInfo.languages["additional language"]?.map(
-            (l) => l.language
-          ) ?? [];
+          additionalLang =
+            speciesInfo.languages["additional language"]?.map(
+              (l) => l.language
+            ) ?? [];
         }
-  
+
         speciesInfo._coreLanguages = coreLangs;
         speciesInfo._additionalLanguage = additionalLang;
       }
-  
+
       speciesData = speciesJson;
       proficiencyData = proficienciesJson;
       armorData = armorJson;
-  })
+      weaponsData = weaponsJson;
+    }
+  )
   .catch((error) => {
-      console.error("Error loading JSON files:", error);
+    console.error("Error loading JSON files:", error);
   });
-  
 
 function getRandom(array) {
   return array[Math.floor(Math.random() * array.length)];
@@ -137,7 +127,9 @@ function rollSpecies() {
     return;
   }
 
-  document.querySelectorAll(".npc").forEach((instance => (instance.textContent = species)));
+  document
+    .querySelectorAll(".npc")
+    .forEach((instance) => (instance.textContent = species));
   document.getElementById("size").textContent = speciesInfo.size || "";
   document.getElementById("shape").textContent =
     speciesInfo["creature type"] || "";
@@ -500,44 +492,140 @@ function rollArmor() {
   } else {
     armor.classList.remove("hidden");
 
-    const stealthDisadvantage = document.getElementById('stealth-disadvantage');
+    const stealthDisadvantage = document.getElementById("stealth-disadvantage");
     const checkArmorMods = (armorToCheck) => {
-        const overencumbered = document.getElementById('overencumbered');
+      const overencumbered = document.getElementById("overencumbered");
 
-        if (armorToCheck['stealth disadvantage']) {
-            traits.classList.remove('hidden');
-            stealthDisadvantage.classList.remove('hidden');
-        } else {
-            stealthDisadvantage.classList.add('hidden');
-        }
+      if (armorToCheck["stealth disadvantage"]) {
+        traits.classList.remove("hidden");
+        stealthDisadvantage.classList.remove("hidden");
+      } else {
+        stealthDisadvantage.classList.add("hidden");
+      }
 
-        if (armorToCheck['dex max'] && npcModifiers.DEX > 2) {
-            ac.textContent = armorToCheck.ac + 2;
-        } else ac.textContent = armorToCheck.ac + npcModifiers.DEX;
+      if (armorToCheck["dex max"] && npcModifiers.DEX > 2) {
+        ac.textContent = armorToCheck.ac + 2;
+      } else ac.textContent = armorToCheck.ac + npcModifiers.DEX;
 
-        if (armorToCheck['str min'] > npcModifiers.STR) {
-            overencumbered.classList.remove('hidden');
-        } else {
-            overencumbered.classList.add('hidden');
-        }
+      if (armorToCheck["str min"] > npcModifiers.STR) {
+        overencumbered.classList.remove("hidden");
+      } else {
+        overencumbered.classList.add("hidden");
+      }
 
-        armorType.textContent = armorToCheck.name;
-    }
+      armorType.textContent = armorToCheck.name;
+    };
 
     if (selection === "light") {
-        const selectedArmor = armorData.light[Math.floor(Math.random() * armorData.light.length)];
-        checkArmorMods(selectedArmor);
+      const selectedArmor =
+        armorData.light[Math.floor(Math.random() * armorData.light.length)];
+      checkArmorMods(selectedArmor);
     } else if (selection === "medium") {
-        const selectedArmor = armorData.medium[Math.floor(Math.random() * armorData.medium.length)];
-        checkArmorMods(selectedArmor);
+      const selectedArmor =
+        armorData.medium[Math.floor(Math.random() * armorData.medium.length)];
+      checkArmorMods(selectedArmor);
     } else {
-        const selectedArmor = armorData.heavy[Math.floor(Math.random() * armorData.heavy.length)];
-        checkArmorMods(selectedArmor);
-    }    
+      const selectedArmor =
+        armorData.heavy[Math.floor(Math.random() * armorData.heavy.length)];
+      checkArmorMods(selectedArmor);
+    }
   }
 }
 
-// function getWeapons() {}
+function getWeapons() {
+  const unarmedStrike = document.getElementById("unarmed-strike");
+  const weaponAttacks = document.getElementById("weapon-attacks");
+  const toHitSTR = npcModifiers.STR + proficiencyBonus;
+  const toHitDEX = npcModifiers.DEX + proficiencyBonus;
+
+  let selectedMeleeWeapon = "";
+  let selectedRangedWeapon = "";
+
+  if (!document.getElementById("armed-check").checked) {
+    unarmedStrike.classList.remove("hidden");
+    weaponAttacks.classList.add("hidden");
+    document.getElementById("to-hit-unarmed").textContent = toHitSTR;
+    document.getElementById("unarmed-dmg").textContent = npcModifiers.STR + 1;
+  } else {
+    unarmedStrike.classList.add("hidden");
+    weaponAttacks.classList.remove("hidden");
+
+    const multiattack = document.getElementById("multiattack");
+
+    let meleeType = "martial";
+    let rangedType = "martial";
+
+    if (commoner.checked) {
+      meleeType = "simple";
+      rangedType = "simple";
+    } else if (adventurer.checked || hero.checked) {
+      if (Math.random() < 0.5) {
+        meleeType = "simple";
+        rangedType = "simple";
+      }
+    }
+
+    if (commoner.checked) {
+        multiattack.classList.add("hidden");
+    } else if (adventurer.checked) {
+        if (Math.random() > 0.66) multiattack.classList.remove("hidden");
+        else multiattack.classList.add("hidden");
+    } else if (hero.checked) {
+        if (Math.random() > 0.33) multiattack.classList.remove("hidden");
+        else multiattack.classList.add("hidden");
+    } else {
+        multiattack.classList.remove("hidden");
+    }
+
+    selectedMeleeWeapon =
+      weaponsData.melee[meleeType][
+        Math.floor(Math.random() * weaponsData.melee[meleeType].length)
+      ];
+
+    document.querySelectorAll(".melee-weapon").forEach((instance) => (instance.textContent = selectedMeleeWeapon.name));
+    
+    const meleeModifier = document.querySelectorAll(".melee-modifier");
+    const reach = document.getElementById("reach");
+
+    if (selectedMeleeWeapon.finesse && npcModifiers.DEX > npcModifiers.STR) {
+    meleeModifier.forEach((instance) => (instance.textContent = toHitDEX));
+    } else {
+    meleeModifier.forEach((instance) => (instance.textContent = toHitSTR));
+    }
+
+    if (selectedMeleeWeapon.reach) {
+    reach.textContent = 10;
+    } else {
+    reach.textContent = 5;
+    }
+
+    document.getElementById("melee-dice").textContent =
+      selectedMeleeWeapon["dmg dice"];
+    document.getElementById("melee-dmg-type").textContent = selectedMeleeWeapon["dmg type"];
+
+    selectedRangedWeapon =
+      weaponsData.ranged[rangedType][
+        Math.floor(Math.random() * weaponsData.ranged[rangedType].length)
+      ];
+
+    document.getElementById("ranged-weapon").textContent =
+      selectedRangedWeapon.name;
+    document.querySelectorAll(".ranged-modifier").forEach((instance) => (instance.textContent = toHitDEX));
+    document.getElementById("range").textContent =
+      selectedRangedWeapon.range;
+    document.getElementById("ranged-dmg-type").textContent = selectedRangedWeapon["dmg type"];
+  }
+
+  document.getElementById("breath-save").textContent = 8 + npcModifiers.CON + proficiencyBonus;
+  
+  const breathDMG = document.getElementById("breath-dice");
+
+  if (levelMultiplier >= 17) breathDMG.textContent = "4d10";
+  else if (levelMultiplier >= 11) breathDMG.textContent = "3d10";
+  else if (levelMultiplier >= 5) breathDMG.textContent = "2d10";
+  else breathDMG.textContent = "1d10";
+}
+
 // function getSpells() {}
 
 function rollNPC() {

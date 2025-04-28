@@ -112,10 +112,13 @@
                         <hr class="mb-2 border-red">
 
                         <div class="space-y-2">
-                        <p id="multiattack"><span class="font-bold">Multiattack.</span> The <span class="npc"></span> makes two <span id="multiattack-type"></span> attacks.</p>
-                        <p><span class="font-bold"><span id="melee-weapon"></span>.</span> <span class="italic">Melee Weapon Attack:</span> +<span class="to-hit"></span> to hit, reach <span id="reach"></span> ft., one target. <span class="italic">Hit:</span> <span id="melee-dice"></span> + <span class="proficiency-bonus"></span> <span id="melee-dmg-type"></span> damage.</p>
-                        <p id="ranged-attack"><span class="font-bold"><span id="ranged-weapon"></span>.</span> <span class="italic">Ranged Weapon Attack:</span> +<span class="to-hit"></span> to hit, range <span id="range"></span> ft., one target. <span class="italic">Hit:</span> <span id="ranged-dice"></span> + <span class="proficiency-bonus"></span> <span id="ranged-dmg-type"></span> damage.</p>
-                        <p id="breath-weapon" class="hidden"><span class="font-bold">Breath Weapon (<span class="breath-dmg-type"></span>).</span> The Dragonborn exhales <span class="breath-dmg-type"></span> in either a 15-ft. cone or a 30-ft. line that's 5 ft. wide (choose the shape each time). Each creature must make a DC <span id="breath-save"></span> DEX saving throw taking <span id="breath-dice"></span> <span class="breath-dmg-type"></span> damage on a failed save or half as much damage on success.</p>
+                            <p id="unarmed-strike"><span class="font-bold">Unarmed Strike.</span> +<span id="to-hit-unarmed"></span> to hit, reach 5 ft., one target. <span class="italic">Hit:</span> <span id="unarmed-dmg"></span> bludgeoning damage.</p>
+                            <div id="weapon-attacks" class="hidden space-y-2">
+                                <p id="multiattack"><span class="font-bold">Multiattack.</span> The <span class="npc"></span> makes two <span class="melee-weapon"></span> attacks.</p>
+                                <p><span class="font-bold"><span class="melee-weapon"></span>.</span> <span class="italic">Melee Weapon Attack:</span> +<span class="melee-modifier"></span> to hit, reach <span id="reach"></span> ft., one target. <span class="italic">Hit:</span> <span id="melee-dice"></span> + <span class="melee-modifier"></span> <span id="melee-dmg-type"></span> damage.</p>
+                                <p id="ranged-attack"><span class="font-bold"><span id="ranged-weapon"></span>.</span> <span class="italic">Ranged Weapon Attack:</span> +<span class="ranged-modifier"></span> to hit, range <span id="range"></span> ft., one target. <span class="italic">Hit:</span> <span id="ranged-dice"></span> + <span class="ranged-modifier"></span> <span id="ranged-dmg-type"></span> damage.</p>
+                            </div>
+                            <p id="breath-weapon" class="hidden"><span class="font-bold">Breath Weapon (<span class="breath-dmg-type"></span>).</span> The Dragonborn exhales <span class="breath-dmg-type"></span> in either a 15-ft. cone or a 30-ft. line that's 5 ft. wide (choose the shape each time). Each creature must make a DC <span id="breath-save"></span> DEX saving throw taking <span id="breath-dice"></span> <span class="breath-dmg-type"></span> damage on a failed save or half as much damage on success.</p>
                         </div>
                     </div>
 
