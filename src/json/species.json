@@ -96,18 +96,18 @@
                 "type": "Drow",
                 "improved darkvision": 120,
                 "spells": [
-                    {"cantrip": "<a href=\"https://www.dndbeyond.com/spells/2619058-dancing-lights\" class=\"hover:text-red active:brightness-90 underline\" target=\"_blank\">Dancing Lights</a>"},
-                    {"1st level": "<a href=\"https://www.dndbeyond.com/spells/2618858-faerie-fire\" class=\"hover:text-red active:brightness-90 underline\" target=\"_blank\">Faerie Fire</a>"},
-                    {"2nd level": "<a href=\"https://www.dndbeyond.com/spells/2619080-darkness\" class=\"hover:text-red active:brightness-90 underline\" target=\"_blank\">Darkness</a>"}
+                    {"name": "Dancing Lights", "link": "https://www.dndbeyond.com/spells/2619058-dancing-lights"},
+                    {"name": "Faerie Fire", "link": "https://www.dndbeyond.com/spells/2618858-faerie-fire"},
+                    {"name": "Darkness", "link": "https://www.dndbeyond.com/spells/2619080-darkness"}
                 ],
                 "proficiency": "Insight"
             },
             {
                 "type": "High",
                 "spells": [
-                    {"cantrip": "<a href=\"https://www.dndbeyond.com/spells/2618893-prestidigitation\" class=\"hover:text-red active:brightness-90 underline\" target=\"_blank\">Prestidigitation</a>"},
-                    {"1st level": "<a href=\"https://www.dndbeyond.com/spells/2619097-detect-magic\" class=\"hover:text-red active:brightness-90 underline\" target=\"_blank\">Detect Magic</a>"},
-                    {"2nd level": "<a href=\"https://www.dndbeyond.com/spells/2619133-misty-step\" class=\"hover:text-red active:brightness-90 underline\" target=\"_blank\">Misty Step</a>"}
+                    {"name": "Prestidigitation", "link": "https://www.dndbeyond.com/spells/2618893-prestidigitation"},
+                    {"name": "Detect Magic", "link": "https://www.dndbeyond.com/spells/2619097-detect-magic"},
+                    {"name": "Misty Step", "link": "https://www.dndbeyond.com/spells/2619133-misty-step"}
                 ],
                 "proficiency": "Perception"
             },
@@ -115,9 +115,9 @@
                 "type": "Wood",
                 "improved speed": 35,
                 "spells": [
-                    {"cantrip": "<a href=\"https://www.dndbeyond.com/spells/2619158-druidcraft\" class=\"hover:text-red active:brightness-90 underline\" target=\"_blank\">Druidcraft</a>"},
-                    {"1st level": "<a href=\"https://www.dndbeyond.com/spells/2619004-longstrider\" class=\"hover:text-red active:brightness-90 underline\" target=\"_blank\">Longstrider</a>"},
-                    {"2nd level": "<a href=\"https://www.dndbeyond.com/spells/2618849-pass-without-trace\" class=\"hover:text-red active:brightness-90 underline\" target=\"_blank\">Pass without Trace</a>"}
+                    {"name": "Druidcraft", "link": "https://www.dndbeyond.com/spells/2619158-druidcraft"},
+                    {"name": "Longstrider", "link": "https://www.dndbeyond.com/spells/2619004-longstrider"},
+                    {"name": "Pass without Trace", "link": "https://www.dndbeyond.com/spells/2618849-pass-without-trace"}
                 ],
                 "proficiency": "Survival"
             }
@@ -153,17 +153,15 @@
             {
                 "type": "Forest",
                 "spells": [
-                    {"cantrip": "<a href=\"https://www.dndbeyond.com/spells/2619039-minor-illusion\" class=\"hover:text-red active:brightness-90 underline\" target=\"_blank\">Minor Illusion</a>"},
-                    {"1st level": "<a href=\"https://www.dndbeyond.com/spells/2619059-speak-with-animals\" class=\"hover:text-red active:brightness-90 underline\" target=\"_blank\">Speak with Animals</a>"}
+                    {"name": "Minor Illusion", "link": "https://www.dndbeyond.com/spells/2619039-minor-illusion"},
+                    {"name": "Speak with Animals", "link": "https://www.dndbeyond.com/spells/2619059-speak-with-animals"}
                 ]
             },
             {
                 "type": "Rock",
                 "spells": [
-                    {"cantrips": [
-                        {"cantrip": "<a href=\"https://www.dndbeyond.com/spells/2619033-mending\" class=\"hover:text-red active:brightness-90 underline\" target=\"_blank\">Mending</a>"},
-                        {"cantrip": "<a href=\"https://www.dndbeyond.com/spells/2618893-prestidigitation\" class=\"hover:text-red active:brightness-90 underline\" target=\"_blank\">Prestidigitation</a>"}
-                    ]}
+                    {"name": "Mending", "link": "https://www.dndbeyond.com/spells/2619033-mending"},
+                    {"name": "Prestidigitation", "link": "https://www.dndbeyond.com/spells/2618893-prestidigitation"}
                 ]
             }
         ]
@@ -371,12 +369,10 @@
                     "core languages": "Common, Abyssal"
                 },
                 "spells": [
-                    {"cantrips": [
-                        {"cantrip": "<a href=\"https://www.dndbeyond.com/spells/2277-thaumaturgy\" class=\"hover:text-red active:brightness-90 underline\" target=\"_blank\">Thaumaturgy</a>"},
-                        {"cantrip": "<a href=\"https://www.dndbeyond.com/spells/2618875-poison-spray\" class=\"hover:text-red active:brightness-90 underline\" target=\"_blank\">Poison Spray</a>"}
-                    ]},
-                    {"1st level": "<a href=\"https://www.dndbeyond.com/spells/2618935-ray-of-sickness\" class=\"hover:text-red active:brightness-90 underline\" target=\"_blank\">Ray of Sickness</a>"},
-                    {"2nd level": "<a href=\"https://www.dndbeyond.com/spells/2619153-hold-person\" class=\"hover:text-red active:brightness-90 underline\" target=\"_blank\">Hold Person</a>"}
+                    {"name": "Thaumaturgy", "link": "https://www.dndbeyond.com/spells/2277-thaumaturgy"},
+                    {"name": "Poison Spray", "link": "https://www.dndbeyond.com/spells/2618875-poison-spray"},
+                    {"name": "Ray of Sickness", "link": "https://www.dndbeyond.com/spells/2618935-ray-of-sickness"},
+                    {"name": "Hold Person", "link": "https://www.dndbeyond.com/spells/2619153-hold-person"}
                 ]
             },
             {
@@ -386,12 +382,10 @@
                     "core languages": "Common, Abyssal & Infernal"
                 },
                 "spells": [
-                    {"cantrips": [
-                        {"cantrip": "<a href=\"https://www.dndbeyond.com/spells/2618965-chill-touch\" class=\"hover:text-red active:brightness-90 underline\" target=\"_blank\">Chill Touch</a>"},
-                        {"cantrip": "<a href=\"https://www.dndbeyond.com/spells/2277-thaumaturgy\" class=\"hover:text-red active:brightness-90 underline\" target=\"_blank\">Thaumaturgy</a>"}
-                    ]},
-                    {"1st level": "<a href=\"https://www.dndbeyond.com/spells/2618866-false-life\" class=\"hover:text-red active:brightness-90 underline\" target=\"_blank\">False Life</a>"},
-                    {"2nd level": "<a href=\"https://www.dndbeyond.com/spells/2618926-ray-of-enfeeblement\" class=\"hover:text-red active:brightness-90 underline\" target=\"_blank\">Ray of Enfeeblement</a>"}
+                    {"name": "Chill Touch", "link": "https://www.dndbeyond.com/spells/2618965-chill-touch"},
+                    {"name": "Thaumaturgy", "link": "https://www.dndbeyond.com/spells/2277-thaumaturgy"},
+                    {"name": "False Life", "link": "https://www.dndbeyond.com/spells/2618866-false-life"},
+                    {"name": "Ray of Enfeeblement", "link": "https://www.dndbeyond.com/spells/2618926-ray-of-enfeeblement"}
                 ]
             },
             {
@@ -401,12 +395,10 @@
                     "core languages": "Common, Infernal"
                 },
                 "spells": [
-                    {"cantrips": [
-                        {"cantrip": "<a href=\"https://www.dndbeyond.com/spells/2277-thaumaturgy\" class=\"hover:text-red active:brightness-90 underline\" target=\"_blank\">Thaumaturgy</a>"},
-                        {"cantrip": "<a href=\"https://www.dndbeyond.com/spells/2618890-fire-bolt\" class=\"hover:text-red active:brightness-90 underline\" target=\"_blank\">Fire Bolt</a>"}
-                    ]},
-                    {"1st level": "<a href=\"https://www.dndbeyond.com/spells/2619149-hellish-rebuke\" class=\"hover:text-red active:brightness-90 underline\" target=\"_blank\">Hellish Rebuke</a>"},
-                    {"2nd level": "<a href=\"https://www.dndbeyond.com/spells/2619080-darkness\" class=\"hover:text-red active:brightness-90 underline\" target=\"_blank\">Darkness</a>"}
+                    {"name": "Thaumaturgy", "link": "https://www.dndbeyond.com/spells/2277-thaumaturgy"},
+                    {"name": "Fire Bolt", "link": "https://www.dndbeyond.com/spells/2618890-fire-bolt"},
+                    {"name": "Hellish Rebuke", "link": "https://www.dndbeyond.com/spells/2619149-hellish-rebuke"},
+                    {"name": "Darkness", "link": "https://www.dndbeyond.com/spells/2619080-darkness"}
                 ]
             }
         ]
