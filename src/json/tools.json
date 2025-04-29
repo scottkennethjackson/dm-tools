@@ -58,7 +58,7 @@
       "npc generator": [
         {
           "title": "NPC Generator",
-          "description": "[Work-in-Progress]",
+          "description": "Bring your NPCs to life with custom statblocks, including unique traits, attacks, and spells. Never again will you be caught off-guard by your party abducting the local stableboy and turning them into an unexpected hero.",
           "link": "./src/tools/npc-generator.html"
         }
       ]
