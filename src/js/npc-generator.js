@@ -16,6 +16,7 @@ let baseHP = 8;
 let levelMultiplier = 1;
 let armorData = {};
 let weaponsData = {};
+let spellsData = {};
 
 window.addEventListener("DOMContentLoaded", () => {
   title.innerText = importedName
@@ -44,9 +45,20 @@ Promise.all([
     if (!res.ok) throw new Error("Failed to load weapons.json");
     return res.json();
   }),
+  fetch("../json/spells.json").then((res) => {
+    if (!res.ok) throw new Error("Failed to load spells.json");
+    return res.json();
+  }),
 ])
   .then(
-    ([namesData, speciesJson, proficienciesJson, armorJson, weaponsJson]) => {
+    ([
+      namesData,
+      speciesJson,
+      proficienciesJson,
+      armorJson,
+      weaponsJson,
+      spellsJson,
+    ]) => {
       names.male = namesData["first names"]?.male.map((obj) => obj.name) || [];
       names.female =
         namesData["first names"]?.female.map((obj) => obj.name) || [];
@@ -81,6 +93,8 @@ Promise.all([
       proficiencyData = proficienciesJson;
       armorData = armorJson;
       weaponsData = weaponsJson;
+      speciesData = speciesJson;
+      spellsData = spellsJson;
     }
   )
   .catch((error) => {
@@ -121,7 +135,6 @@ function rollSpecies() {
   const species = getRandom(speciesList);
   const speciesInfo = speciesData[species];
   const npcSpecies = document.getElementById("species");
-  const npc = document.querySelectorAll("npc");
 
   if (!speciesInfo) {
     console.warn(`Species data for "${species}" not found.`);
@@ -156,16 +169,24 @@ function rollSpecies() {
   const speed = selectedSubspecies?.["improved speed"] ?? speciesInfo.speed;
   document.getElementById("speed").textContent = speed || "";
 
+  const rangedAttack = document.getElementById("ranged-attack");
+  const breathWeapon = document.getElementById("breath-weapon");
   const dmgResistances = document.getElementById("dmg-resistances");
   let resistance = "";
+
+  if (species === "Dragonborn") {
+    rangedAttack.classList.add("hidden");
+    breathWeapon.classList.remove("hidden");
+  } else {
+    rangedAttack.classList.remove("hidden");
+    breathWeapon.classList.add("hidden");
+  }
 
   if (species === "Dragonborn") {
     const element = selectedSubspecies.element;
 
     dmgResistances.classList.remove("hidden");
     resistance = element;
-    document.getElementById("ranged-attack").classList.add("hidden");
-    document.getElementById("breath-weapon").classList.remove("hidden");
     document
       .querySelectorAll(".breath-dmg-type")
       .forEach((instance) => (instance.textContent = element));
@@ -203,7 +224,7 @@ function rollSpecies() {
     selectedSubspecies?.languages?.["core languages"] ??
     speciesInfo._coreLanguages;
 
-  function rollAdditionalLang(exclude = "") {
+  const rollAdditionalLang = (exclude = "") => {
     const additional = speciesInfo._additionalLanguage;
 
     if (!additional.length) return "";
@@ -214,7 +235,7 @@ function rollSpecies() {
       result = additional[Math.floor(Math.random() * additional.length)];
     } while (result === exclude && additional.length > 1);
     return result;
-  }
+  };
 
   if (selectedSubspecies?.type === "Chthonic") {
     languages = coreLangs;
@@ -532,7 +553,7 @@ function rollArmor() {
   }
 }
 
-function getWeapons() {
+function rollWeapons() {
   const unarmedStrike = document.getElementById("unarmed-strike");
   const weaponAttacks = document.getElementById("weapon-attacks");
   const toHitSTR = npcModifiers.STR + proficiencyBonus;
@@ -566,15 +587,15 @@ function getWeapons() {
     }
 
     if (commoner.checked) {
-        multiattack.classList.add("hidden");
+      multiattack.classList.add("hidden");
     } else if (adventurer.checked) {
-        if (Math.random() > 0.66) multiattack.classList.remove("hidden");
-        else multiattack.classList.add("hidden");
+      if (Math.random() > 0.66) multiattack.classList.remove("hidden");
+      else multiattack.classList.add("hidden");
     } else if (hero.checked) {
-        if (Math.random() > 0.33) multiattack.classList.remove("hidden");
-        else multiattack.classList.add("hidden");
+      if (Math.random() > 0.33) multiattack.classList.remove("hidden");
+      else multiattack.classList.add("hidden");
     } else {
-        multiattack.classList.remove("hidden");
+      multiattack.classList.remove("hidden");
     }
 
     selectedMeleeWeapon =
@@ -582,26 +603,29 @@ function getWeapons() {
         Math.floor(Math.random() * weaponsData.melee[meleeType].length)
       ];
 
-    document.querySelectorAll(".melee-weapon").forEach((instance) => (instance.textContent = selectedMeleeWeapon.name));
-    
+    document
+      .querySelectorAll(".melee-weapon")
+      .forEach((instance) => (instance.textContent = selectedMeleeWeapon.name));
+
     const meleeModifier = document.querySelectorAll(".melee-modifier");
     const reach = document.getElementById("reach");
 
     if (selectedMeleeWeapon.finesse && npcModifiers.DEX > npcModifiers.STR) {
-    meleeModifier.forEach((instance) => (instance.textContent = toHitDEX));
+      meleeModifier.forEach((instance) => (instance.textContent = toHitDEX));
     } else {
-    meleeModifier.forEach((instance) => (instance.textContent = toHitSTR));
+      meleeModifier.forEach((instance) => (instance.textContent = toHitSTR));
     }
 
     if (selectedMeleeWeapon.reach) {
-    reach.textContent = 10;
+      reach.textContent = 10;
     } else {
-    reach.textContent = 5;
+      reach.textContent = 5;
     }
 
     document.getElementById("melee-dice").textContent =
       selectedMeleeWeapon["dmg dice"];
-    document.getElementById("melee-dmg-type").textContent = selectedMeleeWeapon["dmg type"];
+    document.getElementById("melee-dmg-type").textContent =
+      selectedMeleeWeapon["dmg type"];
 
     selectedRangedWeapon =
       weaponsData.ranged[rangedType][
@@ -610,14 +634,17 @@ function getWeapons() {
 
     document.getElementById("ranged-weapon").textContent =
       selectedRangedWeapon.name;
-    document.querySelectorAll(".ranged-modifier").forEach((instance) => (instance.textContent = toHitDEX));
-    document.getElementById("range").textContent =
-      selectedRangedWeapon.range;
-    document.getElementById("ranged-dmg-type").textContent = selectedRangedWeapon["dmg type"];
+    document
+      .querySelectorAll(".ranged-modifier")
+      .forEach((instance) => (instance.textContent = toHitDEX));
+    document.getElementById("range").textContent = selectedRangedWeapon.range;
+    document.getElementById("ranged-dmg-type").textContent =
+      selectedRangedWeapon["dmg type"];
   }
 
-  document.getElementById("breath-save").textContent = 8 + npcModifiers.CON + proficiencyBonus;
-  
+  document.getElementById("breath-save").textContent =
+    8 + npcModifiers.CON + proficiencyBonus;
+
   const breathDMG = document.getElementById("breath-dice");
 
   if (levelMultiplier >= 17) breathDMG.textContent = "4d10";
@@ -626,52 +653,301 @@ function getWeapons() {
   else breathDMG.textContent = "1d10";
 }
 
-function getSpells() {
-    const spellcasting = document.getElementById("spellcasting");
-    
-    if (!document.getElementById("spellcaster-check").checked) {
-        spellcasting.classList.add("hidden");
-    } else {
-        traits.classList.remove("hidden");
-        spellcasting.classList.remove("hidden");
-    }
+function rollSpells() {
+  const spellcasterCheck = document.getElementById("spellcaster-check");
+  const spellcasting = document.getElementById("spellcasting");
 
-    const nth = document.getElementById("nth")
-    const spellcastingLevel  = document.getElementById("spellcasting-level");
+  if (!spellcasterCheck.checked) {
+    spellcasting.classList.add("hidden");
+  } else {
+    traits.classList.remove("hidden");
+    spellcasting.classList.remove("hidden");
 
-    if (levelMultiplier === 1) {
-        nth.textContent = "st";
-    } else if (levelMultiplier === 2) {
-        nth.textContent = "nd";
-    } else if (levelMultiplier === 3) {
-        nth.textContent = "rd";
-    } else {
-        nth.textContent = "th";
-    }
-
-    if (levelMultiplier === 8 || levelMultiplier === 11 || levelMultiplier === 18) {
-        spellcastingLevel.textContent = `an ${levelMultiplier}`;
-    } else {
-        spellcastingLevel.textContent = `a ${levelMultiplier}`;
-    }
-
+    const spellcastingLevel = document.getElementById("spellcasting-level");
     const spellcastingAbility = document.getElementById("spellcasting-ability");
     const spellSave = document.getElementById("spell-save");
     const spellToHit = document.getElementById("spell-to-hit");
 
-    if (npcModifiers.CHA > npcModifiers.WIS && npcModifiers.CHA > npcModifiers.INT) {
-        spellcastingAbility.textContent = "Charisma";
-        spellSave.textContent = 8 + npcModifiers.CHA + proficiencyBonus;
-        spellToHit.textContent = npcModifiers.CHA + proficiencyBonus;
-    } else if (npcModifiers.WIS > npcModifiers.INT) {
-        spellcastingAbility.textContent = "Wisdom";
-        spellSave.textContent = 8 + npcModifiers.WIS + proficiencyBonus;
-        spellToHit.textContent = npcModifiers.WIS + proficiencyBonus;
-    } else {
-        spellcastingAbility.textContent = "Intelligence";
-        spellSave.textContent = 8 + npcModifiers.INT + proficiencyBonus;
-        spellToHit.textContent = npcModifiers.INT + proficiencyBonus;
+    const ordinal = (n) => {
+      const ordinals = ["1st", "2nd", "3rd"];
+      return ordinals[n - 1] || `${n}th`;
+    };
+
+    spellcastingLevel.textContent = new Set([8, 11, 18]).has(levelMultiplier)
+      ? `an ${levelMultiplier}th`
+      : `a ${ordinal(levelMultiplier)}`;
+
+    const abilities = {
+      Charisma: npcModifiers.CHA,
+      Wisdom: npcModifiers.WIS,
+      Intelligence: npcModifiers.INT,
+    };
+
+    const bestAbility = Object.entries(abilities).reduce((a, b) =>
+      b[1] > a[1] ? b : a
+    );
+
+    spellcastingAbility.textContent = bestAbility[0];
+    spellSave.textContent = 8 + bestAbility[1] + proficiencyBonus;
+    spellToHit.textContent = bestAbility[1] + proficiencyBonus;
+
+    const getRandomSpells = (spellArray, count) => {
+      const selected = new Set();
+      while (selected.size < count && selected.size < spellArray.length) {
+        const index = Math.floor(Math.random() * spellArray.length);
+        selected.add(spellArray[index]);
+      }
+      return Array.from(selected);
     }
+
+    const generateSpellHTML = (level, spells, slots = null) => {
+      const displayLevel =
+        level === 0
+          ? "Cantrips (at will)"
+          : `${ordinal(level)} level${
+              slots ? ` (${slots} slot${slots > 1 ? "s" : ""})` : ""
+            }`;
+
+      const spellLinks = spells.map((spell) => {
+        const name = spell.name || spell;
+        const url = spell.link || "#";
+        return `<a href="${url}" class="italic hover:text-red active:brightness-90 underline" target="_blank">${name}</a>`;
+      });
+
+      return `<p>${displayLevel}: ${spellLinks.join(", ")}</p>`;
+    }
+
+    const spellsByLevel = {
+      1: { cantrips: 3, spells: { 1: { slots: 2, count: 1 } } },
+      2: { cantrips: 3, spells: { 1: { slots: 3, count: 1 } } },
+      3: {
+        cantrips: 3,
+        spells: { 1: { slots: 4, count: 1 }, 2: { slots: 2, count: 1 } },
+      },
+      4: {
+        cantrips: 4,
+        spells: { 1: { slots: 4, count: 2 }, 2: { slots: 3, count: 1 } },
+      },
+      5: {
+        cantrips: 4,
+        spells: {
+          1: { slots: 4, count: 2 },
+          2: { slots: 3, count: 1 },
+          3: { slots: 2, count: 1 },
+        },
+      },
+      6: {
+        cantrips: 4,
+        spells: {
+          1: { slots: 4, count: 2 },
+          2: { slots: 3, count: 2 },
+          3: { slots: 3, count: 1 },
+        },
+      },
+      7: {
+        cantrips: 4,
+        spells: {
+          1: { slots: 4, count: 2 },
+          2: { slots: 3, count: 2 },
+          3: { slots: 3, count: 1 },
+          4: { slots: 1, count: 1 },
+        },
+      },
+      8: {
+        cantrips: 4,
+        spells: {
+          1: { slots: 4, count: 3 },
+          2: { slots: 3, count: 2 },
+          3: { slots: 3, count: 1 },
+          4: { slots: 2, count: 1 },
+        },
+      },
+      9: {
+        cantrips: 4,
+        spells: {
+          1: { slots: 4, count: 3 },
+          2: { slots: 3, count: 2 },
+          3: { slots: 3, count: 1 },
+          4: { slots: 3, count: 1 },
+          5: { slots: 1, count: 1 },
+        },
+      },
+      10: {
+        cantrips: 5,
+        spells: {
+          1: { slots: 4, count: 3 },
+          2: { slots: 3, count: 2 },
+          3: { slots: 3, count: 2 },
+          4: { slots: 3, count: 1 },
+          5: { slots: 2, count: 1 },
+        },
+      },
+      11: {
+        cantrips: 5,
+        spells: {
+          1: { slots: 4, count: 3 },
+          2: { slots: 3, count: 2 },
+          3: { slots: 3, count: 2 },
+          4: { slots: 3, count: 1 },
+          5: { slots: 2, count: 1 },
+          6: { slots: 1, count: 1 },
+        },
+      },
+      12: {
+        cantrips: 5,
+        spells: {
+          1: { slots: 4, count: 4 },
+          2: { slots: 3, count: 2 },
+          3: { slots: 3, count: 2 },
+          4: { slots: 3, count: 1 },
+          5: { slots: 2, count: 1 },
+          6: { slots: 1, count: 1 },
+        },
+      },
+      13: {
+        cantrips: 5,
+        spells: {
+          1: { slots: 4, count: 4 },
+          2: { slots: 3, count: 2 },
+          3: { slots: 3, count: 2 },
+          4: { slots: 3, count: 1 },
+          5: { slots: 2, count: 1 },
+          6: { slots: 1, count: 1 },
+          7: { slots: 1, count: 1 },
+        },
+      },
+      14: {
+        cantrips: 5,
+        spells: {
+          1: { slots: 4, count: 4 },
+          2: { slots: 3, count: 3 },
+          3: { slots: 3, count: 2 },
+          4: { slots: 3, count: 1 },
+          5: { slots: 2, count: 1 },
+          6: { slots: 1, count: 1 },
+          7: { slots: 1, count: 1 },
+        },
+      },
+      15: {
+        cantrips: 5,
+        spells: {
+          1: { slots: 4, count: 4 },
+          2: { slots: 3, count: 3 },
+          3: { slots: 3, count: 2 },
+          4: { slots: 3, count: 1 },
+          5: { slots: 2, count: 1 },
+          6: { slots: 1, count: 1 },
+          7: { slots: 1, count: 1 },
+          8: { slots: 1, count: 1 },
+        },
+      },
+      16: {
+        cantrips: 5,
+        spells: {
+          1: { slots: 4, count: 4 },
+          2: { slots: 3, count: 3 },
+          3: { slots: 3, count: 2 },
+          4: { slots: 3, count: 1 },
+          5: { slots: 2, count: 1 },
+          6: { slots: 1, count: 1 },
+          7: { slots: 1, count: 1 },
+          8: { slots: 1, count: 1 },
+        },
+      },
+      17: {
+        cantrips: 5,
+        spells: {
+          1: { slots: 4, count: 4 },
+          2: { slots: 3, count: 3 },
+          3: { slots: 3, count: 2 },
+          4: { slots: 3, count: 2 },
+          5: { slots: 2, count: 1 },
+          6: { slots: 1, count: 1 },
+          7: { slots: 1, count: 1 },
+          8: { slots: 1, count: 1 },
+          9: { slots: 1, count: 1 },
+        },
+      },
+      18: {
+        cantrips: 5,
+        spells: {
+          1: { slots: 4, count: 4 },
+          2: { slots: 3, count: 3 },
+          3: { slots: 3, count: 3 },
+          4: { slots: 3, count: 2 },
+          5: { slots: 3, count: 1 },
+          6: { slots: 1, count: 1 },
+          7: { slots: 1, count: 1 },
+          8: { slots: 1, count: 1 },
+          9: { slots: 1, count: 1 },
+        },
+      },
+      19: {
+        cantrips: 5,
+        spells: {
+          1: { slots: 4, count: 4 },
+          2: { slots: 3, count: 3 },
+          3: { slots: 3, count: 3 },
+          4: { slots: 3, count: 3 },
+          5: { slots: 3, count: 1 },
+          6: { slots: 2, count: 1 },
+          7: { slots: 1, count: 1 },
+          8: { slots: 1, count: 1 },
+          9: { slots: 1, count: 1 },
+        },
+      },
+      20: {
+        cantrips: 5,
+        spells: {
+          1: { slots: 4, count: 4 },
+          2: { slots: 3, count: 3 },
+          3: { slots: 3, count: 3 },
+          4: { slots: 3, count: 3 },
+          5: { slots: 3, count: 2 },
+          6: { slots: 2, count: 1 },
+          7: { slots: 2, count: 1 },
+          8: { slots: 1, count: 1 },
+          9: { slots: 1, count: 1 },
+        },
+      },
+    };
+
+    const assignSpellsFromData = () => {
+      if (!spellsData || !Object.keys(spellsData).length) return "";
+
+      const preparedSpells = [];
+      const spellConfig = spellsByLevel[levelMultiplier];
+      if (!spellConfig) return "";
+
+      // Add Cantrips
+      const cantripArray = spellsData["cantrips"];
+      if (cantripArray) {
+        const selectedCantrips = getRandomSpells(
+          cantripArray,
+          spellConfig.cantrips
+        );
+        preparedSpells.push(generateSpellHTML(0, selectedCantrips));
+      }
+
+      // Add Leveled Spells
+      for (const [levelStr, { slots, count }] of Object.entries(
+        spellConfig.spells
+      )) {
+        const level = parseInt(levelStr);
+        const spellsAtLevel = spellsData[`${ordinal(level)} level`] || [];
+        if (!spellsAtLevel.length || !slots || !count) continue;
+
+        const selectedSpells = getRandomSpells(spellsAtLevel, count);
+        if (selectedSpells.length) {
+          preparedSpells.push(generateSpellHTML(level, selectedSpells, slots));
+        }
+      }
+
+      return preparedSpells.join("");
+    }
+
+    document.getElementById("spell-list").innerHTML = assignSpellsFromData();
+  }
 }
 
 function rollNPC() {
@@ -685,8 +961,8 @@ function rollNPC() {
   rollStats();
   rollProficiencies();
   rollArmor();
-  getWeapons();
-  getSpells();
+  rollWeapons();
+  rollSpells();
 }
 
 document.getElementById("roll-btn").addEventListener("click", rollNPC);
