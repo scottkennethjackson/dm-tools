@@ -118,196 +118,223 @@ function rollName() {
     const surname = getRandom(names.surname);
     nameInput.value = `${firstName} ${surname}`;
   }
-
-  if (!names.male.length || !names.female.length || !names.surname.length) {
-    console.warn("Name data is missing.");
-    return;
-  }  
 }
 
-function getRandomSpecies() {
+function rollSpecies() {
   const speciesList = [
-    "Dragonborn", "Dwarf", "Elf", "Gnome", "Goliath",
-    "Halfling", "Human", "Orc", "Tiefling"
+    "Dragonborn",
+    "Dwarf",
+    "Elf",
+    "Gnome",
+    "Goliath",
+    "Halfling",
+    "Human",
+    "Orc",
+    "Tiefling",
   ];
-  return getRandom(speciesList);
-}
-
-function chooseSubspecies(species, speciesInfo) {
-  if (Array.isArray(speciesInfo.subspecies) && speciesInfo.subspecies.length > 0) {
-    return getRandom(speciesInfo.subspecies);
-  }
-  return null;
-}
-
-function updateDisplayName(species, subspecies) {
+  const species = getRandom(speciesList);
+  const speciesInfo = speciesData[species];
   const npcSpecies = document.getElementById("species");
-  let displayName = species;
 
-  if (subspecies?.type && species !== "Goliath") {
-    displayName = `${subspecies.type} ${species}`;
+  if (!speciesInfo) {
+    console.warn(`Species data for "${species}" not found.`);
+    return;
   }
 
-  npcSpecies.textContent = displayName;
-  document.querySelectorAll(".npc").forEach((el) => (el.textContent = species));
-}
-
-function updateBasicAttributes(speciesInfo, subspecies) {
+  document
+    .querySelectorAll(".npc")
+    .forEach((instance) => (instance.textContent = species));
   document.getElementById("size").textContent = speciesInfo.size || "";
-  document.getElementById("shape").textContent = speciesInfo["creature type"] || "";
-  document.getElementById("speed").textContent = (subspecies?.["improved speed"] ?? speciesInfo.speed) || "";
+  document.getElementById("shape").textContent =
+    speciesInfo["creature type"] || "";
 
-  const darkvision = document.getElementById("darkvision");
-  const range = subspecies?.["improved darkvision"] ??
-                (speciesInfo.darkvision?.["has darkvision"] ? speciesInfo.darkvision.range : 0);
+  let selectedSubspecies = null;
 
-  darkvision.classList.toggle("hidden", !range);
-  document.getElementById("darkvision-range").textContent = range || "";
-}
+  if (species === "Goliath") {
+    selectedSubspecies = getRandom(speciesInfo.subspecies);
+    npcSpecies.textContent = species || "";
+  } else if (
+    Array.isArray(speciesInfo.subspecies) &&
+    speciesInfo.subspecies.length > 0
+  ) {
+    selectedSubspecies = getRandom(speciesInfo.subspecies);
+    npcSpecies.textContent = `${selectedSubspecies.type} ${species}` || "";
+  } else {
+    npcSpecies.textContent = species || "";
+  }
 
-function updateAbilities(species, speciesInfo, subspecies) {
-  const ranged = document.getElementById("ranged-attack");
-  const breath = document.getElementById("breath-weapon");
-  const dmgRes = document.getElementById("dmg-resistances");
+  currentSpecies = species;
+  currentSubspecies = selectedSubspecies;
 
+  const speed = selectedSubspecies?.["improved speed"] ?? speciesInfo.speed;
+  document.getElementById("speed").textContent = speed || "";
+
+  const rangedAttack = document.getElementById("ranged-attack");
+  const breathWeapon = document.getElementById("breath-weapon");
+  const dmgResistances = document.getElementById("dmg-resistances");
   let resistance = "";
 
   if (species === "Dragonborn") {
-    ranged.classList.add("hidden");
-    breath.classList.remove("hidden");
-    resistance = subspecies?.element || "";
-    document.querySelectorAll(".breath-dmg-type").forEach((el) => (el.textContent = resistance));
+    rangedAttack.classList.add("hidden");
+    breathWeapon.classList.remove("hidden");
   } else {
-    ranged.classList.remove("hidden");
-    breath.classList.add("hidden");
-
-    if (species === "Tiefling") {
-      resistance = subspecies?.["damage resistance"] || "";
-    } else {
-      resistance = speciesInfo["damage resistance"] || "";
-    }
+    rangedAttack.classList.remove("hidden");
+    breathWeapon.classList.add("hidden");
   }
 
-  dmgRes.classList.toggle("hidden", !resistance);
+  if (species === "Dragonborn") {
+    const element = selectedSubspecies.element;
+
+    dmgResistances.classList.remove("hidden");
+    resistance = element;
+    document
+      .querySelectorAll(".breath-dmg-type")
+      .forEach((instance) => (instance.textContent = element));
+  } else if (species === "Tiefling") {
+    dmgResistances.classList.remove("hidden");
+    resistance = selectedSubspecies["damage resistance"];
+  } else if (speciesInfo["damage resistance"]) {
+    dmgResistances.classList.remove("hidden");
+    resistance = speciesInfo["damage resistance"];
+  } else {
+    dmgResistances.classList.add("hidden");
+  }
+
   document.getElementById("resistance").textContent = resistance || "";
-}
 
-function updateLanguages(species, speciesInfo, subspecies) {
-  const core = subspecies?.languages?.["core languages"] ?? speciesInfo._coreLanguages;
-  const additional = speciesInfo._additionalLanguage || [];
+  const darkvision = document.getElementById("darkvision");
+  let darkvisionRange = 0;
 
-  const rollLang = (exclude = "") => {
-    if (additional.length === 0) return "";
+  if (selectedSubspecies?.["improved darkvision"]) {
+    darkvision.classList.remove("hidden");
+    darkvisionRange = selectedSubspecies["improved darkvision"];
+  } else if (speciesInfo.darkvision["has darkvision"]) {
+    darkvision.classList.remove("hidden");
+    darkvisionRange = speciesInfo.darkvision.range;
+  } else {
+    darkvision.classList.add("hidden");
+  }
+
+  document.getElementById("darkvision-range").textContent =
+    darkvisionRange || "";
+
+  let languages = "";
+
+  const coreLangs =
+    selectedSubspecies?.languages?.["core languages"] ??
+    speciesInfo._coreLanguages;
+
+  const rollAdditionalLang = (exclude = "") => {
+    const additional = speciesInfo._additionalLanguage;
+
+    if (!additional.length) return "";
+
     let result;
+
     do {
-      result = getRandom(additional);
+      result = additional[Math.floor(Math.random() * additional.length)];
     } while (result === exclude && additional.length > 1);
     return result;
   };
 
-  let languages = core;
+  if (selectedSubspecies?.type === "Chthonic") {
+    languages = coreLangs;
+  } else if (species === "Human") {
+    const lang2 = rollAdditionalLang();
+    const lang3 = rollAdditionalLang(lang2);
 
-  if (species === "Human") {
-    const lang2 = rollLang();
-    const lang3 = rollLang(lang2);
-    if (lang2 && lang3) languages += `, ${lang2} & ${lang3}`;
-    else if (lang2) languages += ` & ${lang2}`;
-  } else if (subspecies?.type !== "Chthonic") {
-    const extra = rollLang();
-    if (extra) languages += ` & ${extra}`;
+    if (lang2 && lang3) {
+      languages = `${coreLangs}, ${lang2} & ${lang3}`;
+    } else if (lang2) {
+      languages = `${coreLangs} & ${lang2}`;
+    } else {
+      languages = coreLangs;
+    }
+  } else {
+    const extraLang = rollAdditionalLang();
+    languages = extraLang ? `${coreLangs} & ${extraLang}` : coreLangs;
   }
 
   document.getElementById("languages").textContent = languages || "";
-}
 
-function updateTraits(species, speciesInfo, subspecies) {
-  const traitsBlock = document.getElementById("traits");
-  const main = document.getElementById("main-trait");
-  const sub = document.getElementById("sub-trait");
-  const additional = document.getElementById("additional-traits");
+  const mainTrait = document.getElementById("main-trait");
+  const subTrait = document.getElementById("sub-trait");
+  const additionalTraits = document.getElementById("additional-traits");
 
-  const traitEls = [
-    [document.getElementById("trait1"), document.getElementById("trait1-description")],
-    [document.getElementById("trait2"), document.getElementById("trait2-description")],
-    [document.getElementById("trait3"), document.getElementById("trait3-description")],
-    [document.getElementById("trait4"), document.getElementById("trait4-description")],
-  ];
+  const trait1 = document.getElementById("trait1");
+  const trait1Description = document.getElementById("trait1-description");
+  const trait2 = document.getElementById("trait2");
+  const trait2Description = document.getElementById("trait2-description");
+  const trait3 = document.getElementById("trait3");
+  const trait3Description = document.getElementById("trait3-description");
+  const trait4 = document.getElementById("trait4");
+  const trait4Description = document.getElementById("trait4-description");
 
-  traitsBlock.classList.add("hidden");
-  main.classList.add("hidden");
-  sub.classList.add("hidden");
-  additional.classList.add("hidden");
+  if (species === "Halfling" && Array.isArray(speciesInfo?.traits)) {
+    traits.classList.remove("hidden");
+    mainTrait.classList.remove("hidden");
+    subTrait.classList.remove("hidden");
+    additionalTraits.classList.remove("hidden");
 
-  if (species === "Halfling" && Array.isArray(speciesInfo.traits)) {
-    traitsBlock.classList.remove("hidden");
-    main.classList.remove("hidden");
-    sub.classList.remove("hidden");
-    additional.classList.remove("hidden");
+    const traitElements = [
+      [trait1, trait1Description],
+      [trait2, trait2Description],
+      [trait3, trait3Description],
+      [trait4, trait4Description],
+    ];
 
-    speciesInfo.traits.forEach((trait, i) => {
-      traitEls[i][0].textContent = trait?.name || "";
-      traitEls[i][1].textContent = trait?.description || "";
+    traitElements.forEach(([nameElement, descElement], index) => {
+      const trait = speciesInfo.traits[index];
+      nameElement.textContent = trait?.name || "";
+      descElement.textContent = trait?.description || "";
     });
   } else if (species === "Goliath") {
-    traitsBlock.classList.remove("hidden");
-    main.classList.remove("hidden");
-    sub.classList.remove("hidden");
+    traits.classList.remove("hidden");
+    mainTrait.classList.remove("hidden");
+    subTrait.classList.remove("hidden");
+    additionalTraits.classList.add("hidden");
 
-    traitEls[0][0].textContent = speciesInfo.traits?.name || "";
-    traitEls[0][1].textContent = speciesInfo.traits?.description || "";
+    trait1.textContent = speciesInfo.traits.name || "";
+    trait1Description.textContent = speciesInfo.traits.description || "";
+    trait2.textContent = selectedSubspecies["subspecies trait"].name || "";
+    trait2Description.textContent =
+      selectedSubspecies["subspecies trait"].description || "";
+  } else if (speciesInfo?.traits) {
+    traits.classList.remove("hidden");
+    mainTrait.classList.remove("hidden");
+    subTrait.classList.add("hidden");
+    additionalTraits.classList.add("hidden");
 
-    traitEls[1][0].textContent = subspecies?.["subspecies trait"]?.name || "";
-    traitEls[1][1].textContent = subspecies?.["subspecies trait"]?.description || "";
-  } else if (speciesInfo.traits) {
-    traitsBlock.classList.remove("hidden");
-    main.classList.remove("hidden");
-
-    traitEls[0][0].textContent = speciesInfo.traits?.name || "";
-    traitEls[0][1].textContent = speciesInfo.traits?.description || "";
-  }
-}
-
-function updateBonusAction(speciesInfo) {
-  const bonus = document.getElementById("bonus-actions");
-  const bonusName = document.getElementById("bonus-name");
-  const bonusDesc = document.getElementById("bonus-description");
-
-  if (speciesInfo["bonus action"]) {
-    bonus.classList.remove("hidden");
-    bonusName.textContent = speciesInfo["bonus action"].name || "";
-    bonusDesc.innerHTML = speciesInfo["bonus action"].description || "";
+    trait1.textContent = speciesInfo.traits.name || "";
+    trait1Description.textContent = speciesInfo.traits.description || "";
   } else {
-    bonus.classList.add("hidden");
+    traits.classList.add("hidden");
+    mainTrait.classList.add("hidden");
+    subTrait.classList.add("hidden");
+    additionalTraits.classList.add("hidden");
   }
-}
 
-function rollSpecies() {
-  const species = getRandomSpecies();
-  const speciesInfo = speciesData[species];
-  if (!speciesInfo) return console.warn(`Species data for "${species}" not found.`);
+  const bonusActions = document.getElementById("bonus-actions");
 
-  const selectedSubspecies = chooseSubspecies(species, speciesInfo);
-  updateDisplayName(species, selectedSubspecies);
-  updateBasicAttributes(speciesInfo, selectedSubspecies);
-  updateAbilities(species, speciesInfo, selectedSubspecies);
-  updateLanguages(species, speciesInfo, selectedSubspecies);
-  updateTraits(species, speciesInfo, selectedSubspecies);
-  updateBonusAction(speciesInfo);
-
-  currentSpecies = species;
-  currentSubspecies = selectedSubspecies;
+  if (speciesInfo?.["bonus action"]) {
+    bonusActions.classList.remove("hidden");
+    document.getElementById("bonus-name").textContent =
+      speciesInfo["bonus action"].name || "";
+    document.getElementById("bonus-description").innerHTML =
+      speciesInfo["bonus action"].description || "";
+  } else {
+    bonusActions.classList.add("hidden");
+  }
 }
 
 function rollAlignment() {
   const lawfulness = getRandom(["Chaotic", "Neutral", "Lawful"]);
   const goodness = getRandom(["Evil", "Neutral", "Good"]);
 
-  const alignment =
-    lawfulness === "Neutral" && goodness === "Neutral"
+  document.getElementById("alignment").textContent =
+    lawfulness === goodness
       ? "True Neutral"
-      : `${lawfulness} ${goodness}`;
-
-  document.getElementById("alignment").textContent = alignment;
+      : `${lawfulness} ${goodness}` || "";
 }
 
 function rollLevel() {
@@ -327,33 +354,26 @@ function rollLevel() {
     legend: { level: () => getLevel(4, 16), hp: () => getBaseHP(4, 83) },
   };
 
-  const npcCategory = commoner.checked
-    ? "commoner"
-    : adventurer.checked
-    ? "adventurer"
-    : hero.checked
-    ? "hero"
-    : "legend";
+  let npcCategory = "legend";
 
-  const { level: levelFn, hp: hpFn } = npcTypes[npcCategory];
-  const level = levelFn();
-  const hp = hpFn();
+  if (commoner.checked) npcCategory = "commoner";
+  else if (adventurer.checked) npcCategory = "adventurer";
+  else if (hero.checked) npcCategory = "hero";
+
+  const { level, hp } = {
+    level: npcTypes[npcCategory].level(),
+    hp: npcTypes[npcCategory].hp(),
+  };
 
   baseHP = hp;
   levelMultiplier = level;
-  proficiencyBonus = getProficiencyBonus(level);
 
-  document.querySelectorAll(".proficiency-bonus").forEach((el) => {
-    el.textContent = proficiencyBonus;
+  proficiencyBonus =
+    level >= 17 ? 6 : level >= 13 ? 5 : level >= 9 ? 4 : level >= 5 ? 3 : 2;
+
+  document.querySelectorAll(".proficiency-bonus").forEach((instance) => {
+    instance.textContent = proficiencyBonus;
   });
-}
-
-function getProficiencyBonus(level) {
-  if (level >= 17) return 6;
-  if (level >= 13) return 5;
-  if (level >= 9) return 4;
-  if (level >= 5) return 3;
-  return 2;
 }
 
 function rollStats() {
@@ -368,15 +388,6 @@ function rollStats() {
     CHA: { stat: "cha", modifier: "cha-modifier" },
   };
 
-  const statElements = Object.keys(statIds).reduce((acc, statKey) => {
-    const { stat, modifier } = statIds[statKey];
-    acc[statKey] = {
-      statElement: document.getElementById(stat),
-      modifierElement: document.getElementById(modifier),
-    };
-    return acc;
-  }, {});
-
   const calculateStat = (statKey) => {
     let roll = rollD20();
 
@@ -388,7 +399,9 @@ function rollStats() {
     const modifierValue = Math.floor((roll - 10) / 2);
     const modifierText = (modifierValue >= 0 ? "+" : "") + modifierValue;
 
-    const { statElement, modifierElement } = statElements[statKey];
+    const { stat, modifier: modifierId } = statIds[statKey];
+    const statElement = document.getElementById(stat);
+    const modifierElement = document.getElementById(modifierId);
 
     if (statElement) statElement.textContent = roll;
     if (modifierElement) modifierElement.textContent = modifierText;
@@ -396,7 +409,9 @@ function rollStats() {
     npcModifiers[statKey] = modifierValue;
   };
 
-  Object.keys(statIds).forEach(calculateStat);
+  Object.keys(statIds).forEach((statKey) => {
+    calculateStat(statKey);
+  });
 
   document.getElementById("hp").textContent =
     baseHP + npcModifiers.CON * levelMultiplier;
@@ -408,7 +423,14 @@ function rollProficiencies() {
     return;
   }
 
-  const abilities = ["strength", "dexterity", "intelligence", "wisdom", "charisma"];
+  const abilities = [
+    "strength",
+    "dexterity",
+    "intelligence",
+    "wisdom",
+    "charisma",
+  ];
+
   const abilityShortNames = {
     strength: "STR",
     dexterity: "DEX",
@@ -418,70 +440,83 @@ function rollProficiencies() {
     charisma: "CHA",
   };
 
-  const getRandomAbilities = () => {
-    const [ability1, ability2] = abilities.sort(() => Math.random() - 0.5).slice(0, 2);
-    return { ability1, ability2 };
+  const getRandomAbility = () => {
+    const index = Math.floor(Math.random() * abilities.length);
+    return abilities[index];
   };
 
-  const { ability1, ability2 } = getRandomAbilities();
+  let ability1, ability2;
+  do {
+    ability1 = getRandomAbility();
+    ability2 = getRandomAbility();
+  } while (ability1 === ability2);
 
   const getRandomSkill = (ability) => {
     const entry = proficiencyData[ability];
-    return ability === "strength"
-      ? entry.proficiency
-      : entry[Math.floor(Math.random() * entry.length)].proficiency;
+    if (ability === "strength") {
+      return entry.proficiency;
+    }
+    const skills = entry.map((skillObj) => skillObj.proficiency);
+    const randomSkill = skills[Math.floor(Math.random() * skills.length)];
+    return randomSkill;
   };
 
-  const skill1 = currentSpecies === "Elf"
-    ? currentSubspecies?.proficiency || getRandomSkill(ability1)
-    : getRandomSkill(ability1);
+  let skill1 = "";
+  let shortAbility1 = "";
+
+  if (currentSpecies === "Elf") {
+    skill1 = currentSubspecies?.proficiency || getRandomSkill(ability1);
+    shortAbility1 = "WIS";
+  } else {
+    skill1 = getRandomSkill(ability1);
+    shortAbility1 = abilityShortNames[ability1];
+  }
 
   const skill2 = getRandomSkill(ability2);
-
-  const shortAbility1 = currentSpecies === "Elf" ? "WIS" : abilityShortNames[ability1];
   const shortAbility2 = abilityShortNames[ability2];
 
-  const save1Elem = document.getElementById("save1");
-  const skill1Elem = document.getElementById("skill1");
-  const save2Elem = document.getElementById("save2");
-  const skill2Elem = document.getElementById("skill2");
+  document.getElementById("save1").textContent = shortAbility1;
+  document.getElementById("skill1").textContent = skill1;
+  document.getElementById("save2").textContent = shortAbility2;
+  document.getElementById("skill2").textContent = skill2;
 
-  save1Elem.textContent = shortAbility1;
-  skill1Elem.textContent = skill1;
-  save2Elem.textContent = shortAbility2;
-  skill2Elem.textContent = skill2;
+  document.querySelectorAll(".modifier1").forEach((instance) => {
+    const base = parseInt(npcModifiers[shortAbility1] ?? 0);
+    instance.textContent = base + proficiencyBonus;
+  });
 
-  const updateModifiers = (ability, skillClass) => {
-    const base = parseInt(npcModifiers[ability] ?? 0);
-    document.querySelectorAll(skillClass).forEach((instance) => {
-      instance.textContent = base + proficiencyBonus;
-    });
-  };
-
-  updateModifiers(shortAbility1, ".modifier1");
-  updateModifiers(shortAbility2, ".modifier2");
+  document.querySelectorAll(".modifier2").forEach((instance) => {
+    const base = parseInt(npcModifiers[shortAbility2] ?? 0);
+    instance.textContent = base + proficiencyBonus;
+  });
 
   const passivePerception = document.getElementById("passive-perception");
   const wisModifier = npcModifiers.WIS ?? 0;
-  passivePerception.textContent = (skill1 === "Perception" || skill2 === "Perception")
-    ? 10 + wisModifier + proficiencyBonus
-    : 10 + wisModifier;
+
+  if (skill1 === "Perception" || skill2 === "Perception") {
+    passivePerception.textContent = 10 + wisModifier + proficiencyBonus;
+  } else {
+    passivePerception.textContent = 10 + wisModifier;
+  }
 }
 
 function rollArmor() {
   const selection = document.getElementById("armor-selector").value;
   const armor = document.getElementById("armor");
   const ac = document.getElementById("ac");
-  const stealthDisadvantage = document.getElementById("stealth-disadvantage");
-  const overencumbered = document.getElementById("overencumbered");
-  const traits = document.getElementById("traits");
+  const baseAC = 10 + npcModifiers.DEX;
+  const armorType = document.getElementById("armor-type");
 
   if (selection === "" || selection === "none") {
     armor.classList.add("hidden");
+    ac.textContent = baseAC;
   } else {
     armor.classList.remove("hidden");
 
+    const stealthDisadvantage = document.getElementById("stealth-disadvantage");
     const checkArmorMods = (armorToCheck) => {
+      const overencumbered = document.getElementById("overencumbered");
+
       if (armorToCheck["stealth disadvantage"]) {
         traits.classList.remove("hidden");
         stealthDisadvantage.classList.remove("hidden");
@@ -491,9 +526,7 @@ function rollArmor() {
 
       if (armorToCheck["dex max"] && npcModifiers.DEX > 2) {
         ac.textContent = armorToCheck.ac + 2;
-      } else {
-        ac.textContent = armorToCheck.ac + npcModifiers.DEX;
-      }
+      } else ac.textContent = armorToCheck.ac + npcModifiers.DEX;
 
       if (armorToCheck["str min"] > npcModifiers.STR) {
         overencumbered.classList.remove("hidden");
@@ -501,39 +534,33 @@ function rollArmor() {
         overencumbered.classList.add("hidden");
       }
 
-      document.getElementById("armor-type").textContent = armorToCheck.name;
+      armorType.textContent = armorToCheck.name;
     };
 
-    let selectedArmor;
-    switch (selection) {
-      case "light":
-        selectedArmor = armorData.light[Math.floor(Math.random() * armorData.light.length)];
-        break;
-      case "medium":
-        selectedArmor = armorData.medium[Math.floor(Math.random() * armorData.medium.length)];
-        break;
-      case "heavy":
-        selectedArmor = armorData.heavy[Math.floor(Math.random() * armorData.heavy.length)];
-        break;
-      default:
-        return;
+    if (selection === "light") {
+      const selectedArmor =
+        armorData.light[Math.floor(Math.random() * armorData.light.length)];
+      checkArmorMods(selectedArmor);
+    } else if (selection === "medium") {
+      const selectedArmor =
+        armorData.medium[Math.floor(Math.random() * armorData.medium.length)];
+      checkArmorMods(selectedArmor);
+    } else {
+      const selectedArmor =
+        armorData.heavy[Math.floor(Math.random() * armorData.heavy.length)];
+      checkArmorMods(selectedArmor);
     }
-
-    checkArmorMods(selectedArmor);
   }
 }
 
 function rollWeapons() {
   const unarmedStrike = document.getElementById("unarmed-strike");
   const weaponAttacks = document.getElementById("weapon-attacks");
-  const multiattack = document.getElementById("multiattack");
   const toHitSTR = npcModifiers.STR + proficiencyBonus;
   const toHitDEX = npcModifiers.DEX + proficiencyBonus;
 
-  const getWeaponType = (type, category) => {
-    if (category === "commoner") return "simple";
-    if (category === "adventurer" || category === "hero") return Math.random() < 0.5 ? "simple" : "martial";
-  };
+  let selectedMeleeWeapon = "";
+  let selectedRangedWeapon = "";
 
   if (!document.getElementById("armed-check").checked) {
     unarmedStrike.classList.remove("hidden");
@@ -544,31 +571,82 @@ function rollWeapons() {
     unarmedStrike.classList.add("hidden");
     weaponAttacks.classList.remove("hidden");
 
-    const npcCategory = commoner.checked ? "commoner" : adventurer.checked ? "adventurer" : hero.checked ? "hero" : "legend";
-    multiattack.classList.toggle("hidden", npcCategory === "commoner" || Math.random() <= (npcCategory === "adventurer" ? 0.66 : 0.33));
+    const multiattack = document.getElementById("multiattack");
 
-    const meleeType = getWeaponType("martial", npcCategory);
-    const selectedMeleeWeapon = weaponsData.melee[meleeType][Math.floor(Math.random() * weaponsData.melee[meleeType].length)];
-    document.querySelectorAll(".melee-weapon").forEach((instance) => (instance.textContent = selectedMeleeWeapon.name));
+    let meleeType = "martial";
+    let rangedType = "martial";
 
-    const meleeModifier = selectedMeleeWeapon.finesse && npcModifiers.DEX > npcModifiers.STR ? toHitDEX : toHitSTR;
-    document.querySelectorAll(".melee-modifier").forEach((instance) => (instance.textContent = meleeModifier));
+    if (commoner.checked) {
+      meleeType = "simple";
+      rangedType = "simple";
+    } else if (adventurer.checked || hero.checked) {
+      if (Math.random() < 0.5) {
+        meleeType = "simple";
+        rangedType = "simple";
+      }
+    }
 
-    document.getElementById("reach").textContent = selectedMeleeWeapon.reach ? 10 : 5;
-    document.getElementById("melee-dice").textContent = selectedMeleeWeapon["dmg dice"];
-    document.getElementById("melee-dmg-type").textContent = selectedMeleeWeapon["dmg type"];
+    if (commoner.checked) {
+      multiattack.classList.add("hidden");
+    } else if (adventurer.checked) {
+      if (Math.random() > 0.66) multiattack.classList.remove("hidden");
+      else multiattack.classList.add("hidden");
+    } else if (hero.checked) {
+      if (Math.random() > 0.33) multiattack.classList.remove("hidden");
+      else multiattack.classList.add("hidden");
+    } else {
+      multiattack.classList.remove("hidden");
+    }
 
-    const rangedType = getWeaponType("martial", npcCategory);
-    const selectedRangedWeapon = weaponsData.ranged[rangedType][Math.floor(Math.random() * weaponsData.ranged[rangedType].length)];
-    document.getElementById("ranged-weapon").textContent = selectedRangedWeapon.name;
-    document.querySelectorAll(".ranged-modifier").forEach((instance) => (instance.textContent = toHitDEX));
+    selectedMeleeWeapon =
+      weaponsData.melee[meleeType][
+        Math.floor(Math.random() * weaponsData.melee[meleeType].length)
+      ];
+
+    document
+      .querySelectorAll(".melee-weapon")
+      .forEach((instance) => (instance.textContent = selectedMeleeWeapon.name));
+
+    const meleeModifier = document.querySelectorAll(".melee-modifier");
+    const reach = document.getElementById("reach");
+
+    if (selectedMeleeWeapon.finesse && npcModifiers.DEX > npcModifiers.STR) {
+      meleeModifier.forEach((instance) => (instance.textContent = toHitDEX));
+    } else {
+      meleeModifier.forEach((instance) => (instance.textContent = toHitSTR));
+    }
+
+    if (selectedMeleeWeapon.reach) {
+      reach.textContent = 10;
+    } else {
+      reach.textContent = 5;
+    }
+
+    document.getElementById("melee-dice").textContent =
+      selectedMeleeWeapon["dmg dice"];
+    document.getElementById("melee-dmg-type").textContent =
+      selectedMeleeWeapon["dmg type"];
+
+    selectedRangedWeapon =
+      weaponsData.ranged[rangedType][
+        Math.floor(Math.random() * weaponsData.ranged[rangedType].length)
+      ];
+
+    document.getElementById("ranged-weapon").textContent =
+      selectedRangedWeapon.name;
+    document
+      .querySelectorAll(".ranged-modifier")
+      .forEach((instance) => (instance.textContent = toHitDEX));
     document.getElementById("range").textContent = selectedRangedWeapon.range;
-    document.getElementById("ranged-dmg-type").textContent = selectedRangedWeapon["dmg type"];
+    document.getElementById("ranged-dmg-type").textContent =
+      selectedRangedWeapon["dmg type"];
   }
 
-  document.getElementById("breath-save").textContent = 8 + npcModifiers.CON + proficiencyBonus;
+  document.getElementById("breath-save").textContent =
+    8 + npcModifiers.CON + proficiencyBonus;
 
   const breathDMG = document.getElementById("breath-dice");
+
   if (levelMultiplier >= 17) breathDMG.textContent = "4d10";
   else if (levelMultiplier >= 11) breathDMG.textContent = "3d10";
   else if (levelMultiplier >= 5) breathDMG.textContent = "2d10";
@@ -576,99 +654,300 @@ function rollWeapons() {
 }
 
 function rollSpells() {
+  const spellcasterCheck = document.getElementById("spellcaster-check");
   const spellcasting = document.getElementById("spellcasting");
 
-  if (!document.getElementById("spellcaster-check").checked) {
+  if (!spellcasterCheck.checked) {
     spellcasting.classList.add("hidden");
-    return;
-  }
+  } else {
+    traits.classList.remove("hidden");
+    spellcasting.classList.remove("hidden");
 
-  traits.classList.remove("hidden");
-  spellcasting.classList.remove("hidden");
+    const spellcastingLevel = document.getElementById("spellcasting-level");
+    const spellcastingAbility = document.getElementById("spellcasting-ability");
+    const spellSave = document.getElementById("spell-save");
+    const spellToHit = document.getElementById("spell-to-hit");
 
-  const ordinal = (n) => {
-    const ordinals = ["1st", "2nd", "3rd"];
-    return ordinals[n - 1] || `${n}th`;
-  };
+    const ordinal = (n) => {
+      const ordinals = ["1st", "2nd", "3rd"];
+      return ordinals[n - 1] || `${n}th`;
+    };
 
-  const levelText = [8, 11, 18].includes(levelMultiplier)
-    ? `an ${levelMultiplier}th`
-    : `a ${ordinal(levelMultiplier)}`;
-  document.getElementById("spellcasting-level").textContent = levelText;
+    spellcastingLevel.textContent = new Set([8, 11, 18]).has(levelMultiplier)
+      ? `an ${levelMultiplier}th`
+      : `a ${ordinal(levelMultiplier)}`;
 
-  const abilities = {
-    Charisma: npcModifiers.CHA,
-    Wisdom: npcModifiers.WIS,
-    Intelligence: npcModifiers.INT,
-  };
+    const abilities = {
+      Charisma: npcModifiers.CHA,
+      Wisdom: npcModifiers.WIS,
+      Intelligence: npcModifiers.INT,
+    };
 
-  const bestAbility = Object.entries(abilities).reduce((best, curr) =>
-    curr[1] > best[1] ? curr : best
-  );
+    const bestAbility = Object.entries(abilities).reduce((a, b) =>
+      b[1] > a[1] ? b : a
+    );
 
-  document.getElementById("spellcasting-ability").textContent = bestAbility[0];
-  document.getElementById("spell-save").textContent = 8 + bestAbility[1] + proficiencyBonus;
-  document.getElementById("spell-to-hit").textContent = bestAbility[1] + proficiencyBonus;
+    spellcastingAbility.textContent = bestAbility[0];
+    spellSave.textContent = 8 + bestAbility[1] + proficiencyBonus;
+    spellToHit.textContent = bestAbility[1] + proficiencyBonus;
 
-  const getRandomSpells = (spellArray, count) => {
-    const selected = new Set();
-    while (selected.size < count && selected.size < spellArray.length) {
-      const index = Math.floor(Math.random() * spellArray.length);
-      selected.add(spellArray[index]);
-    }
-    return Array.from(selected);
-  };
-
-  const generateSpellHTML = (level, spells, slots = null) => {
-    const displayLevel =
-      level === 0
-        ? "Cantrips (at will)"
-        : `${ordinal(level)} level${slots ? ` (${slots} slot${slots > 1 ? "s" : ""})` : ""}`;
-
-    const spellLinks = spells.map((spell) => {
-      const name = spell.name || spell;
-      const url = spell.link || "#";
-      return `<a href="${url}" class="italic hover:text-red active:brightness-90 underline" target="_blank">${name}</a>`;
-    });
-
-    return `<p>${displayLevel}: ${spellLinks.join(", ")}</p>`;
-  };
-
-  const spellsByLevel = {
-    1: { cantrips: 3, spells: { 1: { slots: 2, count: 1 } } },
-    2: { cantrips: 3, spells: { 1: { slots: 3, count: 1 } } },
-    3: { cantrips: 3, spells: { 1: { slots: 4, count: 1 }, 2: { slots: 2, count: 1 } } },
-    20: { cantrips: 5, spells: { 1: { slots: 4, count: 4 }, 2: { slots: 3, count: 3 }, 3: { slots: 3, count: 3 }, 4: { slots: 3, count: 3 }, 5: { slots: 3, count: 2 }, 6: { slots: 2, count: 1 }, 7: { slots: 2, count: 1 }, 8: { slots: 1, count: 1 }, 9: { slots: 1, count: 1 } } },
-  };
-
-  const assignSpellsFromData = () => {
-    if (!spellsData || !Object.keys(spellsData).length) return "";
-
-    const preparedSpells = [];
-    const spellConfig = spellsByLevel[levelMultiplier];
-    if (!spellConfig) return "";
-
-    const cantripArray = spellsData["cantrips"];
-    if (cantripArray) {
-      const selectedCantrips = getRandomSpells(cantripArray, spellConfig.cantrips);
-      preparedSpells.push(generateSpellHTML(0, selectedCantrips));
+    const getRandomSpells = (spellArray, count) => {
+      const selected = new Set();
+      while (selected.size < count && selected.size < spellArray.length) {
+        const index = Math.floor(Math.random() * spellArray.length);
+        selected.add(spellArray[index]);
+      }
+      return Array.from(selected);
     }
 
-    for (const [levelStr, { slots, count }] of Object.entries(spellConfig.spells)) {
-      const level = parseInt(levelStr);
-      const spellsAtLevel = spellsData[`${ordinal(level)} level`] || [];
-      if (spellsAtLevel.length && slots && count) {
+    const generateSpellHTML = (level, spells, slots = null) => {
+      const displayLevel =
+        level === 0
+          ? "Cantrips (at will)"
+          : `${ordinal(level)} level${
+              slots ? ` (${slots} slot${slots > 1 ? "s" : ""})` : ""
+            }`;
+
+      const spellLinks = spells.map((spell) => {
+        const name = spell.name || spell;
+        const url = spell.link || "#";
+        return `<a href="${url}" class="italic hover:text-red active:brightness-90 underline" target="_blank">${name}</a>`;
+      });
+
+      return `<p>${displayLevel}: ${spellLinks.join(", ")}</p>`;
+    }
+
+    const spellsByLevel = {
+      1: { cantrips: 3, spells: { 1: { slots: 2, count: 1 } } },
+      2: { cantrips: 3, spells: { 1: { slots: 3, count: 1 } } },
+      3: {
+        cantrips: 3,
+        spells: { 1: { slots: 4, count: 1 }, 2: { slots: 2, count: 1 } },
+      },
+      4: {
+        cantrips: 4,
+        spells: { 1: { slots: 4, count: 2 }, 2: { slots: 3, count: 1 } },
+      },
+      5: {
+        cantrips: 4,
+        spells: {
+          1: { slots: 4, count: 2 },
+          2: { slots: 3, count: 1 },
+          3: { slots: 2, count: 1 },
+        },
+      },
+      6: {
+        cantrips: 4,
+        spells: {
+          1: { slots: 4, count: 2 },
+          2: { slots: 3, count: 2 },
+          3: { slots: 3, count: 1 },
+        },
+      },
+      7: {
+        cantrips: 4,
+        spells: {
+          1: { slots: 4, count: 2 },
+          2: { slots: 3, count: 2 },
+          3: { slots: 3, count: 1 },
+          4: { slots: 1, count: 1 },
+        },
+      },
+      8: {
+        cantrips: 4,
+        spells: {
+          1: { slots: 4, count: 3 },
+          2: { slots: 3, count: 2 },
+          3: { slots: 3, count: 1 },
+          4: { slots: 2, count: 1 },
+        },
+      },
+      9: {
+        cantrips: 4,
+        spells: {
+          1: { slots: 4, count: 3 },
+          2: { slots: 3, count: 2 },
+          3: { slots: 3, count: 1 },
+          4: { slots: 3, count: 1 },
+          5: { slots: 1, count: 1 },
+        },
+      },
+      10: {
+        cantrips: 5,
+        spells: {
+          1: { slots: 4, count: 3 },
+          2: { slots: 3, count: 2 },
+          3: { slots: 3, count: 2 },
+          4: { slots: 3, count: 1 },
+          5: { slots: 2, count: 1 },
+        },
+      },
+      11: {
+        cantrips: 5,
+        spells: {
+          1: { slots: 4, count: 3 },
+          2: { slots: 3, count: 2 },
+          3: { slots: 3, count: 2 },
+          4: { slots: 3, count: 1 },
+          5: { slots: 2, count: 1 },
+          6: { slots: 1, count: 1 },
+        },
+      },
+      12: {
+        cantrips: 5,
+        spells: {
+          1: { slots: 4, count: 4 },
+          2: { slots: 3, count: 2 },
+          3: { slots: 3, count: 2 },
+          4: { slots: 3, count: 1 },
+          5: { slots: 2, count: 1 },
+          6: { slots: 1, count: 1 },
+        },
+      },
+      13: {
+        cantrips: 5,
+        spells: {
+          1: { slots: 4, count: 4 },
+          2: { slots: 3, count: 2 },
+          3: { slots: 3, count: 2 },
+          4: { slots: 3, count: 1 },
+          5: { slots: 2, count: 1 },
+          6: { slots: 1, count: 1 },
+          7: { slots: 1, count: 1 },
+        },
+      },
+      14: {
+        cantrips: 5,
+        spells: {
+          1: { slots: 4, count: 4 },
+          2: { slots: 3, count: 3 },
+          3: { slots: 3, count: 2 },
+          4: { slots: 3, count: 1 },
+          5: { slots: 2, count: 1 },
+          6: { slots: 1, count: 1 },
+          7: { slots: 1, count: 1 },
+        },
+      },
+      15: {
+        cantrips: 5,
+        spells: {
+          1: { slots: 4, count: 4 },
+          2: { slots: 3, count: 3 },
+          3: { slots: 3, count: 2 },
+          4: { slots: 3, count: 1 },
+          5: { slots: 2, count: 1 },
+          6: { slots: 1, count: 1 },
+          7: { slots: 1, count: 1 },
+          8: { slots: 1, count: 1 },
+        },
+      },
+      16: {
+        cantrips: 5,
+        spells: {
+          1: { slots: 4, count: 4 },
+          2: { slots: 3, count: 3 },
+          3: { slots: 3, count: 2 },
+          4: { slots: 3, count: 1 },
+          5: { slots: 2, count: 1 },
+          6: { slots: 1, count: 1 },
+          7: { slots: 1, count: 1 },
+          8: { slots: 1, count: 1 },
+        },
+      },
+      17: {
+        cantrips: 5,
+        spells: {
+          1: { slots: 4, count: 4 },
+          2: { slots: 3, count: 3 },
+          3: { slots: 3, count: 2 },
+          4: { slots: 3, count: 2 },
+          5: { slots: 2, count: 1 },
+          6: { slots: 1, count: 1 },
+          7: { slots: 1, count: 1 },
+          8: { slots: 1, count: 1 },
+          9: { slots: 1, count: 1 },
+        },
+      },
+      18: {
+        cantrips: 5,
+        spells: {
+          1: { slots: 4, count: 4 },
+          2: { slots: 3, count: 3 },
+          3: { slots: 3, count: 3 },
+          4: { slots: 3, count: 2 },
+          5: { slots: 3, count: 1 },
+          6: { slots: 1, count: 1 },
+          7: { slots: 1, count: 1 },
+          8: { slots: 1, count: 1 },
+          9: { slots: 1, count: 1 },
+        },
+      },
+      19: {
+        cantrips: 5,
+        spells: {
+          1: { slots: 4, count: 4 },
+          2: { slots: 3, count: 3 },
+          3: { slots: 3, count: 3 },
+          4: { slots: 3, count: 3 },
+          5: { slots: 3, count: 1 },
+          6: { slots: 2, count: 1 },
+          7: { slots: 1, count: 1 },
+          8: { slots: 1, count: 1 },
+          9: { slots: 1, count: 1 },
+        },
+      },
+      20: {
+        cantrips: 5,
+        spells: {
+          1: { slots: 4, count: 4 },
+          2: { slots: 3, count: 3 },
+          3: { slots: 3, count: 3 },
+          4: { slots: 3, count: 3 },
+          5: { slots: 3, count: 2 },
+          6: { slots: 2, count: 1 },
+          7: { slots: 2, count: 1 },
+          8: { slots: 1, count: 1 },
+          9: { slots: 1, count: 1 },
+        },
+      },
+    };
+
+    const assignSpellsFromData = () => {
+      if (!spellsData || !Object.keys(spellsData).length) return "";
+
+      const preparedSpells = [];
+      const spellConfig = spellsByLevel[levelMultiplier];
+      if (!spellConfig) return "";
+
+      // Add Cantrips
+      const cantripArray = spellsData["cantrips"];
+      if (cantripArray) {
+        const selectedCantrips = getRandomSpells(
+          cantripArray,
+          spellConfig.cantrips
+        );
+        preparedSpells.push(generateSpellHTML(0, selectedCantrips));
+      }
+
+      // Add Leveled Spells
+      for (const [levelStr, { slots, count }] of Object.entries(
+        spellConfig.spells
+      )) {
+        const level = parseInt(levelStr);
+        const spellsAtLevel = spellsData[`${ordinal(level)} level`] || [];
+        if (!spellsAtLevel.length || !slots || !count) continue;
+
         const selectedSpells = getRandomSpells(spellsAtLevel, count);
         if (selectedSpells.length) {
           preparedSpells.push(generateSpellHTML(level, selectedSpells, slots));
         }
       }
+
+      return preparedSpells.join("");
     }
 
-    return preparedSpells.join("");
-  };
-
-  document.getElementById("spell-list").innerHTML = assignSpellsFromData();
+    document.getElementById("spell-list").innerHTML = assignSpellsFromData();
+  }
 }
 
 function rollNPC() {
