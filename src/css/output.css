@@ -566,7 +566,7 @@ html::-webkit-scrollbar {
 }
 .key {
   border-radius: 0.25rem;
-  width: 1.5rem;
+  width: 1.75rem;
   aspect-ratio: 2/3;
   background-color: oklch(70.7% 0.022 261.325);
   cursor: pointer;
