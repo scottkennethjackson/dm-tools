@@ -43,3 +43,15 @@ html {
 html::-webkit-scrollbar {
     display: none;
 }
+
+.key {
+    border-radius: 0.25rem;
+    width: 2rem;
+    height: 2.25rem;
+    background-color: oklch(70.7% 0.022 261.325);
+    cursor: pointer;
+}
+
+.key:active {
+    filter:brightness(90%)
+}

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Scott Kenneth Jackson">
+        <meta name="description" content="A DM Tool for randomly generating encounters">
+        <meta name="theme-color" content="#000000">
+
+        <title>DM Tools | Power Word</title>
+
+        <link rel="stylesheet" href="../css/output.css">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="../assets/icons/favicon_io/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon_io/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../assets/icons/favicon_io/favicon-16x16.png">
+        <link rel="manifest" href="../assets/icons/favicon_io/site.webmanifest">
+    </head>
+    <body class="bg-black">
+        <main class="flex flex-col justify-center items-center space-y-4 px-4 py-12 w-full min-h-screen">
+            <svg
+                role="button"
+                aria-hidden="true"
+                focusable="false"
+                class="absolute top-4 right-4 h-8 fill-gray-400 hover:fill-red active:brightness-90 cursor-pointer"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 576 512"
+                onclick="location.href='https://scottkennethjackson.github.io/dm-tools/'"
+            >
+                <path
+                    d="M575.8 255.5c0 18-15 32.1-32 32.1l-32 0 .7 160.2c0 2.7-.2 5.4-.5 8.1l0 16.2c0 22.1-17.9 40-40 40l-16 0c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1L416 512l-24 0c-22.1 0-40-17.9-40-40l0-24 0-64c0-17.7-14.3-32-32-32l-64 0c-17.7 0-32 14.3-32 32l0 64 0 24c0 22.1-17.9 40-40 40l-24 0-31.9 0c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2l-16 0c-22.1 0-40-17.9-40-40l0-112c0-.9 0-1.9 .1-2.8l0-69.7-32 0c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"
+                />
+            </svg>
+            <div>
+                <img
+                    src="../assets/images/logo.png"
+                    alt="D&D"
+                    class="h-24 sm:h-32 mx-auto"
+                >
+                <h1 class="font-roboto text-3xl font-bold text-center text-gray-400 uppercase">Power Word</h1>
+            </div>
+
+            <div class="container flex flex-col justify-center items-center space-y-4 mb-8 max-w-md px-4 py-8 text-white">
+                <h2
+                    id="word"
+                    class="font-tiamat text-3xl"
+                >
+                    {word}
+                </h2>
+
+                <p id="message">{message}</p>
+
+                <div class="flex w-full space-x-4">
+                    <div class="relative flex justify-center items-center border border-red h-12 w-3/4">
+                        <button id="hint" class="absolute size-full font-tiamat text-2xl bg-red active:brightness-90 cursor-pointer">Hint</button>
+                        <p id="category" class="font-tiamat text-2xl">{category}</p>
+                    </div>
+                    <div class="flex justify-center items-center border border-red h-12 w-1/4 space-x-1">
+                        <svg
+                            role=""
+                            aria-hidden="true"
+                            focusable="false"
+                            class="h-8 fill-white"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 512 512"
+                        >
+                            <path
+                                d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"
+                            />
+                        </svg>
+                        <p id="hp" class="font-roboto font-bold text-3xl">10</p>
+                    </div>
+                </div>
+
+                <div id="keyboard" class="flex flex-col items-center space-y-1">
+                    <div class="space-x-0">
+                        <button class="key" data-key="Q">Q</button>
+                        <button class="key" data-key="W">W</button>
+                        <button class="key" data-key="E">E</button>
+                        <button class="key" data-key="R">R</button>
+                        <button class="key" data-key="T">T</button>
+                        <button class="key" data-key="Y">Y</button>
+                        <button class="key" data-key="U">U</button>
+                        <button class="key" data-key="I">I</button>
+                        <button class="key" data-key="O">O</button>
+                        <button class="key" data-key="P">P</button>
+                    </div>
+                    
+                    <div class="space-x-0">
+                        <button class="key" data-key="A">A</button>
+                        <button class="key" data-key="S">S</button>
+                        <button class="key" data-key="D">D</button>
+                        <button class="key" data-key="F">F</button>
+                        <button class="key" data-key="G">G</button>
+                        <button class="key" data-key="H">H</button>
+                        <button class="key" data-key="J">J</button>
+                        <button class="key" data-key="K">K</button>
+                        <button class="key" data-key="L">L</button>
+                    </div>
+                    
+                    <div class="space-x-0">
+                        <button class="key" data-key="Z">Z</button>
+                        <button class="key" data-key="X">X</button>
+                        <button class="key" data-key="C">C</button>
+                        <button class="key" data-key="V">V</button>
+                        <button class="key" data-key="B">B</button>
+                        <button class="key" data-key="N">N</button>
+                        <button class="key" data-key="M">M</button>
+                    </div>
+                </div>
+            </div>
+
+            <button
+                id="play-btn"
+                class="px-8 py-2 font-tiamat text-xl text-white bg-red active:brightness-90 cursor-pointer"
+            >
+                Play Again!
+            </button>
+        </main>
+    </body>
+
+    <footer>
+        <script src="../js/power-word.js"></script>
+    </footer>
+</html>

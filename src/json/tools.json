@@ -75,9 +75,9 @@
     {
       "hangmaster": [
         {
-          "title": "HangMaster",
+          "title": "Power Word",
           "description": "[Work-in-Progress]",
-          "link": "./src/tools/hangmaster.html"
+          "link": "./src/tools/power-word.html"
         }
       ]
     }
