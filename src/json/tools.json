@@ -73,10 +73,10 @@
       ]
     },
     {
-      "hangmaster": [
+      "power word": [
         {
           "title": "Power Word",
-          "description": "[Work-in-Progress]",
+          "description": "Party taking too long to solve your puzzle? Wizard not prepared their spells? Got a bit of time to kill? Play what is essentially D&D Hangman. You're behind a screen, they'll never know.",
           "link": "./src/tools/power-word.html"
         }
       ]
