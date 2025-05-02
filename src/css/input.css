@@ -28,11 +28,26 @@
 }
 
 @theme {
+    --animate-flip: flip 700ms ease-in-out;
     --breakpoint-xs: 30rem;
-    
     --color-red: #eb1313;
     --font-tiamat: "Tiamat Condensed SC", serif;
     --font-roboto: "Roboto Condensed", sans-serif;
+
+    @keyframes flip {
+        25% {
+            transform: rotateY(45deg);
+        }
+        50% {
+            transform: rotateY(90deg);
+        }
+        75% {
+            transform: rotateY(45deg);
+        }
+        100% {
+            transform: rotateY(0deg);
+        }
+    }
 }
 
 html {
@@ -42,16 +57,4 @@ html {
 
 html::-webkit-scrollbar {
     display: none;
-}
-
-.key {
-    border-radius: 0.25rem;
-    width: 1.75rem;
-    aspect-ratio: 2/3;
-    background-color: oklch(70.7% 0.022 261.325);
-    cursor: pointer;
-}
-
-.key:active {
-    filter:brightness(90%)
 }
