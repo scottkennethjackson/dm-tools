@@ -8,6 +8,8 @@ const hpCounter = document.getElementById("hp-counter");
 const activeClasses = ["bg-gray-400", "active:brightness-90", "cursor-pointer"];
 const inactiveClasses = ["pressed", "bg-gray-600"];
 const correctClasses = ["pressed", "bg-red"];
+const loserClasses = ["animate__animated", "animate__headShake"];
+const winnerClass = "animate-bounce";
 
 let hp = 10;
 let magicItems = [];
@@ -62,7 +64,7 @@ function getWord() {
     do {
         const wordRoll = Math.floor(Math.random() * array.length);
         selectedWord = array[wordRoll];
-        selectedWordUpper = selectedWord.toUpperCase(); // cache for reuse
+        selectedWordUpper = selectedWord.toUpperCase();
         tries++;
     } while ((/[^\w\s]/.test(selectedWord) || selectedWord.length < 5 || selectedWord === "Prestidigitation") && tries < maxTries);
 
@@ -167,6 +169,8 @@ function correctGuess(key) {
 function checkWin() {
     const unflippedTiles = document.querySelectorAll(".tile.unflipped");
     if (unflippedTiles.length === 0) {
+        word.classList.add(winnerClass);
+
         if (hp === 10) message.textContent = "Critical Success!";
         else if (hp > 8) message.textContent = "Impressive!";
         else if (hp > 5) message.textContent = "Well Done!";
@@ -178,6 +182,7 @@ function checkWin() {
 
 function revealMissingLetters() {
     const remainingTiles = document.querySelectorAll(".tile.unflipped");
+    word.classList.add(...loserClasses);
     remainingTiles.forEach(tile => {
         tile.classList.add("animate-flip");
     });
@@ -191,7 +196,9 @@ function revealMissingLetters() {
 function playAgain() {
     hintBtn.classList.remove("hidden");
     playAgainBtn.classList.add("hidden");
+    word.classList.remove(...loserClasses, winnerClass);
     message.classList.add("invisible");
+    
 
     keyMap.forEach((keyEl) => {
         keyEl.classList.remove(...inactiveClasses, ...correctClasses);
@@ -204,7 +211,6 @@ function playAgain() {
     startGame();
 }
 
-// Build keyMap on startup
 document.querySelectorAll("[data-key]").forEach(el => {
     keyMap.set(el.dataset.key.toUpperCase(), el);
 });
