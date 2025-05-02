@@ -58,6 +58,7 @@ function getWord() {
         currentCategory = "Spell";
     }
 
+    let hasLongPart = false;
     let tries = 0;
     const maxTries = 20;
 
@@ -65,8 +66,13 @@ function getWord() {
         const wordRoll = Math.floor(Math.random() * array.length);
         selectedWord = array[wordRoll];
         selectedWordUpper = selectedWord.toUpperCase();
+        const wordParts = selectedWord.split(" ");
+        const hasLongPart = wordParts.some(part => part.length > 10);
         tries++;
-    } while ((/[^\w\s]/.test(selectedWord) || selectedWord.length < 5 || selectedWord === "Prestidigitation") && tries < maxTries);
+    } while (
+        (/[^\w\s]/.test(selectedWord) || selectedWord.length < 5 || hasLongPart) &&
+        tries < maxTries
+    );
 
     hint.textContent = currentCategory;
 }
