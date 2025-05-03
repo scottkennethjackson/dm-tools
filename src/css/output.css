@@ -31,6 +31,7 @@
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
     --animate-flip: flip 700ms ease-in-out;
+    --animate-shake: shake 1s ease-in-out;
     --color-red: #eb1313;
     --font-tiamat: "Tiamat Condensed SC", serif;
     --font-roboto: "Roboto Condensed", sans-serif;
@@ -322,6 +323,9 @@
   }
   .animate-flip {
     animation: var(--animate-flip);
+  }
+  .animate-shake {
+    animation: var(--animate-shake);
   }
   .cursor-not-allowed {
     cursor: not-allowed;
@@ -750,6 +754,26 @@ html::-webkit-scrollbar {
   }
   100% {
     transform: rotateY(0deg);
+  }
+}
+@keyframes shake {
+  20% {
+    transform: translateX(-8px);
+  }
+  40% {
+    transform: translateX(6px);
+  }
+  60% {
+    transform: translateX(-4px);
+  }
+  80% {
+    transform: translateX(2px);
+  }
+  90% {
+    transform: translateX(-1px);
+  }
+  100% {
+    transform: translateX(0);
   }
 }
 @layer properties {

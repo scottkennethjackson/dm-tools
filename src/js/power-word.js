@@ -8,7 +8,7 @@ const hpCounter = document.getElementById("hp-counter");
 const activeClasses = ["bg-gray-400", "active:brightness-90", "cursor-pointer"];
 const inactiveClasses = ["pressed", "bg-gray-600"];
 const correctClasses = ["pressed", "bg-red"];
-const loserClasses = ["animate__animated", "animate__headShake"];
+const loserClass = "animate-shake";
 const winnerClass = "animate-bounce";
 
 let hp = 10;
@@ -188,7 +188,7 @@ function checkWin() {
 
 function revealMissingLetters() {
     const remainingTiles = document.querySelectorAll(".tile.unflipped");
-    word.classList.add(...loserClasses);
+    word.classList.add(loserClass);
     remainingTiles.forEach(tile => {
         tile.classList.add("animate-flip");
     });
@@ -202,7 +202,7 @@ function revealMissingLetters() {
 function playAgain() {
     hintBtn.classList.remove("hidden");
     playAgainBtn.classList.add("hidden");
-    word.classList.remove(...loserClasses, winnerClass);
+    word.classList.remove(loserClass, winnerClass);
     message.classList.add("invisible");
     
 
