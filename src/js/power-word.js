@@ -180,7 +180,7 @@ function checkWin() {
         if (hp === 10) message.textContent = "Critical Success!";
         else if (hp > 8) message.textContent = "Impressive!";
         else if (hp > 5) message.textContent = "Well Done!";
-        else if (hp > 2) message.textContent = "Close One!";
+        else if (hp > 2) message.textContent = "Not Bad!";
         else message.textContent = "Phew!";
         stopGame();
     }
