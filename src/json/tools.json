@@ -76,7 +76,7 @@
       "power word": [
         {
           "title": "Power Word",
-          "description": "Party taking too long to solve your puzzle? Wizard not prepared their spells? Got a bit of time to kill? Play what is essentially D&D Hangman. You're behind a screen, they'll never know.",
+          "description": "Party taking too long to solve your puzzle? Wizard not prepared their spells (again)? Got a bit of time to kill? Play what is essentially D&D Hangman. You're behind a screen, they'll never know.",
           "link": "./src/tools/power-word.html"
         }
       ]
