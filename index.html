@@ -43,8 +43,8 @@
         </button>
 
         <div id="dice-tray" class="absolute -top-full left-2 z-20 flex flex-col space-y-2 p-2 pt-16 bg-white/25 rounded-full duration-500">
-            <button class="relative flex flex-col justify-center items-center size-12 bg-red active:brightness-90 rounded-full cursor-pointer">
-                <div class="absolute -top-0.5 -right-0.5 flex justify-center items-center size-4 font-roboto text-xs font-bold text-red bg-white rounded-full">0</div>
+            <button id="d20-btn" class="relative flex flex-col justify-center items-center size-12 bg-red active:brightness-90 rounded-full cursor-pointer">
+                <div id="d20-counter" class="absolute -top-0.5 -right-0.5 flex justify-center items-center size-4 font-roboto text-xs font-bold text-red bg-white rounded-full">0</div>
                 <svg
                     role="graphics-symbol"
                     aria-hidden="true"
@@ -57,8 +57,8 @@
                 </svg>
                 <p class="font-roboto text-xs font-bold text-white">D20</p>
             </button>
-            <button class="relative flex flex-col justify-center items-center size-12 bg-red active:brightness-90 rounded-full cursor-pointer">
-                <div class="absolute -top-0.5 -right-0.5 flex justify-center items-center size-4 font-roboto text-xs font-bold text-red bg-white rounded-full">0</div>
+            <button id="d12-btn" class="relative flex flex-col justify-center items-center size-12 bg-red active:brightness-90 rounded-full cursor-pointer">
+                <div id="d12-counter" class="absolute -top-0.5 -right-0.5 flex justify-center items-center size-4 font-roboto text-xs font-bold text-red bg-white rounded-full">0</div>
                 <svg
                     role="graphics-symbol"
                     aria-hidden="true"
@@ -71,8 +71,8 @@
                 </svg>
                 <p class="font-roboto text-xs font-bold text-white">D12</p>
             </button>
-            <button class="relative flex flex-col justify-center items-center size-12 bg-red active:brightness-90 rounded-full cursor-pointer">
-                <div class="absolute -top-0.5 -right-0.5 flex justify-center items-center size-4 font-roboto text-xs font-bold text-red bg-white rounded-full">0</div>
+            <button id="d10-btn" class="relative flex flex-col justify-center items-center size-12 bg-red active:brightness-90 rounded-full cursor-pointer">
+                <div id="d10-counter" class="absolute -top-0.5 -right-0.5 flex justify-center items-center size-4 font-roboto text-xs font-bold text-red bg-white rounded-full">0</div>
                 <svg
                     role="graphics-symbol"
                     aria-hidden="true"
@@ -85,8 +85,8 @@
                 </svg>
                 <p class="font-roboto text-xs font-bold text-white">D10</p>
             </button>
-            <button class="relative flex flex-col justify-center items-center size-12 bg-red active:brightness-90 rounded-full cursor-pointer">
-                <div class="absolute -top-0.5 -right-0.5 flex justify-center items-center size-4 font-roboto text-xs font-bold text-red bg-white rounded-full">0</div>
+            <button id="d100-btn" class="relative flex flex-col justify-center items-center size-12 bg-red active:brightness-90 rounded-full cursor-pointer">
+                <div id="d100-counter" class="absolute -top-0.5 -right-0.5 flex justify-center items-center size-4 font-roboto text-xs font-bold text-red bg-white rounded-full">0</div>
                 <span class="flex">
                     <svg
                         role="graphics-symbol"
@@ -111,8 +111,8 @@
                 </span>
                 <p class="font-roboto text-xs font-bold text-white">D100</p>
             </button>
-            <button class="relative flex flex-col justify-center items-center size-12 bg-red active:brightness-90 rounded-full cursor-pointer">
-                <div class="absolute -top-0.5 -right-0.5 flex justify-center items-center size-4 font-roboto text-xs font-bold text-red bg-white rounded-full">0</div>
+            <button id="d8-btn" class="relative flex flex-col justify-center items-center size-12 bg-red active:brightness-90 rounded-full cursor-pointer">
+                <div id="d8-counter" class="absolute -top-0.5 -right-0.5 flex justify-center items-center size-4 font-roboto text-xs font-bold text-red bg-white rounded-full">0</div>
                 <svg
                     role="graphics-symbol"
                     aria-hidden="true"
@@ -125,8 +125,8 @@
                 </svg>
                 <p class="font-roboto text-xs font-bold text-white">D8</p>
             </button>
-            <button class="relative flex flex-col justify-center items-center size-12 bg-red active:brightness-90 rounded-full cursor-pointer">
-                <div class="absolute -top-0.5 -right-0.5 flex justify-center items-center size-4 font-roboto text-xs font-bold text-red bg-white rounded-full">0</div>
+            <button id="d6-btn" class="relative flex flex-col justify-center items-center size-12 bg-red active:brightness-90 rounded-full cursor-pointer">
+                <div id="d6-counter" class="absolute -top-0.5 -right-0.5 flex justify-center items-center size-4 font-roboto text-xs font-bold text-red bg-white rounded-full">0</div>
                 <svg
                     role="graphics-symbol"
                     aria-hidden="true"
@@ -139,8 +139,8 @@
                 </svg>
                 <p class="font-roboto text-xs font-bold text-white">D6</p>
             </button>
-            <button class="relative flex flex-col justify-center items-center size-12 bg-red active:brightness-90 rounded-full cursor-pointer">
-                <div class="absolute -top-0.5 -right-0.5 flex justify-center items-center size-4 font-roboto text-xs font-bold text-red bg-white rounded-full">0</div>
+            <button id="d4-btn" class="relative flex flex-col justify-center items-center size-12 bg-red active:brightness-90 rounded-full cursor-pointer">
+                <div id="d4-counter" class="absolute -top-0.5 -right-0.5 flex justify-center items-center size-4 font-roboto text-xs font-bold text-red bg-white rounded-full">0</div>
                 <svg
                     role="graphics-symbol"
                     aria-hidden="true"
@@ -155,8 +155,8 @@
             </button>
         </div>
 
-        <button class="absolute top-3.5 -left-full z-10 flex justify-center items-center ps-20 pe-8 h-13 font-roboto text-xl uppercase font-bold text-white bg-red active:brightness-90 rounded-full cursor-pointer">
-            Roll<span id="roll-result">&nbsp;= 100</span>
+        <button id="roll-dice-btn" class="absolute top-3.5 -left-full z-10 flex justify-center items-center ps-20 pe-8 h-13 font-roboto text-xl uppercase font-bold text-white bg-red active:brightness-90 rounded-full duration-500 cursor-pointer">
+            Roll<span id="dice-result"></span>
         </button>
 
 

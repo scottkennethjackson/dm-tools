@@ -267,6 +267,9 @@
   .-left-full {
     left: -100%;
   }
+  .left-0 {
+    left: calc(var(--spacing) * 0);
+  }
   .left-1 {
     left: calc(var(--spacing) * 1);
   }
