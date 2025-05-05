@@ -17,6 +17,7 @@ const d4Btn = document.getElementById("d4-btn");
 const d4Counter = document.getElementById("d4-counter");
 const rollDiceBtn = document.getElementById("roll-dice-btn");
 const diceResult = document.getElementById("dice-result");
+const resetBtn = document.getElementById("reset-btn");
 
 let numD20s = 0;
 let numD12s = 0;
@@ -36,8 +37,6 @@ closeBtn.addEventListener("click", function () {
     closeBtn.classList.add("hidden");
     diceTray.classList.remove("top-2");
     diceTray.classList.add("-top-full");
-    rollDiceBtn.classList.remove("left-3.5");
-    rollDiceBtn.classList.add("-left-full");
 
     numD20s = 0;
     numD12s = 0;
@@ -54,6 +53,11 @@ closeBtn.addEventListener("click", function () {
     d8Counter.textContent = numD8s;
     d6Counter.textContent = numD6s;
     d4Counter.textContent = numD4s;
+
+    rollDiceBtn.classList.add("-left-full");
+    rollDiceBtn.classList.remove("left-3.5");
+
+    diceResult.textContent = "";
 });
 
 function addDice(diceVarName, diceCounter) {
@@ -85,6 +89,50 @@ function showRollButton() {
     rollDiceBtn.classList.remove("-left-full");
     rollDiceBtn.classList.add("left-3.5");
 }
+
+function rollMultiple(numRolls, diceValue) {
+    let total = 0;
+    for (let i = 0; i < numRolls; i++) {
+        total += Math.ceil(Math.random() * diceValue);
+    }
+    return total;
+}
+
+rollDiceBtn.addEventListener("click", function () {
+    let total = 0;
+    let rollDuration = 1000;
+    let updateInterval = 50;
+    let elapsed = 0;
+
+    const rollingInterval = setInterval(() => {
+        let fakeTotal = 
+            rollMultiple(numD20s, 20) +
+            rollMultiple(numD12s, 12) +
+            rollMultiple(numD10s, 10) +
+            rollMultiple(numD100s, 100) +
+            rollMultiple(numD8s, 8) +
+            rollMultiple(numD6s, 6) +
+            rollMultiple(numD4s, 4);
+
+        diceResult.innerHTML = `&nbsp;= ${fakeTotal}`;
+
+        elapsed += updateInterval;
+        if (elapsed >= rollDuration) {
+            clearInterval(rollingInterval);
+
+            total =
+                rollMultiple(numD20s, 20) +
+                rollMultiple(numD12s, 12) +
+                rollMultiple(numD10s, 10) +
+                rollMultiple(numD100s, 100) +
+                rollMultiple(numD8s, 8) +
+                rollMultiple(numD6s, 6) +
+                rollMultiple(numD4s, 4);
+
+            diceResult.innerHTML = `&nbsp;= ${total}`;
+        }
+    }, updateInterval);
+});
 
 d20Btn.addEventListener("click", function () {
     addDice("numD20s", d20Counter);
@@ -119,4 +167,32 @@ d6Btn.addEventListener("click", function () {
 d4Btn.addEventListener("click", function () {
     addDice("numD4s", d4Counter);
     showRollButton();
+});
+
+resetBtn.addEventListener("click", function () {
+    resetBtn.classList.add("animate-rotate");
+    setTimeout(() => {
+        resetBtn.classList.remove("animate-rotate");
+    }, 500);
+
+    numD20s = 0;
+    numD12s = 0;
+    numD10s = 0;
+    numD100s = 0;
+    numD8s = 0;
+    numD6s = 0;
+    numD4s = 0;
+
+    d20Counter.textContent = numD20s;
+    d12Counter.textContent = numD12s;
+    d10Counter.textContent = numD10s;
+    d100Counter.textContent = numD100s;
+    d8Counter.textContent = numD8s;
+    d6Counter.textContent = numD6s;
+    d4Counter.textContent = numD4s;
+
+    rollDiceBtn.classList.add("-left-full");
+    rollDiceBtn.classList.remove("left-3.5");
+
+    diceResult.textContent = "";
 });
