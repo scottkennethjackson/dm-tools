@@ -222,6 +222,9 @@
   .right-4 {
     right: calc(var(--spacing) * 4);
   }
+  .right-6 {
+    right: calc(var(--spacing) * 6);
+  }
   .-left-full {
     left: -100%;
   }
@@ -535,6 +538,9 @@
   }
   .py-12 {
     padding-block: calc(var(--spacing) * 12);
+  }
+  .py-14 {
+    padding-block: calc(var(--spacing) * 14);
   }
   .ps-18\.5 {
     padding-inline-start: calc(var(--spacing) * 18.5);

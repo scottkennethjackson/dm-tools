@@ -18,11 +18,164 @@
     </head>
     <body class="bg-black">
         <main class="flex flex-col justify-center items-center space-y-4 px-4 py-12 w-full min-h-screen">
+            <button id="dice-btn" class="absolute top-6 left-6 z-10 cursor-pointer">
+                <svg
+                    role="graphics-symbol"
+                    aria-hidden="true"
+                    focusable="false"
+                    class="size-8 fill-gray-400 hover:fill-red active:brightness-90"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 512 512"
+                >
+                    <path d="M243.7 3.4c7.6-4.6 17.1-4.6 24.7 0l200 120c7.2 4.3 11.7 12.1 11.7 20.6l0 224c0 8.4-4.4 16.2-11.7 20.6l-200 120c-7.6 4.6-17.1 4.6-24.7 0l-200-120C36.4 384.2 32 376.4 32 368l0-224c0-8.4 4.4-16.2 11.7-20.6l200-120zM80 191.1l0 83.4L112.8 215 80 191.1zm65.5 63.9L94.9 347l115 9.2L145.5 255.1zm10.6 145L232 445.6l0-39.5-75.9-6.1zM280 406.2l0 39.5 75.9-45.5L280 406.2zM432 274.6l0-83.4L399.2 215 432 274.6zM375 173.3l37.6-27.3L327.1 94.6 375 173.3zM184.9 94.6L99.4 145.9 137 173.3l47.9-78.6zM256 70.2L186.7 184l138.6 0L256 70.2zM324.3 232l-136.6 0L256 339.3 324.3 232zM302.1 356.2l115-9.2-50.6-92L302.1 356.2z"/>
+                </svg>
+            </button>
+            <button id="close-btn" class="hidden absolute top-4 left-4 z-30 flex flex-col justify-center items-center size-12 bg-gray-600 active:brightness-90 rounded-full cursor-pointer">
+                <svg
+                    role="graphics-symbol"
+                    aria-hidden="true"
+                    focusable="false"
+                    class="size-8 fill-white"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 384 512"
+                >
+                <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/>
+                </svg>
+            </button>
+    
+            <div id="dice-tray" class="absolute -top-full left-2 z-20 flex flex-col space-y-2 p-2 pt-16 bg-white/25 rounded-full duration-500">
+                <button id="d20-btn" class="relative flex flex-col justify-center items-center size-12 bg-red active:brightness-90 rounded-full cursor-pointer">
+                    <div id="d20-counter" class="absolute -top-0.5 -right-0.5 flex justify-center items-center size-4 font-roboto text-xs font-bold text-red bg-white rounded-full">0</div>
+                    <svg
+                        role="graphics-symbol"
+                        aria-hidden="true"
+                        focusable="false"
+                        class="size-4 fill-white"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 512 512"
+                        >
+                        <path d="M243.7 3.4c7.6-4.6 17.1-4.6 24.7 0l200 120c7.2 4.3 11.7 12.1 11.7 20.6l0 224c0 8.4-4.4 16.2-11.7 20.6l-200 120c-7.6 4.6-17.1 4.6-24.7 0l-200-120C36.4 384.2 32 376.4 32 368l0-224c0-8.4 4.4-16.2 11.7-20.6l200-120zM80 191.1l0 83.4L112.8 215 80 191.1zm65.5 63.9L94.9 347l115 9.2L145.5 255.1zm10.6 145L232 445.6l0-39.5-75.9-6.1zM280 406.2l0 39.5 75.9-45.5L280 406.2zM432 274.6l0-83.4L399.2 215 432 274.6zM375 173.3l37.6-27.3L327.1 94.6 375 173.3zM184.9 94.6L99.4 145.9 137 173.3l47.9-78.6zM256 70.2L186.7 184l138.6 0L256 70.2zM324.3 232l-136.6 0L256 339.3 324.3 232zM302.1 356.2l115-9.2-50.6-92L302.1 356.2z"/>
+                    </svg>
+                    <p class="font-roboto text-xs font-bold text-white">D20</p>
+                </button>
+                <button id="d12-btn" class="relative flex flex-col justify-center items-center size-12 bg-red active:brightness-90 rounded-full cursor-pointer">
+                    <div id="d12-counter" class="absolute -top-0.5 -right-0.5 flex justify-center items-center size-4 font-roboto text-xs font-bold text-red bg-white rounded-full">0</div>
+                    <svg
+                        role="graphics-symbol"
+                        aria-hidden="true"
+                        focusable="false"
+                        class="size-4 fill-white"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 512 512"
+                    >
+                        <path d="M200.3 48L158.7 72 256 102.8 353.3 72 311.7 48 200.3 48zm-97.1 56.7L49.7 197.3l83.9 93.1L232 241.2l0-95.6L103.2 104.7zM48 267.1l0 44.7 55.7 96.5L140 429.2l-33.1-96.8L48 267.1zM202.7 464l108 0 43.9-131.8L256 282.8l-98.5 49.3L202.7 464zm170.5-35.4l35.2-20.3L464 311.7l0-44.7-58.8 65.3-32.1 96.2zm89.2-231.3l-53.4-92.5L280 145.6l0 95.6 98.4 49.2 83.9-93.1zM176.3 6.4c7.3-4.2 15.6-6.4 24-6.4L311.7 0c8.4 0 16.7 2.2 24 6.4l96.5 55.7c7.3 4.2 13.4 10.3 17.6 17.6l55.7 96.5c4.2 7.3 6.4 15.6 6.4 24l0 111.5c0 8.4-2.2 16.7-6.4 24l-55.7 96.5c-4.2 7.3-10.3 13.4-17.6 17.6l-96.5 55.7c-7.3 4.2-15.6 6.4-24 6.4l-111.5 0c-8.4 0-16.7-2.2-24-6.4L79.7 449.8c-7.3-4.2-13.4-10.3-17.6-17.6L6.4 335.7c-4.2-7.3-6.4-15.6-6.4-24L0 200.3c0-8.4 2.2-16.7 6.4-24L62.2 79.7c4.2-7.3 10.3-13.4 17.6-17.6L176.3 6.4z"/>
+                    </svg>
+                    <p class="font-roboto text-xs font-bold text-white">D12</p>
+                </button>
+                <button id="d10-btn" class="relative flex flex-col justify-center items-center size-12 bg-red active:brightness-90 rounded-full cursor-pointer">
+                    <div id="d10-counter" class="absolute -top-0.5 -right-0.5 flex justify-center items-center size-4 font-roboto text-xs font-bold text-red bg-white rounded-full">0</div>
+                    <svg
+                        role="graphics-symbol"
+                        aria-hidden="true"
+                        focusable="false"
+                        class="size-4 fill-white"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 512 512"
+                        >
+                            <path d="M256 0c6.9 0 13.5 3 18 8.2l232 264c4.2 4.8 6.4 11.1 5.9 17.5s-3.4 12.3-8.3 16.5l-232 200c-9 7.8-22.3 7.8-31.3 0l-232-200C3.5 302 .5 296 .1 289.7S1.7 277 6 272.2L238 8.2C242.5 3 249.1 0 256 0zM91.6 247.4l50.9-12 36-86.9L91.6 247.4zM256 86.8L189.7 247 256 291.2 322.3 247 256 86.8zm100.6 195L280 332.8l0 102.8 156.7-135-80-18.8zm63.8-34.3l-86.9-98.9 36 86.9 50.9 12zM232 435.6l0-102.8-76.6-51.1-80 18.8L232 435.6z"/>
+                    </svg>
+                    <p class="font-roboto text-xs font-bold text-white">D10</p>
+                </button>
+                <button id="d100-btn" class="relative flex flex-col justify-center items-center size-12 bg-red active:brightness-90 rounded-full cursor-pointer">
+                    <div id="d100-counter" class="absolute -top-0.5 -right-0.5 flex justify-center items-center size-4 font-roboto text-xs font-bold text-red bg-white rounded-full">0</div>
+                    <span class="flex">
+                        <svg
+                            role="graphics-symbol"
+                            aria-hidden="true"
+                            focusable="false"
+                            class="size-4 fill-white"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 512 512"
+                            >
+                                <path d="M256 0c6.9 0 13.5 3 18 8.2l232 264c4.2 4.8 6.4 11.1 5.9 17.5s-3.4 12.3-8.3 16.5l-232 200c-9 7.8-22.3 7.8-31.3 0l-232-200C3.5 302 .5 296 .1 289.7S1.7 277 6 272.2L238 8.2C242.5 3 249.1 0 256 0zM91.6 247.4l50.9-12 36-86.9L91.6 247.4zM256 86.8L189.7 247 256 291.2 322.3 247 256 86.8zm100.6 195L280 332.8l0 102.8 156.7-135-80-18.8zm63.8-34.3l-86.9-98.9 36 86.9 50.9 12zM232 435.6l0-102.8-76.6-51.1-80 18.8L232 435.6z"/>
+                        </svg>
+                        <svg
+                        role="graphics-symbol"
+                        aria-hidden="true"
+                        focusable="false"
+                        class="size-4 fill-white"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 512 512"
+                        >
+                            <path d="M256 0c6.9 0 13.5 3 18 8.2l232 264c4.2 4.8 6.4 11.1 5.9 17.5s-3.4 12.3-8.3 16.5l-232 200c-9 7.8-22.3 7.8-31.3 0l-232-200C3.5 302 .5 296 .1 289.7S1.7 277 6 272.2L238 8.2C242.5 3 249.1 0 256 0zM91.6 247.4l50.9-12 36-86.9L91.6 247.4zM256 86.8L189.7 247 256 291.2 322.3 247 256 86.8zm100.6 195L280 332.8l0 102.8 156.7-135-80-18.8zm63.8-34.3l-86.9-98.9 36 86.9 50.9 12zM232 435.6l0-102.8-76.6-51.1-80 18.8L232 435.6z"/>
+                        </svg>
+                    </span>
+                    <p class="font-roboto text-xs font-bold text-white">D100</p>
+                </button>
+                <button id="d8-btn" class="relative flex flex-col justify-center items-center size-12 bg-red active:brightness-90 rounded-full cursor-pointer">
+                    <div id="d8-counter" class="absolute -top-0.5 -right-0.5 flex justify-center items-center size-4 font-roboto text-xs font-bold text-red bg-white rounded-full">0</div>
+                    <svg
+                        role="graphics-symbol"
+                        aria-hidden="true"
+                        focusable="false"
+                        class="size-4 fill-white"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 512 512"
+                        >
+                            <path d="M239 7c9.4-9.4 24.6-9.4 33.9 0L505 239c9.4 9.4 9.4 24.6 0 33.9L273 505c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L239 7zM126.2 324.3L232 430.1l0-62L126.2 324.3zM280 368l0 62L385.8 324.3 280 368zM445.6 247.6L280 81.9l0 234.2 165.6-68.5zM232 81.9L66.4 247.6 232 316.1l0-234.2z"/>
+                    </svg>
+                    <p class="font-roboto text-xs font-bold text-white">D8</p>
+                </button>
+                <button id="d6-btn" class="relative flex flex-col justify-center items-center size-12 bg-red active:brightness-90 rounded-full cursor-pointer">
+                    <div id="d6-counter" class="absolute -top-0.5 -right-0.5 flex justify-center items-center size-4 font-roboto text-xs font-bold text-red bg-white rounded-full">0</div>
+                    <svg
+                        role="graphics-symbol"
+                        aria-hidden="true"
+                        focusable="false"
+                        class="size-4 fill-white"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 448 512"
+                    >
+                        <path d="M243.9 7.7c-12.4-7-27.6-6.9-39.9 .3L19.8 115.6C7.5 122.8 0 135.9 0 150.1L0 366.6c0 14.5 7.8 27.8 20.5 34.9l184 103c12.1 6.8 26.9 6.8 39.1 0l184-103c12.6-7.1 20.5-20.4 20.5-34.9l0-219.9c0-14.4-7.7-27.7-20.3-34.8L243.9 7.7zM71.8 140.8L224.2 51.7l152 86.2L223.8 228.2l-152-87.4zM48 182.4l152 87.4 0 177.2L48 361.9l0-179.5zM248 447.1l0-177.4 152-90.1 0 182.4L248 447.1z"/>
+                    </svg>
+                    <p class="font-roboto text-xs font-bold text-white">D6</p>
+                </button>
+                <button id="d4-btn" class="relative flex flex-col justify-center items-center size-12 bg-red active:brightness-90 rounded-full cursor-pointer">
+                    <div id="d4-counter" class="absolute -top-0.5 -right-0.5 flex justify-center items-center size-4 font-roboto text-xs font-bold text-red bg-white rounded-full">0</div>
+                    <svg
+                        role="graphics-symbol"
+                        aria-hidden="true"
+                        focusable="false"
+                        class="size-4 fill-white"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 512 512"
+                    >
+                        <path d="M256 0c7.3 0 14.1 3.3 18.7 8.9l232 288c4.1 5.1 5.9 11.5 5.1 18s-4.1 12.3-9.3 16.2l-232 176c-8.6 6.5-20.4 6.5-29 0l-232-176c-5.2-3.9-8.5-9.8-9.3-16.2s1.1-12.9 5.1-18l232-288C241.9 3.3 248.7 0 256 0zM58.2 307.8L232 439.7l0-347.6L58.2 307.8zM280 92.1l0 347.6L453.8 307.8 280 92.1z"/>
+                    </svg>
+                    <p class="font-roboto text-xs font-bold text-white">D4</p>
+                </button>
+                <button id="reset-btn" class="flex flex-col justify-center items-center size-12 bg-white active:brightness-90 rounded-full cursor-pointer">
+                    <svg
+                        role="graphics-symbol"
+                        aria-hidden="true"
+                        focusable="false"
+                        class="size-6 fill-red"
+                        xmlns="http://www.w3.org/2000/svg" 
+                        viewBox="0 0 512 512"
+                    >
+                            <path d="M125.7 160l50.3 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L48 224c-17.7 0-32-14.3-32-32L16 64c0-17.7 14.3-32 32-32s32 14.3 32 32l0 51.2L97.6 97.6c87.5-87.5 229.3-87.5 316.8 0s87.5 229.3 0 316.8s-229.3 87.5-316.8 0c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0c62.5 62.5 163.8 62.5 226.3 0s62.5-163.8 0-226.3s-163.8-62.5-226.3 0L125.7 160z"/>
+                    </svg>
+                </button>
+            </div>
+    
+            <button id="roll-dice-btn" class="absolute top-3.5 -left-full z-10 flex justify-center items-center ps-18.5 pe-10.5 h-13 font-roboto text-xl uppercase font-bold text-white bg-red active:brightness-90 rounded-full duration-500 cursor-pointer">
+                Roll<span id="dice-result"></span>
+            </button>
             <svg
                 role="button"
                 aria-hidden="true"
                 focusable="false"
-                class="absolute top-4 right-4 h-8 fill-gray-400 hover:fill-red active:brightness-90 cursor-pointer"
+                class="absolute top-6 right-6 h-8 fill-gray-400 hover:fill-red active:brightness-90 cursor-pointer"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 576 512"
                 onclick="location.href='https://scottkennethjackson.github.io/dm-tools/'"
@@ -66,6 +219,7 @@
     </body>
 
     <footer>
+        <script src="../js/dice.js"></script>
         <script src="../js/loot-randomiser.js"></script>
     </footer>
 </html>
