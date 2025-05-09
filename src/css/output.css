@@ -201,6 +201,24 @@
   .-top-3 {
     top: calc(var(--spacing) * -3);
   }
+  .-top-\[100px\] {
+    top: calc(100px * -1);
+  }
+  .-top-\[200px\] {
+    top: calc(200px * -1);
+  }
+  .-top-\[300px\] {
+    top: calc(300px * -1);
+  }
+  .-top-\[400px\] {
+    top: calc(400px * -1);
+  }
+  .-top-\[500px\] {
+    top: calc(500px * -1);
+  }
+  .-top-\[550px\] {
+    top: calc(550px * -1);
+  }
   .-top-\[640px\] {
     top: calc(640px * -1);
   }
@@ -227,6 +245,27 @@
   }
   .right-6 {
     right: calc(var(--spacing) * 6);
+  }
+  .-left-0 {
+    left: calc(var(--spacing) * -0);
+  }
+  .-left-20 {
+    left: calc(var(--spacing) * -20);
+  }
+  .-left-28 {
+    left: calc(var(--spacing) * -28);
+  }
+  .-left-32 {
+    left: calc(var(--spacing) * -32);
+  }
+  .-left-36 {
+    left: calc(var(--spacing) * -36);
+  }
+  .-left-40 {
+    left: calc(var(--spacing) * -40);
+  }
+  .-left-48 {
+    left: calc(var(--spacing) * -48);
   }
   .-left-full {
     left: -100%;
@@ -623,6 +662,22 @@
   }
   .accent-red {
     accent-color: var(--color-red);
+  }
+  .duration-100 {
+    --tw-duration: 100ms;
+    transition-duration: 100ms;
+  }
+  .duration-200 {
+    --tw-duration: 200ms;
+    transition-duration: 200ms;
+  }
+  .duration-250 {
+    --tw-duration: 250ms;
+    transition-duration: 250ms;
+  }
+  .duration-300 {
+    --tw-duration: 300ms;
+    transition-duration: 300ms;
   }
   .duration-500 {
     --tw-duration: 500ms;
