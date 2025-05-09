@@ -29,14 +29,14 @@ let numD4s = 0;
 
 diceBtn.addEventListener("click", function () {
     closeBtn.classList.remove("hidden");
-    diceTray.classList.remove("-top-full");
+    diceTray.classList.remove("-top-[640px]");
     diceTray.classList.add("top-2");
 });
 
 closeBtn.addEventListener("click", function () {
     closeBtn.classList.add("hidden");
     diceTray.classList.remove("top-2");
-    diceTray.classList.add("-top-full");
+    diceTray.classList.add("-top-[640px]");
 
     numD20s = 0;
     numD12s = 0;
