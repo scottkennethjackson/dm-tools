@@ -29,11 +29,13 @@ let numD4s = 0;
 
 diceBtn.addEventListener("click", function () {
     closeBtn.classList.remove("hidden");
+    closeBtn.classList.add("flex");
     diceTray.classList.remove("-top-[640px]");
     diceTray.classList.add("top-2");
 });
 
 closeBtn.addEventListener("click", function () {
+    closeBtn.classList.remove("flex");
     closeBtn.classList.add("hidden");
     diceTray.classList.remove("top-2");
     diceTray.classList.add("-top-[640px]");
