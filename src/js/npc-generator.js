@@ -377,7 +377,11 @@ function rollLevel() {
 }
 
 function rollStats() {
-  const rollD20 = () => Math.ceil(Math.random() * 20);
+  const roll4d6DropLowest = () => {
+    const rolls = Array.from({ length: 4 }, () => Math.ceil(Math.random() * 6));
+    rolls.sort((a, b) => b - a);
+    return rolls[0] + rolls[1] + rolls[2];
+  };
 
   const statIds = {
     STR: { stat: "str", modifier: "str-modifier" },
@@ -388,14 +392,37 @@ function rollStats() {
     CHA: { stat: "cha", modifier: "cha-modifier" },
   };
 
-  const calculateStat = (statKey) => {
-    let roll = rollD20();
+  const rawStats = {};
 
-    if (roll < 8) roll = 8;
-    if (commoner.checked && roll > 14) roll = 14;
-    else if (adventurer.checked && roll > 16) roll = 16;
-    else if (hero.checked && roll > 18) roll = 18;
+  Object.keys(statIds).forEach((statKey) => {
+    rawStats[statKey] = roll4d6DropLowest();
+  });
 
+  const getBoostCount = () => {
+    if (levelMultiplier >= 19) return 5;
+    if (levelMultiplier >= 16) return 4;
+    if (levelMultiplier >= 12) return 3;
+    if (levelMultiplier >= 8) return 2;
+    if (levelMultiplier >= 4) return 1;
+    return 0;
+  };
+
+  const boostCount = getBoostCount();
+
+  const sortedStats = Object.entries(rawStats).sort(([, a], [, b]) => b - a);
+
+  if (levelMultiplier >= 19) {
+    sortedStats.slice(0, 5).forEach(([key]) => {
+      rawStats[key] += 2;
+    });
+  } else {
+    sortedStats.slice(0, boostCount).forEach(([key]) => {
+      rawStats[key] += 2;
+    });
+  }
+
+  Object.keys(statIds).forEach((statKey) => {
+    const roll = rawStats[statKey];
     const modifierValue = Math.floor((roll - 10) / 2);
     const modifierText = (modifierValue >= 0 ? "+" : "") + modifierValue;
 
@@ -407,10 +434,6 @@ function rollStats() {
     if (modifierElement) modifierElement.textContent = modifierText;
 
     npcModifiers[statKey] = modifierValue;
-  };
-
-  Object.keys(statIds).forEach((statKey) => {
-    calculateStat(statKey);
   });
 
   document.getElementById("hp").textContent =
@@ -698,7 +721,7 @@ function rollSpells() {
         selected.add(spellArray[index]);
       }
       return Array.from(selected);
-    }
+    };
 
     const generateSpellHTML = (level, spells, slots = null) => {
       const displayLevel =
@@ -715,7 +738,7 @@ function rollSpells() {
       });
 
       return `<p>${displayLevel}: ${spellLinks.join(", ")}</p>`;
-    }
+    };
 
     const spellsByLevel = {
       1: { cantrips: 3, spells: { 1: { slots: 2, count: 1 } } },
@@ -919,7 +942,6 @@ function rollSpells() {
       const spellConfig = spellsByLevel[levelMultiplier];
       if (!spellConfig) return "";
 
-      // Add Cantrips
       const cantripArray = spellsData["cantrips"];
       if (cantripArray) {
         const selectedCantrips = getRandomSpells(
@@ -929,7 +951,6 @@ function rollSpells() {
         preparedSpells.push(generateSpellHTML(0, selectedCantrips));
       }
 
-      // Add Leveled Spells
       for (const [levelStr, { slots, count }] of Object.entries(
         spellConfig.spells
       )) {
@@ -944,7 +965,7 @@ function rollSpells() {
       }
 
       return preparedSpells.join("");
-    }
+    };
 
     document.getElementById("spell-list").innerHTML = assignSpellsFromData();
   }
