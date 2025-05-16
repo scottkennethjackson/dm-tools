@@ -17,6 +17,9 @@ let levelMultiplier = 1;
 let armorData = {};
 let weaponsData = {};
 let spellsData = {};
+let speciesCantrips = "";
+let species1stLevel = "";
+let species2ndLevel = "";
 
 window.addEventListener("DOMContentLoaded", () => {
   title.innerText = importedName
@@ -325,6 +328,33 @@ function rollSpecies() {
   } else {
     bonusActions.classList.add("hidden");
   }
+
+  const setSubspeciesSpells = () => {
+    speciesCantrips = "";
+    species1stLevel = "";
+    species2ndLevel = "";
+  
+    if (!selectedSubspecies?.spells) return;
+  
+    selectedSubspecies.spells.forEach((entry) => {
+      if (entry.cantrip) {
+        speciesCantrips = entry.cantrip;
+      } else if (entry.cantrips) {
+        const htmlLinks = entry.cantrips.map((c) => c.cantrip);
+        speciesCantrips = htmlLinks.join(", ");
+      }
+  
+      if (entry["1st level"]) {
+        species1stLevel = entry["1st level"];
+      }
+  
+      if (entry["2nd level"]) {
+        species2ndLevel = entry["2nd level"];
+      }
+    });
+  }
+
+  setSubspeciesSpells(); 
 }
 
 function rollAlignment() {
@@ -730,15 +760,49 @@ function rollSpells() {
           : `${ordinal(level)} level${
               slots ? ` (${slots} slot${slots > 1 ? "s" : ""})` : ""
             }`;
-
-      const spellLinks = spells.map((spell) => {
+    
+      const lowerDisplay = displayLevel.toLowerCase();
+    
+      let spellLinks = spells.map((spell) => {
         const name = spell.name || spell;
         const url = spell.link || "#";
         return `<a href="${url}" class="italic hover:text-red active:brightness-90 underline" target="_blank">${name}</a>`;
       });
-
-      return `<p>${displayLevel}: ${spellLinks.join(", ")}</p>`;
-    };
+    
+      const extractNamesFromHTML = (html) =>
+        html
+          .split(/,\s*/)
+          .map((s) => {
+            const match = s.match(/>([^<]+)</);
+            return match ? match[1].toLowerCase() : "";
+          });
+    
+      let speciesSpellsHTML = "";
+      let speciesNamesToExclude = [];
+    
+      if (lowerDisplay.startsWith("cantrip") && speciesCantrips) {
+        speciesSpellsHTML = speciesCantrips;
+        speciesNamesToExclude = extractNamesFromHTML(speciesCantrips);
+      } else if (lowerDisplay.includes("1st level") && species1stLevel) {
+        speciesSpellsHTML = species1stLevel;
+        speciesNamesToExclude = extractNamesFromHTML(species1stLevel);
+      } else if (lowerDisplay.includes("2nd level") && species2ndLevel) {
+        speciesSpellsHTML = species2ndLevel;
+        speciesNamesToExclude = extractNamesFromHTML(species2ndLevel);
+      }
+    
+      spellLinks = spellLinks.filter((link) => {
+        const match = link.match(/>([^<]+)</);
+        const linkText = match ? match[1].toLowerCase() : "";
+        return !speciesNamesToExclude.includes(linkText);
+      });
+    
+      const allSpells = speciesSpellsHTML
+        ? `${speciesSpellsHTML}, ${spellLinks.join(", ")}`
+        : spellLinks.join(", ");
+    
+      return `<p>${displayLevel}: ${allSpells}</p>`;
+    };       
 
     const spellsByLevel = {
       1: { cantrips: 3, spells: { 1: { slots: 2, count: 1 } } },
