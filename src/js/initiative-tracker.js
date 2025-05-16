@@ -5,7 +5,6 @@ const addBtn = document.getElementById("add-btn");
 const minusBtn = document.getElementById("minus-btn");
 const minusSymbol = document.getElementById("minus-symbol");
 const nextBtn = document.getElementById("next-btn");
-const sortBtn = document.getElementById("sort-btn");
 
 const inactiveClasses = ["bg-gray-400", "cursor-not-allowed"];
 const activeClasses = ["bg-red", "active:brightness-90", "cursor-pointer"];
@@ -36,46 +35,295 @@ minusBtn.addEventListener("click", () => {
         if (lastInput) {
             combatants.removeChild(lastInput);
             combatantCount--;
+
+            if (combatantCount === 2) {
+                minusBtn.classList.remove(...activeClasses);
+                minusBtn.classList.add(...inactiveClasses);
+                minusSymbol.classList.remove("fill-white");
+                minusSymbol.classList.add("fill-gray-600");
+            }
         }
-    } else {
-        minusBtn.classList.remove(...activeClasses);
-        minusBtn.classList.add(...inactiveClasses);
-        minusSymbol.classList.remove("fill-white");
-        minusSymbol.classList.add("fill-gray-600");
     }
 });
 
-nextBtn.addEventListener("click", () => {
+let combatantsList = [];
+
+nextBtn.addEventListener("click", createCombatants);
+
+function createCombatants() {
+    instructions.textContent = "Roll for initiative & input values";
+    nextBtn.textContent = "Sort";
+
     combatants.classList.add("justify-between", "w-2/3");
     combatantModifiers.classList.add("hidden");
-    nextBtn.classList.add("hidden");
-    sortBtn.classList.remove("hidden");
-
-    instructions.textContent = "Input initiative roll values"
 
     const inputs = combatants.querySelectorAll("input[type='text']");
 
+    combatantsList = [];
+
     inputs.forEach((input, index) => {
         const name = input.value || `Combatant #${index + 1}`;
+        const uniqueId = crypto.randomUUID();
+
+        combatantsList.push({
+            id: uniqueId,
+            name,
+            value: 1,
+            dex: null,
+        });
 
         const wrapper = document.createElement("div");
         wrapper.className = "flex justify-between";
+        wrapper.dataset.id = uniqueId;
 
         const nameP = document.createElement("p");
         nameP.className = "font-tiamat text-xl";
         nameP.textContent = name;
+        nameP.dataset.id = uniqueId;
 
         const numberInput = document.createElement("input");
         numberInput.type = "number";
-        numberInput.id = input.id;
-        numberInput.name = input.name;
         numberInput.className = "w-12 p-1 text-center text-black bg-gray-100";
         numberInput.min = 1;
         numberInput.value = 1;
+        numberInput.dataset.id = uniqueId;
 
         wrapper.appendChild(nameP);
         wrapper.appendChild(numberInput);
 
         combatants.replaceChild(wrapper, input);
     });
-});
+
+    nextBtn.removeEventListener("click", createCombatants);
+    nextBtn.addEventListener("click", sortCombatants);
+}
+
+function getOrdinal(n) {
+    const s = ["th", "st", "nd", "rd"],
+        v = n % 100;
+    return n + (s[(v - 20) % 10] || s[v] || s[0]);
+}
+
+function sortCombatants() {
+    combatants.querySelectorAll("div").forEach(wrapper => {
+        const id = wrapper.dataset.id;
+        const value = parseInt(wrapper.querySelector("input[type='number']").value, 10) || 0;
+
+        const combatant = combatantsList.find(c => c.id === id);
+        if (combatant) {
+            combatant.value = value;
+        }
+    });
+
+    combatantsList.sort((a, b) => b.value - a.value);
+
+    const duplicatesMap = new Map();
+    combatantsList.forEach(c => {
+        if (!duplicatesMap.has(c.value)) duplicatesMap.set(c.value, []);
+        duplicatesMap.get(c.value).push(c);
+    });
+
+    const duplicateGroups = Array.from(duplicatesMap.values()).filter(g => g.length > 1);
+
+    if (duplicateGroups.length > 0) {
+        resolveDexTies(duplicateGroups, combatantsList);
+    } else {
+        const naturalQueue = combatantsList.filter(c => c.value === 20);
+
+        let buttonArea = document.getElementById("instruction-buttons");
+        if (!buttonArea) {
+            buttonArea = document.createElement("div");
+            buttonArea.id = "instruction-buttons";
+            buttonArea.className = "flex justify-center w-2/3 space-x-4";
+            instructions.parentNode.insertBefore(buttonArea, instructions.nextSibling);
+        }
+        buttonArea.innerHTML = "";
+        nextBtn.classList.remove("hidden");
+
+        processNaturalQueue(naturalQueue, combatantsList, buttonArea);
+    }
+}
+
+function resolveDexTies(groups, fullList) {
+    combatants.classList.add("hidden");
+    nextBtn.classList.remove("hidden");
+
+    instructions.textContent = "Input DEX value of duplicated rolls";
+    nextBtn.textContent = "Confirm";
+
+    let buttonArea = document.getElementById("instruction-buttons");
+    if (!buttonArea) {
+        buttonArea = document.createElement("div");
+        buttonArea.id = "instruction-buttons";
+        buttonArea.className = "flex justify-center w-2/3 space-x-4";
+        instructions.parentNode.insertBefore(buttonArea, instructions.nextSibling);
+    }
+
+    buttonArea.innerHTML = "";
+
+    const dexArea = document.createElement("div");
+    dexArea.id = "dex-area";
+    dexArea.className = "w-full space-y-2";
+
+    groups.forEach(group => {
+        group.forEach(combatant => {
+            const row = document.createElement("div");
+            row.className = "flex justify-between";
+            row.dataset.id = combatant.id;
+
+            const p = document.createElement("p");
+            p.className = "font-tiamat text-xl";
+            p.textContent = combatant.name;
+
+            const dexInput = document.createElement("input");
+            dexInput.type = "number";
+            dexInput.min = 1;
+            dexInput.value = combatant.dex ?? 8;
+            dexInput.className = "w-12 p-1 text-center text-black bg-gray-100";
+
+            row.append(p, dexInput);
+            dexArea.appendChild(row);
+        });
+    });
+
+    buttonArea.appendChild(dexArea);
+
+    nextBtn.removeEventListener("click", sortCombatants);
+    nextBtn.addEventListener("click", () => {
+        document.querySelectorAll("#dex-area > div").forEach(row => {
+            const id = row.dataset.id;
+            const dex = parseInt(row.querySelector("input[type='number']").value, 10) || 0;
+    
+            const combatant = combatantsList.find(c => c.id === id);
+            if (combatant) {
+                combatant.dex = dex;
+            }
+        });
+    
+        combatantsList.sort((a, b) => {
+            if (b.value === a.value) {
+                return (b.dex || 0) - (a.dex || 0);
+            }
+            return b.value - a.value;
+        });
+    
+        handleNaturals(combatantsList);
+    });
+    
+
+    nextBtn.addEventListener("click", () => {
+        const dexInputs = document.querySelectorAll("#dex-area div");
+
+        dexInputs.forEach(row => {
+            const id = row.dataset.id;
+            const dexValue = parseInt(row.querySelector("input").value, 10) || 0;
+
+            const combatant = combatantsList.find(c => c.id === id);
+            if (combatant) {
+                combatant.dex = dexValue;
+            }
+        });
+
+        combatantsList.sort((a, b) => {
+            if (b.value === a.value) {
+                return (b.dex || 0) - (a.dex || 0);
+            }
+            return b.value - a.value;
+        });
+
+        handleNaturals(combatantsList);
+    });
+}
+
+function handleNaturals(fullList) {
+    const twenties = fullList.filter(c => c.value === 20);
+
+    let buttonArea = document.getElementById("instruction-buttons");
+    if (!buttonArea) {
+        buttonArea = document.createElement("div");
+        buttonArea.id = "instruction-buttons";
+        buttonArea.className = "flex justify-center w-2/3 space-x-4";
+        instructions.parentNode.insertBefore(buttonArea, instructions.nextSibling);
+    }
+
+    buttonArea.innerHTML = "";
+    nextBtn.classList.remove("hidden");
+
+    processNaturalQueue([...twenties], fullList, buttonArea);
+}
+
+function processNaturalQueue(queue, fullList, buttonArea, takenPositions = []) {
+    if (queue.length === 0) {
+        return;
+    }
+
+    const combatant = queue.shift();
+
+    askNatural(combatant, fullList, buttonArea, () => {
+        processNaturalQueue(queue, fullList, buttonArea, takenPositions);
+    }, takenPositions);
+}
+
+function askNatural(combatant, fullList, buttonArea, done, takenPositions) {
+    instructions.textContent = `Was ${combatant.name}'s 20 natural?`;
+    combatants.classList.add("hidden");
+
+    buttonArea.innerHTML = "";
+
+    const yesBtn = document.createElement("button");
+    yesBtn.textContent = "Yes";
+    yesBtn.className = "px-4 py-2 font-tiamat text-xl text-white bg-green-600 active:brightness-90 cursor-pointer";
+
+    const noBtn = document.createElement("button");
+    noBtn.textContent = "No";
+    noBtn.className = "px-4 py-2 font-tiamat text-xl text-white bg-red active:brightness-90 cursor-pointer";
+
+    buttonArea.appendChild(yesBtn);
+    buttonArea.appendChild(noBtn);
+
+    yesBtn.onclick = () => {
+        buttonArea.innerHTML = "";
+        askPosition(combatant, fullList, buttonArea, pos => {
+            takenPositions.push(pos);
+            done();
+        }, takenPositions);
+    };
+
+    noBtn.onclick = () => {
+        buttonArea.innerHTML = "";
+        done();
+    };
+}
+
+function askPosition(combatant, fullList, buttonArea, done, takenPositions = []) {
+    instructions.textContent = `When would ${combatant.name} like to go?`;
+    combatants.classList.add("hidden");
+
+    const select = document.createElement("select");
+    select.className = "mx-auto px-4 py-2 text-center text-black bg-gray-100";
+
+    for (let i = 0; i < fullList.length; i++) {
+        if (takenPositions.includes(i)) continue;
+
+        const opt = document.createElement("option");
+        opt.value = i;
+        opt.textContent = getOrdinal(i + 1);
+        select.appendChild(opt);
+    }
+
+    buttonArea.appendChild(select);
+
+    nextBtn.classList.remove("hidden");
+    nextBtn.textContent = "Confirm";
+
+    nextBtn.onclick = () => {
+        const pos = parseInt(select.value, 10);
+        const idx = fullList.findIndex(c => c.id === combatant.id);
+        if (idx !== -1) fullList.splice(idx, 1);
+
+        fullList.splice(pos, 0, combatant);
+        buttonArea.innerHTML = "";
+        nextBtn.classList.add("hidden");
+        done(pos);
+    };
+}
