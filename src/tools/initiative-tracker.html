@@ -10,6 +10,7 @@
         <title>DM Tools | Initiative Tracker</title>
 
         <link rel="stylesheet" href="../css/output.css">
+        <link rel="stylesheet" href="../css/libs/glide.core.min.css">
 
         <link rel="apple-touch-icon" sizes="180x180" href="../assets/icons/favicon_io/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon_io/favicon-32x32.png">
@@ -193,56 +194,79 @@
                 <h1 class="font-roboto text-3xl font-bold text-center text-gray-400 uppercase">Initiative Tracker</h1>
             </div>
 
-            <div class="container flex flex-col justify-center items-center mb-8 max-w-md border-2 border-red px-4 py-8 text-white">
-                <p id="instructions" class="mb-4 font-roboto font-bold uppercase">Please add combatants</p>
-                <div id="combatants" class="flex flex-col space-y-2">
-                    <input
-                        type="text"
-                        id="combatant1"
-                        class="p-1 text-center text-black bg-gray-100"
-                        name="combatant1"
-                        placeholder="Combatant #1"
-                    >
-                    <input
-                        type="text"
-                        id="combatant2"
-                        class="p-1 text-center text-black bg-gray-100"
-                        name="combatant2"
-                        placeholder="Combatant #2"
-                    >
+            <div class="container max-w-md border-2 border-red py-8 text-white">
+                <div class="flex flex-col justify-center items-center px-4">
+                    <p id="instructions" class="mb-4 font-roboto font-bold uppercase">Please add combatants</p>
+                    <div id="combatants" class="flex flex-col space-y-2">
+                        <input
+                            type="text"
+                            id="combatant1"
+                            class="p-1 text-center text-black bg-gray-100"
+                            name="combatant1"
+                            placeholder="Combatant #1"
+                        >
+                        <input
+                            type="text"
+                            id="combatant2"
+                            class="p-1 text-center text-black bg-gray-100"
+                            name="combatant2"
+                            placeholder="Combatant #2"
+                        >
+                    </div>
+                    <div id="combatant-modifiers" class="flex mt-4 space-x-4">
+                        <button
+                            id="add-btn"
+                            class="flex justify-center items-center size-8 rounded-full bg-red active:brightness-90 cursor-pointer"
+                        >
+                            <svg
+                                role="graphics-symbol"
+                                aria-hidden="true"
+                                focusable="false"
+                                class="size-6 fill-white"
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 448 512"
+                            >
+                                <path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z"/>
+                            </svg>
+                        </button>
+                        <button
+                            id="minus-btn"
+                            class="flex justify-center items-center size-8 rounded-full bg-gray-400 cursor-not-allowed"
+                        >
+                            <svg
+                                role="graphics-symbol"
+                                aria-hidden="true"
+                                focusable="false"
+                                id="minus-symbol"
+                                class="size-6 fill-gray-600"
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 448 512"
+                            >
+                                <path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/>
+                            </svg>
+                        </button>
+                    </div>
                 </div>
-                <div id="combatant-modifiers" class="flex mt-4 space-x-4">
-                    <button
-                        id="add-btn"
-                        class="flex justify-center items-center size-8 rounded-full bg-red active:brightness-90 cursor-pointer"
-                    >
-                        <svg
-                            role="graphics-symbol"
-                            aria-hidden="true"
-                            focusable="false"
-                            class="size-6 fill-white"
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 448 512"
-                        >
-                            <path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z"/>
-                        </svg>
-                    </button>
-                    <button
-                        id="minus-btn"
-                        class="flex justify-center items-center size-8 rounded-full bg-gray-400 cursor-not-allowed"
-                    >
-                        <svg
-                            role="graphics-symbol"
-                            aria-hidden="true"
-                            focusable="false"
-                            id="minus-symbol"
-                            class="size-6 fill-gray-600"
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 448 512"
-                        >
-                            <path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/>
-                        </svg>
-                    </button>
+                <div class="glide hidden w-full space-y-4">
+                    <div class="glide__track" data-glide-el="track">
+                        <ul class="glide__slides"></ul>
+                    </div>
+
+                    <div class="glide__arrows text-center" data-glide-el="controls">
+                        <button class="glide__arrow glide__arrow--right p-2 bg-red active:brightness-90 rounded-full cursor-pointer" data-glide-dir=">">
+                            <svg
+                                role="graphics-symbol"
+                                aria-hidden="true"
+                                focusable="false"
+                                id="next-symbol"
+                                class="size-6 fill-white"
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 448 512"
+                            >
+                                <path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/>
+                            </svg>
+                        </button>
+                    </div>
                 </div>
             </div>
             <button
@@ -256,6 +280,7 @@
 
     <footer>
         <script src="../js/dice.js"></script>
+        <script src="../js/libs/glide.min.js"></script>
         <script src="../js/initiative-tracker.js"></script>
     </footer>
 </html>
