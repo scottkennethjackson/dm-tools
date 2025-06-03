@@ -390,6 +390,11 @@ function showInitiativeOrder(list) {
             </div>
         `;
 
+        div.querySelector(".dead-btn").addEventListener("mousedown", () => {
+            const condemned = slide.querySelector("h2");
+            condemned.classList.add("text-red", "line-through")
+        });
+
         div.querySelector(".dead-btn").addEventListener("click", () => {
             if(isSliding) return;
             isSliding = true;
