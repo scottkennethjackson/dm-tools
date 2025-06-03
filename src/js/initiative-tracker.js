@@ -71,7 +71,7 @@ function createCombatants() {
     const inputs = combatants.querySelectorAll("input[type='text']");
 
     inputs.forEach((input, index) => {
-        const name = input.value || `Combatant #${index + 1}`;
+        const name = input.value || input.placeholder || `Combatant #${index + 1}`;
         const uniqueId = crypto.randomUUID();
 
         combatantsList.push({
