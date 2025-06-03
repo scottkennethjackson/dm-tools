@@ -40,7 +40,7 @@
       "initiative tracker": [
         {
           "title": "Initiative Tracker",
-          "description": "It's hard to keep track of who goes when sometimes. No more! Simply enter everyone's initiative rolls and cycle smoothly through combat rounds, marking players as dead and moving ever closer to that inevitable total party wipe.",
+          "description": "Sometimes it's hard to keep track of who goes when. No more! Simply enter everyone's initiative rolls and cycle smoothly through combat, marking players as dead as you move towards that inevitable total party wipe.",
           "link": "./src/tools/initiative-tracker.html"
         }
       ]
