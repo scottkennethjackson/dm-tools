@@ -37,10 +37,19 @@
       ]
     },
     {
+      "initiative tracker": [
+        {
+          "title": "Initiative Tracker",
+          "description": "It's hard to keep track of who goes when sometimes. No more! Simply enter everyone's initiative rolls and cycle smoothly through combat rounds, marking players as dead and moving ever closer to that inevitable total party wipe.",
+          "link": "./src/tools/initiative-tracker.html"
+        }
+      ]
+    },
+    {
       "loot randomiser": [
         {
           "title": "Loot Randomiser",
-          "description": "Instead of gold, reward your players with a random item drop. With resources ranging from simple trinkets, to Health Potions and consumables, and all the way up to Legendary magic items, looting has never been more exciting.",
+          "description": "Instead of gold, reward your players with a random item drop. With resources ranging from simple trinkets, to Health Potions and consumables, all the way up to Legendary magic items, looting has never been more exciting.",
           "link": "./src/tools/loot-randomiser.html"
         }
       ]
