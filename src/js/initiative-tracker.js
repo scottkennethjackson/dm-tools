@@ -385,19 +385,17 @@ function showInitiativeOrder(list) {
                         </svg>
                         <input type="number" name="ac" class="w-12 font-roboto text-xl font-bold" placeholder="AC">
                     </div>
-                    <button class="dead-btn py-1 w-2/3 font-roboto text-xl font-bold uppercase bg-red cursor-pointer">Dead</button>
+                    <button class="dead-btn py-1 w-2/3 font-roboto text-xl font-bold uppercase bg-red active:brightness-90 cursor-pointer">Dead</button>
                 </div>
             </div>
         `;
 
-        div.querySelector(".dead-btn").addEventListener("mousedown", () => {
-            const condemned = slide.querySelector("h2");
-            condemned.classList.add("text-red", "line-through")
-        });
-
         div.querySelector(".dead-btn").addEventListener("click", () => {
             if(isSliding) return;
             isSliding = true;
+
+            const condemned = slide.querySelector("h2");
+            condemned.classList.add("text-red", "line-through")
 
             slideTrack.style.transition = "transform 0.5s ease-in-out";
             slideTrack.style.transform = "translateX(-100%)";
