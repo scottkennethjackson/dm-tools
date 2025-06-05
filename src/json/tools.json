@@ -85,7 +85,7 @@
       "wild magic surge": [
         {
           "title": "Wild Magic Surge",
-          "description": "Rather than flipping through the Player's Handbook everytime your your Sorcerer triggers a Wild Magic Surge, simply click a button to reveal what random nonsense has befallen them this time.",
+          "description": "Rather than flipping through the Player's Handbook everytime your Sorcerer triggers a Wild Magic Surge, simply click a button to reveal what random nonsense has befallen them this time.",
           "link": "./src/tools/wild-magic-surge.html"
         }
       ]
