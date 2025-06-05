@@ -1,0 +1,36 @@
+const title = document.getElementById('title');
+const description = document.getElementById('description');
+const rollBtn = document.getElementById('roll-btn');
+
+let effectsArray = [];
+
+fetch("../json/wild-magic-surge.json")
+    .then((response) => response.json())
+    .then((data) => {
+        effectsArray = data;
+    })
+    .catch((error) => console.error("Error loading effects data:", error));
+
+rollBtn.addEventListener("click", function () {
+    title.classList.add("hidden");
+    description.classList.remove("hidden");
+
+    const roll = Math.ceil(Math.random() * 100);
+
+    const effect = effectsArray.find(
+        (entry) => roll >= entry.min && roll <= entry.max
+    );
+
+    if (effect) {
+        description.textContent = effect.description;
+    } else {
+        title.classList.remove("hidden");
+        description.classList.add("hidden");
+
+        title.textContent = "No Effect Found"
+        description.textContent = "Please try again";
+
+        console.warn("Roll outside range (1-100):", roll);
+    }
+});
+  

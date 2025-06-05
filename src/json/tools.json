@@ -58,7 +58,7 @@
       "npc generator": [
         {
           "title": "NPC Generator",
-          "description": "Bring your NPCs to life with custom statblocks, including unique traits, attacks, and spells. Never again will you be caught off-guard by your party abducting the local stableboy and turning them into an unexpected hero.",
+          "description": "Bring your NPCs to life with custom statblocks, including unique traits, attacks and spells. Never again will you be caught off-guard by your party abducting the local stableboy and turning them into an reluctant hero.",
           "link": "./src/tools/npc-generator.html"
         }
       ]
@@ -73,20 +73,29 @@
       ]
     },
     {
+      "spellbook": [
+        {
+          "title": "Spellbook",
+          "description": "Generate spells based on their level, from simple Cantrips to powerful 9th-Level incantations. Or embrace chaos and flip to a random page of your spellbook.",
+          "link": "./src/tools/spellbook.html"
+        }
+      ]
+    },
+    {
+      "wild magic surge": [
+        {
+          "title": "Wild Magic Surge",
+          "description": "Rather than flipping through the Player's Handbook everytime your your Sorcerer triggers a Wild Magic Surge, simply click a button to reveal what random nonsense has befallen them this time.",
+          "link": "./src/tools/wild-magic-surge.html"
+        }
+      ]
+    },
+    {
       "power word": [
         {
           "title": "Power Word",
           "description": "Party taking too long to solve your puzzle? Wizard not prepared their spells (again)? Got a bit of time to kill? Play what is essentially D&D Hangman. You're behind a screen, they'll never know.",
           "link": "./src/tools/power-word.html"
-        }
-      ]
-    },
-    {
-      "spellbook": [
-        {
-          "title": "Spellbook",
-          "description": "Generate spells based on their level, from simple Cantrips to powerful 9th-Level incantations. Or embrace chaos, and flip to a random page of your spellbook.",
-          "link": "./src/tools/spellbook.html"
         }
       ]
     }
