@@ -10,15 +10,6 @@
       ]
     },
     {
-      "chaos magic": [
-        {
-          "title": "Chaos Magic",
-          "description": "Generate spells based on their level, from simple Cantrips to powerful 9th-Level incantations. Or embrace chaos, and flip to a random page of your spellbook.",
-          "link": "./src/tools/chaos-magic.html"
-        }
-      ]
-    },
-    {
       "deck of many things": [
         {
           "title": "Deck of Many Things",
@@ -87,6 +78,15 @@
           "title": "Power Word",
           "description": "Party taking too long to solve your puzzle? Wizard not prepared their spells (again)? Got a bit of time to kill? Play what is essentially D&D Hangman. You're behind a screen, they'll never know.",
           "link": "./src/tools/power-word.html"
+        }
+      ]
+    },
+    {
+      "spellbook": [
+        {
+          "title": "Spellbook",
+          "description": "Generate spells based on their level, from simple Cantrips to powerful 9th-Level incantations. Or embrace chaos, and flip to a random page of your spellbook.",
+          "link": "./src/tools/spellbook.html"
         }
       ]
     }
