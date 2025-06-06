@@ -12,7 +12,7 @@ fetch("../json/wild-magic-surge.json")
     .catch((error) => console.error("Error loading effects data:", error));
 
 rollBtn.addEventListener("click", function () {
-    title.classList.add("hidden");
+    title.textContent = "What Happens:"
     description.classList.remove("hidden");
 
     const roll = Math.ceil(Math.random() * 100);
@@ -24,8 +24,6 @@ rollBtn.addEventListener("click", function () {
     if (effect) {
         description.textContent = effect.description;
     } else {
-        title.classList.remove("hidden");
-
         title.textContent = "No Effect Found"
         description.textContent = "Please try again";
 
