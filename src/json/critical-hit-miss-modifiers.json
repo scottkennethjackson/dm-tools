@@ -102,13 +102,13 @@
                     "min": 95,
                     "max": 99,
                     "effect": "You Strike with Debilitating Force",
-                    "description": "Roll an additional set of damage dice above and beyond your normal critical roll. The target suffers a permanent injury (chosen by DM). It can be healed with extended rest of a length determined by the DM, but leaves a scar."
+                    "description": "Roll an additional set of damage dice above and beyond your normal critical roll. The target suffers a permanent injury (chosen by the DM). It can be healed with extended rest of a length determined by the DM, but leaves a scar."
                 },
                 {
                     "min": 100,
                     "max": 100,
                     "effect": "You Strike with Devastating Force",
-                    "description": "Roll an additional set of damage dice above and beyond your normal critical roll; the target suffers 1 unit of exhaustion and gets a permanent injury (chosen by DM). It can be healed with extended rest of a length determined by the DM, but leaves a scar."
+                    "description": "Roll an additional set of damage dice above and beyond your normal critical roll; the target suffers 1 unit of exhaustion and gets a permanent injury (chosen by the DM). It can be healed with extended rest of a length determined by the DM, but leaves a scar."
                 }
             ]
         },
@@ -326,7 +326,7 @@
                     "min": 95,
                     "max": 99,
                     "effect": "Your Spell Strikes with Debilitating Force",
-                    "description": "Roll an additional set of spell damage dice above and beyond your normal critical roll and the target suffers a permanent injury (chosen by DM). It can be healed with extended rest of a length determined by the DM, but leaves a scar."
+                    "description": "Roll an additional set of spell damage dice above and beyond your normal critical roll and the target suffers a permanent injury (chosen by the DM). It can be healed with extended rest of a length determined by the DM, but leaves a scar."
                 },
                 {
                     "min": 100,
