@@ -25,7 +25,6 @@ rollBtn.addEventListener("click", function () {
         description.textContent = effect.description;
     } else {
         title.classList.remove("hidden");
-        description.classList.add("hidden");
 
         title.textContent = "No Effect Found"
         description.textContent = "Please try again";
@@ -33,4 +32,3 @@ rollBtn.addEventListener("click", function () {
         console.warn("Roll outside range (1-100):", roll);
     }
 });
-  
