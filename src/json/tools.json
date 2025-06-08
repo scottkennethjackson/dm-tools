@@ -91,6 +91,15 @@
       ]
     },
     {
+      "vicious mockery": [
+        {
+          "title": "Vicious Mockery",
+          "description": "In our campaign, Vicious Mockery was less of a spell, more a passive ability. Anyone could \"cast\" it as a Free Action, without expending a spell slot, and the damage output was directly related to how savage or clever a player's words were.",
+          "link": "./src/tools/vicious-mosckery.html"
+        }
+      ]
+    },
+    {
       "wild magic surge": [
         {
           "title": "Wild Magic Surge",
