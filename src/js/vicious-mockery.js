@@ -20,7 +20,7 @@ rollBtn.addEventListener("click", function () {
 
     const rollingInterval = setInterval(() => {
         const fakeTotal = rollMultiple(level);
-        title.textContent = `You Take: ${fakeTotal}`;
+        title.textContent = `You Take: ${fakeTotal} Points of Psychic Damage`;
 
         elapsed += updateInterval;
 
