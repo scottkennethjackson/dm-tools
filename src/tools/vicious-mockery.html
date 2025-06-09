@@ -201,21 +201,24 @@
                     How Savage Were Your Opponent's Words?
                 </h2>
 
-                <div class="flex flex-col items-center w-full space-y-1">
-                    <div class="flex w-full">
-                        <p class="w-1/4 font-serif text-sm italic text-gray-300 text-center">passive</p>
-                        <p class="w-1/4 font-serif text-sm italic text-gray-300 text-center">biting</p>
-                        <p class="w-1/4 font-serif text-sm italic text-gray-300 text-center">harsh</p>
-                        <p class="w-1/4 font-serif text-sm italic text-gray-300 text-center">brutal</p>
-                    </div>
+                <div class="flex flex-col items-center w-full">
                     <input
                         type="range"
                         id="savageness-slider"
-                        class="w-3/4 accent-red"
+                        class="w-3/4 accent-red cursor-pointer"
                         name="savageness"
                         min="1"
                         max="4"
+                        step="1"
+                        value="2"
+                        list="values"
                     >
+                    <datalist id="values" class="flex w-full">
+                        <option value="1" label="passive" class="ps-4 w-1/4 font-serif text-sm italic text-gray-300 text-center"></option>
+                        <option value="2" label="biting" class="ps-2 w-1/4 font-serif text-sm italic text-gray-300 text-center"></option>
+                        <option value="3" label="harsh"class="pe-2 w-1/4 font-serif text-sm italic text-gray-300 text-center"></option>
+                        <option value="4" label="brutal"class="pe-4 w-1/4 font-serif text-sm italic text-gray-300 text-center"></option>
+                    </datalist>
                 </div>
             </div>
 
