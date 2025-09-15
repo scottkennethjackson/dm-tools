@@ -6,7 +6,7 @@ const rollBtn = document.getElementById('roll-btn');
 
 let spellLevels = {};  // Holds all levels including cantrips
 
-fetch('../json/spells.json')
+fetch('../../json/spells.json')
     .then(response => response.json())
     .then(data => {
         spellLevels = {
