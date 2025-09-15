@@ -11,7 +11,7 @@ let beasts = {
     swimming: []
 };
 
-fetch('../json/beasts.json')
+fetch('../../json/beasts.json')
     .then(response => response.json())
     .then(data => {
         beasts.walking = data.walking;
