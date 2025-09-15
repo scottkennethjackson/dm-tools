@@ -7,7 +7,7 @@ const drawBtn = document.getElementById('draw-btn');
 
 let deck = [];
 
-fetch('../json/cards.json')
+fetch('../../json/cards.json')
     .then(response => response.json())
     .then(data => {
         deck = data.deck;
