@@ -9,7 +9,7 @@ const rollBtn = document.getElementById("roll-btn");
 
 let effectsArray = [];
 
-fetch("../../json/critical-hit-miss-modifiers.json")
+fetch("../../json/critical-modifiers.json")
     .then((response) => response.json())
     .then((data) => {
         effectsArray = data;
