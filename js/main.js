@@ -8,7 +8,7 @@ let toolTitle;
 let toolDescription;
 let toolLink;
 
-fetch('src/json/tools.json')
+fetch('./json/tools.json')
     .then(response => response.json())
     .then(data => {
         tools = data.tools;
@@ -32,7 +32,7 @@ function handleSelection() {
         }
     }
 
-    if (selection !== 'empty') {
+    if (selection !== 'placeholder') {
         goBtn.classList.remove(...inactiveClasses);
         goBtn.classList.add(...activeClasses);
         title.innerHTML = toolTitle;
