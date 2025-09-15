@@ -226,10 +226,10 @@ hintBtn.addEventListener("click", showHint);
 playAgainBtn.addEventListener("click", playAgain);
 
 Promise.all([
-    fetchWords("../json/magic-items.json"),
-    fetchWords("../json/monsters.json"),
-    fetchWords("../json/races.json"),
-    fetchWords("../json/spells.json"),
+    fetchWords("../../json/magic-items.json"),
+    fetchWords("../../json/monsters.json"),
+    fetchWords("../../json/races.json"),
+    fetchWords("../../json/spells.json"),
 ])
     .then(([magicItem, monster, race, spell]) => {
         magicItems = magicItem;
