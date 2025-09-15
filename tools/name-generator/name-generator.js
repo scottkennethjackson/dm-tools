@@ -10,7 +10,7 @@ const names = {
     surname: []
 };
 
-fetch('../json/names.json')
+fetch('../../json/names.json')
     .then(response => {
         if (!response.ok) throw new Error("Failed to load names.json");
         return response.json();
