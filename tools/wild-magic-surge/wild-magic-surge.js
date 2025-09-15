@@ -4,7 +4,7 @@ const rollBtn = document.getElementById('roll-btn');
 
 let effectsArray = [];
 
-fetch("../json/wild-magic-surge.json")
+fetch("../../json/wild-magic.json")
     .then((response) => response.json())
     .then((data) => {
         effectsArray = data;
