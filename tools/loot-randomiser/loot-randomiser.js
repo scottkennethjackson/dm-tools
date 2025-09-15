@@ -8,10 +8,10 @@ let cantrips = [], level1 = [], level2 = [], level3 = [], level4 = [], level5 = 
 let cursed = [], uncommon = [], rare = [], veryRare = [], legendary = [];
 
 Promise.all([
-    fetch('../json/treasure.json').then(r => r.json()),
-    fetch('../json/consumables.json').then(r => r.json()),
-    fetch('../json/spells.json').then(r => r.json()),
-    fetch('../json/magic-items.json').then(r => r.json())
+    fetch('../../json/treasure.json').then(r => r.json()),
+    fetch('../../json/consumables.json').then(r => r.json()),
+    fetch('../../json/spells.json').then(r => r.json()),
+    fetch('../../json/magic-items.json').then(r => r.json())
 ]).then(([treasure, consumableData, spells, magicItems]) => {
     trinkets = treasure.trinkets;
     gemstones = treasure.gemstones;
