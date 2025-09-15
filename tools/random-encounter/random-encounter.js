@@ -29,7 +29,7 @@ const encounterTable = {
 
 let monsterData = {};
 
-fetch("../json/monsters.json")
+fetch("../../json/monsters.json")
   .then((response) => response.json())
   .then((data) => {
     monsterData = data;
