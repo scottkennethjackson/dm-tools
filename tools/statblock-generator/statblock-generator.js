@@ -28,27 +28,27 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 Promise.all([
-  fetch("../json/names.json").then((res) => {
+  fetch("../../json/names.json").then((res) => {
     if (!res.ok) throw new Error("Failed to load names.json");
     return res.json();
   }),
-  fetch("../json/species.json").then((res) => {
+  fetch("../../json/species.json").then((res) => {
     if (!res.ok) throw new Error("Failed to load species.json");
     return res.json();
   }),
-  fetch("../json/proficiencies.json").then((res) => {
+  fetch("../../json/proficiencies.json").then((res) => {
     if (!res.ok) throw new Error("Failed to load proficiencies.json");
     return res.json();
   }),
-  fetch("../json/armor.json").then((res) => {
+  fetch("../../json/armor.json").then((res) => {
     if (!res.ok) throw new Error("Failed to load armor.json");
     return res.json();
   }),
-  fetch("../json/weapons.json").then((res) => {
+  fetch("../../json/weapons.json").then((res) => {
     if (!res.ok) throw new Error("Failed to load weapons.json");
     return res.json();
   }),
-  fetch("../json/spells.json").then((res) => {
+  fetch("../../json/spells.json").then((res) => {
     if (!res.ok) throw new Error("Failed to load spells.json");
     return res.json();
   }),
