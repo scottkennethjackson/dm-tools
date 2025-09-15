@@ -12,6 +12,7 @@
     --color-gray-100: oklch(96.7% 0.003 264.542);
     --color-gray-300: oklch(87.2% 0.01 258.338);
     --color-gray-400: oklch(70.7% 0.022 261.325);
+    --color-gray-500: oklch(55.1% 0.027 264.364);
     --color-gray-600: oklch(44.6% 0.03 256.802);
     --color-black: #000;
     --color-white: #fff;
@@ -296,26 +297,14 @@
       max-width: 96rem;
     }
   }
-  .m-auto {
-    margin: auto;
-  }
   .mx-auto {
     margin-inline: auto;
-  }
-  .ms-2 {
-    margin-inline-start: calc(var(--spacing) * 2);
   }
   .mt-2 {
     margin-top: calc(var(--spacing) * 2);
   }
   .mt-4 {
     margin-top: calc(var(--spacing) * 4);
-  }
-  .mt-8 {
-    margin-top: calc(var(--spacing) * 8);
-  }
-  .mt-12 {
-    margin-top: calc(var(--spacing) * 12);
   }
   .mb-2 {
     margin-bottom: calc(var(--spacing) * 2);
@@ -364,9 +353,6 @@
   .size-full {
     width: 100%;
     height: 100%;
-  }
-  .h-2 {
-    height: calc(var(--spacing) * 2);
   }
   .h-6 {
     height: calc(var(--spacing) * 6);
@@ -458,9 +444,6 @@
   }
   .cursor-pointer {
     cursor: pointer;
-  }
-  .appearance-none {
-    appearance: none;
   }
   .flex-col {
     flex-direction: column;
@@ -623,14 +606,8 @@
   .py-12 {
     padding-block: calc(var(--spacing) * 12);
   }
-  .ps-0 {
-    padding-inline-start: calc(var(--spacing) * 0);
-  }
   .ps-2 {
     padding-inline-start: calc(var(--spacing) * 2);
-  }
-  .ps-3 {
-    padding-inline-start: calc(var(--spacing) * 3);
   }
   .ps-4 {
     padding-inline-start: calc(var(--spacing) * 4);
@@ -702,6 +679,9 @@
   .text-gray-400 {
     color: var(--color-gray-400);
   }
+  .text-gray-500 {
+    color: var(--color-gray-500);
+  }
   .text-gray-600 {
     color: var(--color-gray-600);
   }
@@ -752,10 +732,6 @@
     --tw-ease: var(--ease-in-out);
     transition-timing-function: var(--ease-in-out);
   }
-  .outline-none {
-    --tw-outline-style: none;
-    outline-style: none;
-  }
   .not-first\:mt-4 {
     &:not(*:first-child) {
       margin-top: calc(var(--spacing) * 4);
@@ -772,13 +748,6 @@
     &:hover {
       @media (hover: hover) {
         color: var(--color-red);
-      }
-    }
-  }
-  .hover\:accent-gray-400 {
-    &:hover {
-      @media (hover: hover) {
-        accent-color: var(--color-gray-400);
       }
     }
   }
@@ -815,21 +784,21 @@
 }
 @font-face {
   font-family: 'Roboto Condensed';
-  src: url('../fonts/roboto-condensed/RobotoCondensed-Regular.woff2') format('woff2'), url('../fonts/roboto-condensed/RobotoCondensed-Regular.woff') format('woff');
+  src: url('../assets/fonts/roboto-condensed/RobotoCondensed-Regular.woff2') format('woff2'), url('../assets/fonts/roboto-condensed/RobotoCondensed-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Roboto Condensed';
-  src: url('../fonts/roboto-condensed/RobotoCondensed-Bold.woff2') format('woff2'), url('../fonts/roboto-condensed/RobotoCondensed-Bold.woff') format('woff');
+  src: url('../assets/fonts/roboto-condensed/RobotoCondensed-Bold.woff2') format('woff2'), url('../assets/fonts/roboto-condensed/RobotoCondensed-Bold.woff') format('woff');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Tiamat Condensed SC';
-  src: url('../fonts/tiamat-condensed-sc/TiamatCondensedSC-Regular.woff2') format('woff2'), url('../fonts/tiamat-condensed-sc/TiamatCondensedSC-Regular.woff') format('woff');
+  src: url('../assets/fonts/tiamat-condensed-sc/TiamatCondensedSC-Regular.woff2') format('woff2'), url('../assets/fonts/tiamat-condensed-sc/TiamatCondensedSC-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;

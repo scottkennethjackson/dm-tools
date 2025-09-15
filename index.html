@@ -9,12 +9,12 @@
 
         <title>Scott Kenneth Jackson | DM Tools</title>
 
-        <link rel="stylesheet" href="./src/css/output.css">
+        <link rel="stylesheet" href="./css/output.css">
 
-        <link rel="apple-touch-icon" sizes="180x180" href="./src/assets/icons/favicon_io/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="./src/assets/icons/favicon_io/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="./src/assets/icons/favicon_io/favicon-16x16.png">
-        <link rel="manifest" href="./src/assets/icons/favicon_io/site.webmanifest">
+        <link rel="apple-touch-icon" sizes="180x180" href="./assets/icons/favicon_io/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="./assets/icons/favicon_io/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="./assets/icons/favicon_io/favicon-16x16.png">
+        <link rel="manifest" href="./assets/icons/favicon_io/site.webmanifest">
     </head>
     <body class="bg-black">
         <button id="dice-btn" class="absolute top-6 left-6 z-10 cursor-pointer">
@@ -174,7 +174,7 @@
         <main class="flex flex-col justify-center items-center space-y-4 p-4 w-full min-h-screen">
             <div>
                 <img
-                    src="./src/assets/images/logo.png"
+                    src="./assets/images/ampersand.png"
                     alt="D&D"
                     class="h-24 sm:h-32 mx-auto"
                 >
@@ -199,7 +199,7 @@
                     id="tool-selector"
                     class="p-1 w-full max-w-xs bg-gray-100 text-black"
                 >
-                    <option value="empty" selected></option>
+                    <option value="placeholder" selected disabled>Select a Tool</option>
                     <option value="bag of tricks">Bag of Tricks</option>
                     <option value="critical hit/miss modifiers">Critical Hit/Miss Modifiers</option>
                     <option value="deck of many things">Deck of Many Things</option>
@@ -207,10 +207,9 @@
                     <option value="initiative tracker">Initiative Tracker</option>
                     <option value="loot randomiser">Loot Randomiser</option>
                     <option value="name generator">Name Generator</option>
-                    <option value="npc generator">NPC Generator</option>
                     <option value="random encounter">Random Encounter</option>
                     <option value="spellbook">Spellbook</option>
-                    <option value="vicious mockery">Vicious Mockery</option>
+                    <option value="statblock generator">Statblock Generator</option>
                     <option value="wild magic surge">Wild Magic Surge</option>
                     <option value="power word">Power Word (Game)</option>
                 </select>
@@ -226,7 +225,7 @@
     </body>
 
     <footer>
-        <script src="./src/js/dice.js"></script>
-        <script src="./src/js/main.js"></script>
+        <script src="./js/dice.js"></script>
+        <script src="./js/main.js"></script>
     </footer>
 </html>
