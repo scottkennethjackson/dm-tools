@@ -2,6 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import DiceTray from "./Dice";
 
 const App = () => {
   const router = useRouter();
@@ -65,7 +66,7 @@ const App = () => {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center px-4 py-12 space-y-6 min-h-screen">
+    <div className="flex flex-col items-center justify-center relative px-4 py-12 space-y-6 min-h-screen">
       <div>
         <Image
           src="/images/ampersand.png"
@@ -75,34 +76,36 @@ const App = () => {
         <h1 className="font-roboto text-3xl font-bold text-center text-gray-400">DM TOOLS</h1>
       </div>
 
-      <div className="flex flex-col items-center px-4 py-8 space-y-4 w-full max-w-md border-2 border-red">
-        <h2 id="title" className="font-tiamat text-3xl">What Is It That You Require?</h2>
+      <div className="flex flex-col items-center px-4 py-8 space-y-6 w-full max-w-md border-2 border-red">
+        <div className="flex flex-col items-center space-y-2">
+          <h2 id="title" className="font-tiamat text-3xl">What Is It That You Require?</h2>
+          <select
+            name="tools"
+            id="tool-select"
+            className="px-2 py-1 w-full bg-gray-100 text-center text-black"
+            defaultValue=""
+            onChange={(e) => setSelectedTool(e.target.value)}
+          >
+            <option value="" disabled>Select a Tool</option>
+            <option value="bag-of-tricks">Bag of Tricks</option>
+            <option value="critical-modifiers">Critical Hit/Miss Modifiers</option>
+            <option value="deck-of-many-things">Deck of Many Things</option>
+            <option value="gp-lottery">GP Lottery</option>
+            <option value="initiative-tracker">Initiative Tracker</option>
+            <option value="loot-randomiser">Loot Randomiser</option>
+            <option value="name-generator">Name Generator</option>
+            <option value="random-encounter">Random Encounter</option>
+            <option value="spellbook">Spellbook</option>
+            <option value="statblock-generator">Statblock Generator</option>
+            <option value="wild-magic-surge">Wild Magic Surge</option>
+            <option value="power-word">Power Word (Game)</option>
+          </select>
+        </div>
         {selectedTool && (
-          <p className="font-roboto">
+          <p className="pt-2 font-roboto border-t border-red">
             {toolData[selectedTool].description}
           </p>
         )}
-        <select
-          name="tools"
-          id="tool-select"
-          className="px-2 py-1 bg-gray-100 text-black"
-          defaultValue=""
-          onChange={(e) => setSelectedTool(e.target.value)}
-        >
-          <option value="" disabled>Select a Tool</option>
-          <option value="bag-of-tricks">Bag of Tricks</option>
-          <option value="critical-modifiers">Critical Hit/Miss Modifiers</option>
-          <option value="deck-of-many-things">Deck of Many Things</option>
-          <option value="gp-lottery">GP Lottery</option>
-          <option value="initiative-tracker">Initiative Tracker</option>
-          <option value="loot-randomiser">Loot Randomiser</option>
-          <option value="name-generator">Name Generator</option>
-          <option value="random-encounter">Random Encounter</option>
-          <option value="spellbook">Spellbook</option>
-          <option value="statblock-generator">Statblock Generator</option>
-          <option value="wild-magic-surge">Wild Magic Surge</option>
-          <option value="power-word">Power Word (Game)</option>
-        </select>
       </div>
 
       { selectedTool && (
@@ -114,6 +117,7 @@ const App = () => {
       </button>
       )}
       <p className="absolute bottom-0 px-4 pb-1 text-sm text-center text-gray-400">Dungeons & Dragons, D&D, and the dragon ampersand are © and trademark Wizards of the Coast.</p>
+      <DiceTray />
     </div>
   );
 };
