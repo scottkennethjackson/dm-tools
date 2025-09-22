@@ -116,7 +116,7 @@ const DiceTray = () => {
         <button
           aria-label="Roll dice"
           className={`
-            flex items-center absolute top-3.5 left-0 z-30 ps-21 pe-14 min-w-56 h-13 font-roboto text-xl font-bold bg-red active:bg-activered rounded-full cursor-pointer transform transition-transform duration-300
+            flex justify-center items-center absolute top-3.5 left-0 z-30 ps-16.25 pe-6 min-w-48 h-13 font-roboto text-xl font-bold bg-red active:bg-activered rounded-full cursor-pointer transform transition-transform duration-300
             ${showRoll ? "translate-x-3.5" : "-translate-x-full"}
           `}
           onClick={rollDice}
