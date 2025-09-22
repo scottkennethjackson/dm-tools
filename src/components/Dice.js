@@ -138,7 +138,7 @@ const DiceTray = () => {
       {/* Dice tray */}
       <div
         className={`
-          absolute top-0 left-3 z-20 p-1 pt-14.5 space-y-1 bg-white/50 rounded-full transform transition-transform duration-300
+          absolute top-0 left-3 z-20 p-1 pt-14.5 space-y-1 bg-gray-200/50 rounded-full transform transition-transform duration-300
           ${isTrayOpen ? "translate-y-3" : "-translate-y-full"}
         `}
       >

@@ -31,7 +31,7 @@ const App = () => {
     },
     "loot-randomiser": {
       type: "tools",
-      description: "Instead of gold, reward your players with a random item drop. With resources ranging from simple trinkets, to Health Potions and consumables, all the way up to Legendary magic items, looting has never been more chaotic."
+      description: "Instead of gold, reward your players with a random item drop. With resources ranging from simple trinkets, consumables and Health Potions, all the way up to Legendary magic items, looting has never been more exciting."
     },
     "name-generator": {
       type: "tools",
@@ -43,11 +43,11 @@ const App = () => {
     },
     "spellbook": {
       type: "tools",
-      description: "Generate spells based on their level, from simple Cantrips to powerful 9th-Level incantations. Or embrace chaos and flip to a random page of your spellbook."
+      description: "Generate spells based on their level, from simple Cantrips all the way to powerful 9th-Level incantations. Or embrace chaos and flip to a random page of your spellbook."
     },
     "statblock-generator": {
       type: "tools",
-      description: "Bring your NPCs to life with custom statblocks, including unique traits, attacks and spells. Never again will you be caught off-guard by your party abducting the local stableboy and thrusting greatness upon them."
+      description: "Bring your NPCs to life with custom statblocks, including unique traits, attacks and spells. Never again will you be caught off-guard by your party inducting the local stableboy into their party."
     },
     "wild-magic-surge": {
       type: "tools",
@@ -55,7 +55,7 @@ const App = () => {
     },
     "power-word": {
       type: "games",
-      description: "Party taking too long to solve your puzzle? Wizard not prepared their spells (again)? Got a bit of time to kill? Play what is essentially D&D Hangman. You're behind a screen, they'll never know."
+      description: "Party taking too long to solve your puzzle? Wizard not prepared their spells... again? Got a bit of time to kill? Play what's essentially D&D Hangman. You're behind a screen, they'll never know."
     }
   };
 
