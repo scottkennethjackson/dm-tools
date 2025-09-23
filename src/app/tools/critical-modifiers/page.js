@@ -78,7 +78,7 @@ export default function CriticalModifiers() {
             {rollResult ? rollResult.title : "Select Hit or Miss & Attack Type"}
           </h2>
           {rollResult && (
-            <p>{rollResult.description}</p>
+            <p className="text-justify">{rollResult.description}</p>
           )}
         </div>
 

@@ -101,7 +101,7 @@ const App = () => {
           </select>
         </div>
         {selectedTool && (
-          <p className="pt-2 font-roboto border-t border-red">
+          <p className="pt-2 font-roboto text-justify border-t border-red">
             {toolData[selectedTool].description}
           </p>
         )}
