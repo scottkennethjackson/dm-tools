@@ -2,7 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import DiceTray from "./Dice";
+import DiceTray from "./DiceTray";
 
 const App = () => {
   const router = useRouter();
