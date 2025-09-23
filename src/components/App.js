@@ -35,7 +35,7 @@ const App = () => {
     },
     "name-generator": {
       type: "tools",
-      description: "Players shown an interest in a random NPC? Quickly generate a name for them. Now they've invited that NPC along on a quest? Transfer their name to the NPC Generator and roll them up a statblock."
+      description: "Players shown an interest in a random NPC? Quickly generate a name for them. Now they've invited that NPC along on a quest? Transfer their name to the Statblock Generator and roll them up a character sheet."
     },
     "random-encounter": {
       type: "tools",
@@ -116,7 +116,7 @@ const App = () => {
         Go!
       </button>
       )}
-      <p className="absolute bottom-0 px-4 pb-1 text-sm text-center text-gray-400">Dungeons & Dragons, D&D, and the dragon ampersand are © and trademark Wizards of the Coast.</p>
+      <p className="absolute -bottom-5 px-4 w-full text-sm text-center text-gray-400">Dungeons & Dragons, D&D, and the dragon ampersand are © and trademark Wizards of the Coast.</p>
       <DiceTray />
     </div>
   );

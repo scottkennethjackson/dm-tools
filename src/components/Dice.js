@@ -150,7 +150,7 @@ const DiceTray = () => {
           <svg
             aria-hidden="true"
             focusable="false"
-            class="size-4 fill-white"
+            className="size-4 fill-white"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 512 512"
           >
@@ -172,7 +172,7 @@ const DiceTray = () => {
           <svg
             aria-hidden="true"
             focusable="false"
-            class="size-4 fill-white"
+            className="size-4 fill-white"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 512 512"
           >
@@ -194,7 +194,7 @@ const DiceTray = () => {
           <svg
             aria-hidden="true"
             focusable="false"
-            class="size-4 fill-white"
+            className="size-4 fill-white"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 512 512"
           >
@@ -217,7 +217,7 @@ const DiceTray = () => {
             <svg
               aria-hidden="true"
               focusable="false"
-              class="size-4 fill-white"
+              className="size-4 fill-white"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 512 512"
             >
@@ -226,7 +226,7 @@ const DiceTray = () => {
             <svg
               aria-hidden="true"
               focusable="false"
-              class="size-4 fill-white"
+              className="size-4 fill-white"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 512 512"
             >
@@ -249,7 +249,7 @@ const DiceTray = () => {
           <svg
             aria-hidden="true"
             focusable="false"
-            class="size-4 fill-white"
+            className="size-4 fill-white"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 512 512"
           >
@@ -271,7 +271,7 @@ const DiceTray = () => {
           <svg
             aria-hidden="true"
             focusable="false"
-            class="size-4 fill-white"
+            className="size-4 fill-white"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 512 512"
           >
@@ -293,7 +293,7 @@ const DiceTray = () => {
           <svg
             aria-hidden="true"
             focusable="false"
-            class="size-4 fill-white"
+            className="size-4 fill-white"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 512 512"
           >
@@ -315,7 +315,7 @@ const DiceTray = () => {
           <svg
             aria-hidden="true"
             focusable="false"
-            class="size-8 fill-red group-active:fill-activered"
+            className="size-8 fill-red group-active:fill-activered"
             xmlns="http://www.w3.org/2000/svg" 
             viewBox="0 0 512 512"
           >
