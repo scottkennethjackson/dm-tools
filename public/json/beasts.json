@@ -1,0 +1,362 @@
+{
+  "walking": [
+    {
+      "name": "Baboon",
+      "link": "https://www.dndbeyond.com/monsters/16795-baboon"
+    },
+    {
+      "name": "Badger",
+      "link": "https://www.dndbeyond.com/monsters/16796-badger"
+    },
+    { "name": "Cat", "link": "https://www.dndbeyond.com/monsters/16820-cat" },
+    { "name": "Deer", "link": "https://www.dndbeyond.com/monsters/16839-deer" },
+    {
+      "name": "Giant Fire Beetle",
+      "link": "https://www.dndbeyond.com/monsters/16883-giant-fire-beetle"
+    },
+    { "name": "Goat", "link": "https://www.dndbeyond.com/monsters/16906-goat" },
+    {
+      "name": "Hyena",
+      "link": "https://www.dndbeyond.com/monsters/16930-hyena"
+    },
+    {
+      "name": "Jackal",
+      "link": "https://www.dndbeyond.com/monsters/16936-jackal"
+    },
+    {
+      "name": "Lizard",
+      "link": "https://www.dndbeyond.com/monsters/16945-lizard"
+    },
+    { "name": "Rat", "link": "https://www.dndbeyond.com/monsters/16991-rat" },
+    {
+      "name": "Scorpion",
+      "link": "https://www.dndbeyond.com/monsters/17006-scorpion"
+    },
+    {
+      "name": "Spider",
+      "link": "https://www.dndbeyond.com/monsters/17018-spider"
+    },
+    {
+      "name": "Weasel",
+      "link": "https://www.dndbeyond.com/monsters/17052-weasel"
+    },
+    {
+      "name": "Camel",
+      "link": "https://www.dndbeyond.com/monsters/16819-camel"
+    },
+    {
+      "name": "Diseased Giant Rat",
+      "link": "https://www.dndbeyond.com/monsters/288142-diseased-giant-rat"
+    },
+    {
+      "name": "Giant Rat",
+      "link": "https://www.dndbeyond.com/monsters/16891-giant-rat"
+    },
+    {
+      "name": "Giant Weasel",
+      "link": "https://www.dndbeyond.com/monsters/16899-giant-weasel"
+    },
+    {
+      "name": "Mastiff",
+      "link": "https://www.dndbeyond.com/monsters/16953-mastiff"
+    },
+    { "name": "Mule", "link": "https://www.dndbeyond.com/monsters/16960-mule" },
+    { "name": "Pony", "link": "https://www.dndbeyond.com/monsters/16984-pony" },
+    {
+      "name": "Axe Beak",
+      "link": "https://www.dndbeyond.com/monsters/16793-axe-beak"
+    },
+    { "name": "Boar", "link": "https://www.dndbeyond.com/monsters/16812-boar" },
+    {
+      "name": "Draft Horse",
+      "link": "https://www.dndbeyond.com/monsters/16844-draft-horse"
+    },
+    { "name": "Elk", "link": "https://www.dndbeyond.com/monsters/16857-elk" },
+    {
+      "name": "Giant Badger",
+      "link": "https://www.dndbeyond.com/monsters/16874-giant-badger"
+    },
+    {
+      "name": "Giant Centipede",
+      "link": "https://www.dndbeyond.com/monsters/16877-giant-centipede"
+    },
+    {
+      "name": "Giant Lizard",
+      "link": "https://www.dndbeyond.com/monsters/16887-giant-lizard"
+    },
+    {
+      "name": "Giant Wolf Spider",
+      "link": "https://www.dndbeyond.com/monsters/16900-giant-wolf-spider"
+    },
+    {
+      "name": "Panther",
+      "link": "https://www.dndbeyond.com/monsters/16976-panther"
+    },
+    {
+      "name": "Riding Horse",
+      "link": "https://www.dndbeyond.com/monsters/16997-riding-horse"
+    },
+    {
+      "name": "Swarm of Rats",
+      "link": "https://www.dndbeyond.com/monsters/17032-swarm-of-rats"
+    },
+    { "name": "Wolf", "link": "https://www.dndbeyond.com/monsters/17062-wolf" },
+    { "name": "Ape", "link": "https://www.dndbeyond.com/monsters/16788-ape" },
+    {
+      "name": "Black Bear",
+      "link": "https://www.dndbeyond.com/monsters/16806-black-bear"
+    },
+    {
+      "name": "Giant Goat",
+      "link": "https://www.dndbeyond.com/monsters/16885-giant-goat"
+    },
+    {
+      "name": "Swarm of Insects",
+      "link": "https://www.dndbeyond.com/monsters/17029-swarm-of-insects"
+    },
+    {
+      "name": "Swarm of Beetles",
+      "link": "https://www.dndbeyond.com/monsters/301407-swarm-of-insects-beetles"
+    },
+    {
+      "name": "Swarm of Centipedes",
+      "link": "https://www.dndbeyond.com/monsters/301411-swarm-of-insects-centipedes"
+    },
+    {
+      "name": "Swarm of Spiders",
+      "link": "https://www.dndbeyond.com/monsters/301414-swarm-of-insects-spiders"
+    },
+    {
+      "name": "Warhorse",
+      "link": "https://www.dndbeyond.com/monsters/17049-warhorse"
+    },
+    {
+      "name": "Brown Bear",
+      "link": "https://www.dndbeyond.com/monsters/16816-brown-bear"
+    },
+    {
+      "name": "Dire Wolf",
+      "link": "https://www.dndbeyond.com/monsters/16841-dire-wolf"
+    },
+    {
+      "name": "Giant Hyena",
+      "link": "https://www.dndbeyond.com/monsters/16886-giant-hyena"
+    },
+    {
+      "name": "Giant Spider",
+      "link": "https://www.dndbeyond.com/monsters/16895-giant-spider"
+    },
+    { "name": "Lion", "link": "https://www.dndbeyond.com/monsters/16944-lion" },
+    {
+      "name": "Tiger",
+      "link": "https://www.dndbeyond.com/monsters/17036-tiger"
+    },
+    {
+      "name": "Allosaurus",
+      "link": "https://www.dndbeyond.com/monsters/17087-allosaurus"
+    },
+    {
+      "name": "Giant Boar",
+      "link": "https://www.dndbeyond.com/monsters/16876-giant-boar"
+    },
+    {
+      "name": "Giant Elk",
+      "link": "https://www.dndbeyond.com/monsters/16882-giant-elk"
+    },
+    {
+      "name": "Polar Bear",
+      "link": "https://www.dndbeyond.com/monsters/16983-polar-bear"
+    },
+    {
+      "name": "Rhinoceros",
+      "link": "https://www.dndbeyond.com/monsters/16996-rhinoceros"
+    },
+    {
+      "name": "Saber-Toothed Tiger",
+      "link": "https://www.dndbeyond.com/monsters/17002-saber-toothed-tiger"
+    },
+    {
+      "name": "Ankylosaurus",
+      "link": "https://www.dndbeyond.com/monsters/17088-ankylosaurus"
+    },
+    {
+      "name": "Giant Scorpion",
+      "link": "https://www.dndbeyond.com/monsters/16892-giant-scorpion"
+    },
+    {
+      "name": "Elephant",
+      "link": "https://www.dndbeyond.com/monsters/16855-elephant"
+    },
+    {
+      "name": "Triceratops",
+      "link": "https://www.dndbeyond.com/monsters/17039-triceratops"
+    },
+    {
+      "name": "Mammoth",
+      "link": "https://www.dndbeyond.com/monsters/16950-mammoth"
+    },
+    {
+      "name": "Giant Ape",
+      "link": "https://www.dndbeyond.com/monsters/16873-giant-ape"
+    },
+    {
+      "name": "Tyrannosaurus Rex",
+      "link": "https://www.dndbeyond.com/monsters/17041-tyrannosaurus-rex"
+    }
+  ],
+
+  "flying": [
+    { "name": "Bat", "link": "https://www.dndbeyond.com/monsters/16802-bat" },
+    {
+      "name": "Eagle",
+      "link": "https://www.dndbeyond.com/monsters/16852-eagle"
+    },
+    { "name": "Hawk", "link": "https://www.dndbeyond.com/monsters/16920-hawk" },
+    { "name": "Owl", "link": "https://www.dndbeyond.com/monsters/16974-owl" },
+    {
+      "name": "Raven",
+      "link": "https://www.dndbeyond.com/monsters/16992-raven"
+    },
+    {
+      "name": "Vulture",
+      "link": "https://www.dndbeyond.com/monsters/17048-vulture"
+    },
+    {
+      "name": "Blood Hawk",
+      "link": "https://www.dndbeyond.com/monsters/16810-blood-hawk"
+    },
+    {
+      "name": "Flying Snake",
+      "link": "https://www.dndbeyond.com/monsters/16864-flying-snake"
+    },
+    {
+      "name": "Stirge",
+      "link": "https://www.dndbeyond.com/monsters/17023-stirge"
+    },
+    {
+      "name": "Giant Bat",
+      "link": "https://www.dndbeyond.com/monsters/16875-giant-bat"
+    },
+    {
+      "name": "Giant Owl",
+      "link": "https://www.dndbeyond.com/monsters/16889-giant-owl"
+    },
+    {
+      "name": "Pteranodon",
+      "link": "https://www.dndbeyond.com/monsters/17093-pteranodon"
+    },
+    {
+      "name": "Swarm of Bats",
+      "link": "https://www.dndbeyond.com/monsters/17028-swarm-of-bats"
+    },
+    {
+      "name": "Swarm of Ravens",
+      "link": "https://www.dndbeyond.com/monsters/17033-swarm-of-ravens"
+    },
+    {
+      "name": "Giant Wasp",
+      "link": "https://www.dndbeyond.com/monsters/16898-giant-wasp"
+    },
+    {
+      "name": "Swarm of Wasps",
+      "link": "https://www.dndbeyond.com/monsters/301415-swarm-of-insects-wasps"
+    },
+    {
+      "name": "Giant Eagle",
+      "link": "https://www.dndbeyond.com/monsters/16881-giant-eagle"
+    },
+    {
+      "name": "Giant Vulture",
+      "link": "https://www.dndbeyond.com/monsters/16897-giant-vulture"
+    }
+  ],
+
+  "swimming": [
+    { "name": "Crab", "link": "https://www.dndbeyond.com/monsters/16833-crab" },
+    { "name": "Frog", "link": "https://www.dndbeyond.com/monsters/16866-frog" },
+    {
+      "name": "Octopus",
+      "link": "https://www.dndbeyond.com/monsters/16968-octopus"
+    },
+    {
+      "name": "Quipper",
+      "link": "https://www.dndbeyond.com/monsters/16989-quipper"
+    },
+    {
+      "name": "Sea Horse",
+      "link": "https://www.dndbeyond.com/monsters/17009-sea-horse"
+    },
+    {
+      "name": "Giant Crab",
+      "link": "https://www.dndbeyond.com/monsters/16879-giant-crab"
+    },
+    {
+      "name": "Poisonous Snake",
+      "link": "https://www.dndbeyond.com/monsters/16982-poisonous-snake"
+    },
+    {
+      "name": "Constrictor Snake",
+      "link": "https://www.dndbeyond.com/monsters/16830-constrictor-snake"
+    },
+    {
+      "name": "Giant Frog",
+      "link": "https://www.dndbeyond.com/monsters/16884-giant-frog"
+    },
+    {
+      "name": "Giant Poisonous Snake",
+      "link": "https://www.dndbeyond.com/monsters/16890-giant-poisonous-snake"
+    },
+    {
+      "name": "Crocodile",
+      "link": "https://www.dndbeyond.com/monsters/16834-crocodile"
+    },
+    {
+      "name": "Giant Sea Horse",
+      "link": "https://www.dndbeyond.com/monsters/16893-giant-sea-horse"
+    },
+    {
+      "name": "Reef Shark",
+      "link": "https://www.dndbeyond.com/monsters/16994-reef-shark"
+    },
+    {
+      "name": "Giant Octopus",
+      "link": "https://www.dndbeyond.com/monsters/16888-giant-octopus"
+    },
+    {
+      "name": "Giant Toad",
+      "link": "https://www.dndbeyond.com/monsters/16896-giant-toad"
+    },
+    {
+      "name": "Swarm of Quippers",
+      "link": "https://www.dndbeyond.com/monsters/17031-swarm-of-quippers"
+    },
+    {
+      "name": "Giant Constrictor Snake",
+      "link": "https://www.dndbeyond.com/monsters/16878-giant-constrictor-snake"
+    },
+    {
+      "name": "Hunter Shark",
+      "link": "https://www.dndbeyond.com/monsters/16928-hunter-shark"
+    },
+    {
+      "name": "Plesiosaurus",
+      "link": "https://www.dndbeyond.com/monsters/16981-plesiosaurus"
+    },
+    {
+      "name": "Swarm of Poisonous Snakes",
+      "link": "https://www.dndbeyond.com/monsters/17030-swarm-of-poisonous-snakes"
+    },
+    {
+      "name": "Killer Whale",
+      "link": "https://www.dndbeyond.com/monsters/16937-killer-whale"
+    },
+    {
+      "name": "Giant Crocodile",
+      "link": "https://www.dndbeyond.com/monsters/16880-giant-crocodile"
+    },
+    {
+      "name": "Giant Shark",
+      "link": "https://www.dndbeyond.com/monsters/16894-giant-shark"
+    }
+  ]
+}
