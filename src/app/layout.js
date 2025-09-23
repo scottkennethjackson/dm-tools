@@ -14,7 +14,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="antialiased bg-black text-white">
+      <body className="antialiased relative bg-black text-white">
         <DiceTray />
         {children}
         <p className="absolute bottom-0.5 px-4 w-full text-sm text-center text-gray-400">Dungeons & Dragons, D&D, and the dragon ampersand are © and trademark Wizards of the Coast.</p>

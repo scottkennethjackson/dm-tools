@@ -4,11 +4,11 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 
 export default function BagOfTricks() {
+  const router = useRouter();
+
   const [beasts, setBeasts] = useState({ walking: [], flying: [], swimming: [] });
   const [selectedType, setSelectedType] = useState("walking");
   const [rolledBeast, setRolledBeast] = useState(null);
-
-  const router = useRouter();
 
   useEffect(() => {
     const fetchBeasts = async () => {
@@ -51,7 +51,7 @@ export default function BagOfTricks() {
         </svg>
       </button>
 
-      <div>
+      <div className="flex flex-col items-center">
         <Image
           src="/images/ampersand.png"
           width={240}
