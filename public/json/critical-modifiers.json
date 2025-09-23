@@ -1,0 +1,642 @@
+{
+  "hit": [
+    {
+      "melee": [
+        {
+          "min": 1,
+          "max": 1,
+          "effect": "You Feel Accomplished, but Nothing Remarkable Happens",
+          "description": "Regular critical hit."
+        },
+        {
+          "min": 2,
+          "max": 5,
+          "effect": "You Feel It Is Imperative to Press the Advantage No Matter the Cost",
+          "description": "You can choose to gain advantage on all attacks against your target until the end of your next turn, but if you do, all enemies have advantage on their attack rolls against you until the end of your next turn."
+        },
+        {
+          "min": 6,
+          "max": 9,
+          "effect": "You Feel It Is Imperative to Press the Advantage, but Remain Aware",
+          "description": "You can choose to gain advantage on all attacks against your target next turn, but your target will have the same against you until the end of your next turn."
+        },
+        {
+          "min": 10,
+          "max": 14,
+          "effect": "You Know How to Gain the Advantage",
+          "description": "You gain advantage on all attacks on your target until the end of your next turn."
+        },
+        {
+          "min": 15,
+          "max": 19,
+          "effect": "As You Are Fighting, You Notice an Effective Route to Escape Danger",
+          "description": "You are able to use the disengage action after your attack."
+        },
+        {
+          "min": 20,
+          "max": 24,
+          "effect": "You Feel the Flow of the Battle and Know Where to Make Your Next Move",
+          "description": "After your turn you move to the top of the initiative order."
+        },
+        {
+          "min": 25,
+          "max": 29,
+          "effect": "You Begin to Recognise Patterns in Your Opponent's Fighting Technique",
+          "description": "You gain +2 to your AC against your target, and advantage on all savings throws from effects originating from your target until your next turn."
+        },
+        {
+          "min": 30,
+          "max": 39,
+          "effect": "You Are Able to Move Towards Your Target While Attacking and Can Attempt to Harass Them",
+          "description": "After your attack you can choose to attempt to grapple your opponent if you have a free hand, or attempt to shove your opponent if both hands are in use."
+        },
+        {
+          "min": 40,
+          "max": 49,
+          "effect": "You Are Able to Move Towards Your Target While Attacking to Harass Them",
+          "description": "After your attack you can choose to automatically succeed in grappling your opponent if you have a free hand, or shove your target if both hands are in use."
+        },
+        {
+          "min": 50,
+          "max": 59,
+          "effect": "You Attempt to Disarm Your Target",
+          "description": "You are able to take the disarm action after your attack."
+        },
+        {
+          "min": 60,
+          "max": 69,
+          "effect": "You Kick Your Target’s Weapon Out of Their Hands",
+          "description": "You are able to take the disarm action after your attack and steal your target's weapon if you have a free hand. Otherwise, it's knocked up to 20 feet away."
+        },
+        {
+          "min": 70,
+          "max": 74,
+          "effect": "Your Senses Heighten and You Become Aware of Threats Around You",
+          "description": "You are able to use the dodge action after your attack."
+        },
+        {
+          "min": 75,
+          "max": 79,
+          "effect": "Your Attack Knocks Your Target Over",
+          "description": "Your target is knocked prone."
+        },
+        {
+          "min": 80,
+          "max": 84,
+          "effect": "Your Strike Surprises Your Opponent",
+          "description": "Your target is surprised until the end of their next turn."
+        },
+        {
+          "min": 85,
+          "max": 89,
+          "effect": "You Strike with Great Force",
+          "description": "Roll an additional set of damage dice above and beyond your normal critical roll."
+        },
+        {
+          "min": 90,
+          "max": 94,
+          "effect": "You Strike With Extreme Force",
+          "description": "Roll an additional set of damage dice above and beyond your normal critical roll, and the target suffers one unit of exhaustion."
+        },
+        {
+          "min": 95,
+          "max": 99,
+          "effect": "You Strike with Debilitating Force",
+          "description": "Roll an additional set of damage dice above and beyond your normal critical roll. The target suffers a permanent injury (chosen by the DM). It can be healed with extended rest of a length determined by the DM, but leaves a scar."
+        },
+        {
+          "min": 100,
+          "max": 100,
+          "effect": "You Strike with Devastating Force",
+          "description": "Roll an additional set of damage dice above and beyond your normal critical roll; the target suffers 1 unit of exhaustion and gets a permanent injury (chosen by the DM). It can be healed with extended rest of a length determined by the DM, but leaves a scar."
+        }
+      ]
+    },
+    {
+      "ranged": [
+        {
+          "min": 1,
+          "max": 1,
+          "effect": "You Feel Accomplished, but Nothing Remarkable Happens",
+          "description": "Regular critical hit."
+        },
+        {
+          "min": 2,
+          "max": 5,
+          "effect": "You Feel It Is Imperative to Press the Advantage No Matter the Cost",
+          "description": "You can choose to gain advantage on all attacks against your target until the end of your next turn, but if you do, all enemies have advantage on their attack rolls against you until the end of your next turn."
+        },
+        {
+          "min": 6,
+          "max": 9,
+          "effect": "You Feel It Is Imperative to Press the Advantage, but Remain Aware",
+          "description": "You can choose to gain advantage on all attacks against your target next turn, but your target will have the same against you until the end of your next turn."
+        },
+        {
+          "min": 10,
+          "max": 14,
+          "effect": "You Know How to Gain Advantage",
+          "description": "You gain advantage on all attacks on your target until the end of your next turn."
+        },
+        {
+          "min": 15,
+          "max": 19,
+          "effect": "As You Are Fighting, You Notice an Effective Route to Escape Danger",
+          "description": "You are able to use the disengage action after your attack."
+        },
+        {
+          "min": 20,
+          "max": 24,
+          "effect": "You Feel the Flow of the Battle and Know Where to Make Your Next Move",
+          "description": "After your turn you move to the top of the initiative order."
+        },
+        {
+          "min": 25,
+          "max": 29,
+          "effect": "You Begin to Recognise Patterns in Your Opponent's Fighting Technique",
+          "description": "You gain +2 to your AC against your target, and advantage on all savings throws from effects originating from your target until your next turn."
+        },
+        {
+          "min": 30,
+          "max": 39,
+          "effect": "You Are Able to Move Towards Your Target While Attacking and Can Attempt to Harass Them",
+          "description": "After your attack you can choose to attempt to grapple your opponent if you have a free hand, or attempt to shove your opponent if both hands are in use."
+        },
+        {
+          "min": 40,
+          "max": 49,
+          "effect": "You Are Able to Move Towards Your Target While Attacking to Harass Them",
+          "description": "After your attack you can choose to automatically succeed in grappling your opponent if you have a free hand, or shove your target if both hands are in use."
+        },
+        {
+          "min": 50,
+          "max": 59,
+          "effect": "You Attempt to Disarm Your Target",
+          "description": "You are able to take the disarm action after your attack."
+        },
+        {
+          "min": 60,
+          "max": 69,
+          "effect": "You Knock Your Target’s Weapon Out of Their Hands",
+          "description": "Your target’s weapon is flung 1d6x5 feet away in a random direction."
+        },
+        {
+          "min": 70,
+          "max": 74,
+          "effect": "Your Senses Heighten and You Become Aware of Threats Around You",
+          "description": "You are able to use the dodge action after your attack."
+        },
+        {
+          "min": 75,
+          "max": 79,
+          "effect": "Your Attack Knocks Your Target Over",
+          "description": "Your target is knocked prone."
+        },
+        {
+          "min": 80,
+          "max": 84,
+          "effect": "Your Strike Surprises Your Opponent",
+          "description": "Your target is surprised until the end of their next turn."
+        },
+        {
+          "min": 85,
+          "max": 89,
+          "effect": "You Strike with Great Force",
+          "description": "Roll an additional set of damage dice above and beyond your normal critical roll."
+        },
+        {
+          "min": 90,
+          "max": 94,
+          "effect": "You Strike with Extreme Force",
+          "description": "Roll an additional set of damage dice above and beyond your normal critical roll, and the target suffers one unit of exhaustion."
+        },
+        {
+          "min": 95,
+          "max": 99,
+          "effect": "You Strike with Debilitating Force",
+          "description": "Roll an additional set of damage dice above and beyond your normal critical roll. The target suffers a permanent injury (chosen by the DM). It can be healed with extended rest of a length determined by the DM, but leaves a scar."
+        },
+        {
+          "min": 100,
+          "max": 100,
+          "effect": "You Strike with Devastating Force",
+          "description": "Roll an additional set of damage dice above and beyond your normal critical roll; the target suffers 1 unit of exhaustion and gets a permanent injury (chosen by the DM), which can be healed with extended rest of a length determined by the DM, but leaves a scar."
+        }
+      ]
+    },
+    {
+      "spell": [
+        {
+          "min": 1,
+          "max": 1,
+          "effect": "You Feel Accomplished, but Nothing Remarkable Happens",
+          "description": "Regular critical hit."
+        },
+        {
+          "min": 2,
+          "max": 5,
+          "effect": "You Feel It Is Imperative to Press the Advantage No Matter the Cost",
+          "description": "You can choose to gain advantage on your next attack roll against your target, but all enemies have advantage on their attack rolls against you until the end of your next turn."
+        },
+        {
+          "min": 6,
+          "max": 9,
+          "effect": "You Feel It Is Imperative to Press the Advantage, but Maintain Awareness of Your Surroundings",
+          "description": "You can choose to gain advantage on your next attack roll against your target, your target has advantage on their attack rolls against you until the end of your next turn."
+        },
+        {
+          "min": 10,
+          "max": 14,
+          "effect": "As You Are Fighting, You Notice an Effective Route to Escape Danger",
+          "description": "You are able to use the disengage action after your attack."
+        },
+        {
+          "min": 15,
+          "max": 19,
+          "effect": "You Feel Flow of the Battle and Know Where to Make your Next Move",
+          "description": "After your turn you move to the top of the initiative order."
+        },
+        {
+          "min": 20,
+          "max": 24,
+          "effect": "Your Spell Cripples Your Opponent",
+          "description": "After your turn you move to the top of the initiative order."
+        },
+        {
+          "min": 25,
+          "max": 29,
+          "effect": "You Begin to Recognise Patterns in Your Opponent's Fighting Technique",
+          "description": "Your target’s movement speed is cut in half for their next 2 turns."
+        },
+        {
+          "min": 30,
+          "max": 39,
+          "effect": "Your Spell Knocks Your Target Over",
+          "description": "Your target is knocked prone."
+        },
+        {
+          "min": 40,
+          "max": 49,
+          "effect": "The Light from Your Spell Flashes Near Your Target’s Eye",
+          "description": "Your target is blinded until the end of their next turn."
+        },
+        {
+          "min": 50,
+          "max": 59,
+          "effect": "You Blast the Target's Weapon Out of Their Hands",
+          "description": "Your target’s weapon is flung 1d6x5 feet away in a random direction."
+        },
+        {
+          "min": 60,
+          "max": 69,
+          "effect": "The Sight of Your Magic Fills the Target’s Heart with Fear",
+          "description": "Your target is frightened by you until you stop casting magic. You are able to discern the source of your target's fear."
+        },
+        {
+          "min": 70,
+          "max": 74,
+          "effect": "The Force from Your Spell Stuns your Opponent",
+          "description": "Your target is incapacitated until the end of their next turn."
+        },
+        {
+          "min": 75,
+          "max": 79,
+          "effect": "Your Spell is Incidentally Infused with Fey Energy",
+          "description": "Roll 10d8. If your targets current health is lower than the number rolled they fall asleep for 1 minute."
+        },
+        {
+          "min": 80,
+          "max": 84,
+          "effect": "Your Spells Strike Surprises your Opponent",
+          "description": "Your target is surprised until the end of their next turn."
+        },
+        {
+          "min": 85,
+          "max": 89,
+          "effect": "Your Spell Strikes with Great Force",
+          "description": "Roll an additional set of spell damage dice above and beyond your normal critical roll."
+        },
+        {
+          "min": 90,
+          "max": 94,
+          "effect": "Your Spell Strikes with Extreme Force",
+          "description": "Roll an additional set of spell damage dice above and beyond your normal critical roll, and the target suffers one unit of exhaustion."
+        },
+        {
+          "min": 95,
+          "max": 99,
+          "effect": "Your Spell Strikes with Debilitating Force",
+          "description": "Roll an additional set of spell damage dice above and beyond your normal critical roll and the target suffers a permanent injury (chosen by the DM). It can be healed with extended rest of a length determined by the DM, but leaves a scar."
+        },
+        {
+          "min": 100,
+          "max": 100,
+          "effect": "Your Spell Strikes with Devastating Force",
+          "description": "Roll an additional set of spell damage dice above and beyond your normal critical roll. The target suffers 1 unit of exhaustion and gets a permanent injury (chosen by the DM), which can be healed with extended rest of a length determined by the DM, but leaves a scar."
+        }
+      ]
+    }
+  ],
+  "miss": [
+    {
+      "melee": [
+        {
+          "min": 1,
+          "max": 1,
+          "effect": "You Lose Your Footing While Attacking and Slam Your Head into the Ground",
+          "description": "You fall prone, take 3d6 damage, and become unconscious for 1 minute or until you receive damage from any source."
+        },
+        {
+          "min": 2,
+          "max": 5,
+          "effect": "You Lose your Footing While Attacking and Fall Head First",
+          "description": "You fall prone. Roll a DC 15 constitution save, on failure you take 2d6 damage and are knocked unconscious for 1 minute or until you receive damage from any source. On success take half damage and you remain conscious."
+        },
+        {
+          "min": 6,
+          "max": 9,
+          "effect": "You Lose Your Footing While Attacking and Fall to the Ground Bumping Your Head",
+          "description": "You fall prone. Roll a DC 10 constitution save, on failure you take 1d6 damage and are knocked unconscious for 1 minute or until you receive damage from any source. On success take half damage and you remain conscious."
+        },
+        {
+          "min": 10,
+          "max": 14,
+          "effect": "You Attack Wildly and Lose Track of the Fight Around You",
+          "description": "End your turn and move to the bottom of the initiative order at the start of the next round."
+        },
+        {
+          "min": 15,
+          "max": 19,
+          "effect": "Missing What You Thought Was a Critical Blow Causes You to Panic",
+          "description": "End your current turn and you are surprised until the end of your next turn."
+        },
+        {
+          "min": 20,
+          "max": 29,
+          "effect": "You Lunge Past Your Target, Exposing Yourself",
+          "description": "Enemy you were attacking is able to use their reaction to perform and attack of opportunity."
+        },
+        {
+          "min": 30,
+          "max": 39,
+          "effect": "The Weapon Slips from Your Hand as you Attack",
+          "description": "Roll a DC 10 Dex Check; on failure you throw your weapon into your enemy’s space. (DM's choice on large+)"
+        },
+        {
+          "min": 40,
+          "max": 49,
+          "effect": "You Lose Your Grip as You Attack",
+          "description": "Roll a DC 10 Dexterity Check, on failure you drop your weapon at your feet."
+        },
+        {
+          "min": 50,
+          "max": 59,
+          "effect": "You Miss an Attack and Gaze Upon the Chaos of the Battle, Causing Your Confidence to Falter",
+          "description": "Disadvantage on your next attack roll against any target."
+        },
+        {
+          "min": 60,
+          "max": 69,
+          "effect": "As You Attack Your Opponent You Begin to Fear That They Are the Superior Combatant",
+          "description": "Disadvantage on your next attack roll against your target."
+        },
+        {
+          "min": 70,
+          "max": 79,
+          "effect": "You Lose Your Balance",
+          "description": "You fall prone and your movement is reduced to 0."
+        },
+        {
+          "min": 80,
+          "max": 84,
+          "effect": "You Get Tangled with Your Enemy and Fall Over",
+          "description": "You are knocked prone and your movement is reduced to 0. Your target must succeed a DC 10 dexterity check or they are also knocked prone."
+        },
+        {
+          "min": 85,
+          "max": 89,
+          "effect": "You Lose Your Combat Footing, and Have Difficulty Recovering",
+          "description": "Your enemies have advantage on their attack rolls against you until the end of your next turn."
+        },
+        {
+          "min": 90,
+          "max": 94,
+          "effect": "You Lose Your Combat Footing, Exposing Yourself to Your Enemies",
+          "description": "Your enemies have advantage on their first attack roll against you next round."
+        },
+        {
+          "min": 95,
+          "max": 99,
+          "effect": "You Lose Your Combat Footing, Exposing Yourself to Your Target",
+          "description": "Your target has advantage on their first attack roll against you next round."
+        },
+        {
+          "min": 100,
+          "max": 100,
+          "effect": "You Are Embarassed, but Nothing Remarkable Happens",
+          "description": "You miss your attack."
+        }
+      ]
+    },
+    {
+      "ranged": [
+        {
+          "min": 1,
+          "max": 1,
+          "effect": "You Lose Your Footing While Aiming and Slam Your Head into the Ground",
+          "description": "You fall prone, take 3d6 damage, and become unconscious for 1 minute or until you receive damage from any source."
+        },
+        {
+          "min": 2,
+          "max": 5,
+          "effect": "You Lose Your Footing While Aiming and Fall Head First",
+          "description": "You fall prone. Roll a DC 15 constitution save, on failure you take 2d6 damage and are knocked unconscious for 1 minute or until you receive damage from any source. On success take half damage and you remain conscious."
+        },
+        {
+          "min": 6,
+          "max": 9,
+          "effect": "You Lose Your Footing While Aiming and Fall to the Ground Bumping Your Head",
+          "description": "You fall prone. Roll a DC 10 constitution save, on failure you take 1d6 damage and are knocked unconscious for 1 minute or until you receive damage from any source. On success take half damage and you remain conscious."
+        },
+        {
+          "min": 10,
+          "max": 14,
+          "effect": "Whilst Aiming You Lose Track of the Fight Around You",
+          "description": "End your turn and move to the bottom of the initiative order at the start of the next round."
+        },
+        {
+          "min": 15,
+          "max": 19,
+          "effect": "Missing What You Thought Was a Perfect Shot Causes You to Panic",
+          "description": "End your current turn and you are surprised until the end of your next turn."
+        },
+        {
+          "min": 20,
+          "max": 29,
+          "effect": "Your Attack Startles Your Allies Near Your Target",
+          "description": "The target can perform an opportunity attack on any ally within melee range."
+        },
+        {
+          "min": 30,
+          "max": 39,
+          "effect": "Your Ammo Gets Lodged in Its Container",
+          "description": "You must use an action to organize the ammunition in its case before you can make another ranged attack."
+        },
+        {
+          "min": 40,
+          "max": 49,
+          "effect": "You Lose Your Grip As You Attack",
+          "description": "Roll a DC 10 Dexterity Check, on failure you drop your weapon at your feet."
+        },
+        {
+          "min": 50,
+          "max": 59,
+          "effect": "You Miss an Attack and Gaze Upon the Chaos of the Battle, Causing Your Confidence to Falter",
+          "description": "Disadvantage on your next attack roll against any target."
+        },
+        {
+          "min": 60,
+          "max": 69,
+          "effect": "As You Attack Your Opponent You Begin to Fear That They Are the Superior Combatant",
+          "description": "Disadvantage on your next attack roll against your target."
+        },
+        {
+          "min": 70,
+          "max": 79,
+          "effect": "You Lose Your Balance",
+          "description": "You fall prone and your movement is reduced to 0."
+        },
+        {
+          "min": 80,
+          "max": 84,
+          "effect": "You Spill Your Quiver",
+          "description": "You must pick up arrows individually from the ground using your \"environmental interaction\", or the \"Use an Object\" action to nock your bow."
+        },
+        {
+          "min": 85,
+          "max": 89,
+          "effect": "You Lose Your Firing Stance, and Have Difficulty Recovering",
+          "description": "Your enemies have advantage on their attack rolls against you until the end of your next turn."
+        },
+        {
+          "min": 90,
+          "max": 94,
+          "effect": "You Lose Your Firing Stance, Exposing Yourself to Your Enemies",
+          "description": "Your enemies have advantage on their first attack roll against you next round."
+        },
+        {
+          "min": 95,
+          "max": 99,
+          "effect": "You Lose Your Firing Stance, Exposing Yourself to Your Target",
+          "description": "Your target has advantage on their first attack roll against you next round."
+        },
+        {
+          "min": 100,
+          "max": 100,
+          "effect": "You Are Embarassed, but Nothing Remarkable Happens",
+          "description": "You miss your attack."
+        }
+      ]
+    },
+    {
+      "spell": [
+        {
+          "min": 1,
+          "max": 1,
+          "effect": "Your Spell Totally Backfires, Creating a Large Explosion and Causing You to Fall and Bump Your Head",
+          "description": "You hit yourself with your spell. If the spell effect is instant you take the full effect and if the spell requires concentration the effect persists until the end of your next turn. You also take 1d6 bludgeoning damage, 1d6 thunder damage, and are knocked unconscious for 1 minute or until you receive damage from any source."
+        },
+        {
+          "min": 2,
+          "max": 5,
+          "effect": "Your Spell Backfires, Creating an Explosion and Causing You to Fall and Bump Your Head",
+          "description": "You fall prone. Roll a DC 15 Con save; on failure you take 1d6 bludgeoning damage, 1d6 thunder damage, and are knocked unconscious for 1 minute or until you receive damage from any source. On success take half damage and you remain conscious."
+        },
+        {
+          "min": 6,
+          "max": 9,
+          "effect": "Your Spell Backfires and Causes You to Fall and Bump Your Head",
+          "description": "You fall prone. Roll a DC 10 Con save; on failure you take 1d6 bludeoning damage and are knocked unconscious for 1 minute or until you receive damage from any source. On success take half damage and you remain conscious."
+        },
+        {
+          "min": 10,
+          "max": 14,
+          "effect": "You Misfire and Panic",
+          "description": "End your current turn and you are surprised until the end of your next turn."
+        },
+        {
+          "min": 15,
+          "max": 19,
+          "effect": "Your Spell Misfires and Dazes you, Causing You to Lose Track of the Fight",
+          "description": "End your turn and move to the bottom of the initiative order at the start of the next round."
+        },
+        {
+          "min": 20,
+          "max": 29,
+          "effect": "You Bite Your Tongue As You Cast",
+          "description": "You are unable to use verbal components to cast spells until the end of your next turn."
+        },
+        {
+          "min": 30,
+          "max": 39,
+          "effect": "Your Arm Cramps As You Cast",
+          "description": "You are unable to perform somatic components to cast spells until the end of your next turn."
+        },
+        {
+          "min": 40,
+          "max": 49,
+          "effect": "You Scramble the Contents of Your Component Pouch or Your Focus Becomes Overloaded with Energy",
+          "description": "You are unable to perform material components to cast spells until the end of your next turn."
+        },
+        {
+          "min": 50,
+          "max": 59,
+          "effect": "The Placement of Your Spell Startles Your Allies Near Your Target, Causing Them to Drop Their Guard",
+          "description": "Your target is able to use their reaction to take an attack of opportunity on one of your allies in melee range."
+        },
+        {
+          "min": 60,
+          "max": 69,
+          "effect": "The Spell Fires in an Unexpected Manner, Causing Your Confidence in Your Abilities to Falter",
+          "description": "You have disadvantage on any spell attacks, and enemies have advantage against your spell savings throws until the end of your next turn."
+        },
+        {
+          "min": 70,
+          "max": 79,
+          "effect": "You Misfire and Get Knocked Over",
+          "description": "You are knocked prone."
+        },
+        {
+          "min": 80,
+          "max": 84,
+          "effect": "Your Spell Creates a Large Plume of Smoke Obscuring Your Location",
+          "description": "The area in a 5 foot radius around your location becomes heavily obscured for 1 minute. A strong breeze can blow away the smoke in 1 round."
+        },
+        {
+          "min": 85,
+          "max": 89,
+          "effect": "You Are So Wrapped Up in Your Casting That You Forget You Are Fighting a Battle",
+          "description": "All enemies have advantage on their attack rolls against you until the end of your next turn."
+        },
+        {
+          "min": 90,
+          "max": 94,
+          "effect": "You Get Wrapped Up in Your Casting and Forget to Watch Around You",
+          "description": "All enemies have advantage on their first attack roll against you next round."
+        },
+        {
+          "min": 95,
+          "max": 99,
+          "effect": "You Get Wrapped Up in Your Casting and Forget to Watch Your Target",
+          "description": "Your target has advantage on their first attack roll against you next round."
+        },
+        {
+          "min": 100,
+          "max": 100,
+          "effect": "You Are Embarassed, but Nothing Remarkable Happens",
+          "description": "You miss your attack."
+        }
+      ]
+    }
+  ]
+}
