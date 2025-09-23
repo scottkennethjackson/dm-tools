@@ -1,4 +1,5 @@
 import "./globals.css";
+import DiceTray from "@/components/DiceTray";
 
 
 export const metadata = {
@@ -13,8 +14,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="antialiased">
+      <body className="antialiased bg-black text-white">
+        <DiceTray />
         {children}
+        <p className="absolute bottom-0.5 px-4 w-full text-sm text-center text-gray-400">Dungeons & Dragons, D&D, and the dragon ampersand are © and trademark Wizards of the Coast.</p>
       </body>
     </html>
   );
