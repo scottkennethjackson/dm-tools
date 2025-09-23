@@ -1,11 +1,14 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 
 export default function BagOfTricks() {
   const [beasts, setBeasts] = useState({ walking: [], flying: [], swimming: [] });
   const [selectedType, setSelectedType] = useState("walking");
   const [rolledBeast, setRolledBeast] = useState(null);
+
+  const router = useRouter();
 
   useEffect(() => {
     const fetchBeasts = async () => {
@@ -32,6 +35,22 @@ export default function BagOfTricks() {
 
   return (
     <div className="flex flex-col items-center justify-center px-4 py-12 space-y-6 min-h-screen">
+      <button
+        aria-label="Home"
+        className="absolute top-5 right-6 cursor-pointer"
+        onClick={() => router.push("/")}
+      >
+        <svg
+          aria-hidden="true"
+          focusable="false"
+          className="size-10 fill-gray-400 hover:fill-red active:fill-activered"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 -960 960 960"
+        >
+          <path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z" />
+        </svg>
+      </button>
+
       <div>
         <Image
           src="/images/ampersand.png"
