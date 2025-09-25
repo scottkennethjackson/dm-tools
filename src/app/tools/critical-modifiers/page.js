@@ -111,7 +111,7 @@ export default function CriticalModifiers() {
 
           <div className="relative">
             <hr className="border-red"></hr>
-            <p className="absolute -top-3 left-1/2 -translate-x-1/2 px-1 font-serif text-sm text-gray-300 italic bg-black">attack type</p>
+            <h3 className="absolute -top-3 left-1/2 -translate-x-1/2 px-1 font-serif text-sm text-gray-300 italic bg-black">attack type</h3>
           </div>
 
           <div className="flex justify-around mx-auto max-w-64">
