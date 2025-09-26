@@ -6,16 +6,24 @@ import Image from "next/image";
 export default function InitiativeTracker() {
   const router = useRouter();
 
-  const [stage, setStage] = useState(1); // 1 = add combatants, 2 = enter initiative, 3 = resolve ties, 4 = handle nat 20s
-  const [combatants, setCombatants] = useState([
-    { id: crypto.randomUUID(), name: "", initiative: "" },
-    { id: crypto.randomUUID(), name: "", initiative: "" },
-  ]);
+  const defaultCombatant = () => ({
+    id: crypto.randomUUID(),
+    name: "",
+    initiative: "",
+    hp: "",
+    ac: "",
+    conditions: [],
+    deathSaves: [false, false, false],
+  });
+
+  const [stage, setStage] = useState(1); // 1 = add combatants, 2 = enter initiative, 3 = resolve ties, 4 = handle nat 20s, 5 = tracker
+  const [combatants, setCombatants] = useState([defaultCombatant(), defaultCombatant()]);
   const [duplicates, setDuplicates] = useState([]);
   const [nat20Queue, setNat20Queue] = useState([]);
   const [natIndex, setNatIndex] = useState(0);
   const [takenPositions, setTakenPositions] = useState([]);
   const [selectedPosition, setSelectedPosition] = useState(null);
+  const [turnIndex, setTurnIndex] = useState(0);
 
   function sortByInitiative(list) {
     return [...list].sort((a, b) => {
@@ -31,11 +39,16 @@ export default function InitiativeTracker() {
     return `${n}${s[(v - 20) % 10] || s[v] || s[0]}`;
   }
 
+  const ensureDefaults = (c) => ({
+    hp: "",
+    ac: "",
+    conditions: [],
+    deathSaves: [false, false, false],
+    ...c,
+  });
+
   const handleAdd = () => {
-    setCombatants((prev) => [
-      ...prev,
-      { id: crypto.randomUUID(), name: "", initiative: "" },
-    ]);
+    setCombatants((prev) => [...prev, defaultCombatant()]);
   };
 
   const handleRemove = () => {
@@ -43,28 +56,20 @@ export default function InitiativeTracker() {
   };
 
   const handleNameChange = (id, value) => {
-    setCombatants((prev) =>
-      prev.map((c) => (c.id === id ? { ...c, name: value } : c))
-    );
+    setCombatants((prev) => prev.map((c) => (c.id === id ? { ...c, name: value } : c)));
   };
 
   const handleInitChange = (id, value) => {
-    setCombatants((prev) =>
-      prev.map((c) => (c.id === id ? { ...c, initiative: value } : c))
-    );
+    setCombatants((prev) => prev.map((c) => (c.id === id ? { ...c, initiative: value } : c)));
   };
   
   const handleStartCombat = () => {
-    // 1. ensure unnamed combatants get default names
     const namedCombatants = combatants.map((c, idx) => ({
         ...c,
         name: c.name || `Combatant #${idx + 1}`,
     }));
-
-    // 2. sort combatants
-    let sorted = sortByInitiative(namedCombatants);
+    let sorted = sortByInitiative(namedCombatants).map(ensureDefaults);
   
-    // 3. find duplicate initiatives
     const duplicatesMap = new Map();
     sorted.forEach((c) => {
       const val = parseInt(c.initiative, 10) || 0;
@@ -72,9 +77,7 @@ export default function InitiativeTracker() {
       duplicatesMap.get(val).push(c);
     });
   
-    const duplicateGroups = Array.from(duplicatesMap.values()).filter(
-      (group) => group.length > 1
-    );
+    const duplicateGroups = Array.from(duplicatesMap.values()).filter((group) => group.length > 1);
   
     if (duplicateGroups.length > 0) {
       setDuplicates(duplicateGroups);
@@ -83,7 +86,6 @@ export default function InitiativeTracker() {
       return;
     }
   
-    // 4. check natural 20s
     const nat20s = sorted.filter((c) => parseInt(c.initiative, 10) === 20);
     if (nat20s.length > 0) {
       setNat20Queue(nat20s);
@@ -91,12 +93,13 @@ export default function InitiativeTracker() {
       setTakenPositions([]);
       setSelectedPosition(null);
       setCombatants(sorted);
+      setTurnIndex(0);
       setStage(4);
       return;
     }
   
-    // 5. otherwise, go straight to tracker
     setCombatants(sorted);
+    setTurnIndex(0);
     setStage(5);
   };
 
@@ -113,7 +116,7 @@ export default function InitiativeTracker() {
       const ad = a.dex || 0;
       const bd = b.dex || 0;
       return bd - ad;
-    });
+    }).map(ensureDefaults);
   
     const nat20s = updated.filter((c) => parseInt(c.initiative, 10) === 20);
     if (nat20s.length > 0) {
@@ -122,11 +125,13 @@ export default function InitiativeTracker() {
       setTakenPositions([]);
       setSelectedPosition(null);
       setCombatants(updated);
+      setTurnIndex(0);
       setStage(4);
       return;
     }
   
     setCombatants(updated);
+    setTurnIndex(0);
     setStage(5);
   };
 
@@ -139,41 +144,107 @@ export default function InitiativeTracker() {
       setNatIndex(0);
       setTakenPositions([]);
       setSelectedPosition(null);
+      setTurnIndex(0);
       setStage(5);
     }
   };
 
   const handleNatYes = () => {
     const current = nat20Queue[natIndex];
+    if (!current) return;
     if (selectedPosition == null) {
       alert("Please select a combat position.");
       return;
     }
 
-    const updated = [...combatants];
+    setCombatants((prev) => {
+      const copy = prev.map((c) => ({ ...c }));
+      const idx = copy.findIndex((c) => c.id === current.id);
+      if (idx !== -1) copy.splice(idx, 1);
+      const pos = Number(selectedPosition);
+      copy.splice(pos, 0, ensureDefaults(current));
 
-    const idx = updated.findIndex((c) => c.id === current.id);
-    if (idx !== -1) {
-      updated.splice(idx, 1);
-    }
+      setTakenPositions((tp) => [...tp, pos]);
 
-    const pos = Number(selectedPosition);
-    updated.splice(pos, 0, current);
-
-    setCombatants(updated);
-
-    setTakenPositions((prev) => [...prev, pos]);
-
-    if (natIndex < nat20Queue.length - 1) {
-      setNatIndex((i) => i + 1);
-      setSelectedPosition(null);
-    } else {
-      setNat20Queue([]);
-      setNatIndex(0);
-      setSelectedPosition(null);
-      setStage(5);
-    }
+      if (natIndex < nat20Queue.length - 1) {
+        setNatIndex((i) => i + 1);
+        setSelectedPosition(null);
+        return copy;
+      } else {
+        setTimeout(() => {
+          setNat20Queue([]);
+          setNatIndex(0);
+          setSelectedPosition(null);
+          setTurnIndex(pos); // focus the chosen position
+          setStage(5);
+        }, 0);
+        return copy;
+      }
+    });
   };
+
+  const handleStatChange = (id, field, value) => {
+    setCombatants((prev) => prev.map((c) => (c.id === id ? { ...c, [field]: value } : c)));
+  };
+  
+  const handleAddCondition = (id, condition) => {
+    setCombatants(prev =>
+      prev.map((c) => (c.id === id ? { ...c, conditions: [...(c.conditions || []), condition] } : c))
+    );
+  };
+  
+  const handleRemoveCondition = (id, condition) => {
+    setCombatants(prev =>
+      prev.map((c) => (c.id === id ? { ...c, conditions: c.conditions.filter(cond => cond !== condition) }: c))
+    );
+  };
+
+  const handleNextTurn = () => {
+    setTurnIndex((i) => (combatants.length ? (i + 1) % combatants.length : 0));
+  };
+  
+  const handlePrevTurn = () => {
+    setTurnIndex((i) => (combatants.length ? (i - 1 + combatants.length) % combatants.length: 0));
+  };
+
+  const handleDeathSaveToggle = (id, index) => {
+    setCombatants((prev) => {
+      const updated = prev.map((c) => {
+        if (c.id !== id) return c;
+        const ds = [...(c.deathSaves || [false, false, false])];
+        ds[index] = !ds[index];
+        return { ...c, deathSaves: ds };
+      });
+
+      const died = updated.find((c) => c.id === id && (c.deathSaves || []).every(Boolean));
+      if (died) {
+        const filtered = updated.filter((c) => c.id !== id);
+
+        if (filtered.length === 0) {
+          setTimeout(() => handleReset(), 0);
+          return updated;
+        } else {
+          setTurnIndex((t) => Math.min(t, filtered.length - 1));
+          return filtered;
+        }
+      }
+
+      return updated;
+    });
+  };
+
+  const handleReset = () => {
+    setStage(1);
+    setCombatants([defaultCombatant(), defaultCombatant()]);
+    setDuplicates([]);
+    setNat20Queue([]);
+    setNatIndex(0);
+    setTakenPositions([]);
+    setSelectedPosition(null);
+    setTurnIndex(0);
+  };
+
+  const currentCombatant = combatants.length ? combatants[Math.min(turnIndex, combatants.length - 1)] : null;
 
   return (
     <div className="flex flex-col items-center justify-center px-4 py-12 space-y-6 min-h-screen">
@@ -225,6 +296,26 @@ export default function InitiativeTracker() {
 
             <div className="flex space-x-4">
               <button
+                onClick={handleRemove}
+                disabled={combatants.length <= 2}
+                className={`rounded-full ${
+                  combatants.length > 2
+                    ? "bg-red active:bg-activered cursor-pointer"
+                    : "bg-gray-500 cursor-not-allowed"
+                }`}
+              >
+                <svg
+                  aria-hidden="true"
+                  focusable="false"
+                  className="size-10 fill-white"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 -960 960 960"
+                >
+                  <path d="M200-440v-80h560v80H200Z" />
+                </svg>
+              </button>
+
+              <button
                 onClick={handleAdd}
                 className="bg-red active:bg-activered rounded-full cursor-pointer"
               >
@@ -236,26 +327,6 @@ export default function InitiativeTracker() {
                   viewBox="0 -960 960 960"
                 >
                   <path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z" />
-                </svg>
-              </button>
-
-              <button
-                onClick={handleRemove}
-                disabled={combatants.length <= 2}
-                className={`rounded-full ${
-                  combatants.length > 2
-                    ? "bg-red active:bg-activered cursor-pointer"
-                    : "bg-gray-400 cursor-not-allowed"
-                }`}
-              >
-                <svg
-                  aria-hidden="true"
-                  focusable="false"
-                  className="size-10 fill-white"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 -960 960 960"
-                >
-                  <path d="M200-440v-80h560v80H200Z" />
                 </svg>
               </button>
             </div>
@@ -413,6 +484,159 @@ export default function InitiativeTracker() {
             </div>
           </div>
         </>
+      )}
+
+      {/* STAGE 5 */}
+      {stage === 5 && combatants.length > 0 && currentCombatant && (
+        <div className="flex flex-col items-center space-y-6 w-full max-w-md">
+          <div className="flex flex-col items-center px-4 py-8 space-y-4 border-2 border-red w-full">
+            <h2 className="font-tiamat text-3xl text-center">{currentCombatant.name}</h2>
+            
+            <div className="flex space-x-4 min-w-64 max-w-80">
+              <div className="flex flex-col space-y-1">
+                <div className="flex space-x-1">
+                  <svg
+                    aria-hidden="true"
+                    focusable="false"
+                    className="size-8 fill-gray-300"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 640 640"
+                  >
+                    <path d="M305 151.1L320 171.8L335 151.1C360 116.5 400.2 96 442.9 96C516.4 96 576 155.6 576 229.1L576 231.7C576 343.9 436.1 474.2 363.1 529.9C350.7 539.3 335.5 544 320 544C304.5 544 289.2 539.4 276.9 529.9C203.9 474.2 64 343.9 64 231.7L64 229.1C64 155.6 123.6 96 197.1 96C239.8 96 280 116.5 305 151.1z" />
+                  </svg>
+                  <input
+                    type="number"
+                    placeholder="HP"
+                    value={currentCombatant.hp ?? ""}
+                    onChange={(e) => handleStatChange(currentCombatant.id, "hp", e.target.value)}
+                    className="py-1 w-12 font-roboto text-xl font-bold"
+                  />
+                </div>
+                <div className="flex space-x-1">
+                  <svg
+                    aria-hidden="true"
+                    focusable="false"
+                    className="size-8 fill-gray-300"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 640 640"
+                  >
+                    <path d="M320 64C324.6 64 329.2 65 333.4 66.9L521.8 146.8C543.8 156.1 560.2 177.8 560.1 204C559.6 303.2 518.8 484.7 346.5 567.2C329.8 575.2 310.4 575.2 293.7 567.2C121.3 484.7 80.6 303.2 80.1 204C80 177.8 96.4 156.1 118.4 146.8L306.7 66.9C310.9 65 315.4 64 320 64z" />
+                  </svg>
+                  <input
+                    type="number"
+                    placeholder="AC"
+                    value={currentCombatant.ac ?? ""}
+                    onChange={(e) => handleStatChange(currentCombatant.id, "ac", e.target.value)}
+                    className="py-1 w-12 font-roboto text-xl font-bold"
+                  />
+                </div>
+              </div>
+
+              <div className="space-y-1">
+                <div className="flex items-center justify-between space-x-2 h-9.5">
+                  <span className="font-serif text-gray-300 italic">death saves:</span>
+                  <div className="flex space-x-2">
+                    {(currentCombatant.deathSaves || [false, false, false]).map((checked, idx) => (
+                    <label key={`${currentCombatant.id}-save-${idx}`} className="cursor-pointer">
+                        <input
+                        type="checkbox"
+                        checked={checked}
+                        onChange={() => handleDeathSaveToggle(currentCombatant.id, idx)}
+                        className="hidden peer"
+                        />
+                        <span
+                        className={`
+                            flex items-center justify-center size-6 border
+                            ${checked ? "bg-red border-red" : "bg-gray-200 border-gray-300"}
+                            peer-checked:bg-red
+                        `}
+                        >
+                          <svg
+                            aria-hidden="true"
+                            focusable="false"
+                            className="size-10 fill-gray-300"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 -960 960 960"
+                          >
+                            <path d="M240-80v-170q-39-17-68.5-45.5t-50-64.5q-20.5-36-31-77T80-520q0-158 112-259t288-101q176 0 288 101t112 259q0 42-10.5 83t-31 77q-20.5 36-50 64.5T720-250v170H240Zm80-80h40v-80h80v80h80v-80h80v80h40v-142q38-9 67.5-30t50-50q20.5-29 31.5-64t11-74q0-125-88.5-202.5T480-800q-143 0-231.5 77.5T160-520q0 39 11 74t31.5 64q20.5 29 50.5 50t67 30v142Zm100-200h120l-60-120-60 120Zm-80-80q33 0 56.5-23.5T420-520q0-33-23.5-56.5T340-600q-33 0-56.5 23.5T260-520q0 33 23.5 56.5T340-440Zm280 0q33 0 56.5-23.5T700-520q0-33-23.5-56.5T620-600q-33 0-56.5 23.5T540-520q0 33 23.5 56.5T620-440ZM480-160Z" />
+                          </svg>
+                        </span>
+                    </label>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <select
+                    onChange={(e) => { if (e.target.value) { handleAddCondition(currentCombatant.id, e.target.value); e.target.value = ""; } }}
+                    className="p-1 w-full min-w-48 font-roboto text-xl font-bold border border-gray-300"
+                  >
+                    <option value="">CONDITION</option>
+                    <option value="blinded">Blinded</option>
+                    <option value="charmed">Charmed</option>
+                    <option value="deafened">Deafened</option>
+                    <option value="frightened">Frightened</option>
+                    <option value="grappled">Grappled</option>
+                    <option value="incapacitated">Incapacitated</option>
+                    <option value="invisible">Invisible</option>
+                    <option value="paralysed">Paralysed</option>
+                    <option value="petrified">Petrified</option>
+                    <option value="poisoned">Poisoned</option>
+                    <option value="prone">Prone</option>
+                    <option value="restrained">Restrained</option>
+                    <option value="stunned">Stunned</option>
+                    <option value="unconscious">Unconscious</option>
+                  </select>
+
+                  <div className="flex flex-wrap gap-0.5">
+                    {(currentCombatant.conditions || []).map((cond) => (
+                      <span
+                        key={cond}
+                        className="p-1 text-xs capitalize bg-gray-300 text-black rounded-b cursor-pointer"
+                        onClick={() => handleRemoveCondition(currentCombatant.id, cond)}
+                      >
+                        {cond} ✕
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="flex mt-2 space-x-4">
+              <button
+                onClick={handlePrevTurn}
+                className="flex justify-center items-center bg-gray-500 hover:bg-red active:bg-activered rounded-full cursor-pointer"
+              >
+                <svg
+                  aria-hidden="true"
+                  focusable="false"
+                  className="size-10 fill-white group-hover:fill-red group-active:fill-activered"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 -960 960 960"
+                >
+                  <path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z" />
+                </svg>
+              </button>
+              <button
+                onClick={handleNextTurn}
+                className="flex justify-center items-center bg-gray-500 hover:bg-red active:bg-activered rounded-full cursor-pointer"
+              >
+                <svg
+                  aria-hidden="true"
+                  focusable="false"
+                  className="size-10 fill-white group-hover:fill-red group-active:fill-activered"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 -960 960 960"
+                >
+                  <path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div className="flex space-x-2">
+            <button onClick={handleReset} className="p-2 w-24 font-tiamat text-xl bg-red active:bg-activered cursor-pointer">Reset</button>
+          </div>
+        </div>
       )}
     </div>
   );
