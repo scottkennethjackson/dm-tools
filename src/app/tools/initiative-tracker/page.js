@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function InitiativeTracker() {
   const router = useRouter();
@@ -247,7 +248,7 @@ export default function InitiativeTracker() {
   const currentCombatant = combatants.length ? combatants[Math.min(turnIndex, combatants.length - 1)] : null;
 
   return (
-    <div className="flex flex-col items-center justify-center px-4 py-12 space-y-6 min-h-screen">
+    <div className="flex flex-col items-center justify-center px-4 py-24 space-y-6 min-h-screen">
       <button
         aria-label="Home"
         className="absolute top-5 right-6 cursor-pointer"
@@ -489,149 +490,160 @@ export default function InitiativeTracker() {
       {/* STAGE 5 */}
       {stage === 5 && combatants.length > 0 && currentCombatant && (
         <div className="flex flex-col items-center space-y-6 w-full max-w-md">
-          <div className="flex flex-col items-center px-4 py-8 space-y-4 border-2 border-red w-full">
-            <h2 className="font-tiamat text-3xl text-center">{currentCombatant.name}</h2>
-            
-            <div className="flex space-x-4 min-w-64 max-w-80">
-              <div className="flex flex-col space-y-1">
-                <div className="flex space-x-1">
-                  <svg
-                    aria-hidden="true"
-                    focusable="false"
-                    className="size-8 fill-gray-300"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 640 640"
-                  >
-                    <path d="M305 151.1L320 171.8L335 151.1C360 116.5 400.2 96 442.9 96C516.4 96 576 155.6 576 229.1L576 231.7C576 343.9 436.1 474.2 363.1 529.9C350.7 539.3 335.5 544 320 544C304.5 544 289.2 539.4 276.9 529.9C203.9 474.2 64 343.9 64 231.7L64 229.1C64 155.6 123.6 96 197.1 96C239.8 96 280 116.5 305 151.1z" />
-                  </svg>
-                  <input
-                    type="number"
-                    placeholder="HP"
-                    value={currentCombatant.hp ?? ""}
-                    onChange={(e) => handleStatChange(currentCombatant.id, "hp", e.target.value)}
-                    className="py-1 w-12 font-roboto text-xl font-bold"
-                  />
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentCombatant.id}
+              initial={{ x: 100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: -100, opacity: 0 }}
+              transition={{ duration: 0.4 }}
+              className="flex flex-col items-center px-4 py-8 space-y-4 border-2 border-red w-full"
+            >
+              <h2 className="font-tiamat text-3xl text-center">{currentCombatant.name}</h2>
+              
+              <div className="flex space-x-4 min-w-64 max-w-80">
+                <div className="flex flex-col space-y-1">
+                  <div className="flex space-x-1">
+                    <svg
+                      aria-hidden="true"
+                      focusable="false"
+                      className="size-8 fill-gray-400"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 640 640"
+                    >
+                      <path d="M305 151.1L320 171.8L335 151.1C360 116.5 400.2 96 442.9 96C516.4 96 576 155.6 576 229.1L576 231.7C576 343.9 436.1 474.2 363.1 529.9C350.7 539.3 335.5 544 320 544C304.5 544 289.2 539.4 276.9 529.9C203.9 474.2 64 343.9 64 231.7L64 229.1C64 155.6 123.6 96 197.1 96C239.8 96 280 116.5 305 151.1z" />
+                    </svg>
+                    <input
+                      type="number"
+                      placeholder="HP"
+                      value={currentCombatant.hp ?? ""}
+                      onChange={(e) => handleStatChange(currentCombatant.id, "hp", e.target.value)}
+                      className="py-1 w-12 font-roboto text-xl font-bold"
+                    />
+                  </div>
+                  <div className="flex space-x-1">
+                    <svg
+                      aria-hidden="true"
+                      focusable="false"
+                      className="size-8 fill-gray-400"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 640 640"
+                    >
+                      <path d="M320 64C324.6 64 329.2 65 333.4 66.9L521.8 146.8C543.8 156.1 560.2 177.8 560.1 204C559.6 303.2 518.8 484.7 346.5 567.2C329.8 575.2 310.4 575.2 293.7 567.2C121.3 484.7 80.6 303.2 80.1 204C80 177.8 96.4 156.1 118.4 146.8L306.7 66.9C310.9 65 315.4 64 320 64z" />
+                    </svg>
+                    <input
+                      type="number"
+                      placeholder="AC"
+                      value={currentCombatant.ac ?? ""}
+                      onChange={(e) => handleStatChange(currentCombatant.id, "ac", e.target.value)}
+                      className="py-1 w-12 font-roboto text-xl font-bold"
+                    />
+                  </div>
                 </div>
-                <div className="flex space-x-1">
-                  <svg
-                    aria-hidden="true"
-                    focusable="false"
-                    className="size-8 fill-gray-300"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 640 640"
-                  >
-                    <path d="M320 64C324.6 64 329.2 65 333.4 66.9L521.8 146.8C543.8 156.1 560.2 177.8 560.1 204C559.6 303.2 518.8 484.7 346.5 567.2C329.8 575.2 310.4 575.2 293.7 567.2C121.3 484.7 80.6 303.2 80.1 204C80 177.8 96.4 156.1 118.4 146.8L306.7 66.9C310.9 65 315.4 64 320 64z" />
-                  </svg>
-                  <input
-                    type="number"
-                    placeholder="AC"
-                    value={currentCombatant.ac ?? ""}
-                    onChange={(e) => handleStatChange(currentCombatant.id, "ac", e.target.value)}
-                    className="py-1 w-12 font-roboto text-xl font-bold"
-                  />
-                </div>
-              </div>
-
-              <div className="space-y-1">
-                <div className="flex items-center justify-between space-x-2 h-9.5">
-                  <span className="font-serif text-gray-300 italic">death saves:</span>
-                  <div className="flex space-x-2">
-                    {(currentCombatant.deathSaves || [false, false, false]).map((checked, idx) => (
-                    <label key={`${currentCombatant.id}-save-${idx}`} className="cursor-pointer">
-                        <input
-                        type="checkbox"
-                        checked={checked}
-                        onChange={() => handleDeathSaveToggle(currentCombatant.id, idx)}
-                        className="hidden peer"
-                        />
-                        <span
-                        className={`
-                            flex items-center justify-center size-6 border
-                            ${checked ? "bg-red border-red" : "bg-gray-200 border-gray-300"}
-                            peer-checked:bg-red
-                        `}
-                        >
-                          <svg
-                            aria-hidden="true"
-                            focusable="false"
-                            className="size-10 fill-gray-300"
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 -960 960 960"
+  
+                <div className="space-y-1">
+                  <div className="flex items-center justify-between space-x-2 h-9.5">
+                    <span className="font-serif text-gray-300 italic">death saves:</span>
+                    <div className="flex space-x-2">
+                      {(currentCombatant.deathSaves || [false, false, false]).map((checked, idx) => (
+                      <label key={`${currentCombatant.id}-save-${idx}`} className="cursor-pointer">
+                          <input
+                          type="checkbox"
+                          checked={checked}
+                          onChange={() => handleDeathSaveToggle(currentCombatant.id, idx)}
+                          className="hidden peer"
+                          />
+                          <span
+                          className={`
+                              flex items-center justify-center size-6 border
+                              ${checked ? "bg-red border-red" : "bg-gray-200 border-gray-300"}
+                              peer-checked:bg-red
+                          `}
                           >
-                            <path d="M240-80v-170q-39-17-68.5-45.5t-50-64.5q-20.5-36-31-77T80-520q0-158 112-259t288-101q176 0 288 101t112 259q0 42-10.5 83t-31 77q-20.5 36-50 64.5T720-250v170H240Zm80-80h40v-80h80v80h80v-80h80v80h40v-142q38-9 67.5-30t50-50q20.5-29 31.5-64t11-74q0-125-88.5-202.5T480-800q-143 0-231.5 77.5T160-520q0 39 11 74t31.5 64q20.5 29 50.5 50t67 30v142Zm100-200h120l-60-120-60 120Zm-80-80q33 0 56.5-23.5T420-520q0-33-23.5-56.5T340-600q-33 0-56.5 23.5T260-520q0 33 23.5 56.5T340-440Zm280 0q33 0 56.5-23.5T700-520q0-33-23.5-56.5T620-600q-33 0-56.5 23.5T540-520q0 33 23.5 56.5T620-440ZM480-160Z" />
-                          </svg>
-                        </span>
-                    </label>
-                    ))}
+                            <svg
+                              aria-hidden="true"
+                              focusable="false"
+                              className="size-10 fill-gray-300"
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 -960 960 960"
+                            >
+                              <path d="M240-80v-170q-39-17-68.5-45.5t-50-64.5q-20.5-36-31-77T80-520q0-158 112-259t288-101q176 0 288 101t112 259q0 42-10.5 83t-31 77q-20.5 36-50 64.5T720-250v170H240Zm80-80h40v-80h80v80h80v-80h80v80h40v-142q38-9 67.5-30t50-50q20.5-29 31.5-64t11-74q0-125-88.5-202.5T480-800q-143 0-231.5 77.5T160-520q0 39 11 74t31.5 64q20.5 29 50.5 50t67 30v142Zm100-200h120l-60-120-60 120Zm-80-80q33 0 56.5-23.5T420-520q0-33-23.5-56.5T340-600q-33 0-56.5 23.5T260-520q0 33 23.5 56.5T340-440Zm280 0q33 0 56.5-23.5T700-520q0-33-23.5-56.5T620-600q-33 0-56.5 23.5T540-520q0 33 23.5 56.5T620-440ZM480-160Z" />
+                            </svg>
+                          </span>
+                      </label>
+                      ))}
+                    </div>
                   </div>
-                </div>
-                <div>
-                  <select
-                    onChange={(e) => { if (e.target.value) { handleAddCondition(currentCombatant.id, e.target.value); e.target.value = ""; } }}
-                    className="p-1 w-full min-w-48 font-roboto text-xl font-bold border border-gray-300"
-                  >
-                    <option value="">CONDITION</option>
-                    <option value="blinded">Blinded</option>
-                    <option value="charmed">Charmed</option>
-                    <option value="deafened">Deafened</option>
-                    <option value="frightened">Frightened</option>
-                    <option value="grappled">Grappled</option>
-                    <option value="incapacitated">Incapacitated</option>
-                    <option value="invisible">Invisible</option>
-                    <option value="paralysed">Paralysed</option>
-                    <option value="petrified">Petrified</option>
-                    <option value="poisoned">Poisoned</option>
-                    <option value="prone">Prone</option>
-                    <option value="restrained">Restrained</option>
-                    <option value="stunned">Stunned</option>
-                    <option value="unconscious">Unconscious</option>
-                  </select>
-
-                  <div className="flex flex-wrap gap-0.5">
-                    {(currentCombatant.conditions || []).map((cond) => (
-                      <span
-                        key={cond}
-                        className="p-1 text-xs capitalize bg-gray-300 text-black rounded-b cursor-pointer"
-                        onClick={() => handleRemoveCondition(currentCombatant.id, cond)}
-                      >
-                        {cond} ✕
-                      </span>
-                    ))}
+                  <div className="flex flex-col space-y-0.5">
+                    <select
+                      onChange={(e) => { if (e.target.value) { handleAddCondition(currentCombatant.id, e.target.value); e.target.value = ""; } }}
+                      className="py-1 w-full min-w-48 font-roboto text-xl font-bold"
+                    >
+                      <option value="">CONDITION</option>
+                      <option value="blinded">Blinded</option>
+                      <option value="charmed">Charmed</option>
+                      <option value="deafened">Deafened</option>
+                      <option value="frightened">Frightened</option>
+                      <option value="grappled">Grappled</option>
+                      <option value="incapacitated">Incapacitated</option>
+                      <option value="invisible">Invisible</option>
+                      <option value="paralysed">Paralysed</option>
+                      <option value="petrified">Petrified</option>
+                      <option value="poisoned">Poisoned</option>
+                      <option value="prone">Prone</option>
+                      <option value="restrained">Restrained</option>
+                      <option value="stunned">Stunned</option>
+                      <option value="unconscious">Unconscious</option>
+                    </select>
+  
+                    <div className="flex flex-wrap gap-0.5">
+                      {(currentCombatant.conditions || []).map((cond) => (
+                        <span
+                          key={cond}
+                          className="px-1 py-0.5 text-xs capitalize bg-red rounded cursor-pointer"
+                          onClick={() => handleRemoveCondition(currentCombatant.id, cond)}
+                        >
+                          {cond} ✕
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="flex mt-2 space-x-4">
-              <button
-                onClick={handlePrevTurn}
-                className="flex justify-center items-center bg-gray-500 hover:bg-red active:bg-activered rounded-full cursor-pointer"
-              >
-                <svg
-                  aria-hidden="true"
-                  focusable="false"
-                  className="size-10 fill-white group-hover:fill-red group-active:fill-activered"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 -960 960 960"
+              <div className="flex space-x-1 mt-2 w-full">
+                <button
+                  onClick={handlePrevTurn}
+                  className="group flex justify-end items-center px-3.5 w-1/2 font-tiamat text-xl font-bold text-gray-400 hover:text-red active:text-activered cursor-pointer"
                 >
-                  <path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z" />
-                </svg>
-              </button>
-              <button
-                onClick={handleNextTurn}
-                className="flex justify-center items-center bg-gray-500 hover:bg-red active:bg-activered rounded-full cursor-pointer"
-              >
-                <svg
-                  aria-hidden="true"
-                  focusable="false"
-                  className="size-10 fill-white group-hover:fill-red group-active:fill-activered"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 -960 960 960"
+                  <svg
+                    aria-hidden="true"
+                    focusable="false"
+                    className="size-6 fill-gray-400 group-hover:fill-red group-active:fill-activered"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 -960 960 960"
+                  >
+                    <path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z" />
+                  </svg>
+                  Back
+                </button>
+                <button
+                  onClick={handleNextTurn}
+                  className="group flex justify-start items-center px-3.5 w-1/2 font-tiamat text-xl font-bold text-gray-400 hover:text-red active:text-activered cursor-pointer"
                 >
-                  <path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z" />
-                </svg>
-              </button>
-            </div>
-          </div>
+                  Next
+                  <svg
+                    aria-hidden="true"
+                    focusable="false"
+                    className="size-6 fill-gray-400 group-hover:fill-red group-active:fill-activered"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 -960 960 960"
+                  >
+                    <path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z" />
+                  </svg>
+                </button>
+              </div>
+            </motion.div>
+          </AnimatePresence>
 
           <div className="flex space-x-2">
             <button onClick={handleReset} className="p-2 w-24 font-tiamat text-xl bg-red active:bg-activered cursor-pointer">Reset</button>
