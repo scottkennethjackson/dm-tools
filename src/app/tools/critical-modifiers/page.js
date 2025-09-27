@@ -44,7 +44,7 @@ export default function CriticalModifiers() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center px-4 py-12 space-y-6 min-h-screen">
+    <div className="flex flex-col items-center justify-center px-4 py-24 space-y-6 min-h-screen">
       <button
         aria-label="Home"
         className="absolute top-5 right-6 cursor-pointer"
