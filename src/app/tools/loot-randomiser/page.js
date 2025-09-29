@@ -4,6 +4,8 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 
 export default function LootRandomiser() {
+  const router = useRouter();
+  
   const [dataLoaded, setDataLoaded] = useState(false);
   const [lootResult, setLootResult] = useState(null);
 
