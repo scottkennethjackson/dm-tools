@@ -1,0 +1,576 @@
+{
+  "cursed": [
+    {
+      "name": "Armor of Vulnerability",
+      "link": "https://www.dndbeyond.com/magic-items/5376-armor-of-vulnerability"
+    },
+    {
+      "name": "Berserker Axe",
+      "link": "https://www.dndbeyond.com/magic-items/5382-berserker-axe"
+    },
+    {
+      "name": "Shield of Missile Attraction",
+      "link": "https://www.dndbeyond.com/magic-items/4754-shield-of-missile-attraction"
+    }
+  ],
+
+  "uncommon": [
+    {
+      "name": "Adamantine Armor",
+      "link": "https://www.dndbeyond.com/magic-items/5370-adamantine-armor"
+    },
+    {
+      "name": "Ammunition, +1",
+      "link": "https://www.dndbeyond.com/magic-items/5407-ammunition-1"
+    },
+    {
+      "name": "Amulet of Proof Against Detection and Location",
+      "link": "https://www.dndbeyond.com/magic-items/4569-amulet-of-proof-against-detection-and-location"
+    },
+    {
+      "name": "Bag of Holding",
+      "link": "https://www.dndbeyond.com/magic-items/4581-bag-of-holding"
+    },
+    {
+      "name": "Boots of Elvenkind",
+      "link": "https://www.dndbeyond.com/magic-items/4587-boots-of-elvenkind"
+    },
+    {
+      "name": "Boots of the Winterlands",
+      "link": "https://www.dndbeyond.com/magic-items/4591-boots-of-the-winterlands"
+    },
+    {
+      "name": "Bracers of Archery",
+      "link": "https://www.dndbeyond.com/magic-items/4593-bracers-of-archery"
+    },
+    {
+      "name": "Brooch of Shielding",
+      "link": "https://www.dndbeyond.com/magic-items/4596-brooch-of-shielding"
+    },
+    {
+      "name": "Broom of Flying",
+      "link": "https://www.dndbeyond.com/magic-items/4597-broom-of-flying"
+    },
+    {
+      "name": "Circlet of Blasting",
+      "link": "https://www.dndbeyond.com/magic-items/4603-circlet-of-blasting"
+    },
+    {
+      "name": "Cloak of Protection",
+      "link": "https://www.dndbeyond.com/magic-items/4607-cloak-of-protection"
+    },
+    {
+      "name": "Eyes of the Eagle",
+      "link": "https://www.dndbeyond.com/magic-items/4635-eyes-of-the-eagle"
+    },
+    {
+      "name": "Gauntlets of Ogre Power",
+      "link": "https://www.dndbeyond.com/magic-items/4641-gauntlets-of-ogre-power"
+    },
+    {
+      "name": "Gloves of Swimming and Climbing",
+      "link": "https://www.dndbeyond.com/magic-items/4647-gloves-of-swimming-and-climbing"
+    },
+    {
+      "name": "Gloves of Thievery",
+      "link": "https://www.dndbeyond.com/magic-items/5352-gloves-of-thievery"
+    },
+    {
+      "name": "Goggles of Night",
+      "link": "https://www.dndbeyond.com/magic-items/4648-goggles-of-night"
+    },
+    {
+      "name": "Gray Bag of Tricks",
+      "link": "https://www.dndbeyond.com/magic-items/4582-bag-of-tricks"
+    },
+    {
+      "name": "Hat of Disguise",
+      "link": "https://www.dndbeyond.com/magic-items/4651-hat-of-disguise"
+    },
+    {
+      "name": "Headband of Intellect",
+      "link": "https://www.dndbeyond.com/magic-items/4652-headband-of-intellect"
+    },
+    {
+      "name": "Helm of Comprehending Languages",
+      "link": "https://www.dndbeyond.com/magic-items/4654-helm-of-comprehending-languages"
+    },
+    {
+      "name": "Medallion of Thoughts",
+      "link": "https://www.dndbeyond.com/magic-items/4679-medallion-of-thoughts"
+    },
+    {
+      "name": "Mithral Armor",
+      "link": "https://www.dndbeyond.com/magic-items/5381-mithral-armor"
+    },
+    {
+      "name": "Necklace of Adaptation",
+      "link": "https://www.dndbeyond.com/magic-items/4682-necklace-of-adaptation"
+    },
+    {
+      "name": "Pipes of the Sewers",
+      "link": "https://www.dndbeyond.com/magic-items/4697-pipes-of-the-sewers"
+    },
+    {
+      "name": "Ring of Jumping",
+      "link": "https://www.dndbeyond.com/magic-items/4724-ring-of-jumping"
+    },
+    {
+      "name": "Ring of Swimming",
+      "link": "https://www.dndbeyond.com/magic-items/4732-ring-of-swimming"
+    },
+    {
+      "name": "Ring of Warmth",
+      "link": "https://www.dndbeyond.com/magic-items/4736-ring-of-warmth"
+    },
+    {
+      "name": "Ring of Water Walking",
+      "link": "https://www.dndbeyond.com/magic-items/4737-ring-of-water-walking"
+    },
+    {
+      "name": "Rope of Climbing",
+      "link": "https://www.dndbeyond.com/magic-items/4749-rope-of-climbing"
+    },
+    {
+      "name": "Rust Bag of Tricks",
+      "link": "https://www.dndbeyond.com/magic-items/4582-bag-of-tricks"
+    },
+    {
+      "name": "Sending Stones",
+      "link": "https://www.dndbeyond.com/magic-items/5402-sending-stones"
+    },
+    {
+      "name": "Sentinel Shield",
+      "link": "https://www.dndbeyond.com/magic-items/5403-sentinel-shield"
+    },
+    {
+      "name": "Shield, +1",
+      "link": "https://www.dndbeyond.com/magic-items/4753-shield-1"
+    },
+    {
+      "name": "Slippers of Spider Climbing",
+      "link": "https://www.dndbeyond.com/magic-items/4755-slippers-of-spider-climbing"
+    },
+    {
+      "name": "Staff of the Python",
+      "link": "https://www.dndbeyond.com/magic-items/4768-staff-of-the-python"
+    },
+    {
+      "name": "Stone of Good Luck (Luckstone)",
+      "link": "https://www.dndbeyond.com/magic-items/4773-stone-of-good-luck-luckstone"
+    },
+    {
+      "name": "Tan Bag of Tricks",
+      "link": "https://www.dndbeyond.com/magic-items/4582-bag-of-tricks"
+    },
+    {
+      "name": "Trident of Fish Command",
+      "link": "https://www.dndbeyond.com/magic-items/4784-trident-of-fish-command"
+    },
+    {
+      "name": "Wand of Magic Missiles",
+      "link": "https://www.dndbeyond.com/magic-items/4794-wand-of-magic-missiles"
+    },
+    {
+      "name": "Wand of the War Mage, +1",
+      "link": "https://www.dndbeyond.com/magic-items/34712-wand-of-the-war-mage"
+    },
+    {
+      "name": "Weapon, +1",
+      "link": "https://www.dndbeyond.com/magic-items/5400-weapon-1"
+    }
+  ],
+
+  "rare": [
+    {
+      "name": "Ammunition, +2",
+      "link": "https://www.dndbeyond.com/magic-items/5410-ammunition-2"
+    },
+    {
+      "name": "Amulet of Health",
+      "link": "https://www.dndbeyond.com/magic-items/4568-amulet-of-health"
+    },
+    {
+      "name": "Armor, +1",
+      "link": "https://www.dndbeyond.com/magic-items/5377-armor-1"
+    },
+    {
+      "name": "Armor of Acid Resistance",
+      "link": "https://www.dndbeyond.com/magic-items/5371-armor-of-resistance"
+    },
+    {
+      "name": "Armor of Cold Resistance",
+      "link": "https://www.dndbeyond.com/magic-items/5371-armor-of-resistance"
+    },
+    {
+      "name": "Armor of Fire Resistance",
+      "link": "https://www.dndbeyond.com/magic-items/5371-armor-of-resistance"
+    },
+    {
+      "name": "Armor of Force Resistance",
+      "link": "https://www.dndbeyond.com/magic-items/5371-armor-of-resistance"
+    },
+    {
+      "name": "Armor of Lightning Resistance",
+      "link": "https://www.dndbeyond.com/magic-items/5371-armor-of-resistance"
+    },
+    {
+      "name": "Armor of Necrotic Resistance",
+      "link": "https://www.dndbeyond.com/magic-items/5371-armor-of-resistance"
+    },
+    {
+      "name": "Armor of Poison Resistance",
+      "link": "https://www.dndbeyond.com/magic-items/5371-armor-of-resistance"
+    },
+    {
+      "name": "Armor of Psychic Resistance",
+      "link": "https://www.dndbeyond.com/magic-items/5371-armor-of-resistance"
+    },
+    {
+      "name": "Armor of Radiant Resistance",
+      "link": "https://www.dndbeyond.com/magic-items/5371-armor-of-resistance"
+    },
+    {
+      "name": "Armor of Thunder Resistance",
+      "link": "https://www.dndbeyond.com/magic-items/5371-armor-of-resistance"
+    },
+    {
+      "name": "Arrow-Catching Shield",
+      "link": "https://www.dndbeyond.com/magic-items/4577-arrow-catching-shield"
+    },
+    {
+      "name": "Belt of Dwarvenkind",
+      "link": "https://www.dndbeyond.com/magic-items/4584-belt-of-dwarvenkind"
+    },
+    {
+      "name": "Belt of Hill Giant Strength",
+      "link": "https://www.dndbeyond.com/magic-items/5372-belt-of-giant-strength"
+    },
+    {
+      "name": "Boots of Levitation",
+      "link": "https://www.dndbeyond.com/magic-items/4588-boots-of-levitation"
+    },
+    {
+      "name": "Boots of Speed",
+      "link": "https://www.dndbeyond.com/magic-items/4589-boots-of-speed"
+    },
+    {
+      "name": "Bracers of Defense",
+      "link": "https://www.dndbeyond.com/magic-items/4594-bracers-of-defense"
+    },
+    {
+      "name": "Cloak of the Bat",
+      "link": "https://www.dndbeyond.com/magic-items/4608-cloak-of-the-bat"
+    },
+    {
+      "name": "Elven Chain",
+      "link": "https://www.dndbeyond.com/magic-items/4631-elven-chain"
+    },
+    {
+      "name": "Flame Tongue",
+      "link": "https://www.dndbeyond.com/magic-items/5386-flame-tongue"
+    },
+    {
+      "name": "Giant Slayer",
+      "link": "https://www.dndbeyond.com/magic-items/5388-giant-slayer"
+    },
+    {
+      "name": "Glamoured Studded Leather",
+      "link": "https://www.dndbeyond.com/magic-items/4645-glamoured-studded-leather"
+    },
+    {
+      "name": "Helm of Teleportation",
+      "link": "https://www.dndbeyond.com/magic-items/4656-helm-of-teleportation"
+    },
+    {
+      "name": "Mace of Disruption",
+      "link": "https://www.dndbeyond.com/magic-items/4670-mace-of-disruption"
+    },
+    {
+      "name": "Mace of Smiting",
+      "link": "https://www.dndbeyond.com/magic-items/4671-mace-of-smiting"
+    },
+    {
+      "name": "Mantle of Spell Resistance",
+      "link": "https://www.dndbeyond.com/magic-items/4673-mantle-of-spell-resistance"
+    },
+    {
+      "name": "Periapt of Proof Against Poison",
+      "link": "https://www.dndbeyond.com/magic-items/4693-periapt-of-proof-against-poison"
+    },
+    {
+      "name": "Ring of Acid Resistance",
+      "link": "https://www.dndbeyond.com/magic-items/5420-ring-of-resistance"
+    },
+    {
+      "name": "Ring of Cold Resistance",
+      "link": "https://www.dndbeyond.com/magic-items/5420-ring-of-resistance"
+    },
+    {
+      "name": "Ring of Evasion",
+      "link": "https://www.dndbeyond.com/magic-items/4720-ring-of-evasion"
+    },
+    {
+      "name": "Ring of Feather Falling",
+      "link": "https://www.dndbeyond.com/magic-items/4721-ring-of-feather-falling"
+    },
+    {
+      "name": "Ring of Fire Resistance",
+      "link": "https://www.dndbeyond.com/magic-items/5420-ring-of-resistance"
+    },
+    {
+      "name": "Ring of Force Resistance",
+      "link": "https://www.dndbeyond.com/magic-items/5420-ring-of-resistance"
+    },
+    {
+      "name": "Ring of Free Action",
+      "link": "https://www.dndbeyond.com/magic-items/4722-ring-of-free-action"
+    },
+    {
+      "name": "Ring of Lightning Resistance",
+      "link": "https://www.dndbeyond.com/magic-items/5420-ring-of-resistance"
+    },
+    {
+      "name": "Ring of Necrotic Resistance",
+      "link": "https://www.dndbeyond.com/magic-items/5420-ring-of-resistance"
+    },
+    {
+      "name": "Ring of Poison Resistance",
+      "link": "https://www.dndbeyond.com/magic-items/5420-ring-of-resistance"
+    },
+    {
+      "name": "Ring of Protection",
+      "link": "https://www.dndbeyond.com/magic-items/4726-ring-of-protection"
+    },
+    {
+      "name": "Ring of Psychic Resistance",
+      "link": "https://www.dndbeyond.com/magic-items/5420-ring-of-resistance"
+    },
+    {
+      "name": "Ring of Radiant Resistance",
+      "link": "https://www.dndbeyond.com/magic-items/5420-ring-of-resistance"
+    },
+    {
+      "name": "Ring of Spell Storing",
+      "link": "https://www.dndbeyond.com/magic-items/4730-ring-of-spell-storing"
+    },
+    {
+      "name": "Ring of Thunder Resistance",
+      "link": "https://www.dndbeyond.com/magic-items/5420-ring-of-resistance"
+    },
+    {
+      "name": "Shield, +2",
+      "link": "https://www.dndbeyond.com/magic-items/5157-shield-2"
+    },
+    {
+      "name": "Staff of Withering",
+      "link": "https://www.dndbeyond.com/magic-items/4771-staff-of-withering"
+    },
+    {
+      "name": "Wand of the War Mage, +2",
+      "link": "https://www.dndbeyond.com/magic-items/34712-wand-of-the-war-mage"
+    },
+    {
+      "name": "Weapon, +2",
+      "link": "https://www.dndbeyond.com/magic-items/5401-weapon-2"
+    }
+  ],
+
+  "very rare": [
+    {
+      "name": "Ammunition, +3",
+      "link": "https://www.dndbeyond.com/magic-items/5411-ammunition-3"
+    },
+    {
+      "name": "Animated Shield",
+      "link": "https://www.dndbeyond.com/magic-items/4571-animated-shield"
+    },
+    {
+      "name": "Armor, +2",
+      "link": "https://www.dndbeyond.com/magic-items/5378-armor-2"
+    },
+    {
+      "name": "Bag of Devouring",
+      "link": "https://www.dndbeyond.com/magic-items/4580-bag-of-devouring"
+    },
+    {
+      "name": "Belt of Fire Giant Strength",
+      "link": "https://www.dndbeyond.com/magic-items/5372-belt-of-giant-strength"
+    },
+    {
+      "name": "Belt of Frost Giant Strength",
+      "link": "https://www.dndbeyond.com/magic-items/5372-belt-of-giant-strength"
+    },
+    {
+      "name": "Belt of Stone Giant Strength",
+      "link": "https://www.dndbeyond.com/magic-items/5372-belt-of-giant-strength"
+    },
+    {
+      "name": "Cloak of Arachnida",
+      "link": "https://www.dndbeyond.com/magic-items/4604-cloak-of-arachnida"
+    },
+    {
+      "name": "Crystal Ball",
+      "link": "https://www.dndbeyond.com/magic-items/4610-crystal-ball"
+    },
+    {
+      "name": "Dancing Sword",
+      "link": "https://www.dndbeyond.com/magic-items/5383-dancing-sword"
+    },
+    {
+      "name": "Dwarven Plate",
+      "link": "https://www.dndbeyond.com/magic-items/4626-dwarven-plate"
+    },
+    {
+      "name": "Dwarven Thrower",
+      "link": "https://www.dndbeyond.com/magic-items/4627-dwarven-thrower"
+    },
+    {
+      "name": "Energy Bow",
+      "link": "https://www.dndbeyond.com/magic-items/9058960-energy-bow"
+    },
+    {
+      "name": "Frost Brand",
+      "link": "https://www.dndbeyond.com/magic-items/5387-frost-brand"
+    },
+    {
+      "name": "Hat of Many Spells",
+      "link": "https://www.dndbeyond.com/magic-items/9058998-hat-of-many-spells"
+    },
+    {
+      "name": "Manual of Bodily Health",
+      "link": "https://www.dndbeyond.com/magic-items/4674-manual-of-bodily-health"
+    },
+    {
+      "name": "Manual of Clay Golems",
+      "link": "https://www.dndbeyond.com/magic-items/5416-manual-of-golems"
+    },
+    {
+      "name": "Manual of Flesh Golems",
+      "link": "https://www.dndbeyond.com/magic-items/5416-manual-of-golems"
+    },
+    {
+      "name": "Manual of Gainful Exercise",
+      "link": "https://www.dndbeyond.com/magic-items/4675-manual-of-gainful-exercise"
+    },
+    {
+      "name": "Manual of Iron Golems",
+      "link": "https://www.dndbeyond.com/magic-items/5416-manual-of-golems"
+    },
+    {
+      "name": "Manual of Quickness of Action",
+      "link": "https://www.dndbeyond.com/magic-items/4677-manual-of-quickness-of-action"
+    },
+    {
+      "name": "Manual of Stone Golems",
+      "link": "https://www.dndbeyond.com/magic-items/5416-manual-of-golems"
+    },
+    {
+      "name": "Niko's Mace",
+      "link": "https://www.dndbeyond.com/magic-items/9058987-nikos-mace"
+    },
+    {
+      "name": "Nine Lives Stealer",
+      "link": "https://www.dndbeyond.com/magic-items/5394-nine-lives-stealer"
+    },
+    {
+      "name": "Oathbow",
+      "link": "https://www.dndbeyond.com/magic-items/4686-oathbow"
+    },
+    {
+      "name": "Quarterstaff of the Acrobat",
+      "link": "https://www.dndbeyond.com/magic-items/9058897-quarterstaff-of-the-acrobat"
+    },
+    {
+      "name": "Ring of Regeneration",
+      "link": "https://www.dndbeyond.com/magic-items/4727-ring-of-regeneration"
+    },
+    {
+      "name": "Rod of Absorption",
+      "link": "https://www.dndbeyond.com/magic-items/4744-rod-of-absorption"
+    },
+    {
+      "name": "Scimitar of Speed",
+      "link": "https://www.dndbeyond.com/magic-items/4752-scimitar-of-speed"
+    },
+    {
+      "name": "Shield, +3",
+      "link": "https://www.dndbeyond.com/magic-items/5158-shield-3"
+    },
+    {
+      "name": "Shield of the Cavalier",
+      "link": "https://www.dndbeyond.com/magic-items/9058943-shield-of-the-cavalier"
+    },
+    {
+      "name": "Spellguard Shield",
+      "link": "https://www.dndbeyond.com/magic-items/4757-spellguard-shield"
+    },
+    {
+      "name": "Staff of Striking",
+      "link": "https://www.dndbeyond.com/magic-items/4765-staff-of-striking"
+    },
+    {
+      "name": "Thunderous Greatclub",
+      "link": "https://www.dndbeyond.com/magic-items/9058872-thunderous-greatclub"
+    },
+    {
+      "name": "Tome of Clear Thought",
+      "link": "https://www.dndbeyond.com/magic-items/4781-tome-of-clear-thought"
+    },
+    {
+      "name": "Tome of Leadership and Influence",
+      "link": "https://www.dndbeyond.com/magic-items/4782-tome-of-leadership-and-influence"
+    },
+    {
+      "name": "Tome of Understanding",
+      "link": "https://www.dndbeyond.com/magic-items/4783-tome-of-understanding"
+    },
+    {
+      "name": "Wand of the War Mage, +3",
+      "link": "https://www.dndbeyond.com/magic-items/34712-wand-of-the-war-mage"
+    },
+    {
+      "name": "Weapon, +3",
+      "link": "https://www.dndbeyond.com/magic-items/5404-weapon-3"
+    }
+  ],
+
+  "legendary": [
+    {
+      "name": "Armor, +3",
+      "link": "https://www.dndbeyond.com/magic-items/5379-armor-3"
+    },
+    {
+      "name": "Belt of Cloud Giant Strength",
+      "link": "https://www.dndbeyond.com/magic-items/5372-belt-of-giant-strength"
+    },
+    {
+      "name": "Belt of Storm Giant Strength",
+      "link": "https://www.dndbeyond.com/magic-items/5372-belt-of-giant-strength"
+    },
+    {
+      "name": "Cloak of Invisibility",
+      "link": "https://www.dndbeyond.com/magic-items/5347-cloak-of-invisibility"
+    },
+    {
+      "name": "Deck of Many Things",
+      "link": "https://www.dndbeyond.com/magic-items/9228421-deck-of-many-things"
+    },
+    {
+      "name": "Efreeti Chain",
+      "link": "https://www.dndbeyond.com/magic-items/5350-efreeti-chain"
+    },
+    {
+      "name": "Ring of Three Wishes",
+      "link": "https://www.dndbeyond.com/magic-items/4735-ring-of-three-wishes"
+    },
+    {
+      "name": "Robe of the Archmagi",
+      "link": "https://www.dndbeyond.com/magic-items/4742-robe-of-the-archmagi"
+    },
+    {
+      "name": "Rod of Resurrection",
+      "link": "https://www.dndbeyond.com/magic-items/5395-rod-of-resurrection"
+    }
+  ]
+}

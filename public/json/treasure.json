@@ -1,0 +1,458 @@
+{
+  "trinkets": [
+    { "name": "A Mummified Goblin Hand" },
+    { "name": "A Piece of Crystal That Faintly Glows in the Moonlight" },
+    { "name": "A Gold Coin Minted in an Unknown Land" },
+    { "name": "A Diary Written in a Language You Don't Know" },
+    { "name": "A Brass Ring That Never Tarnishes" },
+    { "name": "An Old Chess Piece Made from Glass" },
+    {
+      "name": "A Pair of Knucklebone Dice, Each with a Skull Symbol on the Side That Would Normally Show Six Pips"
+    },
+    {
+      "name": "A Small Idol Depicting a Nightmarish Creature That Gives You Unsettling Dreams When You Sleep Near It"
+    },
+    { "name": "A Rope Necklace from Which Dangles Four Mummified Elf Fingers" },
+    { "name": "The Deed for a Parcel of Land in a Realm Unknown to You" },
+    { "name": "A 1-Ounce Block Made from an Unknown Material" },
+    { "name": "A Small Cloth Doll Skewered with Needles" },
+    { "name": "A Tooth from an Unknown Beast" },
+    { "name": "An Enormous Scale, Perhaps from a Dragon" },
+    { "name": "A Bright Green Feather" },
+    { "name": "An Old Divination Card Bearing Your Likeness" },
+    { "name": "A Glass Orb Filled with Moving Smoke" },
+    { "name": "A 1-Pound Egg with a Bright Red Shell" },
+    { "name": "A Pipe That Blows Bubbles" },
+    {
+      "name": "A Glass Jar Containing a Weird Bit of Flesh Floating in Pickling Fluid"
+    },
+    {
+      "name": "A Tiny Gnome-Crafted Music Box That Plays a Song You Dimly Remember from Your Childhood"
+    },
+    { "name": "A Small Wooden Statuette of a Smug Halfling" },
+    { "name": "A Brass Orb Etched with Strange Runes" },
+    { "name": "A Multicolored Stone Disk" },
+    { "name": "A Tiny Silver Icon of a Raven" },
+    {
+      "name": "A Bag Containing Forty-Seven Humanoid Teeth, One of Which Is Rotten"
+    },
+    { "name": "A Shard of Obsidian That Always Feels Warm to the Touch" },
+    { "name": "A Dragon's Bony Talon Hanging from a Plain Leather Necklace" },
+    { "name": "A Pair of Old Socks" },
+    {
+      "name": "A Blank Book Whose Pages Refuse to Hold Ink, Chalk, Graphite, or Any Other Substance or Marking"
+    },
+    { "name": "A Silver Badge in the Shape of a Five-Pointed Star" },
+    { "name": "A Knife That Belonged to a Relative" },
+    { "name": "A Glass Vial Filled with Nail Clippings" },
+    {
+      "name": "A Rectangular Metal Device with Two Tiny Metal Cups on One End That Throws Sparks When Wet"
+    },
+    { "name": "A White, Sequined Glove Sized for a Human" },
+    { "name": "A Vest with One Hundred Tiny Pockets" },
+    { "name": "A Small, Weightless Stone Block" },
+    { "name": "A Tiny Sketch Portrait of a Goblin" },
+    { "name": "An Empty Glass Vial That Smells of Perfume When Opened" },
+    {
+      "name": "A Gemstone That Looks like a Lump of Coal When Examined by Anyone but You"
+    },
+    { "name": "A Scrap of Cloth from an Old Banner" },
+    { "name": "A Rank Insignia from a Lost Legionnaire" },
+    { "name": "A Tiny Silver Bell Without a Clapper" },
+    { "name": "A Mechanical Canary Inside a Gnome-Crafted Lamp" },
+    {
+      "name": "A Tiny Chest Carved to Look Like It Has Numerous Feet on the Bottom"
+    },
+    { "name": "A Dead Sprite Inside a Clear Glass Bottle" },
+    {
+      "name": "A Metal Can That Has No Opening but Sounds As If It Is Filled with Liquid, Sand, Spiders, or Broken Glass (Your Choice)"
+    },
+    {
+      "name": "A Glass Orb Filled with Water, in Which Swims a Clockwork Goldfish"
+    },
+    { "name": "A Silver Spoon with an M Engraved on the Handle" },
+    { "name": "A Whistle Made from Gold-Colored Wood" },
+    { "name": "A Dead Scarab Beetle the Size of Your Hand" },
+    { "name": "Two Toy Soldiers, One with a Missing Head" },
+    { "name": "A Small Box Filled with Different-Sized Buttons" },
+    { "name": "A Candle That Can't Be Lit" },
+    { "name": "A Tiny Cage with No Door" },
+    { "name": "An Old Key" },
+    { "name": "An Indecipherable Treasure Map" },
+    { "name": "A Hilt from a Broken Sword" },
+    { "name": "A Rabbit's Foot" },
+    { "name": "A Glass Eye" },
+    { "name": "A Cameo Carved in the Likeness of a Hideous Person" },
+    { "name": "A Silver Skull the Size of a Coin" },
+    { "name": "An Alabaster Mask" },
+    { "name": "A Pyramid of Sticky Black Incense That Smells Very Bad" },
+    { "name": "A Nightcap That, When Worn, Gives You Pleasant Dreams" },
+    { "name": "A Single Caltrop Made from Bone" },
+    { "name": "A Gold Monocle Frame Without the Lens" },
+    { "name": "A 1-Inch Cube, Each Side Painted a Different Color" },
+    { "name": "A Crystal Knob from a Door" },
+    { "name": "A Small Packet Filled with Pink Dust" },
+    {
+      "name": "A Fragment of a Beautiful Song, Written As Musical Notes on Two Pieces of Parchment"
+    },
+    { "name": "A Silver Teardrop Earring Made from a Real Teardrop" },
+    {
+      "name": "The Shell of an Egg Painted with Scenes of Human Misery in Disturbing Detail"
+    },
+    { "name": "A Fan That, When Unfolded, Shows a Sleeping Cat" },
+    { "name": "A Set of Bone Pipes" },
+    {
+      "name": "A Four-Leaf Clover Pressed Inside a Book Discussing Manners and Etiquette"
+    },
+    {
+      "name": "A Sheet of Parchment upon Which Is Drawn a Complex Mechanical Contraption"
+    },
+    { "name": "An Ornate Scabbard That Fits No Blade You Have Found So Far" },
+    { "name": "An Invitation to a Party Where a Murder Happened" },
+    {
+      "name": "A Bronze Pentacle with an Etching of a Rat's Head in Its Center"
+    },
+    {
+      "name": "A Purple Handkerchief Embroidered with the Name of a Powerful Archmage"
+    },
+    {
+      "name": "Half of a Floorplan for a Temple, Castle, or Some Other Structure"
+    },
+    {
+      "name": "A Bit of Folded Cloth That, When Unfolded, Turns into a Stylish Cap"
+    },
+    { "name": "A Receipt of Deposit at a Bank in a Far-Flung City" },
+    { "name": "A Diary with Seven Missing Pages" },
+    {
+      "name": "An Empty Silver Snuffbox Bearing an Inscription on the Surface That Says \"Dreams\""
+    },
+    { "name": "An Iron Holy Symbol Devoted to an Unknown God" },
+    {
+      "name": "A Book That Tells the Story of a Legendary Hero's Rise and Fall, with the Last Chapter Missing"
+    },
+    { "name": "A Vial of Dragon Blood" },
+    { "name": "An Ancient Arrow of Elven Design" },
+    { "name": "A Needle That Never Bends" },
+    { "name": "An Ornate Brooch of Dwarven Design" },
+    {
+      "name": "An Empty Wine Bottle Bearing a Pretty Label That Says, \"The Wizard of Wines Winery, Red Dragon Crush, 331422-W\""
+    },
+    { "name": "A Mosaic Tile with a Multicolored, Glazed Surface" },
+    { "name": "A Petrified Mouse" },
+    {
+      "name": "A Black Pirate Flag Adorned with a Dragon's Skull and Crossbones"
+    },
+    {
+      "name": "A Tiny Mechanical Crab or Spider That Moves About When It's Not Being Observed"
+    },
+    {
+      "name": "A Glass Jar Containing Lard with a Label That Reads, \"Griffon Grease\""
+    },
+    {
+      "name": "A Wooden Box with a Ceramic Bottom That Holds a Living Worm with a Head On Each End of Its Body"
+    },
+    { "name": "A Metal Urn Containing the Ashes of a Hero" }
+  ],
+  "gemstones": [
+    {
+      "name": "Gemstone, Alexandrite (500 GP)"
+    },
+    {
+      "name": "Gemstone, Amber (100 GP)"
+    },
+    {
+      "name": "Gemstone, Amethyst (100 GP)"
+    },
+    {
+      "name": "Gemstone, Aquamarine (500 GP)"
+    },
+    {
+      "name": "Gemstone, Azurite (10 GP)"
+    },
+    {
+      "name": "Gemstone, Banded Agate (10 GP)"
+    },
+    {
+      "name": "Gemstone, Black Opal (1000 GP)"
+    },
+    {
+      "name": "Gemstone, Black Pearl (500 GP)"
+    },
+    {
+      "name": "Gemstone, Black Sapphire (5000 GP)"
+    },
+    {
+      "name": "Gemstone, Bloodstone (50 GP)"
+    },
+    {
+      "name": "Gemstone, Blue Quartz (10 GP)"
+    },
+    {
+      "name": "Gemstone, Blue Sapphire (1000 GP)"
+    },
+    {
+      "name": "Gemstone, Blue Spinel (500 GP)"
+    },
+    {
+      "name": "Gemstone, Carnelian (50 GP)"
+    },
+    {
+      "name": "Gemstone, Chalcedony (50 GP)"
+    },
+    {
+      "name": "Gemstone, Chrysoberyl (50 GP)"
+    },
+    {
+      "name": "Gemstone, Citrine (50 GP)"
+    },
+    {
+      "name": "Gemstone, Coral (100 GP)"
+    },
+    {
+      "name": "Gemstone, Diamond (5000 GP)"
+    },
+    {
+      "name": "Gemstone, Emerald (1000 GP)"
+    },
+    {
+      "name": "Gemstone, Eye Agate (10 GP)"
+    },
+    {
+      "name": "Gemstone, Fire Opal (1000 GP)"
+    },
+    {
+      "name": "Gemstone, Garnet (100 GP)"
+    },
+    {
+      "name": "Gemstone, Hematite (10 GP)"
+    },
+    {
+      "name": "Gemstone, Jacinth (5000 GP)"
+    },
+    {
+      "name": "Gemstone, Jade (100 GP)"
+    },
+    {
+      "name": "Gemstone, Jasper (50 GP)"
+    },
+    {
+      "name": "Gemstone, Jet (100 GP)"
+    },
+    {
+      "name": "Gemstone, Lapis Lazuli (10 GP)"
+    },
+    {
+      "name": "Gemstone, Malachite (10 GP)"
+    },
+    {
+      "name": "Gemstone, Moonstone (50 GP)"
+    },
+    {
+      "name": "Gemstone, Moss Agate (10 GP)"
+    },
+    {
+      "name": "Gemstone, Obsidian (10 GP)"
+    },
+    {
+      "name": "Gemstone, Onyx (50 GP)"
+    },
+    {
+      "name": "Gemstone, Opal (1000 GP)"
+    },
+    {
+      "name": "Gemstone, Pearl (100 GP)"
+    },
+    {
+      "name": "Gemstone, Peridot (500 GP)"
+    },
+    {
+      "name": "Gemstone, Quartz (50 GP)"
+    },
+    {
+      "name": "Gemstone, Rhodochrosite (10 GP)"
+    },
+    {
+      "name": "Gemstone, Ruby (5000 GP)"
+    },
+    {
+      "name": "Gemstone, Sardonyx (50 GP)"
+    },
+    {
+      "name": "Gemstone, Spinel (100 GP)"
+    },
+    {
+      "name": "Gemstone, Star Rose Quartz (50 GP)"
+    },
+    {
+      "name": "Gemstone, Star Ruby (1000 GP)"
+    },
+    {
+      "name": "Gemstone, Star Sapphire (1000 GP)"
+    },
+    {
+      "name": "Gemstone, Tiger Eye (10 GP)"
+    },
+    {
+      "name": "Gemstone, Topaz (500 GP)"
+    },
+    {
+      "name": "Gemstone, Tourmaline (100 GP)"
+    },
+    {
+      "name": "Gemstone, Turquoise (10 GP)"
+    },
+    {
+      "name": "Gemstone, Yellow Sapphire (1000 GP)"
+    },
+    {
+      "name": "Gemstone, Zircon (50 GP)"
+    }
+  ],
+
+  "valuables": [
+    {
+      "name": "Silver Ewer (25 GP)"
+    },
+    {
+      "name": "Carved Bone Statuette (25 GP)"
+    },
+    {
+      "name": "Small Gold Bracelet (25 GP)"
+    },
+    {
+      "name": "Cloth-of-Gold Vestments (25 GP)"
+    },
+    {
+      "name": "Black Velvet Mask Stitched with Silver Thread (25 GP)"
+    },
+    {
+      "name": "Copper Chalice with Silver Filigree (25 GP)"
+    },
+    {
+      "name": "Pair of Engraved Bone Dice (25 GP)"
+    },
+    {
+      "name": "Small Mirror Set in a Painted Wooden Frame (25 GP)"
+    },
+    {
+      "name": "Embroidered Silk Handkerchief (25 GP)"
+    },
+    {
+      "name": "Gold Locket with a Painted Portrait Inside (25 GP)"
+    },
+    {
+      "name": "Gold Ring Set with Bloodstones (250 GP)"
+    },
+    {
+      "name": "Carved Ivory Statuette (250 GP)"
+    },
+    {
+      "name": "Large Gold Bracelet (250 GP)"
+    },
+    {
+      "name": "Silver Necklace with Gemstone Pendant (250 GP)"
+    },
+    {
+      "name": "Bronze Crown (250 GP)"
+    },
+    {
+      "name": "Silk Robe with Gold Embroidery (250 GP)"
+    },
+    {
+      "name": "Large Well-Made Tapestry (250 GP)"
+    },
+    {
+      "name": "Brass Mug with Jade Inlay (250 GP)"
+    },
+    {
+      "name": "Box of Turquoise Animal Figurines (250 GP)"
+    },
+    {
+      "name": "Gold Bird Cage with Electrum Filigree (250 GP)"
+    },
+    {
+      "name": "Silver Chalice Set with Moonstones (750 GP)"
+    },
+    {
+      "name": "Silver-Plated Steel Longsword with Jet Set in Hilt (750 GP)"
+    },
+    {
+      "name": "Carved Harp of Exotic Wood with Ivory Inlay and Zircon Gems (750 GP)"
+    },
+    {
+      "name": "Small Gold Idol (750 GP)"
+    },
+    {
+      "name": "Gold Dragon Comb Set with Red Garnets as Eyes (750 GP)"
+    },
+    {
+      "name": "Bottle Stopper Cork Embossed with Gold Leaf and Set with Amethysts (750 GP)"
+    },
+    {
+      "name": "Ceremonial Electrum Dagger with a Black Pearl in the Pommel (750 GP)"
+    },
+    {
+      "name": "Silver and Gold Brooch (750 GP)"
+    },
+    {
+      "name": "Obsidian Statuette with Gold Fittings and Inlay (750 GP)"
+    },
+    {
+      "name": "Painted Gold War Mask (750 GP)"
+    },
+    {
+      "name": "Fine Gold Chain Set with a Fire Opal (2500 GP)"
+    },
+    {
+      "name": "Old Masterpiece Painting (2500 GP)"
+    },
+    {
+      "name": "Embroidered Silk and Velvet Mantle Set with Numerous Moonstones (2500 GP)"
+    },
+    {
+      "name": "Platinum Bracelet Set with a Sapphire (2500 GP)"
+    },
+    {
+      "name": "Embroidered Glove Set with Jewel Chips (2500 GP)"
+    },
+    {
+      "name": "Jeweled Anklet (2500 GP)"
+    },
+    {
+      "name": "Gold Music Box (2500 GP)"
+    },
+    {
+      "name": "Gold Circlet Set with Four Aquamarines (2500 GP)"
+    },
+    {
+      "name": "Eye Patch with a Mock Eye Set in Blue Sapphire and Moonstone (2500 GP)"
+    },
+    {
+      "name": "A Necklace String of Small Pink Pearls (2500 GP)"
+    },
+    {
+      "name": "Jeweled Gold Crown (7500 GP)"
+    },
+    {
+      "name": "Jeweled Platinum Ring (7500 GP)"
+    },
+    {
+      "name": "Small Gold Statuette Set with Rubies (7500 GP)"
+    },
+    {
+      "name": "Gold Cup Set with Emeralds (7500 GP)"
+    },
+    {
+      "name": "Gold Jewelry Box with Platinum Filigree (7500 GP)"
+    },
+    {
+      "name": "Painted Gold Child's Sarcophagus (7500 GP)"
+    },
+    {
+      "name": "Jade Game Board with Solid Gold Playing Pieces (7500 GP)"
+    },
+    {
+      "name": "Bejeweled Ivory Drinking Horn with Gold Filigree (7500 GP)"
+    }
+  ]
+}
