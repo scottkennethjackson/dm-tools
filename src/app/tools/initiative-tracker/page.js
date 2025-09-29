@@ -32,7 +32,7 @@ export default function InitiativeTracker() {
       const bi = parseInt(b.initiative, 10) || 0;
       return bi - ai;
     });
-  };
+  }
 
   function getOrdinal(n) {
     const s = ["th", "st", "nd", "rd"];
@@ -41,11 +41,14 @@ export default function InitiativeTracker() {
   }
 
   const ensureDefaults = (c) => ({
-    hp: "",
-    ac: "",
-    conditions: [],
-    deathSaves: [false, false, false],
-    ...c,
+    id: c.id,
+    name: c.name ?? "",
+    initiative: c.initiative ?? "",
+    hp: c.hp ?? "",
+    ac: c.ac ?? "",
+    conditions: c.conditions ?? [],
+    deathSaves: c.deathSaves ?? [false, false, false],
+    dex: c.dex ?? 0,
   });
 
   const handleAdd = () => {
@@ -157,31 +160,37 @@ export default function InitiativeTracker() {
       alert("Please select a combat position.");
       return;
     }
-
+  
     setCombatants((prev) => {
       const copy = prev.map((c) => ({ ...c }));
+  
       const idx = copy.findIndex((c) => c.id === current.id);
       if (idx !== -1) copy.splice(idx, 1);
-      const pos = Number(selectedPosition);
+  
+      let pos = Number(selectedPosition);
+      if (isNaN(pos) || pos < 0) pos = 0;
+      if (pos > copy.length) pos = copy.length;
+  
       copy.splice(pos, 0, ensureDefaults(current));
-
-      setTakenPositions((tp) => [...tp, pos]);
-
-      if (natIndex < nat20Queue.length - 1) {
-        setNatIndex((i) => i + 1);
-        setSelectedPosition(null);
-        return copy;
-      } else {
-        setTimeout(() => {
-          setNat20Queue([]);
-          setNatIndex(0);
-          setSelectedPosition(null);
-          setTurnIndex(pos); // focus the chosen position
-          setStage(5);
-        }, 0);
-        return copy;
-      }
+  
+      return copy;
     });
+  
+    setTakenPositions((tp) => [...tp, Number(selectedPosition)]);
+  
+    if (natIndex < nat20Queue.length - 1) {
+      setNatIndex((i) => i + 1);
+      setSelectedPosition(null);
+    } else {
+      setTimeout(() => {
+        setNat20Queue([]);
+        setNatIndex(0);
+        setSelectedPosition(null);
+        setTakenPositions([]);
+        setStage(5);
+        setTurnIndex(0);
+      }, 0);
+    }
   };
 
   const handleStatChange = (id, field, value) => {
