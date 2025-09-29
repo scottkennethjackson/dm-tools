@@ -155,20 +155,22 @@ export default function LootRandomiser() {
       </div>
 
       <div className="flex flex-col items-center px-4 py-8 space-y-4 w-full max-w-md border-2 border-red">
-        <h2 className="font-tiamat text-3xl text-center">
-          {lootResult?.title || "Roll to Generate Loot"}
-        </h2>
-          
-        {lootResult?.link && (
-          <a
-            href={lootResult.link}
-            target="_blank"
-            rel="noopener noreferrer"
+        <div className="flex flex-col items-center space-y-1">
+          <h2 className="font-tiamat text-3xl text-center">
+            {lootResult?.title || "Roll to Generate Loot"}
+          </h2>
+            
+          {lootResult?.link && (
+            <a
+              href={lootResult.link}
+              target="_blank"
+              rel="noopener noreferrer"
               className="hover:text-red active:text-activered underline"
-          >
-            View Item
-          </a>
-        )}
+            >
+              View Item
+            </a>
+          )}
+        </div>
       </div>
 
       <button
