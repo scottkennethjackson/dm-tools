@@ -180,7 +180,7 @@ export default function RandomEncounter() {
                 href={encounter[0].link}
                 target="_blank"
                 rel="noopener noreferrer"
-              className="hover:text-red active:text-activered underline"
+                className="hover:text-red active:text-activered underline"
               >
                 View Statblock
               </a>
