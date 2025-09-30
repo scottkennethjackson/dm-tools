@@ -1,0 +1,127 @@
+[
+    {
+        "min": 1,
+        "max": 4,
+        "description": "Roll on this table at the start of each of your turns for the next minute, ignoring this result on subsequent rolls."
+    },
+    {
+        "min": 5,
+        "max": 8,
+        "description": "A creature Friendly toward you appears in a random unoccupied space within 60 feet of you. The creature is under the DM's control and disappears 1 minute later. Roll a d4 to determine the creature: 1. A sprite 2. A blink dog 3. A pixie 4. A faerie dragon (its breath weapon recharges on a 5-6 for this duration)."
+    },
+    {
+        "min": 9,
+        "max": 12,
+        "description": "For the next minute, you regain 5 hit points at the start of each of your turns."
+    },
+    {
+        "min": 13,
+        "max": 16,
+        "description": "Creatures have disadvantage on saving throws against the next spell you cast within the next minute that involves a saving throw. If the spell is an Enchantment spell, creatures that fail the saving throw are Charmed by you until the end of your next turn."
+    },
+    {
+        "min": 17,
+        "max": 20,
+        "description": "You are subjected to a whimsical fey effect that lasts for 1 minute unless stated otherwise. Roll a d8: 1. Faint, ethereal music plays, audible to you and creatures within 5 feet. 2. Your size increases by one category. 3. A beard of feathers grows on your face. It remains until you sneeze, at which point the feathers explode and vanish. 4. You must shout when you speak. 5. Illusory butterflies flutter around you within 10 feet. 6. A third eye appears on your forehead, giving you advantage on Wisdom (Perception) checks and allowing you to see invisible creatures for the duration. 7. Pink bubbles float from your mouth when you speak. 8. Your skin turns a vibrant shade of blue for 24 hours, or until a Remove Curse spell is cast on you."
+    },
+    {
+        "min": 21,
+        "max": 24,
+        "description": "For the next minute, all your spells with a casting time of 1 action have a casting time of 1 bonus action."
+    },
+    {
+        "min": 25,  
+        "max": 28,
+        "description": "You are transported to the Astral Plane until the end of your next turn, when you return to the space you previously occupied or the nearest unoccupied space."
+    },
+    {
+        "min": 29,
+        "max": 32,
+        "description": "The next time you cast a spell that deals damage within the next minute, do not roll for the damage dice. Instead, use the highest possible number for each die. If the attack is a critical hit, the spell's damage is doubled (after maximizing)."
+    },
+    {
+        "min": 33,
+        "max": 36,
+        "description": "You have resistance to all damage for the next minute."
+    },
+    {
+        "min": 37,
+        "max": 40,
+        "description": "You transform into a potted plant until the start of your next turn. While a plant, you are incapacitated and vulnerable to all damage. If you drop to 0 hit points, your pot breaks, and you revert to your normal form."
+    },
+    {
+        "min": 41,
+        "max": 44,
+        "description": "For the next minute, you can teleport up to 20 feet as a bonus action on each of your turns."
+    },
+    {
+        "min": 45,
+        "max": 48,
+        "description": "You and up to three creatures of your choice within 30 feet of you become invisible for 1 minute. The invisibility ends for a creature if it attacks, deals damage, or casts a spell. If the invisibility ends early that creature gains a +2 bonus to its next attack roll or saving throw."
+    },
+    {
+        "min": 49,
+        "max": 52,
+        "description": "A spectral shield hovers near you for the next minute, granting you a +2 bonus to AC and immunity to the Magic Missile spell."
+    },
+    {
+        "min": 53,
+        "max": 56,
+        "description": "You can take one additional action immediately."
+    },
+    {
+        "min": 57,
+        "max": 60,
+        "description": "You cast a random spell. If the spell requires concentration, it doesn't in this case, and it lasts for its full duration. Roll a d10: 1. Confusion 2. Fireball (appearing as a burst of glowing fey light around a point you choose within range) 3. Fog Cloud 4. Fly (cast on a random creature within 60 feet of you) 5. Grease 6. Levitate (cast on yourself) 7. Magic Missile (cast as a level 5 spell) 8. Mirror Image 9. Polymorph (cast on yourself, and if you fail the saving throw, you turn into a Goat) 10. See Invisibility."
+    },
+    {
+        "min": 61,
+        "max": 64,
+        "description": "For the next minute, any flammable, nonmagical object you touch that isn't being worn or carried by another creature bursts into flame, takes 1d4 fire damage, and is burning."
+    },
+    {
+        "min": 65,
+        "max": 68,
+        "description": "If you die within the next hour, you immediately revive as if by the Reincarnate spell, but you return with a random fey trait of the DM's choice."
+    },
+    {
+        "min": 69,
+        "max": 72,
+        "description": "You are afflicted by the Frightened condition until the end of your next turn. The DM determines the source of your fear."
+    },
+    {
+        "min": 73,
+        "max": 76,
+        "description": "You teleport up to 60 feet to an unoccupied space you can see"
+    },
+    {
+        "min": 77,
+        "max": 80,
+        "description": "A random creature within 60 feet of you is Poisoned for 1d4 hours."
+    },
+    {
+        "min": 81,
+        "max": 84,
+        "description": "You radiate Bright Light in a 30-foot radius for the next minute. Any creature that ends its turn within 5 feet of you is Blinded until the end of its next turn."
+    },
+    {
+        "min": 85,
+        "max": 88,
+        "description": "Up to three creatures of your choice that you can see within 30 feet take 1d10 Necrotic damage. You regain hit points equal to the total Necrotic damage dealt."
+    },
+    {
+        "min": 89,
+        "max": 92,
+        "description": "Up to three creatures of your choice that you can see within 30 feet take 4d10 Lightning damage."
+    },
+    {
+        "min": 93,
+        "max": 96,
+        "description": "You and all creatures within 30 feet of you have Vulnerability to Piercing damage for the next minute."
+    },
+    {
+        "min": 97,
+        "max": 100,
+        "description": "Roll a d6: On a 1, you regain 2d10 hit points; on a 2, one ally of your choice within 300 feet regains 2d10 hit points; on a 3, you regain your lowest-level expended spell slot; on a 4, one ally of your choice within 300 feet regains their lowest-level expended spell slot; on a 5, you regain all your expended Sorcery Points; on a 6, all effects from row 17-20 affect you simultaneously."
+  }
+]
