@@ -1,0 +1,1166 @@
+[
+  {
+    "name": "Awakened Shrub",
+    "cr": "0",
+    "xp": "10",
+    "link": "https://www.dndbeyond.com/monsters/16791-awakened-shrub"
+  },
+  {
+    "name": "Homunculus",
+    "cr": "0",
+    "xp": "10",
+    "link": "https://www.dndbeyond.com/monsters/16926-homunculus"
+  },
+  {
+    "name": "Lemure",
+    "cr": "0",
+    "xp": "10",
+    "link": "https://www.dndbeyond.com/monsters/16942-lemure"
+  },
+  {
+    "name": "Shrieker",
+    "cr": "0",
+    "xp": "10",
+    "link": "https://www.dndbeyond.com/monsters/17013-shrieker"
+  },
+  {
+    "name": "Twig Blight",
+    "cr": "1/8",
+    "xp": "25",
+    "link": "https://www.dndbeyond.com/monsters/17095-twig-blight"
+  },
+  {
+    "name": "Blink Dog",
+    "cr": "1/4",
+    "xp": "50",
+    "link": "https://www.dndbeyond.com/monsters/16809-blink-dog"
+  },
+  {
+    "name": "Dretch",
+    "cr": "1/4",
+    "xp": "50",
+    "link": "https://www.dndbeyond.com/monsters/16846-dretch"
+  },
+  {
+    "name": "Flying Sword",
+    "cr": "1/4",
+    "xp": "50",
+    "link": "https://www.dndbeyond.com/monsters/16865-flying-sword"
+  },
+  {
+    "name": "Pseudodragon",
+    "cr": "1/4",
+    "xp": "50",
+    "link": "https://www.dndbeyond.com/monsters/16986-pseudodragon"
+  },
+  {
+    "name": "Skeleton",
+    "cr": "1/4",
+    "xp": "50",
+    "link": "https://www.dndbeyond.com/monsters/17015-skeleton"
+  },
+  {
+    "name": "Sprite",
+    "cr": "1/4",
+    "xp": "50",
+    "link": "https://www.dndbeyond.com/monsters/17020-sprite"
+  },
+  {
+    "name": "Steam Mephit",
+    "cr": "1/4",
+    "xp": "50",
+    "link": "https://www.dndbeyond.com/monsters/17022-steam-mephit"
+  },
+  {
+    "name": "Violet Fungus",
+    "cr": "1/4",
+    "xp": "50",
+    "link": "https://www.dndbeyond.com/monsters/17046-violet-fungus"
+  },
+  {
+    "name": "Zombie",
+    "cr": "1/4",
+    "xp": "50",
+    "link": "https://www.dndbeyond.com/monsters/17077-zombie"
+  },
+  {
+    "name": "Cockatrice",
+    "cr": "1/2",
+    "xp": "100",
+    "link": "https://www.dndbeyond.com/monsters/16828-cockatrice"
+  },
+  {
+    "name": "Darkmantle",
+    "cr": "1/2",
+    "xp": "100",
+    "link": "https://www.dndbeyond.com/monsters/16837-darkmantle"
+  },
+  {
+    "name": "Dust Mephit",
+    "cr": "1/2",
+    "xp": "100",
+    "link": "https://www.dndbeyond.com/monsters/16851-dust-mephit"
+  },
+  {
+    "name": "Gray Ooze",
+    "cr": "1/2",
+    "xp": "100",
+    "link": "https://www.dndbeyond.com/monsters/16909-gray-ooze"
+  },
+  {
+    "name": "Ice Mephit",
+    "cr": "1/2",
+    "xp": "100",
+    "link": "https://www.dndbeyond.com/monsters/16932-ice-mephit"
+  },
+  {
+    "name": "Magma Mephit",
+    "cr": "1/2",
+    "xp": "100",
+    "link": "https://www.dndbeyond.com/monsters/16948-magma-mephit"
+  },
+  {
+    "name": "Magmin",
+    "cr": "1/2",
+    "xp": "100",
+    "link": "https://www.dndbeyond.com/monsters/16949-magmin"
+  },
+  {
+    "name": "Rust Monster",
+    "cr": "1/2",
+    "xp": "100",
+    "link": "https://www.dndbeyond.com/monsters/17001-rust-monster"
+  },
+  {
+    "name": "Satyr",
+    "cr": "1/2",
+    "xp": "100",
+    "link": "https://www.dndbeyond.com/monsters/17005-satyr"
+  },
+  {
+    "name": "Shadow",
+    "cr": "1/2",
+    "xp": "100",
+    "link": "https://www.dndbeyond.com/monsters/17010-shadow"
+  },
+  {
+    "name": "Warhorse Skeleton",
+    "cr": "1/2",
+    "xp": "100",
+    "link": "https://www.dndbeyond.com/monsters/17050-warhorse-skeleton"
+  },
+  {
+    "name": "Worg",
+    "cr": "1/2",
+    "xp": "100",
+    "link": "https://www.dndbeyond.com/monsters/17063-worg"
+  },
+  {
+    "name": "Animated Armor",
+    "cr": "1",
+    "xp": "200",
+    "link": "https://www.dndbeyond.com/monsters/16786-animated-armor"
+  },
+  {
+    "name": "Brass Dragon Wyrmling",
+    "cr": "1",
+    "xp": "200",
+    "link": "https://www.dndbeyond.com/monsters/16814-brass-dragon-wyrmling"
+  },
+  {
+    "name": "Copper Dragon Wyrmling",
+    "cr": "1",
+    "xp": "200",
+    "link": "https://www.dndbeyond.com/monsters/16831-copper-dragon-wyrmling"
+  },
+  {
+    "name": "Death Dog",
+    "cr": "1",
+    "xp": "200",
+    "link": "https://www.dndbeyond.com/monsters/16838-death-dog"
+  },
+  {
+    "name": "Dryad",
+    "cr": "1",
+    "xp": "200",
+    "link": "https://www.dndbeyond.com/monsters/16849-dryad"
+  },
+  {
+    "name": "Ghoul",
+    "cr": "1",
+    "xp": "200",
+    "link": "https://www.dndbeyond.com/monsters/16872-ghoul"
+  },
+  {
+    "name": "Harpy",
+    "cr": "1",
+    "xp": "200",
+    "link": "https://www.dndbeyond.com/monsters/16919-harpy"
+  },
+  {
+    "name": "Hippogriff",
+    "cr": "1",
+    "xp": "200",
+    "link": "https://www.dndbeyond.com/monsters/16924-hippogriff"
+  },
+  {
+    "name": "Imp",
+    "cr": "1",
+    "xp": "200",
+    "link": "https://www.dndbeyond.com/monsters/16933-imp"
+  },
+  {
+    "name": "Quasit",
+    "cr": "1",
+    "xp": "200",
+    "link": "https://www.dndbeyond.com/monsters/16988-quasit"
+  },
+  {
+    "name": "Specter",
+    "cr": "1",
+    "xp": "200",
+    "link": "https://www.dndbeyond.com/monsters/17017-specter"
+  },
+  {
+    "name": "Ankheg",
+    "cr": "2",
+    "xp": "450",
+    "link": "https://www.dndbeyond.com/monsters/16787-ankheg"
+  },
+  {
+    "name": "Awakened Tree",
+    "cr": "2",
+    "xp": "450",
+    "link": "https://www.dndbeyond.com/monsters/16792-awakened-tree"
+  },
+  {
+    "name": "Azer",
+    "cr": "2",
+    "xp": "450",
+    "link": "https://www.dndbeyond.com/monsters/16794-azer"
+  },
+  {
+    "name": "Black Dragon Wyrmling",
+    "cr": "2",
+    "xp": "450",
+    "link": "https://www.dndbeyond.com/monsters/16807-black-dragon-wyrmling"
+  },
+  {
+    "name": "Bronze Dragon Wyrmling",
+    "cr": "2",
+    "xp": "450",
+    "link": "https://www.dndbeyond.com/monsters/16815-bronze-dragon-wyrmling"
+  },
+  {
+    "name": "Centaur",
+    "cr": "2",
+    "xp": "450",
+    "link": "https://www.dndbeyond.com/monsters/16821-centaur"
+  },
+  {
+    "name": "Ettercap",
+    "cr": "2",
+    "xp": "450",
+    "link": "https://www.dndbeyond.com/monsters/16859-ettercap"
+  },
+  {
+    "name": "Gargoyle",
+    "cr": "2",
+    "xp": "450",
+    "link": "https://www.dndbeyond.com/monsters/16868-gargoyle"
+  },
+  {
+    "name": "Gelatinous Cube",
+    "cr": "2",
+    "xp": "450",
+    "link": "https://www.dndbeyond.com/monsters/16869-gelatinous-cube"
+  },
+  {
+    "name": "Ghast",
+    "cr": "2",
+    "xp": "450",
+    "link": "https://www.dndbeyond.com/monsters/16870-ghast"
+  },
+  {
+    "name": "Gibbering Mouther",
+    "cr": "2",
+    "xp": "450",
+    "link": "https://www.dndbeyond.com/monsters/16901-gibbering-mouther"
+  },
+  {
+    "name": "Green Dragon Wyrmling",
+    "cr": "2",
+    "xp": "450",
+    "link": "https://www.dndbeyond.com/monsters/16910-green-dragon-wyrmling"
+  },
+  {
+    "name": "Grick",
+    "cr": "2",
+    "xp": "450",
+    "link": "https://www.dndbeyond.com/monsters/16912-grick"
+  },
+  {
+    "name": "Griffon",
+    "cr": "2",
+    "xp": "450",
+    "link": "https://www.dndbeyond.com/monsters/16913-griffon"
+  },
+  {
+    "name": "Merrow",
+    "cr": "2",
+    "xp": "450",
+    "link": "https://www.dndbeyond.com/monsters/16956-merrow"
+  },
+  {
+    "name": "Mimic",
+    "cr": "2",
+    "xp": "450",
+    "link": "https://www.dndbeyond.com/monsters/16957-mimic"
+  },
+  {
+    "name": "Minotaur Skeleton",
+    "cr": "2",
+    "xp": "450",
+    "link": "https://www.dndbeyond.com/monsters/16959-minotaur-skeleton"
+  },
+  {
+    "name": "Nothic",
+    "cr": "2",
+    "xp": "450",
+    "link": "https://www.dndbeyond.com/monsters/17092-nothic"
+  },
+  {
+    "name": "Ochre Jelly",
+    "cr": "2",
+    "xp": "450",
+    "link": "https://www.dndbeyond.com/monsters/16967-ochre-jelly"
+  },
+  {
+    "name": "Ogre",
+    "cr": "2",
+    "xp": "450",
+    "link": "https://www.dndbeyond.com/monsters/16969-ogre"
+  },
+  {
+    "name": "Ogre Zombie",
+    "cr": "2",
+    "xp": "450",
+    "link": "https://www.dndbeyond.com/monsters/16970-ogre-zombie"
+  },
+  {
+    "name": "Pegasus",
+    "cr": "2",
+    "xp": "450",
+    "link": "https://www.dndbeyond.com/monsters/16977-pegasus"
+  },
+  {
+    "name": "Rug of Smothering",
+    "cr": "2",
+    "xp": "450",
+    "link": "https://www.dndbeyond.com/monsters/17000-rug-of-smothering"
+  },
+  {
+    "name": "Sea Hag",
+    "cr": "2",
+    "xp": "450",
+    "link": "https://www.dndbeyond.com/monsters/17008-sea-hag"
+  },
+  {
+    "name": "Silver Dragon Wyrmling",
+    "cr": "2",
+    "xp": "450",
+    "link": "https://www.dndbeyond.com/monsters/17014-silver-dragon-wyrmling"
+  },
+  {
+    "name": "White Dragon Wyrmling",
+    "cr": "2",
+    "xp": "450",
+    "link": "https://www.dndbeyond.com/monsters/17058-white-dragon-wyrmling"
+  },
+  {
+    "name": "Will-o'-Wisp",
+    "cr": "2",
+    "xp": "450",
+    "link": "https://www.dndbeyond.com/monsters/17060-will-o-wisp"
+  },
+  {
+    "name": "Basilisk",
+    "cr": "3",
+    "xp": "700",
+    "link": "https://www.dndbeyond.com/monsters/16801-basilisk"
+  },
+  {
+    "name": "Bearded Devil",
+    "cr": "3",
+    "xp": "700",
+    "link": "https://www.dndbeyond.com/monsters/16803-bearded-devil"
+  },
+  {
+    "name": "Blue Dragon Wyrmling",
+    "cr": "3",
+    "xp": "700",
+    "link": "https://www.dndbeyond.com/monsters/16811-blue-dragon-wyrmling"
+  },
+  {
+    "name": "Doppelganger",
+    "cr": "3",
+    "xp": "700",
+    "link": "https://www.dndbeyond.com/monsters/16843-doppelganger"
+  },
+  {
+    "name": "Gold Dragon Wyrmling",
+    "cr": "3",
+    "xp": "700",
+    "link": "https://www.dndbeyond.com/monsters/17098-gold-dragon-wyrmling"
+  },
+  {
+    "name": "Green Hag",
+    "cr": "3",
+    "xp": "700",
+    "link": "https://www.dndbeyond.com/monsters/16911-green-hag"
+  },
+  {
+    "name": "Hell Hound",
+    "cr": "3",
+    "xp": "700",
+    "link": "https://www.dndbeyond.com/monsters/16921-hell-hound"
+  },
+  {
+    "name": "Manticore",
+    "cr": "3",
+    "xp": "700",
+    "link": "https://www.dndbeyond.com/monsters/16951-manticore"
+  },
+  {
+    "name": "Minotaur",
+    "cr": "3",
+    "xp": "700",
+    "link": "https://www.dndbeyond.com/monsters/16958-minotaur"
+  },
+  {
+    "name": "Mummy",
+    "cr": "3",
+    "xp": "700",
+    "link": "https://www.dndbeyond.com/monsters/16961-mummy"
+  },
+  {
+    "name": "Nightmare",
+    "cr": "3",
+    "xp": "700",
+    "link": "https://www.dndbeyond.com/monsters/16964-nightmare"
+  },
+  {
+    "name": "Owlbear",
+    "cr": "3",
+    "xp": "700",
+    "link": "https://www.dndbeyond.com/monsters/16975-owlbear"
+  },
+  {
+    "name": "Phase Spider",
+    "cr": "3",
+    "xp": "700",
+    "link": "https://www.dndbeyond.com/monsters/16978-phase-spider"
+  },
+  {
+    "name": "Spectator",
+    "cr": "3",
+    "xp": "700",
+    "link": "https://www.dndbeyond.com/monsters/17094-spectator"
+  },
+  {
+    "name": "Wight",
+    "cr": "3",
+    "xp": "700",
+    "link": "https://www.dndbeyond.com/monsters/17059-wight"
+  },
+  {
+    "name": "Winter Wolf",
+    "cr": "3",
+    "xp": "700",
+    "link": "https://www.dndbeyond.com/monsters/17061-winter-wolf"
+  },
+  {
+    "name": "Yeti",
+    "cr": "3",
+    "xp": "700",
+    "link": "https://www.dndbeyond.com/monsters/17096-yeti"
+  },
+  {
+    "name": "Banshee",
+    "cr": "4",
+    "xp": "1100",
+    "link": "https://www.dndbeyond.com/monsters/17089-banshee"
+  },
+  {
+    "name": "Black Pudding",
+    "cr": "4",
+    "xp": "1100",
+    "link": "https://www.dndbeyond.com/monsters/16808-black-pudding"
+  },
+  {
+    "name": "Chuul",
+    "cr": "4",
+    "xp": "1100",
+    "link": "https://www.dndbeyond.com/monsters/16824-chuul"
+  },
+  {
+    "name": "Couatl",
+    "cr": "4",
+    "xp": "1100",
+    "link": "https://www.dndbeyond.com/monsters/16832-couatl"
+  },
+  {
+    "name": "Ettin",
+    "cr": "4",
+    "xp": "1100",
+    "link": "https://www.dndbeyond.com/monsters/16860-ettin"
+  },
+  {
+    "name": "Flameskull",
+    "cr": "4",
+    "xp": "1100",
+    "link": "https://www.dndbeyond.com/monsters/17091-flameskull"
+  },
+  {
+    "name": "Ghost",
+    "cr": "4",
+    "xp": "1100",
+    "link": "https://www.dndbeyond.com/monsters/16871-ghost"
+  },
+  {
+    "name": "Incubus",
+    "cr": "4",
+    "xp": "1100",
+    "link": "https://www.dndbeyond.com/monsters/257235-incubus"
+  },
+  {
+    "name": "Lamia",
+    "cr": "4",
+    "xp": "1100",
+    "link": "https://www.dndbeyond.com/monsters/16941-lamia"
+  },
+  {
+    "name": "Red Dragon Wyrmling",
+    "cr": "4",
+    "xp": "1100",
+    "link": "https://www.dndbeyond.com/monsters/16993-red-dragon-wyrmling"
+  },
+  {
+    "name": "Succubus",
+    "cr": "4",
+    "xp": "1100",
+    "link": "https://www.dndbeyond.com/monsters/17027-succubus"
+  },
+  {
+    "name": "Air Elemental",
+    "cr": "5",
+    "xp": "1800",
+    "link": "https://www.dndbeyond.com/monsters/16774-air-elemental"
+  },
+  {
+    "name": "Barbed Devil",
+    "cr": "5",
+    "xp": "1800",
+    "link": "https://www.dndbeyond.com/monsters/16800-barbed-devil"
+  },
+  {
+    "name": "Bulette",
+    "cr": "5",
+    "xp": "1800",
+    "link": "https://www.dndbeyond.com/monsters/16818-bulette"
+  },
+  {
+    "name": "Dust Devil",
+    "cr": "5",
+    "xp": "1800",
+    "link": "https://www.dndbeyond.com/monsters/804867-dust-devil"
+  },
+  {
+    "name": "Earth Elemental",
+    "cr": "5",
+    "xp": "1800",
+    "link": "https://www.dndbeyond.com/monsters/16853-earth-elemental"
+  },
+  {
+    "name": "Fire Elemental",
+    "cr": "5",
+    "xp": "1800",
+    "link": "https://www.dndbeyond.com/monsters/16861-fire-elemental"
+  },
+  {
+    "name": "Flesh Golem",
+    "cr": "5",
+    "xp": "1800",
+    "link": "https://www.dndbeyond.com/monsters/16863-flesh-golem"
+  },
+  {
+    "name": "Gorgon",
+    "cr": "5",
+    "xp": "1800",
+    "link": "https://www.dndbeyond.com/monsters/16908-gorgon"
+  },
+  {
+    "name": "Hill Giant",
+    "cr": "5",
+    "xp": "1800",
+    "link": "https://www.dndbeyond.com/monsters/16923-hill-giant"
+  },
+  {
+    "name": "Night Hag",
+    "cr": "5",
+    "xp": "1800",
+    "link": "https://www.dndbeyond.com/monsters/16965-night-hag"
+  },
+  {
+    "name": "Otyugh",
+    "cr": "5",
+    "xp": "1800",
+    "link": "https://www.dndbeyond.com/monsters/16973-otyugh"
+  },
+  {
+    "name": "Roper",
+    "cr": "5",
+    "xp": "1800",
+    "link": "https://www.dndbeyond.com/monsters/16999-roper"
+  },
+  {
+    "name": "Salamander",
+    "cr": "5",
+    "xp": "1800",
+    "link": "https://www.dndbeyond.com/monsters/17004-salamander"
+  },
+  {
+    "name": "Shambling Mound",
+    "cr": "5",
+    "xp": "1800",
+    "link": "https://www.dndbeyond.com/monsters/17011-shambling-mound"
+  },
+  {
+    "name": "Troll",
+    "cr": "5",
+    "xp": "1800",
+    "link": "https://www.dndbeyond.com/monsters/17040-troll"
+  },
+  {
+    "name": "Unicorn",
+    "cr": "5",
+    "xp": "1800",
+    "link": "https://www.dndbeyond.com/monsters/17042-unicorn"
+  },
+  {
+    "name": "Vampire Spawn",
+    "cr": "5",
+    "xp": "1800",
+    "link": "https://www.dndbeyond.com/monsters/17044-vampire-spawn"
+  },
+  {
+    "name": "Water Elemental",
+    "cr": "5",
+    "xp": "1800",
+    "link": "https://www.dndbeyond.com/monsters/17051-water-elemental"
+  },
+  {
+    "name": "Wraith",
+    "cr": "5",
+    "xp": "1800",
+    "link": "https://www.dndbeyond.com/monsters/17064-wraith"
+  },
+  {
+    "name": "Xorn",
+    "cr": "5",
+    "xp": "1800",
+    "link": "https://www.dndbeyond.com/monsters/17066-xorn"
+  },
+  {
+    "name": "Chimera",
+    "cr": "6",
+    "xp": "2300",
+    "link": "https://www.dndbeyond.com/monsters/16823-chimera"
+  },
+  {
+    "name": "Cyclops",
+    "cr": "6",
+    "xp": "2300",
+    "link": "https://www.dndbeyond.com/monsters/17090-cyclops"
+  },
+  {
+    "name": "Drider",
+    "cr": "6",
+    "xp": "2300",
+    "link": "https://www.dndbeyond.com/monsters/16847-drider"
+  },
+  {
+    "name": "Invisible Stalker",
+    "cr": "6",
+    "xp": "2300",
+    "link": "https://www.dndbeyond.com/monsters/16934-invisible-stalker"
+  },
+  {
+    "name": "Medusa",
+    "cr": "6",
+    "xp": "2300",
+    "link": "https://www.dndbeyond.com/monsters/16954-medusa"
+  },
+  {
+    "name": "Vrock",
+    "cr": "6",
+    "xp": "2300",
+    "link": "https://www.dndbeyond.com/monsters/17047-vrock"
+  },
+  {
+    "name": "Wyvern",
+    "cr": "6",
+    "xp": "2300",
+    "link": "https://www.dndbeyond.com/monsters/17065-wyvern"
+  },
+  {
+    "name": "Young Brass Dragon",
+    "cr": "6",
+    "xp": "2300",
+    "link": "https://www.dndbeyond.com/monsters/17069-young-brass-dragon"
+  },
+  {
+    "name": "Young White Dragon",
+    "cr": "6",
+    "xp": "2300",
+    "link": "https://www.dndbeyond.com/monsters/17076-young-white-dragon"
+  },
+  {
+    "name": "Oni",
+    "cr": "7",
+    "xp": "2900",
+    "link": "https://www.dndbeyond.com/monsters/16971-oni"
+  },
+  {
+    "name": "Shield Guardian",
+    "cr": "7",
+    "xp": "2900",
+    "link": "https://www.dndbeyond.com/monsters/17012-shield-guardian"
+  },
+  {
+    "name": "Stone Giant",
+    "cr": "7",
+    "xp": "2900",
+    "link": "https://www.dndbeyond.com/monsters/17024-stone-giant"
+  },
+  {
+    "name": "Young Black Dragon",
+    "cr": "7",
+    "xp": "2900",
+    "link": "https://www.dndbeyond.com/monsters/17067-young-black-dragon"
+  },
+  {
+    "name": "Young Copper Dragon",
+    "cr": "7",
+    "xp": "2900",
+    "link": "https://www.dndbeyond.com/monsters/17071-young-copper-dragon"
+  },
+  {
+    "name": "Chain Devil",
+    "cr": "8",
+    "xp": "3900",
+    "link": "https://www.dndbeyond.com/monsters/16822-chain-devil"
+  },
+  {
+    "name": "Cloaker",
+    "cr": "8",
+    "xp": "3900",
+    "link": "https://www.dndbeyond.com/monsters/16826-cloaker"
+  },
+  {
+    "name": "Frost Giant",
+    "cr": "8",
+    "xp": "3900",
+    "link": "https://www.dndbeyond.com/monsters/16867-frost-giant"
+  },
+  {
+    "name": "Hezrou",
+    "cr": "8",
+    "xp": "3900",
+    "link": "https://www.dndbeyond.com/monsters/16922-hezrou"
+  },
+  {
+    "name": "Hydra",
+    "cr": "8",
+    "xp": "3900",
+    "link": "https://www.dndbeyond.com/monsters/16929-hydra"
+  },
+  {
+    "name": "Spirit Naga",
+    "cr": "8",
+    "xp": "3900",
+    "link": "https://www.dndbeyond.com/monsters/17019-spirit-naga"
+  },
+  {
+    "name": "Young Bronze Dragon",
+    "cr": "8",
+    "xp": "3900",
+    "link": "https://www.dndbeyond.com/monsters/17070-young-bronze-dragon"
+  },
+  {
+    "name": "Young Green Dragon",
+    "cr": "8",
+    "xp": "3900",
+    "link": "https://www.dndbeyond.com/monsters/17073-young-green-dragon"
+  },
+  {
+    "name": "Bone Devil",
+    "cr": "9",
+    "xp": "5000",
+    "link": "https://www.dndbeyond.com/monsters/16813-bone-devil"
+  },
+  {
+    "name": "Clay Golem",
+    "cr": "9",
+    "xp": "5000",
+    "link": "https://www.dndbeyond.com/monsters/16825-clay-golem"
+  },
+  {
+    "name": "Cloud Giant",
+    "cr": "9",
+    "xp": "5000",
+    "link": "https://www.dndbeyond.com/monsters/16827-cloud-giant"
+  },
+  {
+    "name": "Fire Giart",
+    "cr": "9",
+    "xp": "5000",
+    "link": "https://www.dndbeyond.com/monsters/16862-fire-giant"
+  },
+  {
+    "name": "Glabrezu",
+    "cr": "9",
+    "xp": "5000",
+    "link": "https://www.dndbeyond.com/monsters/16902-glabrezu"
+  },
+  {
+    "name": "Treant",
+    "cr": "9",
+    "xp": "5000",
+    "link": "https://www.dndbeyond.com/monsters/17037-treant"
+  },
+  {
+    "name": "Young Blue Dragon",
+    "cr": "9",
+    "xp": "5000",
+    "link": "https://www.dndbeyond.com/monsters/17068-young-blue-dragon"
+  },
+  {
+    "name": "Young Silver Dragon",
+    "cr": "9",
+    "xp": "5000",
+    "link": "https://www.dndbeyond.com/monsters/17075-young-silver-dragon"
+  },
+  {
+    "name": "Aboleth",
+    "cr": "10",
+    "xp": "5900",
+    "link": "https://www.dndbeyond.com/monsters/16762-aboleth"
+  },
+  {
+    "name": "Deva",
+    "cr": "10",
+    "xp": "5900",
+    "link": "https://www.dndbeyond.com/monsters/16840-deva"
+  },
+  {
+    "name": "Guardian Naga",
+    "cr": "10",
+    "xp": "5900",
+    "link": "https://www.dndbeyond.com/monsters/16916-guardian-naga"
+  },
+  {
+    "name": "Stone Golem",
+    "cr": "10",
+    "xp": "5900",
+    "link": "https://www.dndbeyond.com/monsters/17025-stone-golem"
+  },
+  {
+    "name": "Young Gold Dragon",
+    "cr": "10",
+    "xp": "5900",
+    "link": "https://www.dndbeyond.com/monsters/17072-young-gold-dragon"
+  },
+  {
+    "name": "Young Red Dragon",
+    "cr": "10",
+    "xp": "5900",
+    "link": "https://www.dndbeyond.com/monsters/17074-young-red-dragon"
+  },
+  {
+    "name": "Behir",
+    "cr": "11",
+    "xp": "7200",
+    "link": "https://www.dndbeyond.com/monsters/16804-behir"
+  },
+  {
+    "name": "Djinni",
+    "cr": "11",
+    "xp": "7200",
+    "link": "https://www.dndbeyond.com/monsters/16842-djinni"
+  },
+  {
+    "name": "Efreeti",
+    "cr": "11",
+    "xp": "7200",
+    "link": "https://www.dndbeyond.com/monsters/16854-efreeti"
+  },
+  {
+    "name": "Gynosphinx",
+    "cr": "11",
+    "xp": "7200",
+    "link": "https://www.dndbeyond.com/monsters/16917-gynosphinx"
+  },
+  {
+    "name": "Horned Devil",
+    "cr": "11",
+    "xp": "7200",
+    "link": "https://www.dndbeyond.com/monsters/16927-horned-devil"
+  },
+  {
+    "name": "Remorhaz",
+    "cr": "11",
+    "xp": "7200",
+    "link": "https://www.dndbeyond.com/monsters/16995-remorhaz"
+  },
+  {
+    "name": "Roc",
+    "cr": "11",
+    "xp": "7200",
+    "link": "https://www.dndbeyond.com/monsters/16998-roc"
+  },
+  {
+    "name": "Erinyes",
+    "cr": "12",
+    "xp": "8400",
+    "link": "https://www.dndbeyond.com/monsters/16858-erinyes"
+  },
+  {
+    "name": "Adult Brass Dragon",
+    "cr": "13",
+    "xp": "10000",
+    "link": "https://www.dndbeyond.com/monsters/16766-adult-brass-dragon"
+  },
+  {
+    "name": "Adult White Dragon",
+    "cr": "13",
+    "xp": "10000",
+    "link": "https://www.dndbeyond.com/monsters/16773-adult-white-dragon"
+  },
+  {
+    "name": "Nalfeshnee",
+    "cr": "13",
+    "xp": "10000",
+    "link": "https://www.dndbeyond.com/monsters/16963-nalfeshnee"
+  },
+  {
+    "name": "Rakshasa",
+    "cr": "13",
+    "xp": "10000",
+    "link": "https://www.dndbeyond.com/monsters/16990-rakshasa"
+  },
+  {
+    "name": "Storm Giant",
+    "cr": "13",
+    "xp": "10000",
+    "link": "https://www.dndbeyond.com/monsters/17026-storm-giant"
+  },
+  {
+    "name": "Vampire",
+    "cr": "13",
+    "xp": "10000",
+    "link": "https://www.dndbeyond.com/monsters/17043-vampire"
+  },
+  {
+    "name": "Adult Black Dragon",
+    "cr": "14",
+    "xp": "11500",
+    "link": "https://www.dndbeyond.com/monsters/16764-adult-black-dragon"
+  },
+  {
+    "name": "Adult Copper Dragon",
+    "cr": "14",
+    "xp": "11500",
+    "link": "https://www.dndbeyond.com/monsters/16768-adult-copper-dragon"
+  },
+  {
+    "name": "Ice Devil",
+    "cr": "14",
+    "xp": "11500",
+    "link": "https://www.dndbeyond.com/monsters/16931-ice-devil"
+  },
+  {
+    "name": "Adult Bronze Dragon",
+    "cr": "15",
+    "xp": "13000",
+    "link": "https://www.dndbeyond.com/monsters/16767-adult-bronze-dragon"
+  },
+  {
+    "name": "Adult Green Dragon",
+    "cr": "15",
+    "xp": "13000",
+    "link": "https://www.dndbeyond.com/monsters/16770-adult-green-dragon"
+  },
+  {
+    "name": "Mummy Lord",
+    "cr": "15",
+    "xp": "13000",
+    "link": "https://www.dndbeyond.com/monsters/16962-mummy-lord"
+  },
+  {
+    "name": "Purple Worm",
+    "cr": "15",
+    "xp": "13000",
+    "link": "https://www.dndbeyond.com/monsters/16987-purple-worm"
+  },
+  {
+    "name": "Adult Blue Dragon",
+    "cr": "16",
+    "xp": "15000",
+    "link": "https://www.dndbeyond.com/monsters/16765-adult-blue-dragon"
+  },
+  {
+    "name": "Adult Silver Dragon",
+    "cr": "16",
+    "xp": "15000",
+    "link": "https://www.dndbeyond.com/monsters/16772-adult-silver-dragon"
+  },
+  {
+    "name": "Iron Golem",
+    "cr": "16",
+    "xp": "15000",
+    "link": "https://www.dndbeyond.com/monsters/16935-iron-golem"
+  },
+  {
+    "name": "Marilith",
+    "cr": "16",
+    "xp": "15000",
+    "link": "https://www.dndbeyond.com/monsters/16952-marilith"
+  },
+  {
+    "name": "Planetar",
+    "cr": "16",
+    "xp": "15000",
+    "link": "https://www.dndbeyond.com/monsters/16980-planetar"
+  },
+  {
+    "name": "Adult Gold Dragon",
+    "cr": "17",
+    "xp": "18000",
+    "link": "https://www.dndbeyond.com/monsters/16769-adult-gold-dragon"
+  },
+  {
+    "name": "Adult Red Dragon",
+    "cr": "17",
+    "xp": "18000",
+    "link": "https://www.dndbeyond.com/monsters/16771-adult-red-dragon"
+  },
+  {
+    "name": "Androsphinx",
+    "cr": "17",
+    "xp": "18000",
+    "link": "https://www.dndbeyond.com/monsters/16785-androsphinx"
+  },
+  {
+    "name": "Dragon Turtle",
+    "cr": "17",
+    "xp": "18000",
+    "link": "https://www.dndbeyond.com/monsters/16845-dragon-turtle"
+  },
+  {
+    "name": "Balor",
+    "cr": "19",
+    "xp": "22000",
+    "link": "https://www.dndbeyond.com/monsters/16797-balor"
+  },
+  {
+    "name": "Ancient Brass Dragon",
+    "cr": "20",
+    "xp": "25000",
+    "link": "https://www.dndbeyond.com/monsters/16777-ancient-brass-dragon"
+  },
+  {
+    "name": "Ancient White Dragon",
+    "cr": "20",
+    "xp": "25000",
+    "link": "https://www.dndbeyond.com/monsters/16784-ancient-white-dragon"
+  },
+  {
+    "name": "Pit Fiend",
+    "cr": "20",
+    "xp": "25000",
+    "link": "https://www.dndbeyond.com/monsters/16979-pit-fiend"
+  },
+  {
+    "name": "Ancient Black Dragon",
+    "cr": "21",
+    "xp": "33000",
+    "link": "https://www.dndbeyond.com/monsters/16775-ancient-black-dragon"
+  },
+  {
+    "name": "Ancient Copper Dragon",
+    "cr": "21",
+    "xp": "33000",
+    "link": "https://www.dndbeyond.com/monsters/16779-ancient-copper-dragon"
+  },
+  {
+    "name": "Lich",
+    "cr": "21",
+    "xp": "33000",
+    "link": "https://www.dndbeyond.com/monsters/16943-lich"
+  },
+  {
+    "name": "Solar",
+    "cr": "21",
+    "xp": "33000",
+    "link": "https://www.dndbeyond.com/monsters/17016-solar"
+  },
+  {
+    "name": "Ancient Bronze Dragon",
+    "cr": "22",
+    "xp": "41000",
+    "link": "https://www.dndbeyond.com/monsters/16778-ancient-bronze-dragon"
+  },
+  {
+    "name": "Ancient Green Dragon",
+    "cr": "22",
+    "xp": "41000",
+    "link": "https://www.dndbeyond.com/monsters/16781-ancient-green-dragon"
+  },
+  {
+    "name": "Ancient Blue Dragon",
+    "cr": "23",
+    "xp": "50000",
+    "link": "https://www.dndbeyond.com/monsters/16776-ancient-blue-dragon"
+  },
+  {
+    "name": "Ancient Silver Dragon",
+    "cr": "23",
+    "xp": "50000",
+    "link": "https://www.dndbeyond.com/monsters/16783-ancient-silver-dragon"
+  },
+  {
+    "name": "Kraken",
+    "cr": "23",
+    "xp": "50000",
+    "link": "https://www.dndbeyond.com/monsters/16940-kraken"
+  },
+  {
+    "name": "Ancient Gold Dragon",
+    "cr": "24",
+    "xp": "62000",
+    "link": "https://www.dndbeyond.com/monsters/16780-ancient-gold-dragon"
+  },
+  {
+    "name": "Ancient Red Dragon",
+    "cr": "24",
+    "xp": "62000",
+    "link": "https://www.dndbeyond.com/monsters/16782-ancient-red-dragon"
+  },
+  {
+    "name": "Tarrasque",
+    "cr": "30",
+    "xp": "155000",
+    "link": "https://www.dndbeyond.com/monsters/17034-tarrasque"
+  }
+]
