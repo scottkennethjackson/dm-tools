@@ -73,7 +73,6 @@ export default function Spellbook() {
 
   return (
     <div className="flex flex-col items-center justify-center px-4 py-24 space-y-6 min-h-screen">
-      {/* Home button */}
       <button
         aria-label="Home"
         className="absolute top-5 right-6 cursor-pointer"
@@ -156,7 +155,6 @@ export default function Spellbook() {
         </div>
       </div>
 
-      {/* Roll Button */}
       <button
         className="p-2 w-24 font-tiamat text-xl bg-red active:bg-activered cursor-pointer"
         onClick={rollSpell}
