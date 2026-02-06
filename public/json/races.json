@@ -1,0 +1,49 @@
+{
+  "common": [
+    { "name": "Aasimar" },
+    { "name": "Dragonborn" },
+    { "name": "Dwarf" },
+    { "name": "Elf" },
+    { "name": "Gnome" },
+    { "name": "Halfling" },
+    { "name": "Human" },
+    { "name": "Tiefling" }
+  ],
+  "exotic": [
+    { "name": "Aarakocra" },
+    { "name": "Changeling" },
+    { "name": "Deep Gnome" },
+    { "name": "Duergar" },
+    { "name": "Eladrin" },
+    { "name": "Fairy" },
+    { "name": "Firbolg" },
+    { "name": "Genasi" },
+    { "name": "Githyanki" },
+    { "name": "Githzerai" },
+    { "name": "Goliath" },
+    { "name": "Harengon" },
+    { "name": "Kenku" },
+    { "name": "Locathah" },
+    { "name": "Owlin" },
+    { "name": "Satyr" },
+    { "name": "Sea Elf" },
+    { "name": "Shadar-Kai" },
+    { "name": "Tabaxi" },
+    { "name": "Tortle" },
+    { "name": "Triton" },
+    { "name": "Verdan" }
+  ],
+  "monsterous": [
+    { "name": "Bugbear" },
+    { "name": "Centaur" },
+    { "name": "Goblin" },
+    { "name": "Grung" },
+    { "name": "Hobgoblin" },
+    { "name": "Kobold" },
+    { "name": "Lizardfolk" },
+    { "name": "Minotaur" },
+    { "name": "Orc" },
+    { "name": "Shifter" },
+    { "name": "Yuan-Ti" }
+  ]
+}

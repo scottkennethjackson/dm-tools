@@ -1,0 +1,35 @@
+{
+  "light": [
+    { "name": "Padded", "ac": 11, "stealth disadvantage": true },
+    { "name": "Leather", "ac": 11 },
+    { "name": "Studded Leather", "ac": 12 }
+  ],
+  "medium": [
+    { "name": "Hide", "ac": 12, "dex max": 2 },
+    { "name": "Chain Shirt", "ac": 13, "dex max": 2 },
+    {
+      "name": "Scale Mail",
+      "ac": 14,
+      "dex max": 2,
+      "stealth disadvantage": true
+    },
+    { "name": "Breastplate", "ac": 14, "dex max": 2 },
+    {
+      "name": "Half Plate",
+      "ac": 15,
+      "dex max": 2,
+      "stealth disadvantage": true
+    }
+  ],
+  "heavy": [
+    { "name": "Ring Mail", "ac": 14, "stealth disadvantage": true },
+    {
+      "name": "Chain Mail",
+      "ac": 16,
+      "str min": 13,
+      "stealth disadvantage": true
+    },
+    { "name": "Splint", "ac": 17, "str min": 15, "stealth disadvantage": true },
+    { "name": "Plate", "ac": 18, "str min": 15, "stealth disadvantage": true }
+  ]
+}

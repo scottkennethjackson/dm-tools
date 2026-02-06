@@ -1,0 +1,36 @@
+{
+  "strength": {
+    "proficiency": "Athletics"
+  },
+
+  "dexterity": [
+    { "proficiency": "Acrobatics" },
+    { "proficiency": "Slight of Hand" },
+    { "proficiency": "Stealth" }
+  ],
+
+  "constitution": null,
+
+  "intelligence": [
+    { "proficiency": "Arcana" },
+    { "proficiency": "History" },
+    { "proficiency": "Investigation" },
+    { "proficiency": "Nature" },
+    { "proficiency": "Religion" }
+  ],
+
+  "wisdom": [
+    { "proficiency": "Animal Handling" },
+    { "proficiency": "Insight" },
+    { "proficiency": "Medicine" },
+    { "proficiency": "Perception" },
+    { "proficiency": "Survival" }
+  ],
+
+  "charisma": [
+    { "proficiency": "Deception" },
+    { "proficiency": "Intimidation" },
+    { "proficiency": "Performance" },
+    { "proficiency": "Persuasion" }
+  ]
+}

@@ -1,0 +1,218 @@
+{
+  "melee": {
+    "simple": [
+      { "name": "Club", "dmg dice": "1d4", "dmg type": "bludgeoning" },
+      {
+        "name": "Dagger",
+        "dmg dice": "1d4",
+        "dmg type": "piercing",
+        "finesse": true,
+        "throwable": true,
+        "range": "20/60"
+      },
+      {
+        "name": "Greatclub",
+        "dmg dice": "1d8",
+        "dmg type": "bludgeoning",
+        "two-handed": true
+      },
+      {
+        "name": "Handaxe",
+        "dmg dice": "1d6",
+        "dmg type": "slashing",
+        "throwable": true,
+        "range": "20/60"
+      },
+      {
+        "name": "Javelin",
+        "dmg dice": "1d6",
+        "dmg type": "piercing",
+        "throwable": true,
+        "range": "30/120"
+      },
+      {
+        "name": "Light Hammer",
+        "dmg dice": "1d4",
+        "dmg type": "bludgeoning",
+        "throwable": true,
+        "range": "20/60"
+      },
+      { "name": "Mace", "dmg dice": "1d6", "dmg type": "bludgeoning" },
+      {
+        "name": "Quarterstaff",
+        "dmg dice": "1d6",
+        "dmg type": "bludgeoning",
+        "versatile": true,
+        "versatile dmg": "1d8"
+      },
+      { "name": "Sickle", "dmg dice": "1d4", "dmg type": "slashing" },
+      {
+        "name": "Spear",
+        "dmg dice": "1d6",
+        "dmg type": "piercing",
+        "throwable": true,
+        "range": "20/60",
+        "versatile": true,
+        "versatile dmg": "1d8"
+      }
+    ],
+    "martial": [
+      {
+        "name": "Battleaxe",
+        "dmg dice": "1d8",
+        "dmg type": "slashing",
+        "versatile": true,
+        "versatile dmg": "1d10"
+      },
+      { "name": "Flail", "dmg dice": "1d8", "dmg type": "bludgeoning" },
+      {
+        "name": "Glaive",
+        "dmg dice": "1d10",
+        "dmg type": "slashing",
+        "heavy": true,
+        "reach": true,
+        "two-handed": true
+      },
+      {
+        "name": "Greataxe",
+        "dmg dice": "1d12",
+        "dmg type": "slashing",
+        "heavy": true,
+        "two-handed": true
+      },
+      {
+        "name": "Greatsword",
+        "dmg dice": "2d6",
+        "dmg type": "slashing",
+        "heavy": true,
+        "two-handed": true
+      },
+      {
+        "name": "Halberd",
+        "dmg dice": "1d10",
+        "dmg type": "slashing",
+        "heavy": true,
+        "reach": true,
+        "two-handed": true
+      },
+      {
+        "name": "Longsword",
+        "dmg dice": "1d8",
+        "dmg type": "slashing",
+        "versatile": true,
+        "versatile dmg": "1d10"
+      },
+      {
+        "name": "Maul",
+        "dmg dice": "2d6",
+        "dmg type": "bludgeoning",
+        "heavy": true,
+        "two-handed": true
+      },
+      { "name": "Morningstar", "dmg dice": "1d8", "dmg type": "piercing" },
+      {
+        "name": "Pike",
+        "dmg dice": "1d10",
+        "dmg type": "piercing",
+        "heavy": true,
+        "reach": true,
+        "two-handed": true
+      },
+      {
+        "name": "Rapier",
+        "dmg dice": "1d8",
+        "dmg type": "piercing",
+        "finesse": true
+      },
+      {
+        "name": "Scimitar",
+        "dmg dice": "1d6",
+        "dmg type": "slashing",
+        "finesse": true
+      },
+      {
+        "name": "Shortsword",
+        "dmg dice": "1d6",
+        "dmg type": "piercing",
+        "finesse": true
+      },
+      {
+        "name": "Trident",
+        "dmg dice": "1d6",
+        "dmg type": "piercing",
+        "throwable": true,
+        "range": "20/60",
+        "versatile": true,
+        "versatile dmg": "1d8"
+      },
+      { "name": "War Pick", "dmg dice": "1d8", "dmg type": "piercing" },
+      {
+        "name": "Warhammer",
+        "dmg dice": "1d8",
+        "dmg type": "bludgeoning",
+        "versatile": true,
+        "versatile dmg": "1d10"
+      },
+      {
+        "name": "Whip",
+        "dmg dice": "1d4",
+        "dmg type": "slashing",
+        "reach": true
+      }
+    ]
+  },
+  "ranged": {
+    "simple": [
+      {
+        "name": "Crossbow, Light",
+        "dmg dice": "1d8",
+        "dmg type": "piercing",
+        "range": "80/320"
+      },
+      {
+        "name": "Dart",
+        "dmg dice": "1d4",
+        "dmg type": "piercing",
+        "range": "20/60"
+      },
+      {
+        "name": "Shortbow",
+        "dmg dice": "1d6",
+        "dmg type": "piercing",
+        "range": "80/320"
+      },
+      {
+        "name": "Sling",
+        "dmg dice": "1d4",
+        "dmg type": "bludgeoning",
+        "range": "30/120"
+      }
+    ],
+    "martial": [
+      {
+        "name": "Blowgun",
+        "dmg dice": "1",
+        "dmg type": "piercing",
+        "range": "25/100"
+      },
+      {
+        "name": "Crossbow, Hand",
+        "dmg dice": "1d6",
+        "dmg type": "piercing",
+        "range": "30/120"
+      },
+      {
+        "name": "Crossbow, Heavy",
+        "dmg dice": "1d10",
+        "dmg type": "piercing",
+        "range": "100/400"
+      },
+      {
+        "name": "Longbow",
+        "dmg dice": "1d8",
+        "dmg type": "piercing",
+        "range": "150/600"
+      }
+    ]
+  }
+}
